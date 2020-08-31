@@ -17,7 +17,7 @@ app.engine('hbs', hbs({
     defaultLayout: 'main'
 }));
 
-// Express static permet de diriger un chemin sur un dossier en particulier
+// Express static permet de diriger un chemin (URL) sur un dossier en particulier
 app.use('/assets', express.static('public'));
 
 // Body parser permet de parser les data d'une page à l'autre en passant par les controllers, ... 

@@ -1,0 +1,106 @@
+<!--Message-->
+<body class="my-message">
+    <section class="h-100">
+        <div class="container h-100">
+            <h1 style="text-align: center;">Send a message</h1>
+            <h4 style="text-align: center;">About me</h4>
+            <p style="text-align: center;"> Procedente igitur mox tempore cum adventicium nihil inveniretur, relicta
+                ora
+                maritima in
+                Lycaoniam adnexam Isauriae se contulerunt ibique densis intersaepientes itinera
+                praetenturis provincialium et viatorum opibus pascebantur".Mox dicta finierat,
+                multitudo
+                omnis ad, quae imperator voluit, promptior laudato consilio
+                consensit in pacem ea ratione maxime percita, quod norat expeditionibus crebris
+                fortunam
+                eius in malis tantum civilibus vigilasse, cum autem bella moverentur externa,
+                accidisse
+                plerumque luctuosa, icto post haec foedere gentium ritu perfectaque sollemnitate
+                imperator
+                Mediolanum ad hiberna discessit.</p>
+        </div>
+
+        <!--Image-->
+        <div class="container mt-5">
+            <div class="row py-5 mt-4 align-items-center">
+                <!-- For Demo Purpose -->
+                <div class="col-md-5">
+                    <img src="/assets/IMAGES/bg-heading.png" alt="" class="img-fluid">
+
+                </div>
+                <!--/Images-->
+
+                <!--Form-->
+                <div class=" col-lg-6 ml-auto">
+                    <form action="#">
+                        <div class="row">
+
+                            <form id="contact-form" method="post" action="contact.php" role="form">
+
+                                <div class="messages"></div>
+
+                                <div class="controls">
+
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="form_name">Firstname *</label>
+                                                <input id="form_name" type="text" name="name" class="form-control"
+                                                    placeholder="Please enter your firstname *" required="required"
+                                                    data-error="Firstname is required.">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="form_lastname">Lastname *</label>
+                                                <input id="form_lastname" type="text" name="surname"
+                                                    class="form-control" placeholder="Please enter your lastname *"
+                                                    required="required" data-error="Lastname is required.">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="form_email">Email *</label>
+                                                <input id="form_email" type="email" name="email" class="form-control"
+                                                    placeholder="Please enter your email *" required="required"
+                                                    data-error="Valid email is required.">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="form_need">Subject *</label>
+                                                <input id="form_text" type="text" name="text" class="form-control"
+                                                    placeholder="Please enter your subject *" required="required"
+                                                    data-error="">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="form_message">Message *</label>
+                                                <textarea id="form_message" name="message" class="form-control"
+                                                    placeholder="Message for me *" rows="4" required="required"
+                                                    data-error="Please, leave us a message."></textarea>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="submit" class="btn btn-success btn-lg btn-send"
+                                                value="Send message">
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                </div>
+                <!--/Form-->
+            </div>
+        </div>
+    </section>
+    <!--/Message-->
