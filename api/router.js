@@ -16,8 +16,7 @@ const homeController = require('./controllers/homeController'),
     messageController = require('./controllers/messageController'),
     registerController = require('./controllers/registerController'),
     profileController = require('./controllers/profileController'),
-    homedashboardController = require('./controllers/homedashboardController')
-
+    adminController = require('./controllers/admin/adminController')
 
 
 
@@ -62,7 +61,17 @@ router.route('/profile')
     .get(profileController.get)
 
 // Admin
-router.route('/homedashboard')
-    .get(homedashboardController.get)
+
+router.route('/admin')
+    .get(adminController.get)
+
+router.route('/admin/users')
+    .get(adminController.getUsers)
+
+router.route('/admin/settings')
+    .get(adminController.getSettings)
+
+
+
 
 module.exports = router;

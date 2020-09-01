@@ -14,7 +14,9 @@ const
 app.set('view engine', 'hbs');
 app.engine('hbs', hbs({
     extname: 'hbs',
-    defaultLayout: 'main'
+    defaultLayout: 'main',
+    adminLayout: 'adminLayout'
+
 }));
 
 // Express static permet de diriger un chemin (URL) sur un dossier en particulier
