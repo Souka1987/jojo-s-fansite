@@ -4,3 +4,5 @@ color:
   - input-placeholder: $dark (_variables.scss:645)
   - $primary: #412ecb (_variables.scss:63)
   - $light: $white (_variables.scss:80)
+  - $small-font-size: (_variables.scss:443)
+  - breadcrumb-bg: rgb(242, 244, 247) (_variables.scss:1202)

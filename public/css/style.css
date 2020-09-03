@@ -3405,7 +3405,7 @@ progress {
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #e9ecef;
+  background-color: #f2f4f7;
   border-radius: 0.25rem; }
 
 .breadcrumb-item {
@@ -3416,7 +3416,7 @@ progress {
       display: inline-block;
       padding-right: 0.5rem;
       color: #6c757d;
-      content: "/"; }
+      content: url("ata:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc"); }
   .breadcrumb-item.active {
     color: #6c757d; }
 
@@ -8019,16 +8019,25 @@ navbar {
 .card {
   -webkit-box-shadow: 10px 10px 30px -30px; }
 
+/*buttons */
 .btn {
-  background-color: #BABA26;
-  border: #BABA26; }
+  background-color: #F48C06;
+  border: #F48C06; }
 
+/*banner */
 .banner {
   background: linear-gradient(to right, #412ecb, #4b007d); }
 
 /*form */
 .form-control {
-  background-color: #white;
-  /*border: 1px solid #412ecb */ }
+  background-color: #white; }
+
+/*star */
+.rating {
+  color: #DC2F02; }
+
+/*video */
+.content {
+  background: linear-gradient(to right, #412ecb, #4b007d); }
 
 /*# sourceMappingURL=style.css.map */

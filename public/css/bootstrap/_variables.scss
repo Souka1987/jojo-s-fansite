@@ -1199,11 +1199,12 @@ $breadcrumb-padding-y:              $spacer / 2 !default;
 $breadcrumb-padding-x:              $spacer !default;
 $breadcrumb-item-padding-x:         .5rem !default;
 $breadcrumb-margin-bottom:          1rem !default;
-$breadcrumb-bg:                     $gray-200 !default;
+$breadcrumb-bg:                     rgb(242, 244, 247) !default;
 $breadcrumb-divider-color:          $gray-600 !default;
 $breadcrumb-active-color:           $gray-600 !default;
 $breadcrumb-divider:                quote("/") !default;
 $breadcrumb-border-radius:          $border-radius !default;
+$breadcrumb-divider: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+);
 
 // Carousel
 
