@@ -77,7 +77,7 @@ $theme-colors: (
   "info":       $info,
   "warning":    $warning,
   "danger":     $danger,
-  "light":      $light,
+  "light":      $white,
   "dark":       $dark
 ) !default;
 // scss-docs-end theme-colors-map
@@ -227,6 +227,7 @@ $enable-important-utilities:  true !default;
 // The gradient which is added to components if `$enable-gradients` is `true`
 // This gradient is also added to elements with `.bg-gradient`
 $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
+
 
 // Spacing
 //
@@ -439,7 +440,7 @@ $display-line-height: $headings-line-height !default;
 $lead-font-size:              $font-size-base * 1.25 !default;
 $lead-font-weight:            300 !default;
 
-$small-font-size:             .875em !default;
+$small-font-size:             12px !default;
 
 $sub-sup-font-size:           .75em !default;
 
