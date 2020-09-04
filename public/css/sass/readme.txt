@@ -6,3 +6,6 @@ color:
   - $light: $white (_variables.scss:80)
   - $small-font-size: (_variables.scss:443)
   - breadcrumb-bg: rgb(242, 244, 247) (_variables.scss:1202)
+
+font:
+  - font-family-sans-serif: Monserrat (_variables.scss:387)
