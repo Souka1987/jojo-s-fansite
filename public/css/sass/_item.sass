@@ -2,21 +2,22 @@
 /*navbar*/
 
 .navbar
-  font-family: cantarell, sans-serif
-  font-size: 12px
-  background-color: rgba(0, 0, 0, 0.85) hsla(117, 0%, 0%, 0.85)
+  font-size: 10px
+  background-color: $secondary
 
 .form-control
   padding: 2px
+  color: $secondary
 
-.search
-  font-size: 12px
-  font-family: cantarell, sans-serif
+.dropdown-toggle::after
+  margin-left: 10px
 
 .dropdown-item
-  color: white
-  background-color: rgba(0, 0, 0, 0.85) hsla(117, 0%, 0%, 0.85)
-  font-family: cantarell, sans-serif
+  color: $white
+  font-size: 13px
+
+.dropdown-menu
+  background-color: $secondary
 
 /*news*/
 
@@ -31,7 +32,9 @@
   background-color: $white
   border: none
 
-
+.card-h1
+  text-align: center
+  border: solid 1px $gray-300
 
 .arc
   text-align: center
@@ -42,41 +45,40 @@
 
 .descr
   font-size: 11.2px
-  font-family: montserrat-medium, sans-serif
   text-align: center
 
 .descr-top
   text-align: justify
-  font-size: 11.9px
+  font-size: 12px
+  font-family: montserrat-medium, sans-serif
 
 .card-first-title
   color: #dd3d31
 
 /*buttons*/
 .btn
-  background-color: #dd3d31
-  border: #dd3d31
+  background-color: $primary
+  border: $secondary
   color: $white
   font-size: 12px
   margin-top: 10px
+  box-shadow: 2px 5px 16px 0px #4D194D, inset 5px -34px 3px -22px rgba(0,0,0,0)
 
 .btn-block
   width: auto
 
 /*banner*/
 .banner
-  background-color: #dd3d31
+  background-color: $secondary
 
 .text-banner
   color: $white
-  font-family: montserrat-medium, sans-serif
   font-size: 14px
   text-align: center
 
 /*form*/
 .form-control
   font-size: 12px
-  font-family: montserrat, sans-serif
   margin-top: 10px
 
 .message
@@ -87,7 +89,6 @@
   float: right
 
 .card-header:first-child
-  background-color: #dd3d31
   color: $white
   font-family: montserrat-medium, sans-serif
 
@@ -105,7 +106,7 @@
 
 /*footer*/
 .text
-  color: #7b7b83
+  color: $white
   font-size: 11px
 
 .text-uppercase
@@ -136,7 +137,7 @@
 
 /*home*/     
 .content
-  background: linear-gradient(to right,#00296B 0,#3a10d3cc 100%)
+  background-color: $primary
 
 /*accordion*/
 .accordion > .card > .card-header
@@ -179,8 +180,6 @@
 .login-section
   /*background-color: $primary*/
 
-  
-
 /*separator*/     
 .divider-text
   position: relative
@@ -188,5 +187,12 @@
   margin-top: 15px
   margin-bottom: 15px
 
+/* Add some content at the bottom of the video/page */
 
-
+.content
+  position: absolute
+  bottom: 0
+  background: rgba(0, 0, 0, 0.5)
+  color: #f1f1f1
+  width: 100%
+  padding: 20px
