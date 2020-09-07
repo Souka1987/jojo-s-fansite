@@ -1,0 +1,205 @@
+<!--Characters-->
+
+<section>
+
+    <div class="py-5">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
+                        <li class="breadcrumb-item"><a href="#">Encyclopédie</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="#">Personnages</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 style="text-align: center;" class="display-4">Liste des personnages</h1>
+        <p class="" style="text-align: center;">Et olim licet otiosae sint tribus pacataeque centuriae et nulla
+            suffragiorum certamina set Pompiliani redierit securitas temporis, per omnes tamen quotquot sunt
+            partes terrarum, ut domina suscipitur et regina et ubique patrum reverenda cum auctoritate canities
+            populique Romani nomen circumspectum et verecundum, Haec dum oriens diu perferret, caeli reserato tepore
+            Constantius consulatu suo septies et Caesaris ter egressus Arelate Valentiam petit, in Gundomadum et
+            Vadomarium fratres Alamannorum reges arma moturus, quorum crebris excursibus vastabantur confines limitibus
+            terrae Gallorum.
+        </p>
+        <div class="form-group mb-4">
+            <input id="myInput" type="text" onkeyup="myFunction()" placeholder="Qui recherchez-vous ?"
+                class="form-control">
+        </div>
+
+        <script>
+            //déclaration de "myFunction"//
+            function myFunction() {
+                //déclaration des variables//
+                var input, filter, h5, a, alt, ul, li, i, txtValue;
+                //récupération de la balise "input"//
+                input = document.getElementById("myInput");
+                //lui attribuer la variable "filter"//
+                filter = input.value.toUpperCase();
+                //Récuperer la liste des éléments avec "ul"//
+                ul = document.getElementById("myJojo");
+                //"li" est l'enfant de "ul"//
+                li = ul.getElementsByTagName("li");
+
+                for (i = 0; i < li.length; i++) {
+                    h5 = li[i].getElementsByTagName("h5")[0];
+                    h5TxtValue = (h5.textContent || h5.innerText).toUpperCase().indexOf(filter) > -1;
+
+                    btn = li[i].getElementsByTagName("button")[0];
+                    btnTxtValue = (btn.textContent || btn.innerText).toUpperCase().indexOf(filter) > -1;
+
+                    p = li[i].getElementsByTagName("p")[0];
+                    pTxtValue = (p.textContent || p.innerText).toUpperCase().indexOf(filter) > -1;
+
+                    if (h5TxtValue || btnTxtValue || pTxtValue) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+
+        <div class="row">
+
+            <!-- Gallery item -->
+            <ul id="myJojo" class="row">
+                <li class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                    <div class="card bg-white">
+                        <img src="https://oocentral.files.wordpress.com/2018/08/w3a1738.jpg" alt="Jonathan"
+                            class="img-fluid card-img">
+                        <div class="p-4">
+                            <div class="Name__header">
+                                    <h5 style="text-align: center;">Jonathan</h5>
+                            </div>
+                            <p class="text-perso mb-0 mt-2">Eminuit autem inter humilia supergressa iam impotentia
+                                fines mediocrium delictorum nefanda Clematii cuiusdam Alexandrini nobilis mors
+                                repentina; cuius socrus cum misceri sibi generum.
+                            </p>
+                            <div
+                                class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                <!--<button type="button" class="btn btn-primary btn-sm">Background</button>
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn btn-primary btn-sm" data-toggle="modal"
+                                    data-target="#staticBackdrop"> Capacité
+                                </button>
+                                <!-- /Button trigger modal -->
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!--card 2-->
+                <li class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                    <div class="card bg-white">
+                        <img src="https://oocentral.files.wordpress.com/2018/08/w3a1738.jpg" alt="Jonathan"
+                            class="img-fluid card-img">
+                        <div class="p-4">
+                            <!--<h5 class="name font-weight-bolder">Joseph</h5>-->
+                            <div class="Name__header">
+                                    <h5 style="text-align: center;">Joseph</h5>
+                            </div>
+                            <p class="text-perso mb-0 mt-2">Eminuit autem inter humilia supergressa iam impotentia
+                                fines mediocrium delictorum nefanda Clematii cuiusdam Alexandrini nobilis mors
+                                repentina; cuius socrus cum misceri sibi generum.
+                            </p>
+                            <div
+                                class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                <!--<button type="button" class="btn btn-primary btn-sm">Background</button>
+                            <!-- Button trigger modal -->
+                                <button type="button" class="btn btn btn-primary btn-sm" data-toggle="modal"
+                                    data-target="#staticBackdrop"> Capacité
+                                </button>
+                                <!-- /Button trigger modal -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+
+            <!--Modal-->
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title font-weight-bolder">Overdrive</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <p class=""><img
+                                    src="https://qph.fs.quoracdn.net/main-qimg-64ef8b9e4fec8eae7090b30336952137"
+                                    height="200" width="200"> trium sententiarum nulli prorsus assentior. Nec
+                                enim illa
+                                prima vera est, ut,
+                                quem ad modum in se quisque sit, sic in amicum sit animatus. Quam multa enim,
+                                quae
+                                nostra causa numquam faceremus, facimus causa amicorum! precari ab indigno,
+                                supplicare, tum acerbius in aliquem invehi insectarique vehementius, quae in
+                                nostris
+                                rebus non satis honeste, in amicorum fiunt honestissime; multaeque res sunt in
+                                quibus de suis commodis viri boni multa detrahunt detrahique patiuntur, ut iis
+                                amici
+                                potius quam ipsi fruantur. Harum trium sententiarum nulli prorsus assentior. Nec
+                                enim illa prima vera est, ut,
+                                quem ad modum in se quisque sit, sic in amicum sit animatus. Quam multa enim,
+                                quae
+                                nostra causa numquam faceremus, facimus causa amicorum! precari ab indigno,
+                                supplicare, tum acerbius in aliquem invehi insectarique vehementius, quae in
+                                nostris
+                                rebus non satis honeste, in amicorum fiunt honestissime; multaeque res sunt in
+                                quibus de suis commodis viri boni multa detrahunt detrahique patiuntur, ut iis
+                                amici
+                                potius quam ipsi fruantur.</p>
+                        </div>
+                        <!--Rate-->
+                        <div class="rating">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <!--/Rate-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Modal-->
+
+
+        </div>
+    </div>
+
+</section>
+<!--/Characters-->
+
+
+<!-- Pagination -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+<!--/Pagination-->

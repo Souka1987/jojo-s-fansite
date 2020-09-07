@@ -61,6 +61,7 @@
                             <a class="dropdown-item" href="#">Chronology</a>
                             <a class="dropdown-item" href="#">Dictionary</a>-->
                         </div>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">FOLDERS</a>
@@ -76,12 +77,13 @@
                             aria-haspopup="true" aria-expanded="false">MEDIAS</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown07">
                             <a class="dropdown-item" href="images.html">Images</a>
-                            <!--<a class="dropdown-item" href="#">Videos</a>-->
+                            <!--<a class="dropdown-item" href="#">Videos</a>
+                            <a class="dropdown-item" href="#">Rating</a>-->
                         </div>
                     </li>
                     <li class="">
-                        <a class="nav-link" href="store.html" id="" data-toggle=""
-                            aria-haspopup="true" aria-expanded="false">STORE</a>
+                        <a class="nav-link" href="store.html" id="" data-toggle="" aria-haspopup="true"
+                            aria-expanded="false">STORE</a>
                         <!--<div class="dropdown-menu" aria-labelledby="dropdown07">
                             <a class="dropdown-item" href="#">Books</a>
                             <a class="dropdown-item" href="#">Games</a>
@@ -94,8 +96,10 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown07">
                             <a class="dropdown-item" href="login.html">Login</a>
                             <a class="dropdown-item" href="message.html">Message</a>
-                            <a class="dropdown-item" href="register.html">Register</a>
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">REGISTER<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-md-0">
@@ -125,380 +129,185 @@
                 evitandum
                 est, excedamus.</p>
 
-            <div class="row" style="margin-top: 20px;">
-                <div class="col-sm-10">
-                    <h3>Username</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-
-                    <!--left col-->
-                    <div class="text-center">
-                        <img src="https://i.kym-cdn.com/photos/images/original/001/221/740/41e.jpg"
-                            class="avatar img-circle img-thumbnail" alt="avatar">
-                        <h6>Upload</h6>
-                        <input type="file" class="text-center center-block file-upload">
+            <!--Info-->
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        <div class="list-group ">
+                            <div class="text-center">
+                                <img src="https://i.kym-cdn.com/photos/images/original/001/221/740/41e.jpg"
+                                    class="avatar rounded img-thumbnail" alt="avatar">
+                                <h6>Upload</h6>
+                                <input type="file" class="">
+                            </div>
+                            <div class="text-center center-block">
+                                <br>
+                                <a href=""><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                                <a href=""><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                                <a href=""><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                                <a href=""><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                            </div>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn btn-danger btn-sm" data-toggle="modal"
+                            data-target="#staticBackdrop"> Delete your account
+                        </button>
+                        <!-- /Button trigger modal -->
                     </div>
-                    </hr><br>
-
-
-                    <ul class="list-group">
-                        <li class="list-group-item active">Informations</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-
-
-                    <!--Modal button-->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Delete your account
-                    </button>
-                    <!--/Modal button-->
 
                     <!--Modal-->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
+                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel"> Delete your account
-                                    </h5>
+                                    <h5 class="modal-title" id="staticBackdropLabel">Delete your account</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    Inter haec Orfitus praefecti potestate regebat urbem aeternam
-                                    ultra modum delatae dignitatis sese efferens insolenter, vir
-                                    quidem prudens et forensium negotiorum oppido gnarus, sed
-                                    splendore liberalium doctrinarum minus quam nobilem decuerat
-                                </div>
-                                <!--Form-->
-                                <form>
-                                    <div class="col">
-                                        <label for="email">Username</label>
-                                        <input type="text" class="form-control" placeholder="">
-                                    </div>
-                                    <div class="col">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="col">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1">
-                                    </div>
-                                </form>
 
-                                <!--/Form-->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger btn-block">Delete</button>
+                                    <p> trium sententiarum nulli prorsus assentior. Nec
+                                        enim illa
+                                        prima vera est, ut,
+                                        quem ad modum in se quisque sit, sic in amicum sit animatus. Quam multa enim,
+                                        quae
+                                        nostra causa numquam faceremus, facimus causa amicorum! precari ab indigno,
+                                        supplicare, tum acerbius in aliquem invehi insectarique vehementius, quae in
+                                        nostris.</p>
+
+                                    <div class="row" style="margin-top: 20px;">
+                                        <div class="col">
+                                            <label for="email">Username</label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                        <div class="col">
+                                            <label for="email">Email</label>
+                                            <input id="email" type="email" class="form-control" name="email" value=""
+                                                required autofocus>
+                                            <div class="invalid-feedback">
+                                                Email is invalid
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-top: 20px;">
+                                        <label for="password">Password</label>
+                                        <input id="password" type="password" class="form-control" name="password"
+                                            required data-eye>
+                                        <div class="invalid-feedback">
+                                            Password is required
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger btn-lg btn-block">Delete</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!--/Modal-->
 
-                </div>
-                <!--/col-3-->
-                <div class="col-sm-9">
+                    <!--/Info-->
 
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="home">
-                            <hr>
-                            <form class="form" action="##" method="post" id="registrationForm">
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="first_name">
-                                            <h4>First name</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="first_name" id="first_name"
-                                            placeholder="first name" title="enter your first name if any.">
+                    <!--Form-->
+                    <div class="col-md-9 mt-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4>Your Profile</h4>
+                                        <hr>
                                     </div>
                                 </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="last_name">
-                                            <h4>Last name</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="last_name" id="last_name"
-                                            placeholder="last name" title="enter your last name if any.">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="last_name">
-                                            <h4>Username</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="user_name" id="user_name"
-                                            placeholder="username" title="enter your user name if any.">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="form_message">Description</label>
-                                    <textarea id="form_text" name="text" class="form-control" placeholder="Describe you"
-                                        rows="4" required="required" data-error="Please, describe you."></textarea>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Email</h4>
-                                        </label>
-                                        <input type="email" class="form-control" name="email" id="email"
-                                            placeholder="you@email.com" title="enter your email.">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="password">
-                                            <h4>Password</h4>
-                                        </label>
-                                        <input type="password" class="form-control" name="password" id="password"
-                                            placeholder="password" title="enter your password.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="password2">
-                                            <h4>Verify</h4>
-                                        </label>
-                                        <input type="password" class="form-control" name="password2" id="password2"
-                                            placeholder="password2" title="enter your password2.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <br>
-                                        <button class="btn btn-lg btn-success" type="submit"><i
-                                                class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                        <button class="btn btn-lg" type="reset"><i
-                                                class="glyphicon glyphicon-repeat"></i>
-                                            Reset</button>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <hr>
-
-                        </div>
-                        <!--/tab-pane-->
-                        <div class="tab-pane" id="messages">
-
-                            <h2></h2>
-
-                            <hr>
-                            <form class="form" action="##" method="post" id="registrationForm">
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="first_name">
-                                            <h4>First name</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="first_name" id="first_name"
-                                            placeholder="first name" title="enter your first name if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="last_name">
-                                            <h4>Last name</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="last_name" id="last_name"
-                                            placeholder="last name" title="enter your last name if any.">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form>
+                                            <div class="form-group row">
+                                                <label for="username" class="col-4 col-form-label">User Name
+                                                    *</label>
+                                                <div class="col-8">
+                                                    <input id="username" name="username" placeholder="Username"
+                                                        class="form-control here" required="required" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="name" class="col-4 col-form-label">First Name</label>
+                                                <div class="col-8">
+                                                    <input id="name" name="name" placeholder="First Name"
+                                                        class="form-control here" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="lastname" class="col-4 col-form-label">Last Name</label>
+                                                <div class="col-8">
+                                                    <input id="lastname" name="lastname" placeholder="Last Name"
+                                                        class="form-control here" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="website" class="col-4 col-form-label">Favorite
+                                                    arc</label>
+                                                <div class="col-8">
+                                                    <input id="Favorite arc" name="Favorite arc"
+                                                        placeholder="Favorite arc" class="form-control here"
+                                                        type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="text" class="col-4 col-form-label">Favorite
+                                                    Stand</label>
+                                                <div class="col-8">
+                                                    <input id="text" name="text" placeholder="Favorite stand"
+                                                        class="form-control here" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="select" class="col-4 col-form-label">Favorite
+                                                    character</label>
+                                                <div class="col-8">
+                                                    <input id="text" name="text" placeholder="Favorite character"
+                                                        class="form-control here" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="email" class="col-4 col-form-label">Email *</label>
+                                                <div class="col-8">
+                                                    <input id="email" name="email" placeholder="Email"
+                                                        class="form-control here" required="required" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="info" class="col-4 col-form-label">Information</label>
+                                                <div class="col-8">
+                                                    <textarea id="info" name="info" cols="40" rows="4"
+                                                        class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="newpass" class="col-4 col-form-label">Password *</label>
+                                                <div class="col-8">
+                                                    <input id="pass" name="pass" placeholder="Password"
+                                                        class="form-control here" required="required" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="offset-4 col-8">
+                                                    <button name="submit" type="submit" class="btn btn-primary">Update
+                                                        My Profile</button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="phone">
-                                            <h4>Phone</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="phone" id="phone"
-                                            placeholder="enter phone" title="enter your phone number if any.">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="mobile">
-                                            <h4>Mobile</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="mobile" id="mobile"
-                                            placeholder="enter mobile number" title="enter your mobile number if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Email</h4>
-                                        </label>
-                                        <input type="email" class="form-control" name="email" id="email"
-                                            placeholder="you@email.com" title="enter your email.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Location</h4>
-                                        </label>
-                                        <input type="email" class="form-control" id="location" placeholder="somewhere"
-                                            title="enter a location">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="password">
-                                            <h4>Password</h4>
-                                        </label>
-                                        <input type="password" class="form-control" name="password" id="password"
-                                            placeholder="password" title="enter your password.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="password2">
-                                            <h4>Verify</h4>
-                                        </label>
-                                        <input type="password" class="form-control" name="password2" id="password2"
-                                            placeholder="password2" title="enter your password2.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <br>
-                                        <button class="btn btn-lg btn-success" type="submit"><i
-                                                class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                        <button class="btn btn-lg" type="reset"><i
-                                                class="glyphicon glyphicon-repeat"></i>
-                                            Reset</button>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
-                        <!--/tab-pane-->
-                        <div class="tab-pane" id="settings">
-
-                            <hr>
-                            <form class="form" action="##" method="post" id="registrationForm">
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="first_name">
-                                            <h4>First name</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="first_name" id="first_name"
-                                            placeholder="first name" title="enter your first name if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="last_name">
-                                            <h4>Last name</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="last_name" id="last_name"
-                                            placeholder="last name" title="enter your last name if any.">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="phone">
-                                            <h4>Phone</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="phone" id="phone"
-                                            placeholder="enter phone" title="enter your phone number if any.">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="mobile">
-                                            <h4>Mobile</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="mobile" id="mobile"
-                                            placeholder="enter mobile number" title="enter your mobile number if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Email</h4>
-                                        </label>
-                                        <input type="email" class="form-control" name="email" id="email"
-                                            placeholder="you@email.com" title="enter your email.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Location</h4>
-                                        </label>
-                                        <input type="email" class="form-control" id="location" placeholder="somewhere"
-                                            title="enter a location">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="password">
-                                            <h4>Password</h4>
-                                        </label>
-                                        <input type="password" class="form-control" name="password" id="password"
-                                            placeholder="password" title="enter your password.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="password2">
-                                            <h4>Verify</h4>
-                                        </label>
-                                        <input type="password" class="form-control" name="password2" id="password2"
-                                            placeholder="password2" title="enter your password2.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-xs-12">
-                                        <br>
-                                        <button class="btn btn-lg btn-success pull-right" type="submit"><i
-                                                class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                        <button class="btn btn-lg" type="reset"><i
-                                                class="glyphicon glyphicon-repeat"></i> Reset</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
-
+    <!--/Form-->
 
 
     <!-- Footer -->

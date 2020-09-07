@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <h2>My Phonebook</h2>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+    <ul id="myUL">
+        <li>
+            <div  class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <div class="card bg-white rounded"><img src="https://oocentral.files.wordpress.com/2018/08/w3a1738.jpg"
+                        alt="Jonathan" class="img-fluid card-img-top">
+                    <div class="p-4">
+                        <h5 id="myJojo"> <a href="#" class="text-dark">Jonathan 1</a></h5>
+                        <p class="small text-muted mb-0">Et olim licet otiosae sint tribus pacataeque centuriae
+                            et nulla suffragiorum certamina set Pompiliani redierit securitas temporis.
+                        </p>
+                        <div
+                            class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                            <!--<button type="button" class="btn btn-primary btn-sm">Background</button>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#staticBackdrop"> Abilities titi
+                            </button>
+                            <!-- /Button trigger modal -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div  class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <div class="card bg-white rounded"><img src="https://oocentral.files.wordpress.com/2018/08/w3a1738.jpg"
+                        alt="Jonathan" class="img-fluid card-img-top">
+                    <div class="p-4">
+                        <h5 id="myJojo"> <a href="#" class="text-dark">Jonathan 2</a></h5>
+                        <p class="small text-muted mb-0">Et olim licet otiosae sint tribus pacataeque centuriae
+                            et nulla suffragiorum certamina set Pompiliani redierit securitas temporis.
+                        </p>
+                        <div
+                            class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                            <!--<button type="button" class="btn btn-primary btn-sm">Background</button>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#staticBackdrop"> Abilities toto
+                            </button>
+                            <!-- /Button trigger modal -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, h5, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                // a = li[i].getElementsByTagName("a")[0];
+                // txtValue = a.textContent || a.innerText;
+                // console.log(a)
+                // h5 = li[i].getElementsByTagName("h5")[0];
+                // txtValue = h5.textContent || h5.innerText;
+                // console.log(h5)
+                console.log(input.value)
+                btn = li[i].getElementsByTagName('button')
+                txtValue = btn.value
+                console.log(btn)
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- <script>
+    //déclaration de "myFunction"//
+    function myFunction() {
+        //déclaration des variables//
+        var input, filter, h5, a, alt, txtValue;
+        //récupération de la balise "input"//
+        input = document.getElementById("myInput");
+        //lui attribuer la variable "filter"//
+        filter = input.value.toUpperCase();
+        //
+        h5 = document.getElementById("myJojo");
+        alt = document.getElementsByTagName("alt");
+
+        console.log(input.value)
+        console.log(alt)
+
+        for (i = 0; i < h5.length; i++) { 
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = ""; 
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script> -->

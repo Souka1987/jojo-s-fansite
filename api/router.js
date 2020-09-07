@@ -6,7 +6,20 @@ const express = require('express'),
 // Controller
 const homeController = require('./controllers/homeController'),
     articleController = require('./controllers/articleController'),
-    contactController = require('./controllers/contactController')
+    contactController = require('./controllers/contactController'),
+    authorController = require('./controllers/authorController'),
+    charactersController = require('./controllers/charactersController'),
+    mangaController = require('./controllers/mangaController'),
+    imagesController = require('./controllers/imagesController'),
+    storeController = require('./controllers/storeController'),
+    loginController = require('./controllers/loginController'),
+    messageController = require('./controllers/messageController'),
+    registerController = require('./controllers/registerController'),
+    profileController = require('./controllers/profileController'),
+    adminController = require('./controllers/admin/adminController')
+
+
+
 
 // Home
 router.route('/')
@@ -16,8 +29,49 @@ router.route('/')
 router.route('/article')
     .get(articleController.get)
 
+router.route('/author')
+    .get(authorController.get)
+
+router.route('/characters')
+    .get(charactersController.get)
+
+router.route('/manga')
+    .get(mangaController.get)
+
+router.route('/images')
+    .get(imagesController.get)
+
+router.route('/store')
+    .get(storeController.get)
+
 // Contact
 router.route('/contact')
     .get(contactController.get)
+
+router.route('/login')
+    .get(loginController.get)
+
+router.route('/message')
+    .get(messageController.get)
+
+router.route('/register')
+    .get(registerController.get)
+
+router.route('/profile')
+    .get(profileController.get)
+
+// Admin
+
+router.route('/admin')
+    .get(adminController.get)
+
+router.route('/admin/users')
+    .get(adminController.getUsers)
+
+router.route('/admin/settings')
+    .get(adminController.getSettings)
+
+
+
 
 module.exports = router;
