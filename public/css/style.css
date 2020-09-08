@@ -8073,17 +8073,11 @@ ul {
   font-size: 12px;
   font-family: montserrat-medium, sans-serif; }
 
-.card-first-title {
-  color: #dd3d31; }
-
 /*buttons */
 .btn {
-  background-color: #7D007D;
-  border: #3A0CA3;
   color: #fff;
   font-size: 12px;
-  margin-top: 10px;
-  box-shadow: 2px 5px 16px 0px #4D194D, inset 5px -34px 3px -22px rgba(0, 0, 0, 0); }
+  margin-top: 10px; }
 
 .btn-block {
   width: auto; }
