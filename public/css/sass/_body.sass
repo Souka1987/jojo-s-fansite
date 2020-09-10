@@ -3,6 +3,7 @@
 a
   text-decoration: none
   color: $black
+  background-color: transparent
 
 body
   font-family: 'Montserrat', sans-serif
@@ -33,6 +34,7 @@ h6
 P 
   font-size: 13px
   text-align: justify
+  font-family: montserrat-medium, sans-serif
 
 button
   color: white
@@ -45,6 +47,7 @@ label
 
 input
   margin-top: 10px
+  font-family: sans-serif
 
 option
   font-size: 12px
@@ -52,7 +55,8 @@ option
 
 /*footer*/
 footer
-  background-color: #181818
+  background: linear-gradient(140deg, #1f2327 0%, $black 85%)
+  
 
 /*Navbar*/
 
@@ -62,7 +66,6 @@ a
   padding: 5px
   display: flow-root
   font-size: 13px
-  background-color: $secondary
   color: $white
 
 a:hover 
@@ -94,7 +97,8 @@ ul
   border: none
   color: $white
   cursor: pointer
-  background-color: #31053183
+  background: $danger
+  font-family: montserrat-bold, sans-serif
 
   &:hover
     background: #ddd
@@ -123,3 +127,6 @@ ul
     top: 0
     right: 15px
     margin-top: 125px
+
+textarea
+  font-family: sans-serif

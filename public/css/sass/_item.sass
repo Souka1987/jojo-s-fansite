@@ -1,13 +1,21 @@
+/*header*/      
+
+.text-header
+  font-family: montserrat-medium, sans-serif
+  color: $white
 
 /*navbar*/
 
 .navbar
   font-size: 10px
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link
   background-color: $secondary
-  
+
+.nav-link
+  background-color: none
 
 .form-control
-  padding: 2px
   color: $secondary
 
 .dropdown-toggle::after
@@ -32,6 +40,7 @@
   border-radius: 0.9px
   background-color: $white
   border: none
+  margin-top: 2px
 
 .card-h1
   text-align: center
@@ -53,21 +62,25 @@
   font-size: 12px
   font-family: montserrat-medium, sans-serif
 
-
-
 /*buttons*/
 .btn
   color: $white
   font-size: 12px
   margin-top: 10px
+  font-family: montserrat-bold, sans-serif
 
 .btn-block
   width: auto
 
+.btn-send
+  background-color: $black
+
+.btn-com
+  background-color: $secondary
+
 /*banner*/
 .banner
   background-color: $secondary
-   
 
 .text-banner
   color: $white
@@ -78,9 +91,12 @@
 .form-control
   font-size: 12px
   margin-top: 10px
+  font-family: montserrat-bold, sans-serif
+  color: $black
 
 .message
-  background-color: $primary
+  /*background-color: $primary*/
+  background: url(/assets/IMAGES/pattern2.jpg)
 
 .btn-com
   margin: 5px
@@ -89,6 +105,7 @@
 .card-header:first-child
   color: $white
   font-family: montserrat-medium, sans-serif
+  background-color: $primary
 
 /*characters*/
 
@@ -104,8 +121,9 @@
 
 /*footer*/
 .text
-  color: $white
+  color: $gray-600
   font-size: 11px
+  font-family: montserrat-medium, sans-serif
 
 .text-uppercase
   font-family: montserrat, sans-serif
@@ -141,6 +159,7 @@
 .accordion > .card > .card-header
   border-radius: 10px 10px 10px 10px
   padding: 1px
+  background-color: $primary
 
 .title-accordion
   text-align: center
@@ -156,14 +175,17 @@
 
 /*tomes list*/
 .nav-tabs .nav-link
-  font-size: 14px
-  font-family: montserrat, sans-serif
-  background-color: $primary
+  font-size: 12px
+  font-family: montserrat-bold, sans-serif
+  background-color: $secondary
   color: $white
 
 /*characters list*/ 
 .text-manga
   font-family: montserrat-medium, sans-serif
+
+.list-chara
+  color: $black
 
 /*store*/
 .text-primary
@@ -172,8 +194,7 @@
 
 /*breadcrumb*/    
 .breadcrumb
-  background: linear-gradient(to right,#00296B 0,#3a10d3cc 100%)
-
+  background: linear-gradient(#271F30, #1B263B, #11293D)
 
 /*login*/
 .login-section
@@ -195,3 +216,9 @@
   color: #f1f1f1
   width: 100%
   padding: 20px
+
+/*register*/
+.profile
+  color: $secondary
+.login
+  background-color: $primary
