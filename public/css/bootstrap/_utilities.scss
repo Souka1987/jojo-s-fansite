@@ -39,13 +39,14 @@ $utilities: map-merge(
       property: position,
       values: static relative absolute fixed sticky
     ),
-    "border": (
+    /*"border": (
       property: border,
       values: (
         null: $border-width solid $border-color,
         0: 0,
       )
-    ),
+    ),*/
+
     "border-top": (
       property: border-top,
       values: (
@@ -364,7 +365,7 @@ $utilities: map-merge(
       values: (
         light: $font-weight-light,
         lighter: $font-weight-lighter,
-        normal: $font-weight-normal,
+        /*normal: $font-weight-normal,*/
         bold: $font-weight-bold,
         bolder: $font-weight-bolder
       )
