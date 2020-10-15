@@ -1,36 +1,21 @@
-<!--Characters-->
+{{!-- Page personnages --}}
 
-<section>
-
-    <div class="py-5">
-        <div class="row">
-            <div class="col-lg-9 mx-auto">
-                <nav aria-label="breadcrumb">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a class="a-chara" href="#">Acceuil</a></li>
-                        <li class="breadcrumb-item"><a class="a-chara"  href="#">Encyclopédie</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><a class="a-chara" href="#">Personnages</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
+<section class="mt-5">
 
     <div class="container">
         <h1 style="text-align: center;" class="display-4">Liste des personnages</h1>
         <p class="" style="text-align: center;">Et olim licet otiosae sint tribus pacataeque centuriae et nulla
             suffragiorum certamina set Pompiliani redierit securitas temporis, per omnes tamen quotquot sunt
-            partes terrarum, ut domina suscipitur et regina et ubique patrum reverenda cum auctoritate canities
-            populique Romani nomen circumspectum et verecundum, Haec dum oriens diu perferret, caeli reserato tepore
-            Constantius consulatu suo septies et Caesaris ter egressus Arelate Valentiam petit, in Gundomadum et
-            Vadomarium fratres Alamannorum reges arma moturus, quorum crebris excursibus vastabantur confines limitibus
-            terrae Gallorum.
+            partes terrarum, ut domina suscipitur et regina et ubique patrum reverenda cum auctoritate canities.
         </p>
+
+        {{!-- bar de recherche --}}
         <div class="form-group mb-4">
             <input id="myInput" type="text" onkeyup="myFunction()" placeholder="Qui recherchez-vous ?"
                 class="form-control">
         </div>
 
+        {{!-- Filtrage des personnages --}}
         <script>
             //déclaration de "myFunction"//
             function myFunction() {
@@ -64,67 +49,36 @@
             }
         </script>
 
+        {{!-- Card  --}}
         <div class="row">
-
-            <!-- Gallery item -->
             <ul id="myJojo" class="row">
+                {{!-- Réduction des cards ici, 4 avec "limit" --}}
+                {{#each character }}
                 <li class="col-xl-3 col-lg-4 col-md-6 mb-4">
                     <div class="card bg-white">
-                        <img src="https://oocentral.files.wordpress.com/2018/08/w3a1738.jpg" alt="Jonathan"
-                            class="img-fluid card-img">
+                        <a href=""></a>
+                        <img alt="Jonathan" class="img-fluid card-img">
                         <div class="p-4">
                             <div class="Name__header">
-                                <h5 style="text-align: center;">Jonathan</h5>
+                                <h2>{{ name }}</h2>
                             </div>
-                            <p class="text-perso mb-0 mt-2">Eminuit autem inter humilia supergressa iam impotentia
-                                fines mediocrium delictorum nefanda Clematii cuiusdam Alexandrini nobilis mors
-                                repentina; cuius socrus cum misceri sibi generum.
-                            </p>
+                            {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
+                            <p>{{ content }}</p>
                             <div
                                 class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                <!--<button type="button" class="btn btn-primary btn-sm">Background</button>
-                            <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-secondary  btn-lg" data-toggle="modal"
+                                {{!--  Button trigger modal  --}}
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
                                     data-target="#staticBackdrop"> Capacité
                                 </button>
-                                <!-- /Button trigger modal -->
-
+                                {{!-- /Button trigger modal --}}
                             </div>
                         </div>
                     </div>
-                </li>
-
-                <!--card 2-->
-                <li class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                    <div class="card bg-white">
-                        <img src="https://i.ytimg.com/vi/8qFOPu4Joqg/maxresdefault.jpg" alt="Jonathan"
-                            class="img-fluid card-img">
-                        <div class="p-4">
-                            <!--<h5 class="name font-weight-bolder">Joseph</h5>-->
-                            <div class="Name__header">
-                                <h5 style="text-align: center;">Joseph</h5>
-                            </div>
-                            <p class="text-perso mb-0 mt-2">Eminuit autem inter humilia supergressa iam impotentia
-                                fines mediocrium delictorum nefanda Clematii cuiusdam Alexandrini nobilis mors
-                                repentina; cuius socrus cum misceri sibi generum.
-                            </p>
-                            <div
-                                class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                                <!--<button type="button" class="btn btn-primary btn-sm">Background</button>
-                            <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal"
-                                    data-target="#staticBackdrop"> Capacité
-                                </button>
-                                <!-- /Button trigger modal -->
-
-                            </div>
-                        </div>
-                    </div>
-
                 </li>
             </ul>
 
-            <!--Modal-->
+
+            {{!-- Modal --}}
             <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -136,9 +90,8 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p class=""><img
-                                    src="https://i.ytimg.com/vi/_Kwf_JKrwFw/maxresdefault.jpg"
-                                    height="" width="450">
+                            <p class=""><img src="https://i.ytimg.com/vi/_Kwf_JKrwFw/maxresdefault.jpg" height=""
+                                    width="450">
                                 <!--Rate-->
                             <div class="rating float:right">
                                 <span class="fa fa-star checked"></span>
@@ -152,10 +105,9 @@
                                 <div class="card">
                                     <div class="card-header" id="headingOne">
                                         <h5 class="mb-0">
-                                            <button class="btn " data-toggle="collapse"
-                                                data-target="#collapseOne" aria-expanded="true"
-                                                aria-controls="collapseOne">
-                                                Type
+                                            <button class="btn " data-toggle="collapse" data-target="#collapseOne"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                                Spécificité
                                             </button>
                                         </h5>
                                     </div>
@@ -163,40 +115,7 @@
                                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                         data-parent="#accordion">
                                         <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-                                            synth nesciunt you probably haven't heard of them accusamus labore
-                                            sustainable VHS.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <h5 class="mb-0">
-                                            <button class="btn collapsed" data-toggle="collapse"
-                                                data-target="#collapseTwo" aria-expanded="false"
-                                                aria-controls="collapseTwo">
-                                                Spécificité
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                        data-parent="#accordion">
-                                        <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-                                            synth nesciunt you probably haven't heard of them accusamus labore
-                                            sustainable VHS.
+                                            ...
                                         </div>
                                     </div>
                                 </div>
@@ -213,61 +132,26 @@
                                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                         data-parent="#accordion">
                                         <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-                                            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                                            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                                            wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                                            vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-                                            synth nesciunt you probably haven't heard of them accusamus labore
-                                            sustainable VHS.
+                                            ...
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-                            <!--trium sententiarum nulli prorsus assentior. Nec
-                                enim illa
-                                prima vera est, ut,
-                                quem ad modum in se quisque sit, sic in amicum sit animatus. Quam multa enim,
-                                quae
-                                nostra causa numquam faceremus, facimus causa amicorum! precari ab indigno,
-                                supplicare, tum acerbius in aliquem invehi insectarique vehementius, quae in
-                                nostris
-                                rebus non satis honeste, in amicorum fiunt honestissime; multaeque res sunt in
-                                quibus de suis commodis viri boni multa detrahunt detrahique patiuntur, ut iis
-                                amici
-                                potius quam ipsi fruantur. Harum trium sententiarum nulli prorsus assentior. Nec
-                                enim illa prima vera est, ut,
-                                quem ad modum in se quisque sit, sic in amicum sit animatus. Quam multa enim,
-                                quae
-                                nostra causa numquam faceremus, facimus causa amicorum! precari ab indigno,
-                                supplicare, tum acerbius in aliquem invehi insectarique vehementius, quae in
-                                nostris
-                                rebus non satis honeste, in amicorum fiunt honestissime; multaeque res sunt in
-                                quibus de suis commodis viri boni multa detrahunt detrahique patiuntur, ut iis
-                                amici
-                                potius quam ipsi fruantur.</p>
-                        </div>-->
-
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">Fermer</button>
-
+                                <button type="button" class="btn btn-secondary btn-sm"
+                                    data-dismiss="modal">Fermer</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--/Modal-->
-
-
+                {{!-- /Modal --}}
             </div>
-
+            {{!-- Fin de la boucle --}}
+            {{/each }}
+        </div>
+    </div>
 </section>
-<!--/Characters-->
+{{!-- /Page personnages --}}
 
 
 <!-- Pagination -->

@@ -1,77 +1,113 @@
-// Import
+// Import 
 const express = require('express'),
     router = express.Router(),
-    path = require('path')
+    path = require('path'),
+    upload  = require('./config/multer')
 
-// Controller
+
+// CONTROLLER
 const homeController = require('./controllers/homeController'),
-    articleController = require('./controllers/articleController'),
-    contactController = require('./controllers/contactController'),
-    authorController = require('./controllers/authorController'),
+    // articleCreateController = require('./controllers/articleCreateController'),
+    // articleEditController = require('./controllers/characterEditController'),
+    // contactController = require('./controllers/contactController'),
+    // authorController = require('./controllers/authorController'),
     charactersController = require('./controllers/charactersController'),
-    mangaController = require('./controllers/mangaController'),
-    imagesController = require('./controllers/imagesController'),
-    storeController = require('./controllers/storeController'),
-    loginController = require('./controllers/loginController'),
-    messageController = require('./controllers/messageController'),
-    registerController = require('./controllers/registerController'),
-    profileController = require('./controllers/profileController'),
+    arcsController = require('./controllers/arcsController'),
+    // mangaController = require('./controllers/mangaController'),
+    // imagesController = require('./controllers/imagesController'),
+    // storeController = require('./controllers/storeController'),
+    // loginController = require('./controllers/loginController'),
+    // messageController = require('./controllers/messageController'),
+    // registerController = require('./controllers/registerController'),
+    // profileController = require('./controllers/profileController'),
     adminController = require('./controllers/admin/adminController')
 
 
+/*
+ * Home
+ * ***** */
 
-
-// Home
 router.route('/')
-    .get(homeController.get)
+    .get(homeController.getArcs)
 
-// Article
-router.route('/article')
-    .get(articleController.get)
 
-router.route('/author')
-    .get(authorController.get)
 
+/*
+ * Personnages
+ * *********** */
+
+//  Page Characters Site
 router.route('/characters')
-    .get(charactersController.get)
+    .get(charactersController.getCharacters)
 
-router.route('/manga')
-    .get(mangaController.get)
+// router.route('/author')
+// .get(authorController.get)
 
-router.route('/images')
-    .get(imagesController.get)
+// router.route('/manga')
+// .get(mangaController.get)
 
-router.route('/store')
-    .get(storeController.get)
+// router.route('/images')
+// .get(imagesController.get)
 
-// Contact
-router.route('/contact')
-    .get(contactController.get)
+// router.route('/store')
+// .get(storeController.get)
 
-router.route('/login')
-    .get(loginController.get)
+/*
+ * CONTACT
+ * ******* */
 
-router.route('/message')
-    .get(messageController.get)
+// router.route('/contact')
+// .get(contactController.get)
 
-router.route('/register')
-    .get(registerController.get)
+// router.route('/login')
+// .get(loginController.get)
 
-router.route('/profile')
-    .get(profileController.get)
+// router.route('/message')
+// .get(messageController.get)
 
-// Admin
+// router.route('/register')
+// .get(registerController.get)
 
+// router.route('/profile')
+// .get(profileController.get)
+
+/*
+ * ADMIN
+ * ***** */
+
+// Page admin
 router.route('/admin')
     .get(adminController.get)
 
-router.route('/admin/users')
-    .get(adminController.getUsers)
-
-router.route('/admin/settings')
-    .get(adminController.getSettings)
 
 
+// ARCS
+router.route('/admin/arcs')
+// GET récupération du formulaire formAdd
+.get(homeController.formAddArcs)
+// POST formulaire addArcs
+.post(upload.single('imageArcs'), arcsController.addArcs)
+
+// Liste des UX
+// router.route('/admin/users')
+// .get(adminController.getUsers)
+
+// router.route('/admin/settings')
+// .get(adminController.getSettings)
 
 
-module.exports = router;
+// CHARACTERS
+router.route('/admin/characters')
+    // GET recupération du formulaire addCharacter
+    .get(charactersController.formAddCharacter)
+    // POST formulaire addCharacter
+    .post(charactersController.addCharacters)
+
+
+// router.route('/admin/characaters')
+//     .get(articleEditController.get)
+//     .post(articleEditController.edit)
+
+
+// Exportation du routeur
+module.exports = router

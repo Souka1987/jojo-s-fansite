@@ -1,0 +1,37 @@
+
+<!--Cards-->
+<section class="jumbotron text-center" style="background-color: #fff;">
+    <div class="container">
+        <h1>Jojo's Bizarre Adventure parts</h1>
+        <p>Accenderat super his incitatum propositum ad nocendum aliqua
+            mulier vilis,
+            quae
+            ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a
+            militibus
+            obscurissimis.
+        </p>
+        <p>
+            <a href="/manga" class="btn btn-primary my-2">Voir plus</a>
+        </p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row">
+        {{#each arcs }}
+        <!-- Gallery item -->
+        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div class="bg-white"><img
+                    src=""
+                    alt="" class="img-fluid card-img-top">
+                <div class="p-4">
+                    <h4><a href="#" class="text-dark">{{ title }}</a></h4>
+                    <h6></h6>
+                    <p class="small text-muted mb-0">{{ content }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- End -->
+        {{/each }}
+    </div>
+</div>

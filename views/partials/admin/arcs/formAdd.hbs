@@ -1,0 +1,30 @@
+<section>
+    {{!--Ajout de l'url et de la méthode. "application/x-www-form-urlencoded" valeur par défaut--}}
+    <form action="/admin/article/create" method="POST" enctype="application/x-www-form-urlencoded">
+
+        {{!-- Input Nom du personnage --}}
+        <div class="form-group">
+            <label for="text">Nom</label>
+            <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
+        </div>
+
+        {{!-- Input Contenu --}}
+        <div class="form-group">
+            <label for="exampleInputTextarea">Contenu</label>
+            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"
+                value="{{ content }}"></textarea>
+        </div>
+
+        {{!-- Input Images --}}
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" value="{{ image }}">
+        </div>
+
+        {{!-- Bouttons --}}
+        <div>
+            <button type="submit" class="btn btn-primary">Valider</button>
+            <button type="submit" class="btn btn-secondary">Annuler</button>
+        </div>
+    </form>
+</section>

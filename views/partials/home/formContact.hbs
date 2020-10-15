@@ -1,0 +1,100 @@
+<!--Form-->
+<section>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-8 offset-xl-2 py-5">
+
+                <h1>Send a message</h1>
+
+                <p>Post quorum necem nihilo lenius ferociens Gallus ut leo
+                    cadaveribus pastus
+                    multa
+                    huius modi scrutabatur. quae singula narrare non refert, me professione
+                    modum, quod
+                    evitandum
+                    est, excedamus.</p>
+
+
+                <form id="contact-form" method="post" action="contact.php" role="form">
+
+                    <div class="messages"></div>
+
+                    <div class="controls">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Firstname *</label>
+                                    <input id="form_name" type="text" name="name" class="form-control"
+                                        placeholder="Please enter your firstname *" required="required"
+                                        data-error="Firstname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_lastname">Lastname *</label>
+                                    <input id="form_lastname" type="text" name="surname" class="form-control"
+                                        placeholder="Please enter your lastname *" required="required"
+                                        data-error="Lastname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_email">Email *</label>
+                                    <input id="form_email" type="email" name="email" class="form-control"
+                                        placeholder="Please enter your email *" required="required"
+                                        data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_need">Favorite arc *</label>
+                                    <select id="form_need" name="need" class="form-control" required="required"
+                                        data-error="Please specify your need.">
+                                        <option value=""></option>
+                                        <option value="arc1">Phantom Blood</option>
+                                        <option value="arc2">Battle Tendency</option>
+                                        <option value="arc3">Stardust Crusaders</option>
+                                        <option value="arc4">Diamond Is Unbreakable</option>
+                                        <option value="arc5">Golden Wind</option>
+                                        <option value="arc6">Stone Ocean</option>
+                                        <option value="arc7">Steel Ball Run</option>
+                                        <option value="arc8">Jojolion</option>
+                                    </select>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_message">Message *</label>
+                                    <textarea id="form_message" name="message" class="form-control"
+                                        placeholder="Message for me *" rows="4" required="required"
+                                        data-error="Please, leave us a message."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-success btn-send" value="Send message">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--/Form-->
