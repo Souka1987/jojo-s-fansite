@@ -1,3 +1,7 @@
+/*
+ * Controller Page Arcs Home
+ * ********************************** */
+
 const Arcs = require('../../database/models/Arcs')
 
 
@@ -9,31 +13,29 @@ module.exports = {
         // console.log(req)
 
         console.log(req.file)
+        // Demander de charger le model "Arcs"
         const dbArcs = await Arcs.find({})
-
-        // const {
-        //     image
-        // } = req.file
 
         console.log(req.body)
         // console.log(dbArcs)
         //console.log(image)
+
+        // Définir le fichier image
         const image = req.file.originalname
 
+        // Création de l'article à partir du model
         Arcs.create({
 
+            // ...req.body prend par défaut tout le schéma
             ...req.body,
-            // name: req.body.name,
-            // content: req.body.content,
+
             image: `/assets/images/arcs/${image}`,
             name: req.body.name
 
         }, (err) => {
             if (err) console.log(err)
-            res.render('index', {
-                arcs: dbArcs
-            })
-
+            // Recharger la page automatiquement après création avec "res.redirect"
+            res.render('index')
         })
     }
 }

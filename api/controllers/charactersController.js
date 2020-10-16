@@ -1,6 +1,7 @@
 /*
  * Controller Page Personnages
  * ********************************** */
+
 const path = require('path');
 const Character = require('../../database/models/Character')
 

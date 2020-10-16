@@ -1,5 +1,5 @@
 
-<!--Cards-->
+<!--Card-->
 <section class="jumbotron text-center" style="background-color: #fff;">
     <div class="container">
         <h1>Jojo's Bizarre Adventure parts</h1>
@@ -24,8 +24,8 @@
             <div class="bg-white">
                 <img src= "{{ image }}" alt=""  class="img-fluid card-img-top">
                 <div class="p-4">
-                    <h4><a href="#" class="text-dark">{{ title }}</a></h4>
-                    <h6></h6>
+                    <h4>{{ title }}</h4>
+                    {{!-- <h6></h6> --}}
                     <p class="small text-muted mb-0">{{ content }}</p>
                 </div>
             </div>
@@ -34,3 +34,4 @@
         {{/each }}
     </div>
 </div>
+<!--card-->

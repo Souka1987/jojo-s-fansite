@@ -61,7 +61,7 @@
                         <div class="p-4">
                             <div class="">
                                 <h5>{{ name }}</h5>
-                                <p>{{_id}}</p>
+                                <p>{{ _id }}</p>
                             </div>
                             {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
                             <p>{{ content }}</p>
@@ -79,7 +79,7 @@
                 </li>
 
                 {{!-- Modal --}}
-                <div class="modal fade" id="staticBackdrop{{_id}}" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                <div class="modal fade" id="staticBackdrop{{ _id }}" data-backdrop="static" data-keyboard="false" tabindex="-1"
                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">

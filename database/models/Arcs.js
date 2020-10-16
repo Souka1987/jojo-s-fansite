@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 //Schema
 const ArcsSchema = new mongoose.Schema({
 
-    name: String,
+    title: String,
     content: String,
     image: String,
     createDate: {
