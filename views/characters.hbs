@@ -50,17 +50,18 @@
         </script>
 
         {{!-- Card  --}}
-        <div class="row">
+        <div>
             <ul id="myJojo" class="row">
                 {{!-- Réduction des cards ici, 4 avec "limit" --}}
                 {{#each character }}
-                <li class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                    <div class="card bg-white">
+                <li class="col-xl-3 col-lg-4 col-md-6 mb-4 list-group-item">
+                    <div class="bg-white">
                         <a href=""></a>
-                        <img alt="Jonathan" class="img-fluid card-img">
+                        <img src="{{ image }}" alt="Jonathan" class="img-fluid card-img">
                         <div class="p-4">
-                            <div class="Name__header">
-                                <h2>{{ name }}</h2>
+                            <div class="">
+                                <h5>{{ name }}</h5>
+                                <p>{{_id}}</p>
                             </div>
                             {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
                             <p>{{ content }}</p>
@@ -68,86 +69,86 @@
                                 class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
                                 {{!--  Button trigger modal  --}}
                                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                                    data-target="#staticBackdrop"> Capacité
+                                {{!-- Définir l'ID pour le lier au modal --}}
+                                    data-target="#staticBackdrop{{ _id }}"> Capacité
                                 </button>
                                 {{!-- /Button trigger modal --}}
                             </div>
                         </div>
                     </div>
                 </li>
-            </ul>
 
-
-            {{!-- Modal --}}
-            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title font-weight-bolder">Nom de la capacité</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p class=""><img src="https://i.ytimg.com/vi/_Kwf_JKrwFw/maxresdefault.jpg" height=""
-                                    width="450">
-                                <!--Rate-->
-                            <div class="rating float:right">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
+                {{!-- Modal --}}
+                <div class="modal fade" id="staticBackdrop{{_id}}" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title font-weight-bolder">{{ name }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                            <!--/Rate-->
-                            <div id="accordion">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <h5 class="mb-0">
-                                            <button class="btn " data-toggle="collapse" data-target="#collapseOne"
-                                                aria-expanded="true" aria-controls="collapseOne">
-                                                Spécificité
-                                            </button>
-                                        </h5>
-                                    </div>
+                            <div class="modal-body">
+                                <p class=""><img src="{{ image }}" height=""
+                                        width="450">
+                                    <!--Rate-->
+                                <div class="rating float:right">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <!--/Rate-->
+                                <div id="accordion">
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <button class="btn " data-toggle="collapse" data-target="#collapseOne"
+                                                    aria-expanded="true" aria-controls="collapseOne">
+                                                    Spécificité
+                                                </button>
+                                            </h5>
+                                        </div>
 
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                        data-parent="#accordion">
-                                        <div class="card-body">
-                                            ...
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                            data-parent="#accordion">
+                                            <div class="card-body">
+                                                ...
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h5 class="mb-0">
+                                                <button class="btn collapsed" data-toggle="collapse"
+                                                    data-target="#collapseThree" aria-expanded="false"
+                                                    aria-controls="collapseThree">
+                                                    Histoire
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                            data-parent="#accordion">
+                                            <div class="card-body">
+                                                ...
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h5 class="mb-0">
-                                            <button class="btn collapsed" data-toggle="collapse"
-                                                data-target="#collapseThree" aria-expanded="false"
-                                                aria-controls="collapseThree">
-                                                Histoire
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                        data-parent="#accordion">
-                                        <div class="card-body">
-                                            ...
-                                        </div>
-                                    </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm"
+                                        data-dismiss="modal">Fermer</button>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary btn-sm"
-                                    data-dismiss="modal">Fermer</button>
                             </div>
                         </div>
                     </div>
+                    {{!-- /Modal --}}
                 </div>
-                {{!-- /Modal --}}
-            </div>
-            {{!-- Fin de la boucle --}}
-            {{/each }}
+                {{!-- Fin de la boucle --}}
+                {{/each }}
+            </ul>
         </div>
     </div>
 </section>

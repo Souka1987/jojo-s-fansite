@@ -1,5 +1,6 @@
 const Arcs = require('../../database/models/Arcs')
 
+
 module.exports = {
     // POST Action du formulaire AddArcs( Admin )
     addArcs: async (req, res) => {
@@ -16,14 +17,16 @@ module.exports = {
 
         console.log(req.body)
         // console.log(dbArcs)
-        // console.log(image)
-
+        //console.log(image)
+        const image = req.file.originalname
 
         Arcs.create({
 
-            name: req.body.name,
-            content: req.body.content,
-            image: req.file.fieldname
+            ...req.body,
+            // name: req.body.name,
+            // content: req.body.content,
+            image: `/assets/images/arcs/${image}`,
+            name: req.body.name
 
         }, (err) => {
             if (err) console.log(err)

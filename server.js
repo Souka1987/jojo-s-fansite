@@ -32,7 +32,7 @@ const
 
 //ENV
 require('dotenv').config()
-//console.log(process.env);
+// console.log(process.env);
 
 // Handlebars
 app.set('view engine', 'hbs');
@@ -69,7 +69,7 @@ app.engine('hbs', hbs({
 // }))
 
 
-//Mongoose pour le lien avec la base de données. "jjba" sera le nom de la base de données.
+// Mongoose pour le lien avec la base de données. "jjba" sera le nom de la base de données.
 mongoose.connect(process.env.MONGO_URI, {// URI = chemin
         useNewUrlParser: true,
         useUnifiedTopology: true,

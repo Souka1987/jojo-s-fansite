@@ -2,7 +2,8 @@
 const express = require('express'),
     router = express.Router(),
     path = require('path'),
-    upload  = require('./config/multer')
+    uploadArcs  = require('./config/multerArcs'),
+    uploadCharacters  = require('./config/multerCharacters')
 
 
 // CONTROLLER
@@ -86,7 +87,7 @@ router.route('/admin/arcs')
 // GET récupération du formulaire formAdd
 .get(homeController.formAddArcs)
 // POST formulaire addArcs
-.post(upload.single('imageArcs'), arcsController.addArcs)
+.post(uploadArcs.single('image'), arcsController.addArcs)
 
 // Liste des UX
 // router.route('/admin/users')
@@ -101,7 +102,7 @@ router.route('/admin/characters')
     // GET recupération du formulaire addCharacter
     .get(charactersController.formAddCharacter)
     // POST formulaire addCharacter
-    .post(charactersController.addCharacters)
+    .post(uploadCharacters.single('image'), charactersController.addCharacters)
 
 
 // router.route('/admin/characaters')

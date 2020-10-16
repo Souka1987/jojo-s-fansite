@@ -1,4 +1,3 @@
-
 // Import de Multer
 const multer = require('multer')
 
@@ -6,7 +5,7 @@ const multer = require('multer')
 const storage = multer.diskStorage({
   // Ici la destination (ou seront stocker nos fichiers par default)
   destination: (req, file, cb) => {
-    cb(null, './public/arcs')
+    cb(null, './public/images/characters');
   },
   // Ici est définit le format du nom de l'image à stocker
   filename: (req, file, cb) => {
@@ -17,7 +16,7 @@ const storage = multer.diskStorage({
 })
 
 // Ici seront initialiser les parametre de la config de multer
-const upload = multer({
+const uploadCharacters = multer({
   // Ici nous renseignons le stockage definit au dessu
   storage: storage,
   // Ici seront renseigner les limits des fichiers (taile, proportion, ...)
@@ -42,4 +41,4 @@ const upload = multer({
 })
 
 // Ici nous exportons upload afin de pouvoir l'appeler dans notre router
-module.exports = upload
+module.exports = uploadCharacters

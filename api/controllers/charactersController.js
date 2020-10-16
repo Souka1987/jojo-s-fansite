@@ -9,6 +9,7 @@ module.exports = {
     getCharacters: async (req, res) => {
         const dbCharacter = await Character.find({})
 
+        // Demander de rendre la page "characters"
         res.render('characters', {
             character: dbCharacter
         })
@@ -23,23 +24,30 @@ module.exports = {
     addCharacters: async (req, res) => {
 
         console.log('Controller form add character')
-
+        // Demander de charger le model "character"
         const dbCharacter = await Character.find({})
 
         console.log(req.body)
         console.log(dbCharacter)
+        console.log(req.file)
+        // Définir le fichier image
+        const image = req.file.originalname
 
+        // Création de l'article à partir du model
         Character.create({
-            
-            name: req.body.name,
-            content: req.body.content
+
+            // ...req.body prend par défaut tout le schéma
+            ...req.body,
+
+            // Aller chercher le dossier dans lequel les images seront stockées
+            image: `/assets/images/characters/${image}`,
+            name: req.body.name
 
         }, (err) => {
             if (err) console.log(err)
-            res.render('characters', {
-                character: dbCharacter
-            })
-            
+            // Recharger la page automatiquement après création avec "res.redirect"
+            res.redirect('/characters')
+    
         })
     }
 }

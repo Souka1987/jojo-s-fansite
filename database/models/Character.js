@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
-//Schema
+// Schema pour la création de des articles
 const CharacterSchema = new mongoose.Schema({
 
-    name:String,
-    content:String,
-    // image:String,
-    // createDate: {
-        // type: Date,
-        // default: new Date() //=> La date sera créé au moment où l'on va créer l'character donc, nul besion de la définir dans "add.hbs".
-    // }
-    
+    name: String,
+    content: String,
+    image: String,
+    createDate: {
+        type: Date,
+        default: new Date() //=> La date sera créé au moment où l'on va créer l'article.
+    }
+
 
 })
 
