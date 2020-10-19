@@ -1,23 +1,19 @@
 <section>
     <div class="container">
-
-        {{!-- {{> admin/arcs/formAdd}} --}}
-
         <section>
             {{!--Ajout de l'url et de la méthode. "multipart/form-data" pour l'ajout de fichier--}}
             <form action="/admin/arcs" method="POST" enctype="multipart/form-data">
 
                 {{!-- Input Nom du personnage --}}
                 <div class="form-group">
-                    <label for="text">Nom</label>
-                    <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
+                    <label for="text">Titre</label>
+                    <input type="text" class="form-control" id="exampleInput" name="title">
                 </div>
 
                 {{!-- Input Contenu --}}
                 <div class="form-group">
                     <label for="exampleInputTextarea">Contenu</label>
-                    <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"
-                        value="{{ content }}"></textarea>
+                    <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"></textarea>
                 </div>
 
                 {{!-- Images --}}

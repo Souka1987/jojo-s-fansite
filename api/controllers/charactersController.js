@@ -3,7 +3,7 @@
  * ********************************** */
 
 const path = require('path');
-const Character = require('../../database/models/Character')
+const Character = require('../../database/models/Character');
 
 module.exports = {
     // GET Page website Characters ( Utilisateur )
@@ -20,9 +20,10 @@ module.exports = {
     formAddCharacter: (req, res) => {
         res.render('admin/character/characterAdd')
     },
+    
 
-    // POST Action du formulaire AddCharacters ( Admin )
-    addCharacters: async (req, res) => {
+    // POST Action du formulaire characterAdd ( Admin )
+    CharacterAdd: async (req, res) => {
 
         console.log('Controller form add character')
         // Demander de charger le model "character"

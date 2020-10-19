@@ -2,14 +2,14 @@
 const express = require('express'),
     router = express.Router(),
     path = require('path'),
-    uploadArcs  = require('./config/multerArcs'),
-    uploadCharacters  = require('./config/multerCharacters')
+    uploadArcs = require('./config/multerArcs'),
+    uploadCharacters = require('./config/multerCharacters')
 
 
 // CONTROLLER
 const homeController = require('./controllers/homeController'),
     // articleCreateController = require('./controllers/articleCreateController'),
-    // articleEditController = require('./controllers/characterEditController'),
+    EditCharactersController = require('./controllers/EditCharactersController'),
     // contactController = require('./controllers/contactController'),
     // authorController = require('./controllers/authorController'),
     charactersController = require('./controllers/charactersController'),
@@ -42,10 +42,10 @@ router.route('/characters')
     .get(charactersController.getCharacters)
 
 // router.route('/author')
-// .get(authorController.get)
+    // .get(authorController.get)
 
-// router.route('/manga')
-// .get(mangaController.get)
+//  router.route('/manga')
+//  .get(mangaController.get)
 
 // router.route('/images')
 // .get(imagesController.get)
@@ -84,10 +84,10 @@ router.route('/admin')
 
 // ARCS
 router.route('/admin/arcs')
-// GET récupération du formulaire formAdd
-.get(homeController.formAddArcs)
-// POST formulaire addArcs
-.post(uploadArcs.single('image'), arcsController.addArcs)
+    // GET récupération du formulaire formAdd
+    .get(homeController.formAddArcs)
+    // POST formulaire addArcs
+    .post(uploadArcs.single('image'), arcsController.addArcs)
 
 // Liste des UX
 // router.route('/admin/users')
@@ -99,15 +99,18 @@ router.route('/admin/arcs')
 
 // CHARACTERS
 router.route('/admin/characters')
-    // GET recupération du formulaire addCharacter
+    // GET recupération du formulaire formAdd
     .get(charactersController.formAddCharacter)
-    // POST formulaire addCharacter
-    .post(uploadCharacters.single('image'), charactersController.addCharacters)
+    // POST formulaire characterAdd
+    .post(uploadCharacters.single('image'), charactersController.CharacterAdd)
 
 
-// router.route('/admin/characaters')
-//     .get(articleEditController.get)
-//     .post(articleEditController.edit)
+router.route('/admin/editCharacters')
+    // GET récupération du formulaire formEdit
+    .get(EditCharactersController.formEditCharacter)
+    // POST formulaire EditCharacters
+    .post(EditCharactersController.EditCharacters)
+
 
 
 // Exportation du routeur

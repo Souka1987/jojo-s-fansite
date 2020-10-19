@@ -1,112 +1,56 @@
-<!--Message-->
-
+{{!-- Form --}}
 <section>
     <div class="container">
+        <h1 class="text-center">Envoyer un message</h1>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum."</p>
+    </div>
+</section>
+
+
+<div class="container mb-5">
+    <form>
         <div class="row">
-            <h1 style="text-align: center; mt-5">Send a message</h1>
-            <h2 style="text-align: center; mt-5">About me</h2>
-            <p class="small" style="text-align: center;"> Procedente igitur mox tempore cum adventicium nihil
-                inveniretur,
-                relicta
-                ora
-                maritima in
-                Lycaoniam adnexam Isauriae se contulerunt ibique densis intersaepientes itinera
-                praetenturis provincialium et viatorum opibus pascebantur".Mox dicta finierat,
-                multitudo
-                omnis ad, quae imperator voluit, promptior laudato consilio
-                consensit in pacem ea ratione maxime percita, quod norat expeditionibus crebris
-                fortunam
-                eius in malis tantum civilibus vigilasse, cum autem bella moverentur externa,
-                accidisse
-                plerumque luctuosa, icto post haec foedere gentium ritu perfectaque sollemnitate
-                imperator
-                Mediolanum ad hiberna discessit.</p>
-        </div>
-
-        <!--Image-->
-        <div class="card-body">
-            <div class="container mt-5">
-                <div class="row py-5 mt-4 align-items-center">
-                    <!-- For Demo Purpose -->
-                    <div class="col-md-6">
-                        <img src="https://vignette.wikia.nocookie.net/jjba/images/2/24/KiraPhotograph.png/revision/latest?cb=20160413094716"
-                            alt="" class="img-fluid">
-
-                    </div>
-                    <!--/Images-->
-
-                    <!--Form-->
-                    <div class=" col-md-6 ml-auto">
-                        <form action="#">
-                            <div class="row">
-
-                                <form id="contact-form" method="post" action="contact.php" role="form">
-
-                                    <div class="messages"></div>
-
-                                    <div class="controls">
-
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="form_name">Firstname *</label>
-                                                    <input id="form_name" type="text" name="name" class="form-control"
-                                                        placeholder="Please enter your firstname *" required="required"
-                                                        data-error="Firstname is required.">
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="form_lastname">Lastname *</label>
-                                                    <input id="form_lastname" type="text" name="surname"
-                                                        class="form-control" placeholder="Please enter your lastname *"
-                                                        required="required" data-error="Lastname is required.">
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <label for="form_email">Email *</label>
-                                                    <input id="form_email" type="email" name="email"
-                                                        class="form-control" placeholder="Please enter your email *"
-                                                        required="required" data-error="Valid email is required.">
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <label for="form_need">Subject *</label>
-                                                    <input id="form_text" type="text" name="text" class="form-control"
-                                                        placeholder="Please enter your subject *" required="required"
-                                                        data-error="">
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="form_message">Message *</label>
-                                                    <textarea id="form_message" name="message" class="form-control"
-                                                        placeholder="Message for me *" rows="4" required="required"
-                                                        data-error="Please, leave us a message."></textarea>
-                                                    <div class="help-block with-errors"></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="submit" class="btn btn-success btn-lg btn-send"
-                                                    value="Send message">
-                                            </div>
-                                        </div>
-                                </form>
-                            </div>
-                    </div>
-                    <!--/Form-->
-                </div>
+            <div class="col">
+                <label for="exampleInputEmail1">Nom</label>
+                <input type="text" class="form-control" placeholder="">
+            </div>
+            <div class="col">
+                <label for="exampleInputEmail1">Prénom</label>
+                <input type="text" class="form-control" placeholder="">
             </div>
         </div>
-</section>
-<!--/Message-->
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Mot de passe</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <label for="exampleInputEmail1">Quel est votre partie favorite ?</label>
+        <select class="form-control">
+            <option></option>
+            <option>Phantom Blood</option>
+            <option>Battle Tendency</option>
+            <option>Stardust Crusaders</option>
+            <option>Diamond Is Unbreakable</option>
+            <option>Golden Wind</option>
+            <option>Stone Ocean</option>
+            <option>Steel Ball Run</option>
+            <option>Jojolion</option>
+        </select>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{{!-- /Form --}}

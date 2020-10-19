@@ -33,6 +33,7 @@
         "express-session": "^1.17.1",
         "fs": "0.0.1-security",
         "handlebars-helpers": "^0.10.0",
+        "handlebars.moment": "^1.0.4",
         "hbs": "^4.1.1",
         "limit-queue": "0.0.6",
         "mongo-store": "0.0.2",

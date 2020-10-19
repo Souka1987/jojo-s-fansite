@@ -1,36 +1,29 @@
-
 <!--Card-->
 <section class="jumbotron text-center" style="background-color: #fff;">
     <div class="container">
-        <h1>Jojo's Bizarre Adventure parts</h1>
-        <p>Accenderat super his incitatum propositum ad nocendum aliqua
-            mulier vilis,
-            quae
-            ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a
-            militibus
-            obscurissimis.
-        </p>
-        <p>
-            <a href="/manga" class="btn btn-primary my-2">Voir plus</a>
+        <h1>Jojo's Bizarre Adventure parties</h1>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum."
         </p>
     </div>
 </section>
 
 <div class="container">
     <div class="row">
-        {{#each arcs }}
-        <!-- Gallery item -->
-        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-            <div class="bg-white">
-                <img src= "{{ image }}" alt=""  class="img-fluid card-img-top">
-                <div class="p-4">
-                    <h4>{{ title }}</h4>
-                    {{!-- <h6></h6> --}}
-                    <p class="small text-muted mb-0">{{ content }}</p>
-                </div>
+        {{!-- Début de la boucle --}}
+        {{#each (limit arcs 4) }}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ title }}</h5>
+                <p class="card-text">{{ content }}</p>
+                <a href="#" class="btn btn-primary">Voir plus</a>
             </div>
         </div>
-        <!-- End -->
+        {{!-- Fin de la boucle --}}
         {{/each }}
     </div>
 </div>

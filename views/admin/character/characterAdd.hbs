@@ -8,14 +8,24 @@
                 {{!-- Input Nom du personnage --}}
                 <div class="form-group">
                     <label for="text">Nom</label>
-                    <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
+                    <input type="text" class="form-control" id="exampleInput" name="name">
                 </div>
 
                 {{!-- Input Contenu --}}
                 <div class="form-group">
                     <label for="exampleInputTextarea">Contenu</label>
-                    <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"
-                        value="{{ content }}"></textarea>
+                    <textarea class="form-control" id="Textarea" placeholder="example textarea"
+                        name="content"></textarea>
+                    <script>
+                        const ed = CKEDITOR.replace('content', {
+                            entities: false, //pour la suppression des caractères spéciaux
+                            uiColor: '#00000' //Coloriser les bordures de l'éditeur
+                        });
+
+                        ed.on('change', function (e) {//modification du contenu de l'éditeur
+                            console.log(e.editor.getData())
+                        })
+                    </script>
                 </div>
 
                 {{!-- Input Images --}}

@@ -16,7 +16,7 @@ const
     mongoose = require('mongoose'),
     expressSession = require('express-session'),
     // fileupload = require('express-fileupload'),
-    
+
     //MongoStore
     mongoStore = require('connect-mongo'),
     bodyParser = require('body-parser'),
@@ -58,19 +58,19 @@ app.engine('hbs', hbs({
 
 //Admin
 // app.use(expressSession({
-    // secret: 'securite',
-    // name: 'biscuit',
-    // saveUninitialized: true, // Sauvegarde ce qui n'est pas initialisé
-    // resave: false, // Enregistre automatiquement la session même si elle n'est pas modifiée
+// secret: 'securite',
+// name: 'biscuit',
+// saveUninitialized: true, // Sauvegarde ce qui n'est pas initialisé
+// resave: false, // Enregistre automatiquement la session même si elle n'est pas modifiée
 
-    // Store: new mongoStore({
-    //     mongooseConnection: mongoose.connection
-    // })
+// Store: new mongoStore({
+//     mongooseConnection: mongoose.connection
+// })
 // }))
 
 
 // Mongoose pour le lien avec la base de données. "jjba" sera le nom de la base de données.
-mongoose.connect(process.env.MONGO_URI, {// URI = chemin
+mongoose.connect(process.env.MONGO_URI, { // URI = chemin
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
@@ -79,6 +79,11 @@ mongoose.connect(process.env.MONGO_URI, {// URI = chemin
     .then(() => console.log('Connecter à MongoDB'))
     .catch(err => console.log(err))
 
+
+//Handlebars.moment => Pour formater la temporalité (dates/horraires)
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars);
 
 // Express static permet de diriger un chemin (URL) sur un dossier en particulier
 app.use('/assets', express.static('public'));
@@ -98,9 +103,11 @@ app.use(bodyParser.urlencoded({
 const ROUTER = require('./api/router')
 app.use('/', ROUTER)
 
-// app.use((req, res) => {
-    // res.render('err404')
-// })
+
+// Page erreur 404
+app.use((req, res) => {
+    res.render('err404')
+})
 
 // Ensuite nous demandons a express (app) de run notre projet.
 app.listen(port, () => {
