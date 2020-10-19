@@ -9,7 +9,6 @@ const express = require('express'),
 // CONTROLLER
 const homeController = require('./controllers/homeController'),
     // articleCreateController = require('./controllers/articleCreateController'),
-    EditCharactersController = require('./controllers/EditCharactersController'),
     // contactController = require('./controllers/contactController'),
     // authorController = require('./controllers/authorController'),
     charactersController = require('./controllers/charactersController'),
@@ -42,7 +41,7 @@ router.route('/characters')
     .get(charactersController.getCharacters)
 
 // router.route('/author')
-    // .get(authorController.get)
+// .get(authorController.get)
 
 //  router.route('/manga')
 //  .get(mangaController.get)
@@ -104,12 +103,13 @@ router.route('/admin/characters')
     // POST formulaire characterAdd
     .post(uploadCharacters.single('image'), charactersController.CharacterAdd)
 
-
-router.route('/admin/editCharacters')
-    // GET récupération du formulaire formEdit
-    .get(EditCharactersController.formEditCharacter)
-    // POST formulaire EditCharacters
-    .post(EditCharactersController.EditCharacters)
+router.route('/admin/editCharacters/:id')
+    // GET récupération du formulaire FormEdit
+    .get(charactersController.pageFormEditCharacter)
+    // POST formulaire editCharacters
+    .post(uploadCharacters.single('image'), charactersController.editCharacters)
+    // GET
+    .delete(charactersController.deleteCharacters)
 
 
 

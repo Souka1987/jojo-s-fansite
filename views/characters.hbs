@@ -53,12 +53,11 @@
         <div class="card-deck">
             <ul id="myJojo" class="row">
                 {{!-- Réduction des cards ici, 4 avec "limit" --}}
-                {{#each (limit character 4) }}
+                {{#each (limit character 3) }}
                 <li class="list-group-item">
                     <img src="{{ image }}" class="card-img-top" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">{{ name }}</h5>
-                        {{!-- <p class="card-text">{{ _id }}</p> --}}
+                        <a href="/admin/editCharacters/{{ _id }}"><h5 class="card-text">{{ name }}</h5></a>
                         {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
                         <p class="card-text">{{ stripTags content }}</p>
                         {{!-- Récupérer le "createDate" pour ajouter la date --}}

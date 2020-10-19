@@ -1,29 +1,31 @@
 <section>
-    {{!--Ajout de l'url et de la méthode. "multipart/form-data" sert à prendre en compte le jpeg--}}
-    <form action="./formEdit.hbs" method="POST" enctype="multipart/form-data">
-        {{!-- Input Titre --}}
-        <div class="form-group">
-            <label for="text">Name {{ character.name }}</label>
-            <input type="text" class="form-control" id="exampleInput" name="name" value="{{ character.name }}">
-        </div>
+    <div class="container">
+        {{!--Ajout de l'url et de la méthode. "multipart/form-data" sert à prendre en compte le jpeg--}}
+        <form action="/admin/editCharacters/{{ _id }}" method="POST" enctype="multipart/form-data">
+            {{!-- Input Titre --}}
+            <div class="form-group">
+                <label for="text">Name {{ name }}</label>
+                <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
+            </div>
 
-        {{!-- Input Contenu --}}
-        <div class="form-group">
-            <label for="exampleInputTextarea">Contenu {{ content }}</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"
-                value="{{ content }}"></textarea>
-        </div>
+            {{!-- Input Contenu --}}
+            <div class="form-group">
+                <label for="exampleInputTextarea">Contenu {{ content }}</label>
+                <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"
+                    value="{{ content }}"></textarea>
+            </div>
 
-        {{!-- Images --}}
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
-        </div>
-        <button type="submit" class="btn btn-primary">Valider</button>
-    </form>
+            {{!-- Images --}}
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+            </div>
+            <button type="submit" class="btn btn-primary">Valider</button>
+        </form>
 
-    {{!-- Boutton de suppression--}}
-    <form action="">
-        <button type="submit" class="btn btn-danger">Supprimer</button>
-    </form>
+        {{!-- Boutton de suppression--}}
+        <form action="">
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+    </div>
 </section>
