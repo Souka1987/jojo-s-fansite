@@ -10,10 +10,10 @@ const express = require('express'),
 const homeController = require('./controllers/homeController'),
     // articleCreateController = require('./controllers/articleCreateController'),
     // contactController = require('./controllers/contactController'),
-    // authorController = require('./controllers/authorController'),
+    authorController = require('./controllers/authorController'),
     charactersController = require('./controllers/charactersController'),
     arcsController = require('./controllers/arcsController'),
-    // mangaController = require('./controllers/mangaController'),
+    mangaController = require('./controllers/mangaController'),
     // imagesController = require('./controllers/imagesController'),
     // storeController = require('./controllers/storeController'),
     // loginController = require('./controllers/loginController'),
@@ -40,11 +40,19 @@ router.route('/')
 router.route('/characters')
     .get(charactersController.getCharacters)
 
-// router.route('/author')
-// .get(authorController.get)
+/*
+ * Auteur
+ * *********** */
 
-//  router.route('/manga')
-//  .get(mangaController.get)
+router.route('/author')
+    .get(authorController.get)
+
+/*
+ * Auteur
+ * *********** */
+
+router.route('/manga')
+    .get(mangaController.getManga)
 
 // router.route('/images')
 // .get(imagesController.get)
@@ -92,18 +100,16 @@ router.route('/admin/editArcs/:id')
     // GET récupéreration du formulaire 
     .get(arcsController.pageFormEditArcs)
     // POST formulaire editArcs
-    .post(uploadCharacters.single('image'), arcsController.editArcs)
+    .post(uploadArcs.single('image'), arcsController.editArcs)
 
 // Bouton de suppression
 router.route('/admin/deleteArcs/:id')
     .get(arcsController.deleteArcs)
 
+
 // Liste des UX
 // router.route('/admin/users')
 // .get(adminController.getUsers)
-
-// router.route('/admin/settings')
-// .get(adminController.getSettings)
 
 
 // CHARACTERS
@@ -123,6 +129,19 @@ router.route('/admin/editCharacters/:id')
 router.route('/admin/deleteCharacters/:id')
     .get(charactersController.deleteCharacters)
 
+
+// MANGA
+router.route('/admin/manga')
+// GET récupération du formulaire mangaFormAdd
+.get(mangaController.mangaFormAdd)
+// POST formulaire mangaAdd
+.post(uploadArcs.single('image'), mangaController.mangaAdd)
+
+router.route('/admin/editManga/:id')
+// GET récupération du formulaire editFormMAnga
+.get(mangaController.editFormManga)
+// POST formulaire editManga
+.post(uploadArcs.single('image'), mangaController.editManga)
 
 
 // Exportation du routeur

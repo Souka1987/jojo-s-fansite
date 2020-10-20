@@ -96,7 +96,7 @@ module.exports = {
     // GET Pour supprimer un article
     deleteCharacters: async (req, res) => {
         const articleID = await Character.findById(req.params.id)
-        console.log('Controller Delete One Article') //Toujours voir si cela fonction avec le console.log
+        console.log('Controller Delete One Article') 
         console.log(articleID)
 
         // Effacer l'image depuis le dossier source "public"

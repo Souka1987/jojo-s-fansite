@@ -1,23 +1,32 @@
 {{!-- Video --}}
-<header>
-    <video autoplay muted loop id="myVideo">
+<header style='width: 100%'>
+    <video autoplay muted loop id="myVideo" style='width: 100%'>
         <source src="assets/VIDEOS/head2.mp4" type="video/mp4">
     </video>
-
-    <div class="container">
-        <h1>Titre</h1>
-        <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu
-            recteque expetendis
-            neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore
-            latine
-            molestiae, ad mutat oblique delicatissimi pro.</p>
-        {{!-- Boutton pour démarrer et arréter la vidéo avec Javascript --}}
-        <button type="button" class="btn btn-primary" id="myBtn" onclick="myFunction()">Pause</button>
+    <div class="container-fluid title">
+        <div class="row d-flex justify-content-center text-center">
+            <div class="col-md-6 col-sm-12">
+                <h1>Titre</h1>
+                <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu
+                    recteque expetendis
+                    neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore
+                    latine
+                    molestiae, ad mutat oblique delicatissimi pro.</p>
+                {{!-- Boutton pour démarrer et arréter la vidéo avec Javascript --}}
+                <button type="button" class="btn btn-primary" id="myBtn" onclick="myFunction()">Pause</button>
+            </div>
+        </div>
     </div>
     <style>
         video {
             /*position:absolute;*/
             z-index: -1
+        }
+
+        .title {
+            position: absolute;
+            top: 10vh;
+
         }
     </style>
     <script>

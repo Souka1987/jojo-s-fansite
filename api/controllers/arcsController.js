@@ -1,6 +1,7 @@
 /*
  * Controller Page Arcs Home
  * ********************************** */
+const multer = require('multer');
 const path = require('path');
 const Arcs = require('../../database/models/Arcs');
 const fs = require('fs')
@@ -84,11 +85,11 @@ module.exports = {
     // GET Pour supprimer un article
     deleteArcs: async (req, res) => {
         const articleID = await Arcs.findById(req.params.id)
-        console.log('Controller Delete One Article') //Toujours voir si cela fonction avec le console.log
+        console.log('Controller Delete One Article')
         console.log(articleID)
 
         // Effacer l'image depuis le dossier source "public"
-        fs.unlink(`/public/images/arcs/${articleID.image}`, (err) => {
+        fs.unlink(`public/images/arcs/${articleID.imageName}`, (err) => {
             /*la méthode "fs.unlink" sert à effacer un fichier
                     depuis le dossier ciblé*/
 

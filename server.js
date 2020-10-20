@@ -15,20 +15,14 @@ const
     hbs = require('express-handlebars'),
     mongoose = require('mongoose'),
     expressSession = require('express-session'),
-    // fileupload = require('express-fileupload'),
 
     //MongoStore
     mongoStore = require('connect-mongo'),
     bodyParser = require('body-parser'),
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
-    {
-        stripTags,
-        limit
-    } = require('./helpers/hbs'),
+    {stripTags, limit} = require('./helpers/hbs'),
     port = process.env.PORT || 1870;
 
-//Pour les images
-// app.use(fileupload())
 
 //ENV
 require('dotenv').config()

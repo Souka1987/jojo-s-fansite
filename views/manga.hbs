@@ -116,37 +116,38 @@
                             {{!-- / Navbar Tabs --}}
 
                             {{!-- Liste des tomes --}}
+
                             <h2>...</h2>
                             <p>...</p>
 
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the bulk of the card's content.</p>
+                            <div class="container">
+                                <div class="row">
+                                    {{!-- Début de la boucle --}}
+                                    {{#each (limit manga 4) }}
+                                    <div class=" card col-lg-3 col-md-6 col-sm-12" style="width: 18rem;">
+                                        <img src="{{ image }}" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <a href="/admin/editManga/{{ _id }}">
+                                                <h5 class="card-title">{{ title }}</h5>
+                                            </a>
+                                            <p class="card-text">{{ content }}</p>
+                                            {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                                            <p class="card-text"><small class="text-muted">Ajouté le:
+                                                    {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                                        </div>
+                                    </div>
+                                    {{!-- Fin de la boucle --}}
+                                    {{/each }}
                                 </div>
                             </div>
 
                             {{!-- Section commentaires --}}
                             <h2 class="text-center mt-5">Commentaires</h2>
                             <div class="media mt-4">
-                                <img class="d-flex mr-3 rounded-circle"
-                                    src=""
-                                    height="64" width="64" alt="">
+                                <img class="d-flex mr-3 rounded-circle" src="" height="64" width="64" alt="">
                                 <div class="media-body">
                                     <h5 class="mt-0">User Name</h5>
-                                    <p class="small">Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                                        metus
-                                        scelerisque
-                                        ante
-                                        sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
-                                        viverra
-                                        turpis.
-                                        Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                                        felis
-                                        in
-                                        faucibus.</p>
+                                    <p class="small">...</p>
                                 </div>
                             </div>
                             {{!-- Formulaire commentaire --}}
