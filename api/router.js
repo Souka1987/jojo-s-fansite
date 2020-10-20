@@ -88,6 +88,16 @@ router.route('/admin/arcs')
     // POST formulaire addArcs
     .post(uploadArcs.single('image'), arcsController.addArcs)
 
+router.route('/admin/editArcs/:id')
+    // GET récupéreration du formulaire 
+    .get(arcsController.pageFormEditArcs)
+    // POST formulaire editArcs
+    .post(uploadCharacters.single('image'), arcsController.editArcs)
+
+// Bouton de suppression
+router.route('/admin/deleteArcs/:id')
+    .get(arcsController.deleteArcs)
+
 // Liste des UX
 // router.route('/admin/users')
 // .get(adminController.getUsers)
@@ -101,15 +111,17 @@ router.route('/admin/characters')
     // GET recupération du formulaire formAdd
     .get(charactersController.formAddCharacter)
     // POST formulaire characterAdd
-    .post(uploadCharacters.single('image'), charactersController.CharacterAdd)
+    .post(uploadCharacters.single('image'), charactersController.characterAdd)
 
 router.route('/admin/editCharacters/:id')
     // GET récupération du formulaire FormEdit
     .get(charactersController.pageFormEditCharacter)
     // POST formulaire editCharacters
     .post(uploadCharacters.single('image'), charactersController.editCharacters)
-    // GET
-    .delete(charactersController.deleteCharacters)
+
+// GET bouton de suppression
+router.route('/admin/deleteCharacters/:id')
+    .get(charactersController.deleteCharacters)
 
 
 

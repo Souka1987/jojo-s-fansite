@@ -6,16 +6,17 @@ const ArcsSchema = new mongoose.Schema({
     title: String,
     content: String,
     image: String,
+    imageName: String,
     createDate: {
         type: Date,
-        default: new Date() //=> La date sera créé au moment où l'on va créer l'article donc, nul besion de la définir dans "add.hbs".
+        default: new Date() // La date sera créé au moment où l'on va créer l'article donc, nul besion de la définir dans "add.hbs".
     }
 
 
 })
 
-//Modèle, pour mettre les infos dans la base de données.
+// Modèle, pour mettre les infos dans la base de données.
 const Arcs = mongoose.model('arcs', ArcsSchema)
 
-//On peut aussi le faire d'une autre manière
+// On peut aussi le faire d'une autre manière
 module.exports = Arcs

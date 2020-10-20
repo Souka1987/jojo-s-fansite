@@ -18,9 +18,14 @@
         <div class="card col-3" style="width: 18rem;">
             <img src="{{ image }}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{ title }}</h5>
+                <a href="/admin/editArcs/{{ _id }}">
+                    <h5 class="card-text">{{ title }}</h5>
+                </a>
                 <p class="card-text">{{ content }}</p>
-                <a href="#" class="btn btn-primary">Voir plus</a>
+                {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                <p class="card-text"><small class="text-muted">Ajouté le:
+                        {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                <a href="/manga" class="btn btn-primary">Voir plus</a>
             </div>
         </div>
         {{!-- Fin de la boucle --}}

@@ -1,5 +1,5 @@
 /*
- * Controller Page Personnages
+ * Controller Page Characters
  * ********************************** */
 
 const path = require('path');
@@ -12,7 +12,7 @@ module.exports = {
         const dbCharacter = await Character.find({})
 
         // Demander de rendre la page "characters"
-        res.render('characters', {
+        res.render('characters', { // "res.render", rend une vue.
             character: dbCharacter
         })
     },
@@ -24,7 +24,7 @@ module.exports = {
 
 
     // POST Action du formulaire characterAdd ( Admin )
-    CharacterAdd: async (req, res) => {
+    characterAdd: async (req, res) => {
 
         console.log('Controller form add character')
         // Demander de charger le model "character"
@@ -44,6 +44,7 @@ module.exports = {
 
             // Aller chercher le dossier dans lequel les images seront stockées
             image: `/assets/images/characters/${image}`,
+            imageName: req.file.originalname,
             name: req.body.name
 
         }, (err) => {
@@ -64,7 +65,7 @@ module.exports = {
     },
 
     // POST Modifier l'article
-    //syncroniser l"url "/" avec la base de données avec la méthode "async"
+    // Syncroniser l"url "/" avec la base de données avec la méthode "async"
     editCharacters: async (req, res) => {
         const q = req.params.id
 
@@ -79,42 +80,41 @@ module.exports = {
         // Pour modifier l'image
         Character.findByIdAndUpdate(q, { //Définir les variables de son article
 
-                // Schéma par défaut
-                ...req.body,
-                // Aller chercher le chemin de l'image à modifier
-                image: `assets/images/characters/${image}`,
-                name: req.body.name
+            // Schéma par défaut
+            ...req.body,
+            // Aller chercher le chemin de l'image à modifier
+            image: `assets/images/characters/${image}`,
+            name: req.body.name
 
-            }, (err) => {
-                if (err) console.log(err); //Si il y a une erreur, l'afficher
-                res.redirect('/characters') //sinon renvoyer sur la page d'édition
+        }, (err) => {
+            if (err) console.log(err); //Si il y a une erreur, l'afficher
+            res.redirect('/characters') //sinon renvoyer sur la page "characters"
 
-            },
-        )
+        })
     },
 
     // GET Pour supprimer un article
     deleteCharacters: async (req, res) => {
         const articleID = await Character.findById(req.params.id)
-        console.log('Controller Delete One Article')//Toujours voir si cela fonction avec le console.log
+        console.log('Controller Delete One Article') //Toujours voir si cela fonction avec le console.log
         console.log(articleID)
-        const image = req.file.originalname
 
+        // Effacer l'image depuis le dossier source "public"
+        fs.unlink(`public/images/characters/${articleID.imageName}`, (err) => {
+            /*la méthode "fs.unlink" sert à effacer un fichier
+                    depuis le dossier ciblé*/
 
-        fs.unlink(`assets/images/characters/${image}`, (err) => {/*la méthode "fs.unlink" sert à effacer un fichier
-        depuis le dossier ciblé*/
-    
-        /*après avoir défini la suppression procéder à la suppression de l'article entier en ne 
-        ciblant que son id*/
-    
+            /*après avoir défini la suppression procéder à la suppression de l'article entier en ne 
+            ciblant que son id*/
+
             if (err) return console.log(err)
-            Character.deleteOne({//pour suprimer un document à la fois par son ID
-                    _id: req.params.id//tjs définir l'ID
-                }, (err) => {
-                    if (!err) return res.redirect('/characters')//si il n'y a pas d'érreur rediriger vers la page d'acceuil
-                    else res.send(err) //sinon afficher l'érreur
-                })
+            Character.deleteOne({ // Pour suprimer un document à la fois par son ID
+                _id: req.params.id // Toujours définir l'ID
+            }, (err) => {
+                if (!err) return res.redirect('/characters') // Rediriger vers la page "characters"
+                else res.send(err) // Sinon afficher l'érreur
+            })
         })
-    
+
     }
 }

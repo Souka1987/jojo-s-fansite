@@ -12,7 +12,7 @@ module.exports = {
 
         // console.log(posts)
 
-        res.render('index', {
+        res.render('index', { // "res.render", rend une vue
             arcs: dbArcs
         })
     },

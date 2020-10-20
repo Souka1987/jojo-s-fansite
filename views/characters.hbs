@@ -50,7 +50,7 @@
         </script>
 
         {{!-- Card  --}}
-        <div class="card-deck">
+        <div class="container">
             <ul id="myJojo" class="row">
                 {{!-- Réduction des cards ici, 4 avec "limit" --}}
                 {{#each (limit character 3) }}
@@ -59,7 +59,7 @@
                     <div class="card-body">
                         <a href="/admin/editCharacters/{{ _id }}"><h5 class="card-text">{{ name }}</h5></a>
                         {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
-                        <p class="card-text">{{ stripTags content }}</p>
+                        <p class="card-text">{{ content }}</p>
                         {{!-- Récupérer le "createDate" pour ajouter la date --}}
                         <p class="card-text"><small class="text-muted">Ajouté le:
                                 {{ moment createDate format="DD-MM-YYYY" }}</small></p>

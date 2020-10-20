@@ -1,33 +1,8 @@
+
 <section>
     <div class="container">
-        {{!--Ajout de l'url et de la méthode. "multipart/form-data" sert à prendre en compte les fichiers--}}
-        <form action="/admin/editCharacters/{{ article._id }}" method="POST" enctype="multipart/form-data">
-            {{!-- Input Titre --}}
-            <div class="form-group">
-                <label for="text">Name {{ article.name }}</label>
-                <input type="text" class="form-control" id="exampleInput" name="name" value="{{ article.name }}">
-            </div>
 
-            {{!-- Input Contenu --}}
-            <div class="form-group">
-                <label for="exampleInputTextarea">Contenu {{ article.content }}</label>
-                <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"
-                    value="{{ article.content }}"></textarea>
-            </div>
+        {{> admin/character/formEdit}}
 
-            {{!-- Images --}}
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" value="{{ article.image }}">
-            </div>
-            <button type="submit" class="btn btn-primary">Valider</button>
-        </form>
-
-        {{!-- Boutton de suppression--}}
-       
-            <form action="/admin/deleteCharacters/{{ article._id }}" method="GET" class="mt-2">
-                <button type="submit" class="btn btn-danger">Supprimer</button>
-            </form>
-    
     </div>
 </section>

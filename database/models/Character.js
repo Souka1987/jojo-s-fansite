@@ -1,21 +1,22 @@
 const mongoose = require('mongoose');
 
-// Schema pour la création de des articles
+// Schema pour la création  des articles personnages
 const CharacterSchema = new mongoose.Schema({
 
     name: String,
     content: String,
     image: String,
+    imageName: String, 
     createDate: {
         type: Date,
-        default: new Date() //=> La date sera créé au moment où l'on va créer l'article.
+        default: new Date() // La date sera créé au moment où l'on va créer l'article.
     }
 
 
 })
 
-//Modèle, pour mettre les infos dans la base de données.
+// Modèle, pour mettre les infos dans la base de données.
 const Character = mongoose.model('Character', CharacterSchema)
 
-//On peut aussi le faire d'une autre manière
+// On peut aussi le faire d'une autre manière
 module.exports = Character
