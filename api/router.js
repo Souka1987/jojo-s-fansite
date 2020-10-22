@@ -14,7 +14,7 @@ const homeController = require('./controllers/homeController'),
     charactersController = require('./controllers/charactersController'),
     arcsController = require('./controllers/arcsController'),
     mangaController = require('./controllers/mangaController'),
-    // imagesController = require('./controllers/imagesController'),
+    imagesController = require('./controllers/imagesController'),
     // storeController = require('./controllers/storeController'),
     // loginController = require('./controllers/loginController'),
     // messageController = require('./controllers/messageController'),
@@ -48,14 +48,18 @@ router.route('/author')
     .get(authorController.get)
 
 /*
- * Auteur
+ * Manga
  * *********** */
 
 router.route('/manga')
     .get(mangaController.getManga)
 
-// router.route('/images')
-// .get(imagesController.get)
+/*
+ * Images
+ * *********** */
+
+router.route('/images')
+    .get(imagesController.get)
 
 // router.route('/store')
 // .get(storeController.get)
@@ -132,16 +136,21 @@ router.route('/admin/deleteCharacters/:id')
 
 // MANGA
 router.route('/admin/manga')
-// GET récupération du formulaire mangaFormAdd
-.get(mangaController.mangaFormAdd)
-// POST formulaire mangaAdd
-.post(uploadArcs.single('image'), mangaController.mangaAdd)
+    // GET récupération du formulaire mangaFormAdd
+    .get(mangaController.mangaFormAdd)
+    // POST formulaire mangaAdd
+    .post(uploadArcs.single('image'), mangaController.mangaAdd)
 
 router.route('/admin/editManga/:id')
-// GET récupération du formulaire editFormMAnga
-.get(mangaController.editFormManga)
-// POST formulaire editManga
-.post(uploadArcs.single('image'), mangaController.editManga)
+    // GET récupération du formulaire editFormMAnga
+    .get(mangaController.editFormManga)
+    // POST formulaire editManga
+    .post(uploadArcs.single('image'), mangaController.editManga)
+
+// GET bouton de suppression
+router.route('/admin/deleteManga/:id')
+    .get(mangaController.deleteManga)
+
 
 
 // Exportation du routeur

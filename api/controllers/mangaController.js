@@ -4,6 +4,8 @@
 
 const path = require('path');
 const Manga = require('../../database/models/Manga');
+const fs = require('fs')
+
 
 module.exports = {
     // GET Page website Manga ( Utilisateur )
@@ -24,8 +26,8 @@ module.exports = {
     // POST Action du formulaire characterAdd ( Admin )
     mangaAdd: async (req, res) => {
 
-        console.log('Controller form add character')
-        // Demander de charger le model "character"
+        console.log('Controller form add manga')
+        // Demander de charger le model "Manga"
         const dbManga = await Manga.find({})
 
         console.log(req.body)
@@ -90,4 +92,29 @@ module.exports = {
 
         })
     },
+
+    // GET Pour supprimer un article
+    deleteManga: async (req, res) => {
+        const articleID = await Manga.findById(req.params.id)
+        console.log('Controller Delete One Article')
+        console.log(articleID)
+
+        // Effacer l'image depuis le dossier source "public"
+        fs.unlink(`public/images/arcs/${articleID.imageName}`, (err) => {
+            /*la méthode "fs.unlink" sert à effacer un fichier
+                    depuis le dossier ciblé*/
+
+            /*après avoir défini la suppression procéder à la suppression de l'article entier en ne 
+            ciblant que son id*/
+
+            if (err) return console.log(err)
+            Manga.deleteOne({ // Pour suprimer un document à la fois par son ID
+                _id: req.params.id // Toujours définir l'ID
+            }, (err) => {
+                if (!err) return res.redirect('/manga') // Rediriger vers la page "characters"
+                else res.send(err) // Sinon afficher l'érreur
+            })
+        })
+
+    }
 }

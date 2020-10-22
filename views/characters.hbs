@@ -52,14 +52,14 @@
         {{!-- Card  --}}
         <div class="container">
             <div class="row">
-                <ul id="myJojo" class="col-lg-3 col-md-6 col-sm-12" style="width: 18rem;">
+                <ul id="myJojo" class="row" style="margin: 5px;">
                     {{!-- Réduction des cards ici, 4 avec "limit" --}}
                     {{#each (limit character 4) }}
                     <li class="list-group-item">
                         <img src="{{ image }}" class="card-img-top" alt="">
                         <div class="card-body">
                             <a href="/admin/editCharacters/{{ _id }}">
-                                <h5 class="card-text">{{ name }}</h5>
+                                <h5 class="card-title">{{ name }}</h5>
                             </a>
                             {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
                             <p class="card-text">{{ content }}</p>

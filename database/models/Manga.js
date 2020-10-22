@@ -6,7 +6,8 @@ const MangaSchema = new mongoose.Schema({
     // déclaration de variable et leur type
     title: String,
     content: String,
-    image:String,
+    image: String,
+    imageName: String,
     createDate: {
         type: Date,
         default: new Date() // La date sera créé au moment où l'on va créer l'article.
@@ -15,8 +16,8 @@ const MangaSchema = new mongoose.Schema({
 
 })
 
-//Modèle, pour mettre les infos dans la base de données.
+// Modèle, pour mettre les infos dans la base de données.
 const Manga = mongoose.model('manga', MangaSchema)
 
-//On peut aussi le faire d'une autre manière
+// On peut aussi le faire d'une autre manière
 module.exports = Manga
