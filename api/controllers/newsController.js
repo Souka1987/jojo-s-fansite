@@ -64,9 +64,9 @@ module.exports = {
         const articleID = await News.findById(req.params.id)
         const image = req.file.originalname
 
-        console.log(req.body)
-        console.log(req.file)
-        console.log(image)
+         console.log(req.body)
+         console.log(req.file)
+         console.log(image)
 
         // Pour modifier l'image
         News.findByIdAndUpdate(q, { // Définir les variables de son article
