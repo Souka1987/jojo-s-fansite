@@ -4,24 +4,39 @@
 
 const path = require('path');
 const Character = require('../../database/models/Character');
+const Powers = require('../../database/models/Powers');
 const fs = require('fs')
 
 module.exports = {
     // GET Page website Characters ( Utilisateur )
-    getCharacters: async (req, res) => {
-        const dbCharacter = await Character.find({})
+    getCharacters: (req, res) => {
+        /* Ci-dessous, syntax permetant d'attendre le retour de la requête + "schema.find({})" 
+           pour afficher le contenu de la base de données.*/
 
-        // Demander de rendre la page "characters"
-        res.render('characters', { // "res.render", rend une vue.
-            character: dbCharacter
+        //    Mettre en relation "powers" avec "characters" pour le modal
+        Character.find({})
+            .populate('powers')
+            .exec((err, data) => {
+                if (err) console.log(err)
+                console.log(data)
+                res.render('characters', { // "res.render", rend une vue.
+                    character: data
+                })
+            })
+
+
+    },
+
+    // GET Page du formulaire cration de Characters ( Admin )
+    formAddCharacter: async (req, res) => {
+        const dbCharacter = await Character.find({}),
+            dbPowers = await Powers.find({})
+
+        res.render('admin/character/characterAdd', {
+            character: dbCharacter,
+            powers: dbPowers
         })
     },
-
-    // GET Page du formulaire creation de Characters ( Admin )
-    formAddCharacter: (req, res) => {
-        res.render('admin/character/characterAdd')
-    },
-
 
     // POST Action du formulaire characterAdd ( Admin )
     characterAdd: async (req, res) => {
@@ -30,9 +45,9 @@ module.exports = {
         // Demander de charger le model "character"
         const dbCharacter = await Character.find({})
 
-        console.log(req.body)
-        console.log(dbCharacter)
-        console.log(req.file)
+        // console.log(req.body)
+        // console.log(dbCharacter)
+        // console.log(req.file)
         // Définir le fichier image
         const image = req.file.originalname
 
@@ -96,7 +111,7 @@ module.exports = {
     // GET Pour supprimer un article
     deleteCharacters: async (req, res) => {
         const articleID = await Character.findById(req.params.id)
-        console.log('Controller Delete One Article') 
+        console.log('Controller Delete One Article')
         console.log(articleID)
 
         // Effacer l'image depuis le dossier source "public"
@@ -104,7 +119,7 @@ module.exports = {
             /*la méthode "fs.unlink" sert à effacer un fichier
                     depuis le dossier ciblé*/
 
-            /*après avoir défini la suppression procéder à la suppression de l'article entier en ne 
+            /* Procéder à la suppression de l'article entier en ne 
             ciblant que son id*/
 
             if (err) return console.log(err)

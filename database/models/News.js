@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 //Schema
-const ArcsSchema = new mongoose.Schema({
+const NewsSchema = new mongoose.Schema({
 
     title: String,
     content: String,
@@ -16,7 +16,7 @@ const ArcsSchema = new mongoose.Schema({
 })
 
 // Modèle, pour mettre les infos dans la base de données.
-const Arcs = mongoose.model('arcs', ArcsSchema)
+const News = mongoose.model('News', NewsSchema)
 
 // On peut aussi le faire d'une autre manière
-module.exports = Arcs
+module.exports = News

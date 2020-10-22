@@ -1,0 +1,54 @@
+<section>
+    {{!--Ajout de l'url et de la méthode--}}
+    <form action="/admin/powers" method="POST" enctype="multipart/form-data">
+
+        {{!-- Input Name --}}
+        <div class="form-group">
+            <label for="text">Nom</label>
+            <input type="text" class="form-control" id="exampleInput" name="name">
+        </div>
+
+        {{!-- Input Contenu --}}
+        <div class="form-group">
+            <label for="exampleInputTextarea">Contenu 1</label>
+            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content1"></textarea>
+        </div>
+
+        {{!-- Input Titre --}}
+        <div class="form-group">
+            <label for="text">Titre 1</label>
+            <input type="text" class="form-control" id="exampleInput" name="title1">
+        </div>
+
+        {{!-- Input Contenu --}}
+        <div class="form-group">
+            <label for="exampleInputTextarea">Contenu 2</label>
+            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content2"></textarea>
+        </div>
+
+        {{!-- Input Titre --}}
+        <div class="form-group">
+            <label for="text">Titre 2</label>
+            <input type="text" class="form-control" id="exampleInput" name="title2">
+        </div>
+
+        {{!-- Input Contenu --}}
+        <div class="form-group">
+            <label for="exampleInputTextarea">Contenu 3</label>
+            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content3"></textarea>
+        </div>
+
+
+        {{!-- Images --}}
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+        </div>
+
+        {{!-- Boutons --}}
+        <div>
+            <button type="submit" class="btn btn-primary">Valider</button>
+            <button type="submit" class="btn btn-secondary">Annuler</button>
+        </div>
+    </form>
+</section>

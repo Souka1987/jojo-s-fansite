@@ -69,12 +69,12 @@
                             {{!--  Button trigger modal  --}}
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                 {{!-- Définir l'ID pour le lier au modal --}} data-target="#staticBackdrop{{ _id }}">
-                                Plus
+                                Faculté
                             </button>
+
                             {{!-- /Button trigger modal --}}
                         </div>
                     </li>
-
 
                     {{!-- Modal --}}
                     <div class="modal fade" id="staticBackdrop{{ _id }}" data-backdrop="static" data-keyboard="false"
@@ -88,28 +88,27 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <p class=""><img src="" height="" width="450">
-
-                                        {{!-- card --}}
+                                    {{!-- card --}}
+                                 
                                     <div>
-                                        <img src="..." class="card-img-top" alt="...">
+                                        <img src="{{ powers.image }}" class="card-img-top" alt="...">
                                         <div>
-                                            <h5>...</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit
-                                                longer.
-
-                                            <h5>...</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit
-                                                longer.
-
-                                            <h5>...</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit
-                                                longer.
+                                            <h5>{{ powers.name }}</h5>
+                                            <p class="card-text">{{ content1  }}</p>
+                                        </div>
+                                        <div>
+                                            <h5>{{ title1 }}</h5>
+                                            <p class="card-text">{{ content2 }}</p>
+                                        </div>
+                                        <div>
+                                            <h5>{{ title2 }}</h5>
+                                            <p class="card-text">{{ content3 }}</p>
+                                            {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                                            <p class="card-text"><small class="text-muted">Ajouté le:
+                                                    {{ moment createDate format="DD-MM-YYYY" }}</small></p>
                                         </div>
                                     </div>
+                                    
                                     {{!-- /card --}}
 
                                     <div class="modal-footer">

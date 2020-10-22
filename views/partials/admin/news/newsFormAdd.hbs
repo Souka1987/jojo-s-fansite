@@ -1,24 +1,16 @@
 <section>
-    {{!--Ajout de l'url et de la méthode--}}
-    <form action="/admin/characters" method="POST" enctype="multipart/form-data">
+    {{!--Ajout de l'url et de la méthode + multipart/form-data pour ajouter des fichiers--}}
+    <form action="/admin/news" method="POST" enctype="multipart/form-data">
 
-        {{!-- Input Nom du personnage --}}
+        {{!-- Input Titre du manga --}}
         <div class="form-group">
-            <label for="text">Nom</label>
-            <input type="text" class="form-control" id="exampleInput" name="name">
+            <label for="text">Titre</label>
+            <input type="text" class="form-control" id="exampleInput" name="title">
         </div>
-
-        {{!-- Input du Pouvoir --}}
-        <select class="custom-select custom-select-sm" name="powers">
-            <option>Selectionner un pouvoir</option>
-            {{#each powers }}
-            <option value="{{ _id }}">{{ name }}</option>
-            {{/each }}
-        </select>
 
         {{!-- Input Contenu --}}
         <div class="form-group">
-            <label for="exampleInputTextarea">Contenu</label>
+            <label for="exampleInputTextarea">Contenu </label>
             <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"></textarea>
         </div>
 
@@ -28,7 +20,7 @@
             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
         </div>
 
-        {{!-- Boutons --}}
+        {{!-- Bouttons --}}
         <div>
             <button type="submit" class="btn btn-primary">Valider</button>
             <button type="submit" class="btn btn-secondary">Annuler</button>

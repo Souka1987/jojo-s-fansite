@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const Powers = require('./Powers')
 
 // Schema pour la création  des articles personnages
 const CharacterSchema = new mongoose.Schema({
@@ -10,8 +12,11 @@ const CharacterSchema = new mongoose.Schema({
     createDate: {
         type: Date,
         default: new Date() // La date sera créé au moment où l'on va créer l'article.
+    },
+    powers: {
+        type: Schema.Types.ObjectId,
+        ref: 'Powers'
     }
-
 
 })
 

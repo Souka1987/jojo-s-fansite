@@ -1,0 +1,32 @@
+<section>
+    {{!--Ajout de l'url et de la méthode--}}
+    <form action="/admin/editNews/{{ article._id }}" method="POST" enctype="multipart/form-data">
+
+        {{!-- Input Titre du manga --}}
+        <div class="form-group">
+            <label for="text">Titre {{ article.title }}</label>
+            <input type="text" class="form-control" id="exampleInput" name="title" value="{{ article.title }}">
+        </div>
+
+        {{!-- Input Contenu --}}
+        <div class="form-group">
+            <label for="exampleInputTextarea">Contenu {{ article.content }}</label>
+            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"
+                value="{{ article.content }}"></textarea>
+        </div>
+
+        {{!-- Images --}}
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+        </div>
+
+        {{!-- Bouton valider --}}
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
+    <form action="/admin/deleteNews/{{ article._id }}" method="GET">
+        <button type="submit" class="btn btn-danger mt-2">Supprimer</button>
+    </form>
+    </div>
+
+</section>

@@ -8,10 +8,11 @@ const express = require('express'),
 
 // CONTROLLER
 const homeController = require('./controllers/homeController'),
-    // articleCreateController = require('./controllers/articleCreateController'),
+    newsController = require('./controllers/newsController'),
     // contactController = require('./controllers/contactController'),
     authorController = require('./controllers/authorController'),
     charactersController = require('./controllers/charactersController'),
+    powersController = require('./controllers/powersController'),
     arcsController = require('./controllers/arcsController'),
     mangaController = require('./controllers/mangaController'),
     imagesController = require('./controllers/imagesController'),
@@ -29,7 +30,6 @@ const homeController = require('./controllers/homeController'),
 
 router.route('/')
     .get(homeController.getArcs)
-
 
 
 /*
@@ -83,6 +83,8 @@ router.route('/images')
 // router.route('/profile')
 // .get(profileController.get)
 
+
+
 /*
  * ADMIN
  * ***** */
@@ -93,7 +95,7 @@ router.route('/admin')
 
 
 
-// ARCS
+// Arcs
 router.route('/admin/arcs')
     // GET récupération du formulaire formAdd
     .get(homeController.formAddArcs)
@@ -111,12 +113,31 @@ router.route('/admin/deleteArcs/:id')
     .get(arcsController.deleteArcs)
 
 
-// Liste des UX
-// router.route('/admin/users')
-// .get(adminController.getUsers)
+/************************************** */
 
 
-// CHARACTERS
+// News
+router.route('/admin/news')
+    // GET récupération du formulaire newsFormAdd
+    .get(homeController.newsFormAdd)
+    // POST formulaire newsAdd
+    .post(uploadArcs.single('image'), newsController.newsAdd)
+
+router.route('/admin/editNews/:id')
+    // GET récupéreration du formulaire 
+    .get(newsController.editFormNews)
+    // POST formulaire editNews
+    .post(uploadArcs.single('image'), newsController.editNews)
+
+// Bouton de suppression
+router.route('/admin/deleteNews/:id')
+    .get(newsController.deleteNews)
+
+
+/************************************** */
+
+
+// Characters
 router.route('/admin/characters')
     // GET recupération du formulaire formAdd
     .get(charactersController.formAddCharacter)
@@ -133,8 +154,19 @@ router.route('/admin/editCharacters/:id')
 router.route('/admin/deleteCharacters/:id')
     .get(charactersController.deleteCharacters)
 
+// Powers
+router.route('/admin/powers')
+    // GET recupération du formulaire powersPageFormAdd
+    .get(powersController.powersPageFormAdd)
+    .post(powersController.powersAdd)
 
-// MANGA
+
+
+
+/************************************** */
+
+
+// Manga
 router.route('/admin/manga')
     // GET récupération du formulaire mangaFormAdd
     .get(mangaController.mangaFormAdd)
