@@ -158,7 +158,11 @@ router.route('/admin/deleteCharacters/:id')
 router.route('/admin/powers')
     // GET recupération du formulaire powersPageFormAdd
     .get(powersController.powersPageFormAdd)
-    .post(powersController.powersAdd)
+    .post(uploadCharacters.single('image'), powersController.powersAdd)
+
+
+// router.route('/admin/powers/:id')
+//     .get(powersController.deleteOne)
 
 
 

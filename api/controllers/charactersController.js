@@ -13,7 +13,7 @@ module.exports = {
         /* Ci-dessous, syntax permetant d'attendre le retour de la requête + "schema.find({})" 
            pour afficher le contenu de la base de données.*/
 
-        //    Mettre en relation "powers" avec "characters" pour le modal
+        //    MISE EN RELATION AVEC la propriété "populate()"
         Character.find({})
             .populate('powers')
             .exec((err, data) => {
@@ -23,11 +23,9 @@ module.exports = {
                     character: data
                 })
             })
-
-
     },
 
-    // GET Page du formulaire cration de Characters ( Admin )
+    // GET Page du formulaire création de Characters ( Admin )
     formAddCharacter: async (req, res) => {
         const dbCharacter = await Character.find({}),
             dbPowers = await Powers.find({})
@@ -44,16 +42,15 @@ module.exports = {
         console.log('Controller form add character')
         // Demander de charger le model "character"
         const dbCharacter = await Character.find({})
-
-        // console.log(req.body)
-        // console.log(dbCharacter)
-        // console.log(req.file)
+           
+         console.log(req.body)
+         console.log(dbCharacter)
+         console.log(req.file)
         // Définir le fichier image
         const image = req.file.originalname
 
         // Création de l'article à partir du model
         Character.create({
-
             // ...req.body prend par défaut tout le schéma
             ...req.body,
 
@@ -73,9 +70,13 @@ module.exports = {
     // GET Page du formulaire édition de Characters ( Admin )
     pageFormEditCharacter: async (req, res) => {
         const articleID = await Character.findById(req.params.id)
+        const dbPowers = await Powers.find({})
+
         console.log(articleID)
         res.render('admin/character/editCharacters', {
-            article: articleID
+            article: articleID,
+            powers: dbPowers,
+            lol: 'fdgregdrfs'
         })
     },
 
@@ -84,28 +85,42 @@ module.exports = {
     editCharacters: async (req, res) => {
         const q = req.params.id
 
-
         // Récupération l'article grace au params.id
         const articleID = await Character.findById(req.params.id)
-        const image = req.file.originalname
+
 
         console.log(req.body)
         console.log(req.file)
 
-        // Pour modifier l'image
-        Character.findByIdAndUpdate(q, { //Définir les variables de son article
+        if (!req.file) {
+            // Pour modifier l'image
+            Character.findByIdAndUpdate(q, { //Définir les variables de son article
 
-            // Schéma par défaut
-            ...req.body,
-            // Aller chercher le chemin de l'image à modifier
-            image: `assets/images/characters/${image}`,
-            name: req.body.name
+                // Schéma par défaut
+                ...req.body
 
-        }, (err) => {
-            if (err) console.log(err); //Si il y a une erreur, l'afficher
-            res.redirect('/characters') //sinon renvoyer sur la page "characters"
+            }, (err) => {
+                if (err) console.log(err); //Si il y a une erreur, l'afficher
+                res.redirect('/characters') //sinon renvoyer sur la page "characters"
 
-        })
+            })
+        } else {
+            const image = req.file.originalname
+            // Pour modifier l'image
+            Character.findByIdAndUpdate(q, { //Définir les variables de son article
+
+                // Schéma par défaut
+                ...req.body,
+                // Aller chercher le chemin de l'image à modifier
+                image: `assets/images/characters/${image}`,
+                name: req.body.name
+
+            }, (err) => {
+                if (err) console.log(err); //Si il y a une erreur, l'afficher
+                res.redirect('/characters') //sinon renvoyer sur la page "characters"
+
+            })
+        }
     },
 
     // GET Pour supprimer un article
