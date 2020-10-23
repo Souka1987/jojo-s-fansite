@@ -27,7 +27,7 @@ module.exports = {
     },
 
     // GET Page du formulaire création des Arcs ( Admin )
-    formAddArcs: (req, res) => {
+    arcsPageFormAdd: (req, res) => {
         res.render('admin/arcs/arcsAdd')
     },
 

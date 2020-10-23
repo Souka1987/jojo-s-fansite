@@ -98,7 +98,7 @@ router.route('/admin')
 // Arcs
 router.route('/admin/arcs')
     // GET récupération du formulaire formAdd
-    .get(homeController.formAddArcs)
+    .get(homeController.arcsPageFormAdd)
     // POST formulaire addArcs
     .post(uploadArcs.single('image'), arcsController.addArcs)
 
@@ -154,11 +154,22 @@ router.route('/admin/editCharacters/:id')
 router.route('/admin/deleteCharacters/:id')
     .get(charactersController.deleteCharacters)
 
+
+/************************************** */
+
+
 // Powers
 router.route('/admin/powers')
     // GET recupération du formulaire powersPageFormAdd
     .get(powersController.powersPageFormAdd)
-    .post(uploadCharacters.single('image'), powersController.powersAdd)
+    // POST formulaire
+    .post(uploadArcs.single('image'), powersController.powersAdd)
+
+router.route('/admin/editPowers/:id')
+// GET recupération du formulaire powersPageFormEdit
+.get(powersController.powersPageFormEdit)
+// POST formulaire
+.post(uploadArcs.single('image'), powersController.powersEdit)
 
 
 // router.route('/admin/powers/:id')

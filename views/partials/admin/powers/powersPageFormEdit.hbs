@@ -1,42 +1,44 @@
 <section>
-    {{!--Ajout de l'url et de la méthode--}}
-    <form action="/admin/editPowers/{{ article._id }}" method="POST" enctype="multipart/form-data">
+    {{!--Ajout de l'url et de la méthode + "multipart/form-data" pour l'ajout de fichiers --}}
+    <form action="/admin/editPowers/{{ powers._id }}" method="POST" enctype="multipart/form-data">
 
         {{!-- Input Name --}}
         <div class="form-group">
-            <label for="text">Nom {{ article.name }}</label>
-            <input type="text" class="form-control" id="exampleInput" name="name" value="{{ article.name }}">
+            <label for="text">Nom {{ name }}</label>
+            <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
         </div>
 
         {{!-- Input Contenu --}}
         <div class="form-group">
-            <label for="exampleInputTextarea">Contenu 1 {{ article.content1 }}</label>
+            <label for="exampleInputTextarea">Contenu 1 {{ content1 }}</label>
             <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content1"
-                value="{{ article.content1}}"></textarea>
+                value="{{ content1 }}"></textarea>
         </div>
 
         {{!-- Input Titre --}}
         <div class="form-group">
-            <label for="text">Titre 1 {{ article.title1 }}</label>
-            <input type="text" class="form-control" id="exampleInput" name="title1" value="{{ article.title1 }}">
+            <label for="text">Titre 1 {{ title1 }}</label>
+            <input type="text" class="form-control" id="exampleInput" name="title1" value="{{ title1 }}">
         </div>
 
         {{!-- Input Contenu --}}
         <div class="form-group">
-            <label for="exampleInputTextarea">Contenu 2 {{ article.title2 }}</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content2" value="{{ article.content2 }}"></textarea>
+            <label for="exampleInputTextarea">Contenu 2 {{ content2 }}</label>
+            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content2"
+                value="{{ content2 }}"></textarea>
         </div>
 
         {{!-- Input Titre --}}
         <div class="form-group">
-            <label for="text">Titre 2 {{ article.title2 }}</label>
-            <input type="text" class="form-control" id="exampleInput" name="title2" value="{{ article.title2 }}">
+            <label for="text">Titre 2 {{ title2 }}</label>
+            <input type="text" class="form-control" id="exampleInput" name="title2" value="{{ title2 }}">
         </div>
 
         {{!-- Input Contenu --}}
         <div class="form-group">
-            <label for="exampleInputTextarea">Contenu 3 {{ article.content3 }}</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content3" value="{{ article.content3 }}"></textarea>
+            <label for="exampleInputTextarea">Contenu 3 {{ content3 }}</label>
+            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content3"
+                value="{{ content3 }}"></textarea>
         </div>
 
 
@@ -47,13 +49,12 @@
         </div>
 
         {{!-- Bouton valider --}}
-            <button type="submit" class="btn btn-primary">Valider</button>
-        </form>
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </form>
 
-        {{!-- Bouton de suppression--}}
+    {{!-- Bouton de suppression--}}
 
-        <form action="" method="GET" class="mt-2">
-            <button type="submit" class="btn btn-danger">Supprimer</button>
-        </form>
+    <form action="" method="GET" class="mt-2">
+        <button type="submit" class="btn btn-danger">Supprimer</button>
     </form>
 </section>

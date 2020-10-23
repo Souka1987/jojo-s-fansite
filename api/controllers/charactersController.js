@@ -76,7 +76,7 @@ module.exports = {
         res.render('admin/character/editCharacters', {
             article: articleID,
             powers: dbPowers,
-            lol: 'fdgregdrfs'
+        
         })
     },
 
@@ -85,7 +85,7 @@ module.exports = {
     editCharacters: async (req, res) => {
         const q = req.params.id
 
-        // Récupération l'article grace au params.id
+        // Récupération de l'article grace au params.id
         const articleID = await Character.findById(req.params.id)
 
 
@@ -94,20 +94,20 @@ module.exports = {
 
         if (!req.file) {
             // Pour modifier l'image
-            Character.findByIdAndUpdate(q, { //Définir les variables de son article
+            Character.findByIdAndUpdate(q, { // Définir les variables de son article
 
                 // Schéma par défaut
                 ...req.body
 
             }, (err) => {
-                if (err) console.log(err); //Si il y a une erreur, l'afficher
-                res.redirect('/characters') //sinon renvoyer sur la page "characters"
+                if (err) console.log(err); // Si il y a une erreur, l'afficher
+                res.redirect('/characters') // Sinon renvoyer sur la page "characters"
 
             })
-        } else {
+        } else { 
             const image = req.file.originalname
             // Pour modifier l'image
-            Character.findByIdAndUpdate(q, { //Définir les variables de son article
+            Character.findByIdAndUpdate(q, { // Définir les variables de son article
 
                 // Schéma par défaut
                 ...req.body,
