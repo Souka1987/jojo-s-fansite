@@ -22,6 +22,7 @@
     },
     "homepage": "https://github.com/xdrkush/architecture-nodejs-base#readme",
     "dependencies": {
+        "bcrypt": "^5.0.0",
         "body-parser": "^1.19.0",
         "bootstrap": "^4.5.2",
         "bootstrap-icons": "^1.0.0",
@@ -37,9 +38,10 @@
         "hbs": "^4.1.1",
         "limit-queue": "0.0.6",
         "mongo-store": "0.0.2",
-        "mongoose": "^5.10.9",
+        "mongoose": "^5.10.10",
         "multer": "^1.4.2",
-        "path": "^0.12.7"
+        "path": "^0.12.7",
+        "sharp": "^0.26.2"
     },
     "devDependencies": {
         "handlebars": "^4.5.0",

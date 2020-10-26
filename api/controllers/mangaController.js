@@ -3,7 +3,7 @@
  * ********************************** */
 
 const path = require('path');
-const Manga = require('../../database/models/Manga');
+const News = require('../../database/models/News');
 const fs = require('fs')
 
 
@@ -87,8 +87,8 @@ module.exports = {
             name: req.body.name
 
         }, (err) => {
-            if (err) console.log(err); //Si il y a une erreur, l'afficher
-            res.redirect('/manga') //sinon renvoyer sur la page "characters"
+            if (err) console.log(err); // Si il y a une erreur, l'afficher
+            res.redirect('/manga') // sinon rediriger sur la page "manga"
 
         })
     },

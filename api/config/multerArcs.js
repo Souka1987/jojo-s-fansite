@@ -1,4 +1,3 @@
-
 // Import de Multer
 const multer = require('multer')
 
@@ -8,13 +7,18 @@ const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, './public/images/arcs');
   },
+
+
   // Ici est définit le format du nom de l'image à stocker
   filename: (req, file, cb) => {
     const ext = file.originalname,
       date = Date.now()
     cb(null, ext)
-  }
+  },
+
 })
+
+
 
 // Ici seront initialiser les parametre de la config de multer
 const uploadArcs = multer({

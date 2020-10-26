@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Powers = require('./Powers')
+const Powers = require('./Powers');
+const Manga = require('./Manga')
 
 // Schema pour la création  des articles personnages
 const CharacterSchema = new mongoose.Schema({
@@ -17,7 +18,6 @@ const CharacterSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'Powers'
     }
-
 })
 
 // Modèle, pour mettre les infos dans la base de données.
