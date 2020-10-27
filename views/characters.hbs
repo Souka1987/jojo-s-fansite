@@ -52,17 +52,17 @@
         {{!-- Card  --}}
         <div class="container">
             <div class="row">
-                <ul id="myJojo" class="row" style="margin: 5px;">
+                <ul id="myJojo" class="row justify-content-center">
                     {{!-- Réduction des cards ici, 4 avec "limit" --}}
-                    {{#each (limit character 4) }}
-                    <li class="list-group-item">
+                    {{#each  character }}
+                    <li class="list-group-item col-md-6 col-sm-12 col-lg-3 col-xl-3 m-2 p-1">
                         <img src="{{ image }}" class="card-img-top" alt="">
                         <div class="card-body">
                             <a href="/admin/editCharacters/{{ _id }}">
                                 <h5 class="card-title">{{ name }}</h5>
                             </a>
                             {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
-                            <p class="card-text">{{ content }}</p>
+                            <p class="card-text">{{ stripTags content }}</p>
                             {{!-- Récupérer le "createDate" pour ajouter la date --}}
                             <p class="card-text"><small class="text-muted">Ajouté le:
                                     {{ moment createDate format="DD-MM-YYYY" }}</small></p>
@@ -71,7 +71,6 @@
                                 {{!-- Définir l'ID pour le lier au modal --}} data-target="#staticBackdrop{{ _id }}">
                                 Faculté
                             </button>
-
                             {{!-- /Button trigger modal --}}
                         </div>
                     </li>
@@ -87,9 +86,8 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body p-1">
                                     {{!-- card --}}
-                                 
                                     <div>
                                         <img src="{{ powers.image }}" class="card-img-top" alt="...">
                                         <div>
@@ -107,7 +105,6 @@
                                                     {{ moment createDate format="DD-MM-YYYY" }}</small></p>
                                         </div>
                                     </div>
-                                    
                                     {{!-- /card --}}
 
                                     <div class="modal-footer">

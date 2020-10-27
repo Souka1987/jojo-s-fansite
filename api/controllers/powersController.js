@@ -72,12 +72,55 @@ module.exports = {
             res.redirect('/characters') // sinon rediriger sur la page "characters"
 
         })
+    },
+
+        // Récupération l'article grâce au params.id
+        const dbPowers = await Powers.findById(req.params.id)
+
+        console.log(req.body)
+        console.log(req.file)
+
+        const image = req.file.originalname
+        // Pour modifier l'image
+        Powers.findByIdAndUpdate(q, { // Définir les variables de son article
+
+            // Schéma par défaut
+            ...req.body,
+            // Aller chercher le chemin de l'image à modifier
+            image: `assets/images/arcs/${image}`,
+            name: req.body.name
+
+        }, (err) => {
+            if (err) console.log(err); // Si il y a une erreur, l'afficher
+            res.redirect('/characters') // sinon rediriger sur la page "characters"
+
+        })
+
     }
 
 
-    // deleteOne: async (req, res) => {
-    //     const dbCharactersRelation = await Character.find({powers: req.params.id}) 
-    //     console.log(dbCharactersRelation)
-    // }
+    // GET Pour supprimer un article
+    deletePowers: async (req, res) => {
+        const dbPowers = await Powers.findById(req.params.id)
+        console.log('Controller Delete One Article')
+        console.log(dbPowers)
 
-}
+        // Effacer l'image depuis le dossier source "public"
+        fs.unlink(`public/images/arcs/${dbPowers.imageName}`, (err) => {
+            /*la méthode "fs.unlink" sert à effacer un fichier
+                    depuis le dossier ciblé*/
+
+            /* Procéder à la suppression de l'article entier en ne 
+            ciblant que son id*/
+
+            if (err) return console.log(err)
+            Powers.deleteOne({ // Pour suprimer un document à la fois par son ID
+                _id: req.params.id // Toujours définir l'ID
+            }, (err) => {
+                if (!err) return res.redirect('/characters') // Rediriger vers la page "characters"
+                else res.send(err) // Sinon afficher l'érreur
+            })
+        })
+
+    }
+

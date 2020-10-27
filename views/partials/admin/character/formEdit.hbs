@@ -13,8 +13,19 @@
             {{!-- Input Contenu --}}
             <div class="form-group">
                 <label for="exampleInputTextarea">Contenu {{ article.content }}</label>
-                <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"
+                <textarea class="form-control" id="content" placeholder="example textarea" name="content"
                     value="{{ article.content }}"></textarea>
+                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+                <script>
+                    const ed = CKEDITOR.replace('content', {
+                        entities: false, //pour la suppression des caractères spéciaux
+                        //uiColor: '#00000' //Coloriser les bordures de l'éditeur
+                    });
+
+                    ed.on('change', function (e) {//modification du contenu de l'éditeur
+                        console.log(e.editor.getData())
+                    })
+                </script>
             </div>
 
             {{!-- Input du Pouvoir --}}

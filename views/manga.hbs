@@ -6,171 +6,222 @@
             {{!-- Contenu --}}
             <div class="">
 
-                {{!-- Titre --}}
-                <h1 style="text-align: center;">A propos du manga</h1>
-
-                {{!-- Images --}}
-                <div class="row" style="margin-top: 50px;">
-                    <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                        <div class="bg-white rounded shadow-sm"><img
-                                src="https://pbs.twimg.com/media/EfrBZQAXgAs-3s7.jpg" alt=""
-                                class="img-fluid card-img-top">
-                        </div>
-                    </div>
-                    {{!-- / Images --}}
-
-
-                    {{!-- Info --}}
-                    <div class="accordion" id="accordionExample">
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block title-accordion" type="button"
-                                        data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                        aria-controls="collapseOne">
-                                        Préambule
-                                    </button>
-                                </h2>
-                            </div>
-
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                data-parent="#accordionExample">
-                                <div class="card-body">
-                                    ...
-                                </div>
-                            </div>
-                            <div class="card mt-2">
-                                <div class="card-header" id="headingTwo">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block title-accordion collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                            aria-controls="collapseTwo">
-                                            Information
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        ...
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mt-2">
-                                <div class="card-header" id="headingThree">
-                                    <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block title-accordion collapsed" type="button"
-                                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">
-                                            Information
-                                        </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        ...
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {{!-- / Info --}}
-
-
-                        {{!-- Tomes --}}
-                        <div class="container mt-5">
-                            <h1 style="text-align: center; mt-5">Liste des tomes</h1>
-
-                            {{!-- Navbar Tabs --}}
-                            <div class="mb-5">
-                                <ul class="nav nav-tabs">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#">Phantom Blood</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Battle Tendency</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Stardust Crusaders</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Diamond Is Unbreakable</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Golden Wind</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Stone Ocean</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Steel Ball Run</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Jojolion</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            {{!-- / Navbar Tabs --}}
-
-                            {{!-- Liste des tomes --}}
-
-                            <h2>Phantom Blood</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                est laborum</p>
-
-                            <div class="container mt-5">
-                                <div class="row">
-                                    {{!-- Début de la boucle --}}
-                                    {{#each (limit manga 4) }}
-                                    <div class=" card col-xl-3 col-lg-4 col-md-6 mb-4" style="margin: 5px;">
-                                        <img src="{{ image }}" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <a href="/admin/editManga/{{ _id }}">
-                                                <h5 class="card-title">{{ title }}</h5>
-                                            </a>
-                                            <p class="card-text">{{ content }}</p>
-                                            {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                                            <p class="card-text"><small class="text-muted">Ajouté le:
-                                                    {{ moment createDate format="DD-MM-YYYY" }}</small></p>
-                                        </div>
-                                    </div>
-                                    {{!-- Fin de la boucle --}}
-                                    {{/each }}
-                                </div>
-                            </div>
-
-                            {{!-- Section commentaires --}}
-                            <h2 class="text-center mt-5">Commentaires</h2>
-                            <div class="media mt-4">
-                                <img class="d-flex mr-3 rounded-circle" src="" height="64" width="64" alt="">
-                                <div class="media-body">
-                                    <h5 class="mt-0">User Name</h5>
-                                    <p class="small">...</p>
-                                </div>
-                            </div>
-                            {{!-- Formulaire commentaire --}}
-                            <div class="card my-4">
-                                <h5 class="card-header">Laisser un commentaire:</h5>
-                                <div class="card-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <textarea class="form-control" rows="3"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-com">Envoyer</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                <div class="jumbotron-manga p-4 p-md-5 text-white rounded">
+                    <div class="">
+                        <h1 class="display-4 font-italic">A propos du manga</h1>
+                        <p class="lead">JoJo's Bizarre Adventure est toujours en publication à l'heure actuelle et a
+                            dépassé les 100 volumes, devenant très vite une oeuvre majeure de la bande dessinée
+                            japonaise. La
+                            série à laissé depuis le début de sa parution une empreinte dans la culture populaire,
+                            inspirant nombre d'artistes et laissant une ribambelle de phrases cultes et références à
+                            travers tout média.</p>
                     </div>
                 </div>
+
+
+                <div class="jumbotron alert alert-light p-4 p-md-5 text-muted rounded mt-5">
+                    
+                        <h5 class="lead">Qu'est-ce que c'est ?</h5>
+                        <p class="text-justify">Jojo's Bizarre Adventure est un manga
+                            de
+                            type
+                            Shonen et a
+                            partir
+                            de la partie 7 de type
+                            Seinen (le Shonen est un manga s'adressant à un public d'adolescents tandis
+                            que
+                            le
+                            Seinen s'adresse à un public adulte du moins plus mature). En tant que tel,
+                            l'accent
+                            est mis sur les combats et les personnages. Cependant,
+                            contrairement à la plupart des autres mangas de ce type, les combats se
+                            remportent
+                            davantage grâce à la réflexion et à l'ingéniosité que par la force brute.
+
+                            Cela est rendu possible grâce à la complexité et à la richesse des pouvoirs
+                            des
+                            personnages. En effet, les protagonistes sont la majorité du temps en
+                            désavantage
+                            évident, ce qui les poussent à utiliser intelligemment tous les moyens à
+                            leur
+                            disposition pour surmonter les épreuves auxquelles ils sont
+                            confrontés.</p>
+                    <br>
+                    <br>
+                    <h5 class="lead">L'histoire</h5>
+                    <p class="text-justify">
+                        L'histoire de JoJo’s Bizarre Adventure relate la relation mortelle entre
+                        Dio
+                        Brando, fils adoptif d'un bienveillant noble et Jonathan Joestar, son
+                        héritier
+                        principal et donc rival de Dio. La suite de la série via ses diverses
+                        parties
+                        raconte la lutte sur plus d'un siècle entre les descendants de Jonathan
+                        et
+                        leurs
+                        alliés et (de près ou de loin) Dio et ses disciples. Chaque protagoniste
+                        de
+                        chaque partie étant un personnage différent, le lieu de l'action couvre
+                        plusieurs pays, que ce soit l’Italie, le Japon, les Etats-Unis ou
+                        l’Angleterre.
+
+                        La série recouvre un large panel de genres, y compris l'action,
+                        l'aventure,
+                        l'horreur, le thriller, le mystère, le fantastique et la comédie. Les
+                        récits
+                        emploient des thèmes récurrents incluant le destin, la justice, la
+                        rédemption,
+                        la psychologie et des développements imaginaires sur des théories
+                        scientifiques,
+                        ainsi que l'histoire, les mathématiques, les mythes, les phénomènes
+                        naturels...
+                        Autant pour expliquer l’existence et le fonctionnement de concepts
+                        propre a
+                        ce
+                        manga comme le Stand ou l’Onde que la façon dont ils entrent en action
+                        vis-à-vis
+                        du temps et du monde.
+
+                        Le trait d'Araki, d'abord très similaire aux mangas des années 80
+                        (fortement
+                        inspiré de Sakigake!! Otokojuku et de Hokuto no Ken) devient au fil des
+                        parties
+                        plus fin et plus proche de ses inspirations artistiques personnelles.
+                        Les
+                        personnages, à la base très virils et musclés, deviennent plus
+                        androgynes à
+                        partir de la partie 4, jusqu'à la partie 6 centrée quasi uniquement sur
+                        des
+                        personnages féminins. Son dessin à gardé depuis cette particularité en
+                        offrant
+                        des designs très soignés et des poses extravagantes emblématiques de la
+                        série.
+
+                        Une des particularités les plus notoires de JoJo's est aussi son nombre
+                        colossal
+                        de référence envers la mode, la musique (principalement le rock et la
+                        pop du
+                        moment) et divers styles d'art, que ce soit dans les noms des
+                        personnages,
+                        de
+                        leur pouvoir, ou les situations qu'ils vivent.
+                    </p>
+                    <br>
+                    <br>
+                    <h5 class="lead">L'histoire</h5>
+                    <p class="text-justify">
+                        JoJo's Bizarre Adventure a la particularité d'être découpé en parties
+                        distinctes, chacune suivant un protagoniste différent (mais qui ont tous
+                        le point commun d'être être surnommés Jojo), son propre cast, époque et
+                        scénario, tout en s'inscrivant dans une continuité globale.
+
+                        Cela permet de suivre l'évolution de l'histoire sur différentes périodes
+                        et lieux, tout en retrouvant certains personnages d'une partie à
+                        l'autre.
+
+                        A l'heure actuelle, JoJo's Bizarre Adventure comporte 8 parties:
+                    <ul class="">
+                        <li>Phasellus iaculis neque</li>
+                        <li>Purus sodales ultricies</li>
+                        <li>Vestibulum laoreet porttitor sem</li>
+                        <li>Ac tristique libero volutpat at</li>
+                    </ul>
+                    </p>
+                    <br>
+                    <br>
+                    <h5 class="lead">Inspirations</h5>
+                    <p class="text-justify">
+
+                        Conception
+                        Pour Araki, l'essence même d'un manga réside dans son héros. Le héros doit
+                        marquer la mémoire et l'esprit du lecteur. Si, au contraire, il donne une
+                        impression de déjà-vu, Araki considère que le manga est raté26.
+
+                        Technique
+                        Araki réalise toutes ses planches à la main. Après l'esquisse, il dessine à la
+                        plume et à l'encre de Chine. Il rajoute ensuite plusieurs couches d'acrylique27.
+                        Il ne dessine que les personnages ; son équipe d'assistants est chargé des
+                        décors et des paysages28.
+
+                        Araki explique que le trait dans les manga est plus nerveux que dans la BD
+                        européenne ou américaine où les dessins sont plus « arrondis »29.
+
+                        Inspiration
+                        L'auteur utilise une large palette de couleurs et revendique un intérêt pour
+                        Paul Gauguin. Il se réclame du maniérisme et s'inspire de Michel-Ange pour les
+                        poses de ses personnages ainsi que de Egon Schiele et Gustav Klimt. Il fait
+                        également référence aux travaux du mangaka Buronson2.
+
+                        Babel II, de Mitsuteru Yokoyama2,30.
+
+                        Style
+                        Avec son style baroque[C'est-à-dire ?], l'auteur se démarque de la concurrence
+                        auprès de son lectorat en ne collant pas aux références du genre31.
+
+                        Nationalité de ses personnages
+                        Au Japon, il est de tradition que les héros de shōnen soient japonais. Araki
+                        souhaitait briser cette coutume, en attribuant à ses personnages la nationalité
+                        des pays où se déroule l'histoire32. Quelques exemples dans le shōnen / seinen
+                        Jojo's Bizarre Adventure : Jonathan Joestar (Partie 1 : Phantom Blood) est
+                        anglais, son petit-fils Joseph Joestar (Partie 2 : Battle Tendency) est
+                        américain, les membres de la famille Zeppeli (Partie 1 : Phantom Blood, Partie 2
+                        : Battle Tendency & Partie 7 : Steel Ball Run) qui sont italiens, ou encore
+                        Jean-Pierre Polnareff (Partie 3 : Stardust Crusaders) qui est français.
+                        Néanmoins on retrouve beaucoup de personnages japonais : Kujo Jotaro (Partie 3 :
+                        Stardust Crusaders), Higashikata Josuke (Partie 4 : Diamond Is Unbreakable), ou
+                        encore certains aïeux de la famille Joestar. Araki considérait qu'il n'y avait
+                        pas lieu de faire la différence entre les personnages et leurs origines, car des
+                        thèmes récurrents dans ses mangas, comme l'amour et le courage étaient largement
+                        universels et unificateurs33.
+                    </p>
+                </div>
+
+
+
+            {{!-- Liste des tomes --}}
+            <div class="container text-center">
+                <h2 class="text-center mt-5">Liste des tomes</h2>
+                <div class="container mt-5 alert alert-dark alert-solid" role="alert">
+                    <h5 class="text-center">Phantom Blood</h5>
+                    <span class="text-center">1987-1988</span>
+                    <p class="justify">Phantom Blood, connu initialement sous le nom Dai Ichi Bu Jonathan Joestar: Sono
+                        Seishun (第一部 ジョナサン·ジョースター ―その青春―, Dai Ichi Bu Jonasan Jōsutā Sono Seishun?, Jonathan Joestar: Sa
+                        jeunesse), est la première partie du manga JoJo's Bizarre Adventure écrit et dessiné par
+                        Hirohiko Araki. Elle a été publiée en 1987 dans le magazine Weekly Shōnen Jump et comporte 44
+                        chapitres compilés dans les volumes 1 à 5.
+                    </p>
+                    <p>
+                        <a href="" class="btn btn-primary my-2">Voir plus</a>
+                    </p>
+                </div>
             </div>
+
+            {{!-- Card --}}
+            <div class="container">
+                <div class="row justify-content-center">
+                    {{!-- Début de la boucle --}}
+                    {{#each manga }}
+                    <div class="card-deck mb-3 text-center col-md-3">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header">
+                                <a href="/admin/editManga/{{ _id }}">
+                                    <h6 class="my-0 font-weight-normal">{{ title }}</h6>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <img src="{{ image }}" class="card-img-top" alt="...">
+                                {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
+                                <p class="justify mt-2">{{ stripTags content }}</p>
+                                {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                                <p class="card-text text-muted"><small>Ajouté le:
+                                        {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each }}
+                </div>
+            </div>
+            {{!-- / Card --}}
         </div>
 </section>
 {{!-- / Manga --}}

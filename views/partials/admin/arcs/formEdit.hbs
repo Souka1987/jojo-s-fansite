@@ -1,18 +1,29 @@
 <section>
     {{!--Ajout de l'url et la méthode --}}
-    <form action="/admin/editArcs/{{ article._id }}" method="POST" enctype="multipart/form-data">
+    <form action="/admin/editArcs/{{ _id }}" method="POST" enctype="multipart/form-data">
 
         {{!-- Input Titre --}}
         <div class="form-group">
-            <label for="text">Titre {{ article.title }}</label>
-            <input type="text" class="form-control" id="exampleInput" name="title" value="{{ article.title }}">
+            <label for="text">Titre {{ arcs.title }}</label>
+            <input type="text" class="form-control" id="exampleInput" name="title" value="{{ arcs.title }}">
         </div>
 
         {{!-- Input Contenu --}}
         <div class="form-group">
-            <label for="exampleInputTextarea">Contenu {{ article.content }}</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"
+            <label for="exampleInputTextarea">Contenu {{ arcs.content }}</label>
+            <textarea class="form-control" id="content" placeholder="example textarea" name="content"
                 value="{{ article.content }}"></textarea>
+            {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+            <script>
+                const ed = CKEDITOR.replace('content', {
+                    entities: false, //pour la suppression des caractères spéciaux
+                    //uiColor: '#00000' //Coloriser les bordures de l'éditeur
+                });
+
+                ed.on('change', function (e) {//modification du contenu de l'éditeur
+                    console.log(e.editor.getData())
+                })
+            </script>
         </div>
 
         {{!-- Input Images --}}
@@ -22,11 +33,11 @@
         </div>
 
         {{!-- Bouton valider --}}
-            <button type="submit" class="btn btn-primary">Valider</button>
+        <button type="submit" class="btn btn-primary">Valider</button>
     </form>
 
     {{!-- Bouton de suppression--}}
-    <form action="/admin/deleteArcs/{{ article._id }}" method="GET" class="mt-2"> 
-        <button type="submit" class="btn btn-danger">Supprimer</button> 
-     </form> 
+    <form action="/admin/deleteArcs/{{ article._id }}" method="GET" class="mt-2">
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+    </form>
 </section>

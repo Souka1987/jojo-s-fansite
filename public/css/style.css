@@ -1,3 +1,62 @@
 /* body */
+@import url(../bootstrap/bootstrap.min.css);
 section {
   padding: 80px 0px; }
+
+p {
+  font-family: "montserrat", "roboto", "lato", "sans-serif";
+  font-size: small; }
+
+ul > li {
+  text-decoration: non; }
+
+a {
+  color: #5800e8; }
+
+.text-author {
+  background-color: #5800e8;
+  border-color: #5800e8; }
+
+.jumbotron-manga {
+  background-color: #5800e8;
+  border-color: #5800e8; }
+
+.alert-light {
+  color: #7c7e81;
+  background-color: #fcfdfe;
+  border-color: #fbfcfd; }
+
+.banner {
+  background-color: #5800e8;
+  border-color: #5800e8; }
+
+.btn-primary {
+  background-color: #5800e8; }
+
+.nav-link {
+  margin: 10px;
+  color: darkgrey;
+  font-family: "lato", "sans-serif";
+  font-size: 14px; }
+
+.alert.alert-indigo.alert-solid {
+  color: #2e0079;
+  background-color: #deccfa;
+  border-color: #d0b8f9; }
+
+.btn-primary {
+  color: #fff;
+  background-color: #5800e8;
+  border-color: #5800e8; }
+
+.btn-admin {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+
+.text-justify {
+  color: black; }
+
+.img {
+  background-image: url("/public/images/bg.png"); }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,19 +1,32 @@
-{{!-- /News --}}
+{{!-- Bouton Search --}}
 <section>
-    <div class="container">
-        <div class="row">
+    <div class="container mt-5">
+        <form class="form-inline my-2 justify-content-center">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0 text-white" type="submit">Search</button>
+        </form>
+    </div>
+
+
+    {{!-- news --}}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
             {{!-- Début de la boucle --}}
             {{#each (limit news 3) }}
-            <div class="card col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-4" style="margin: 5px;">
-                <img src="{{ image }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="/admin/editNews/{{ _id }}">
-                        <h5 class="card-title">{{ title }}</h5>
-                    </a>
-                    <p class="card-text">{{ content }}</p>
-                    {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                    <p class="card-text"><small class="text-muted">Ajouté le:
-                            {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+            <div class="card-deck mb-3 text-center col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <a href="/admin/editNews/{{ _id }}">
+                        <h6 class="my-0 font-weight-normal">{{ title }}</h6>
+                        </a>
+                    </div>
+                    <div class="card-body p-1">
+                        <img src="{{ image }}" class="card-img-top" alt="...">
+                        <p class="justify mt-2">{{ stripTags content }}</p>
+                        {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                        <p class="card-text text-muted"><small>Ajouté le:
+                                {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                    </div>
                 </div>
             </div>
             {{!-- Fin de la boucle --}}
@@ -21,4 +34,4 @@
         </div>
     </div>
 </section>
-{{!-- /News --}}
+{{!-- / news --}}

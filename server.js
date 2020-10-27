@@ -1,6 +1,8 @@
 /*
  * App.js
  ******************************/
+const router = require('./api/router');
+
 
 // Import du module http (pour afficher la page dans un naviguateur web)
 // "http" est un protocole de transmission de données (www..)
@@ -15,12 +17,19 @@ const
     hbs = require('express-handlebars'),
     mongoose = require('mongoose'),
     expressSession = require('express-session'),
+    MongoStore = require('connect-mongo'),
+    
 
-    //MongoStore
-    mongoStore = require('connect-mongo'),
+    
+//MongoStore
+mongoStore = require('connect-mongo'),
     bodyParser = require('body-parser'),
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
-    {stripTags, limit} = require('./helpers/hbs'),
+    {
+        stripTags,
+        limit,
+        inc
+    } = require('./helpers/hbs'),
     port = process.env.PORT || 1870;
 
 
@@ -33,9 +42,10 @@ app.set('view engine', 'hbs');
 app.engine('hbs', hbs({
     helpers: {
         stripTags: stripTags,
-        limit: limit //"limit", pour la réduction des cards
+        limit: limit, //"limit", pour la réduction des cards
         /* Pour l'édition de texte afin de le faire passer dans le
                 moteur de templating "app.engine" */
+        inc: inc
     },
     extname: 'hbs',
     defaultLayout: 'main',
@@ -51,16 +61,16 @@ app.engine('hbs', hbs({
 
 
 //Admin
-// app.use(expressSession({
-// secret: 'securite',
-// name: 'biscuit',
-// saveUninitialized: true, // Sauvegarde ce qui n'est pas initialisé
-// resave: false, // Enregistre automatiquement la session même si elle n'est pas modifiée
+//  app.use(expressSession({
+//  secret: 'securite',
+//  name: 'biscuit',
+//  saveUninitialized: true, // Sauvegarde ce qui n'est pas initialisé
+//  resave: false, // Enregistre automatiquement la session même si elle n'est pas modifiée
 
-// Store: new mongoStore({
-//     mongooseConnection: mongoose.connection
-// })
-// }))
+//  Store: new mongoStore({
+//      mongooseConnection: mongoose.connection
+//  })
+//  }))
 
 
 // Mongoose pour le lien avec la base de données. "jjba" sera le nom de la base de données.

@@ -1,35 +1,44 @@
-<!--Card-->
-<section class="jumbotron text-center" style="background-color: #fff;">
+{{!-- Arcs Card --}}
+<section class="jumbotron text-center bg-light">
     <div class="container">
-        <h1>Jojo's Bizarre Adventure parties</h1>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum."
+        <h1>Les différentes parties de Jojo's Bizarre Adventure</h1>
+        <p class="lead text-muted">Cet oeuvre à la particularité d'être découpé en parties distinctes,
+            chacune suivant un
+            protagoniste différent (mais qui ont tous pour point commun d'être être surnommés Jojo), son propre casting,
+            son
+            époque et son scénario, tout en s'inscrivant dans une continuité globale. Cela permet de suivre l'évolution
+            de l'histoire sur différentes périodes et lieux, tout en retrouvant
+            certains personnages d'une partie à l'autre. A l'heure actuelle, JoJo's Bizarre Adventure comporte 8 parties
+            :</p>
+        <p>
+            <a href="/manga" class="btn btn-primary my-2">Voir plus</a>
         </p>
     </div>
-</section>
 
-<div class="container">
-    <div class="row">
-        {{!-- Début de la boucle --}}
-        {{#each (limit arcs 4) }}
-        <div class="card col-xl-3 col-lg-4 col-md-6 mb-4" style="margin: 5px;">
-            <img src="{{ image }}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <a href="/admin/editArcs/{{ _id }}">
-                    <h5 class="card-title">{{ title }}</h5>
-                </a>
-                <p class="card-text">{{ content }}</p>
-                {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                <p class="card-text"><small class="text-muted">Ajouté le:
-                        {{ moment createDate format="DD-MM-YYYY" }}</small></p>
-                <a href="/manga" class="btn btn-primary">Voir plus</a>
+
+    {{!-- Arcs List --}}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            {{!-- Début de la boucle --}}
+            {{#each (limit arcs 10) }}
+            <div class="card-deck mb-3 text-center col-md-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                         <a href="/admin/editArcs/{{ _id }}"> 
+                            <h6 class="my-0 font-weight-normal">{{ title }}</h6>
+                         </a> 
+                    </div>
+                    <div class="card-body">
+                        <img src="{{ image }}" class="card-img-top" alt="...">
+                        <p class="justify mt-2">{{ stripTags content }}</p>
+                        {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                        <p class="card-text text-muted"><small>Ajouté le:
+                                {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                    </div>
+                </div>
             </div>
+            {{!-- Fin de la boucle --}}
+            {{/each }}
         </div>
-        {{!-- Fin de la boucle --}}
-        {{/each }}
     </div>
-</div>
-<!--card-->
+</section>

@@ -10,10 +10,8 @@ const fs = require('fs')
 module.exports = {
     // GET Page website Characters ( Utilisateur )
     getCharacters: (req, res) => {
-        /* Ci-dessous, syntax permetant d'attendre le retour de la requête + "schema.find({})" 
-           pour afficher le contenu de la base de données.*/
 
-        //    MISE EN RELATION AVEC la propriété "populate()"
+        //    MISE EN RELATION AVEC la propriété "populate() de mongoose"
         Character.find({})
             .populate('powers')
             .exec((err, data) => {
@@ -26,6 +24,8 @@ module.exports = {
     },
 
     // GET Page du formulaire création de Characters ( Admin )
+    /* Ci-dessous, syntax permetant d'attendre le retour de la requête + "schema.find({})" 
+           pour afficher le contenu de la base de données.*/
     formAddCharacter: async (req, res) => {
         const dbCharacter = await Character.find({}),
             dbPowers = await Powers.find({})
@@ -42,10 +42,10 @@ module.exports = {
         console.log('Controller form add character')
         // Demander de charger le model "character"
         const dbCharacter = await Character.find({})
-           
-         console.log(req.body)
-         console.log(dbCharacter)
-         console.log(req.file)
+
+        console.log(req.body)
+        console.log(dbCharacter)
+        console.log(req.file)
         // Définir le fichier image
         const image = req.file.originalname
 
@@ -76,7 +76,11 @@ module.exports = {
         res.render('admin/character/editCharacters', {
             article: articleID,
             powers: dbPowers,
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 5bf9a65f8dcd1d17de11ce1b4ae890d319bb58ab
         })
     },
 

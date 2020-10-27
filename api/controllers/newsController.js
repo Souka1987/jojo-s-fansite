@@ -5,7 +5,8 @@
 const multer = require('multer');
 const path = require('path');
 const News = require('../../database/models/News');
-const fs = require('fs')
+const fs = require('fs');
+
 
 
 module.exports = {
@@ -24,6 +25,7 @@ module.exports = {
         console.log(dbNews)
         // console.log(image)
 
+
         // Définir le fichier image
         const image = req.file.originalname
 
@@ -35,14 +37,14 @@ module.exports = {
 
             image: `/assets/images/arcs/${image}`,
             imageName: req.file.originalname,
-            name: req.body.name
-
+            name: req.body.name,
 
         }, (err) => {
             if (err) console.log(err)
 
             res.redirect('/')
         })
+
     },
 
     // GET Page du formulaire édition de Arcs ( Admin )
@@ -64,9 +66,9 @@ module.exports = {
         const articleID = await News.findById(req.params.id)
         const image = req.file.originalname
 
-         console.log(req.body)
-         console.log(req.file)
-         console.log(image)
+        console.log(req.body)
+        console.log(req.file)
+        console.log(image)
 
         // Pour modifier l'image
         News.findByIdAndUpdate(q, { // Définir les variables de son article

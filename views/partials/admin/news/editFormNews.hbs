@@ -1,4 +1,5 @@
 <section>
+    <h1 class="text-center">Edit News</h1>
     {{!--Ajout de l'url et de la méthode--}}
     <form action="/admin/editNews/{{ article._id }}" method="POST" enctype="multipart/form-data">
 
@@ -11,8 +12,18 @@
         {{!-- Input Contenu --}}
         <div class="form-group">
             <label for="exampleInputTextarea">Contenu {{ article.content }}</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content"
-                value="{{ article.content }}"></textarea>
+            <textarea class="form-control" id="content" placeholder="example textarea" name="content"></textarea>
+            {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+            <script>
+                var ed = CKEDITOR.replace('content', {
+                    entities: false, //pour la suppression des caractères spéciaux
+                    //uiColor: '#00000' //Coloriser les bordures de l'éditeur
+                });
+
+                ed.on('change', function (e) {//modification du contenu de l'éditeur
+                    console.log(e.editor.getData())
+                })
+            </script>
         </div>
 
         {{!-- Images --}}
@@ -24,9 +35,10 @@
         {{!-- Bouton valider --}}
         <button type="submit" class="btn btn-primary">Valider</button>
     </form>
-    <form action="/admin/deleteNews/{{ article._id }}" method="GET">
+    {{!-- <form action="/admin/deleteNews/{{ article._id }}" method="GET">
         <button type="submit" class="btn btn-danger mt-2">Supprimer</button>
-    </form>
+    </form> --}}
+    <a href="/admin/deleteNews/{{ article._id }}" class="btn btn-danger mt-2">Supprimer</a>
     </div>
 
 </section>

@@ -3,6 +3,7 @@
  * ********************************** */
 
 const path = require('path');
+const News = require('../../database/models/News');
 const Manga = require('../../database/models/Manga');
 const fs = require('fs')
 
