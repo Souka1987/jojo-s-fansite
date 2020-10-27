@@ -1,16 +1,16 @@
 <section>
     {{!--Ajout de l'url et la méthode --}}
-    <form action="/admin/editArcs/{{ article._id }}" method="POST" enctype="multipart/form-data">
+    <form action="/admin/editArcs/{{ _id }}" method="POST" enctype="multipart/form-data">
 
         {{!-- Input Titre --}}
         <div class="form-group">
-            <label for="text">Titre {{ article.title }}</label>
-            <input type="text" class="form-control" id="exampleInput" name="title" value="{{ article.title }}">
+            <label for="text">Titre {{ arcs.title }}</label>
+            <input type="text" class="form-control" id="exampleInput" name="title" value="{{ arcs.title }}">
         </div>
 
         {{!-- Input Contenu --}}
         <div class="form-group">
-            <label for="exampleInputTextarea">Contenu {{ article.content }}</label>
+            <label for="exampleInputTextarea">Contenu {{ arcs.content }}</label>
             <textarea class="form-control" id="content" placeholder="example textarea" name="content"
                 value="{{ article.content }}"></textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}

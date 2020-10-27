@@ -1,4 +1,5 @@
 <section>
+    <h1 class="text-center">News</h1>
     {{!--Ajout de l'url et de la méthode + multipart/form-data pour ajouter des fichiers--}}
     <form action="/admin/news" method="POST" enctype="multipart/form-data">
 
@@ -11,18 +12,15 @@
         {{!-- Input Contenu --}}
         <div class="form-group">
             <label for="exampleInputTextarea">Contenu </label>
-            <textarea class="form-control" id="content" placeholder="example textarea" name="content"></textarea>
+            <textarea class="form-control" id="content{{ _id }}" placeholder="example textarea" name="content"></textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
-            <script>
-                const ed = CKEDITOR.replace('content', {
-                    entities: false, //pour la suppression des caractères spéciaux
-                    //uiColor: '#00000' //Coloriser les bordures de l'éditeur
-                });
 
-                ed.on('change', function (e) {//modification du contenu de l'éditeur
-                    console.log(e.editor.getData())
+            <script>
+                CKEDITOR.replace('content{{ _id }}', {
+                    entities: false
                 })
             </script>
+
         </div>
 
         {{!-- Images --}}

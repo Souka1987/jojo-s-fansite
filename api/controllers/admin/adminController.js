@@ -1,16 +1,19 @@
 /*
  * Controller Page Admin
  * ********************************** */
-
+const News = require('../../../database/models/News'),
+    Arcs = require('../../../database/models/Arcs')
 
 module.exports = {
-    get: async( req, res) => {
-        res.render('admin')
+    get: async (req, res) => {
+        const dbNews = await News.find({}),
+            dbArcs = await Arcs.find({})
+        res.render('admin', {
+            article: dbNews,
+            arcs: dbArcs
+        })
     }
 }
-
-
-
 
 
 

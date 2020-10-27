@@ -27,7 +27,8 @@ mongoStore = require('connect-mongo'),
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
     {
         stripTags,
-        limit
+        limit,
+        inc
     } = require('./helpers/hbs'),
     port = process.env.PORT || 1870;
 
@@ -41,9 +42,10 @@ app.set('view engine', 'hbs');
 app.engine('hbs', hbs({
     helpers: {
         stripTags: stripTags,
-        limit: limit //"limit", pour la réduction des cards
+        limit: limit, //"limit", pour la réduction des cards
         /* Pour l'édition de texte afin de le faire passer dans le
                 moteur de templating "app.engine" */
+        inc: inc
     },
     extname: 'hbs',
     defaultLayout: 'main',

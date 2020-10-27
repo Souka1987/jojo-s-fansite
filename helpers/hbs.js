@@ -12,5 +12,9 @@ module.exports = {
             return [];
         }
         return arr.slice(0, limit);
+    },
+
+    inc: (value, option) => {
+        return parseInt(value) + 1
     }
 }

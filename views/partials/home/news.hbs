@@ -22,7 +22,7 @@
                     </div>
                     <div class="card-body p-1">
                         <img src="{{ image }}" class="card-img-top" alt="...">
-                        <p class="justify mt-2">{{ content }}</p>
+                        <p class="justify mt-2">{{ stripTags content }}</p>
                         {{!-- Récupérer le "createDate" pour ajouter la date --}}
                         <p class="card-text text-muted"><small>Ajouté le:
                                 {{ moment createDate format="DD-MM-YYYY" }}</small></p>
