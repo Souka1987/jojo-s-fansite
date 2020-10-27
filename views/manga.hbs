@@ -181,7 +181,7 @@
             {{!-- Liste des tomes --}}
             <div class="container text-center">
                 <h2 class="text-center mt-5">Liste des tomes</h2>
-                <div class="container mt-5 alert alert-indigo alert-solid" role="alert">
+                <div class="container mt-5 alert alert-dark alert-solid" role="alert">
                     <h5 class="text-center">Phantom Blood</h5>
                     <span class="text-center">1987-1988</span>
                     <p class="justify">Phantom Blood, connu initialement sous le nom Dai Ichi Bu Jonathan Joestar: Sono
@@ -200,7 +200,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     {{!-- Début de la boucle --}}
-                    {{#each (limit manga 4) }}
+                    {{#each manga }}
                     <div class="card-deck mb-3 text-center col-md-3">
                         <div class="card mb-4 shadow-sm">
                             <div class="card-header">
@@ -210,7 +210,8 @@
                             </div>
                             <div class="card-body">
                                 <img src="{{ image }}" class="card-img-top" alt="...">
-                                <p class="justify mt-2">{{ content }}</p>
+                                {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
+                                <p class="justify mt-2">{{ stripTags content }}</p>
                                 {{!-- Récupérer le "createDate" pour ajouter la date --}}
                                 <p class="card-text text-muted"><small>Ajouté le:
                                         {{ moment createDate format="DD-MM-YYYY" }}</small></p>

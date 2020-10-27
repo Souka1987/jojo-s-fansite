@@ -89,8 +89,8 @@ router.route('/images')
  * ***** */
 
 // Page admin
-router.route('/admin')
-    .get(adminController.get)
+ router.route('/admin')
+     .get(adminController.get)
 
 
 

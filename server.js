@@ -17,7 +17,7 @@ const
     hbs = require('express-handlebars'),
     mongoose = require('mongoose'),
     expressSession = require('express-session'),
-    MongoStore = require('connect-mongo')
+    MongoStore = require('connect-mongo'),
     
 
     

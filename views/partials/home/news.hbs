@@ -3,7 +3,7 @@
     <div class="container mt-5">
         <form class="form-inline my-2 justify-content-center">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn my-2 my-sm-0 text-white" type="submit">Search</button>
+            <button class="btn btn-primary my-2 my-sm-0 text-white" type="submit">Search</button>
         </form>
     </div>
 
@@ -12,7 +12,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             {{!-- Début de la boucle --}}
-            {{#each (limit news 4) }}
+            {{#each (limit news 3) }}
             <div class="card-deck mb-3 text-center col-md-4">
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header">

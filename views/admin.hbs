@@ -3,6 +3,61 @@
     <div class="container">
 
 
+        <div id="crud-articles" class="container mt-15vh pb-0">
+            <h2 class="container text-center bg-black p-2 ft-45 mb-0 ">Gestion des articles</h2>
+        </div>
+
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            NEWS
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Articles</th>
+                                                <th scope="col"><button type="button" class="btn btn-primary"
+                                                        data-toggle="modal" data-target="#exampleModal{{ _id }}"
+                                                        data-whatever="@mdo">Ajouter</button>
+                                                    {{!-- Appel du modal avec un ID dynamique de l'object dans la boucle --}}
+                                                    {{> admin/crudAdmin/modalAdd }}
+                                                    <button type="button" class="btn btn-success" data-toggle="modal"
+                                                        data-target="#exampleModal2{{ _id }}"
+                                                        data-whatever="@mdo">Editer</button>
+                                                    {{!-- Appel du modal avec un ID dynamique de l'object dans la boucle --}}
+                                                    {{> admin/crudAdmin/modalEdit }}
+                                                </th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 {{!-- / Admin --}}
