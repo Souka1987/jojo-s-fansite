@@ -91,15 +91,15 @@
                                     <div>
                                         <img src="{{ powers.image }}" class="card-img-top" alt="...">
                                         <div>
-                                            <p class="card-text">{{ powers.content1  }}</p>
+                                            <p class="card-text">{{ stripTags powers.content1  }}</p>
                                         </div>
                                         <div>
                                             <h5>{{ powers.title1 }}</h5>
-                                            <p class="card-text">{{ powers.content2 }}</p>
+                                            <p class="card-text">{{ stripTags powers.content2 }}</p>
                                         </div>
                                         <div>
                                             <h5>{{ powers.title2 }}</h5>
-                                            <p class="card-text">{{ powers.content3 }}</p>
+                                            <p class="card-text">{{ stripTags powers.content3 }}</p>
                                             {{!-- Récupérer le "createDate" pour ajouter la date --}}
                                             <p class="card-text"><small class="text-muted">Ajouté le:
                                                     {{ moment createDate format="DD-MM-YYYY" }}</small></p>

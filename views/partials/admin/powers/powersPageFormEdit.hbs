@@ -1,60 +1,57 @@
 <section>
-    {{!--Ajout de l'url et de la méthode + "multipart/form-data" pour l'ajout de fichiers --}}
-    <form action="/admin/editPowers/{{ _id }}" method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <h1 class="text-center text-dark">Edition Powers</h1>
+        {{!--Ajout de l'url et de la méthode + "multipart/form-data" pour l'ajout de fichiers --}}
+        <form action="/admin/editPowers/{{ _id }}" method="POST" enctype="multipart/form-data">
 
-        {{!-- Input Name --}}
-        <div class="form-group">
-            <label for="text">Nom {{ name }}</label>
-            <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
-        </div>
+            {{!-- Input Name --}}
+            <div class="form-group">
+                <label for="text">Nom {{ name }}</label>
+                <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
+            </div>
 
-        {{!-- Input Contenu --}}
-        <div class="form-group">
-            <label for="exampleInputTextarea">Contenu 1 {{ content1 }}</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content1"
-                value="{{ content1 }}"></textarea>
-        </div>
+            {{!-- Input Contenu --}}
+            <div class="form-group">
+                <label for="exampleInputTextarea">Contenu 1 {{ content1 }}</label>
+                <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content1"
+                    value="{{ content1 }}"></textarea>
+            </div>
 
-        {{!-- Input Titre --}}
-        <div class="form-group">
-            <label for="text">Titre 1 {{ title1 }}</label>
-            <input type="text" class="form-control" id="exampleInput" name="title1" value="{{ title1 }}">
-        </div>
+            {{!-- Input Titre --}}
+            <div class="form-group">
+                <label for="text">Titre 1 {{ title1 }}</label>
+                <input type="text" class="form-control" id="exampleInput" name="title1" value="{{ title1 }}">
+            </div>
 
-        {{!-- Input Contenu --}}
-        <div class="form-group">
-            <label for="exampleInputTextarea">Contenu 2 {{ content2 }}</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content2"
-                value="{{ content2 }}"></textarea>
-        </div>
+            {{!-- Input Contenu --}}
+            <div class="form-group">
+                <label for="exampleInputTextarea">Contenu 2 {{ content2 }}</label>
+                <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content2"
+                    value="{{ content2 }}"></textarea>
+            </div>
 
-        {{!-- Input Titre --}}
-        <div class="form-group">
-            <label for="text">Titre 2 {{ title2 }}</label>
-            <input type="text" class="form-control" id="exampleInput" name="title2" value="{{ title2 }}">
-        </div>
+            {{!-- Input Titre --}}
+            <div class="form-group">
+                <label for="text">Titre 2 {{ title2 }}</label>
+                <input type="text" class="form-control" id="exampleInput" name="title2" value="{{ title2 }}">
+            </div>
 
-        {{!-- Input Contenu --}}
-        <div class="form-group">
-            <label for="exampleInputTextarea">Contenu 3 {{ content3 }}</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content3"
-                value="{{ content3 }}"></textarea>
-        </div>
+            {{!-- Input Contenu --}}
+            <div class="form-group">
+                <label for="exampleInputTextarea">Contenu 3 {{ content3 }}</label>
+                <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content3"
+                    value="{{ content3 }}"></textarea>
+            </div>
 
 
-        {{!-- Images --}}
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
-        </div>
+            {{!-- Images --}}
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+            </div>
 
-        {{!-- Bouton valider --}}
-        <button type="submit" class="btn btn-primary">Valider</button>
-    </form>
-
-    {{!-- Bouton de suppression--}}
-
-    <form action="/admin/deletePowers/{{ article._id }}" method="GET" class="mt-2">
-        <button type="submit" class="btn btn-danger">Supprimer</button>
-    </form>
+            {{!-- Bouton valider --}}
+            <button type="submit" class="btn btn-info">Modifier</button>
+        </form>
+    </div>
 </section>

@@ -2,44 +2,22 @@
  * Controller Page Admin
  * ********************************** */
 const News = require('../../../database/models/News'),
-    Arcs = require('../../../database/models/Arcs')
+    Arcs = require('../../../database/models/Arcs'),
+    Character = require('../../../database/models/Character'),
+    Powers = require('../../../database/models/Powers')
 
 module.exports = {
     get: async (req, res) => {
         const dbNews = await News.find({}),
-            dbArcs = await Arcs.find({})
+            dbArcs = await Arcs.find({}),
+            dbCharacter = await Character.find({}),
+            dbPowers = await Powers.find({})
         res.render('admin', {
             news: dbNews,
-            arcs: dbArcs
+            arcs: dbArcs,
+            character: dbCharacter,
+            powers: dbPowers
         })
     }
 }
 
-
-
-// const Character = require('../../../database/models/Character'),
-//     Powers = require('../../../database/models/Powers'),
-//     News = require('../../../database/models/News'),
-//     Manga = require('../../../database/models/Manga'),
-//     Arcs = require('../../../database/models/Arcs')
-
-// module.exports = {
-//     get: async (req, res) => {
-//         const dbManga = await Manga.find({}),
-//             dbNews = await News.find({}),
-//             dbArcs = await Arcs.find({}),
-//             dbCharacter = await Character.find({}),
-//             dbPowers = await Powers.find({})
-
-//         res.render('admin', { // "res.render", rend une vue
-//             layout: "adminLayout",
-//             arcs: dbArcs,
-//             news: dbNews,
-//             manga: dbManga,
-//             character: dbCharacter,
-//             power: dbPowers
-
-//         })
-
-//     }
-// }

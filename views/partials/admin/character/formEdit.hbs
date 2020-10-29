@@ -1,56 +1,47 @@
 <section>
-    <div class="container">
-        {{ lol }}
-        {{!--Ajout de l'url et de la méthode. "multipart/form-data" sert à prendre en compte le jpeg--}}
-        <form action="/admin/editCharacters/{{ article._id }}" method="POST" enctype="multipart/form-data">
+    <h1 class="text-center text-dark">Edition Characters</h1>
+    {{!--Ajout de l'url et de la méthode. "multipart/form-data" sert à prendre en compte le jpeg--}}
+    <form action="/admin/editCharacters/{{ character._id }}" method="POST" enctype="multipart/form-data">
 
-            {{!-- Input Nom du personnage --}}
-            <div class="form-group">
-                <label for="text">Name {{ article.name }}</label>
-                <input type="text" class="form-control" id="exampleInput" name="name" value="{{ article.name }}">
-            </div>
+        {{!-- Input Nom du personnage --}}
+        <div class="form-group">
+            <label for="text">Name {{ character.name }}</label>
+            <input type="text" class="form-control" id="exampleInput" name="name" value="{{ character.name }}">
+        </div>
 
-            {{!-- Input Contenu --}}
-            <div class="form-group">
-                <label for="exampleInputTextarea">Contenu {{ article.content }}</label>
-                <textarea class="form-control" id="content" placeholder="example textarea" name="content"
-                    value="{{ article.content }}"></textarea>
-                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
-                <script>
-                    const ed = CKEDITOR.replace('content', {
-                        entities: false, //pour la suppression des caractères spéciaux
-                        //uiColor: '#00000' //Coloriser les bordures de l'éditeur
-                    });
+        {{!-- Input Contenu --}}
+        <div class="form-group">
+            <label for="exampleInputTextarea">Contenu {{ character.content }}</label>
+            <textarea class="form-control" id="content" placeholder="example textarea" name="content"
+                value="{{ character.content }}"></textarea>
+            {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+            <script>
+                const ed = CKEDITOR.replace('content', {
+                    entities: false, //pour la suppression des caractères spéciaux
+                    //uiColor: '#00000' //Coloriser les bordures de l'éditeur
+                });
 
-                    ed.on('change', function (e) {//modification du contenu de l'éditeur
-                        console.log(e.editor.getData())
-                    })
-                </script>
-            </div>
+                ed.on('change', function (e) {//modification du contenu de l'éditeur
+                    console.log(e.editor.getData())
+                })
+            </script>
+        </div>
 
-            {{!-- Input du Pouvoir --}}
-            <select class="custom-select custom-select-sm" name="powers">
-                <option>Selectionner un pouvoir</option>
-                {{#each powers }}
-                <option value="{{ _id }}">{{ name }}</option>
-                {{/each }}
-            </select>
+        {{!-- Input du Pouvoir --}}
+        <select class="custom-select custom-select-sm" name="powers">
+            <option>Selectionner un pouvoir</option>
+            {{#each powers }}
+            <option value="{{ _id }}">{{ name }}</option>
+            {{/each }}
+        </select>
 
-            {{!-- Input Images --}}
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
-            </div>
+        {{!-- Input Images --}}
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+        </div>
 
-            {{!-- Bouton valider --}}
-            <button type="submit" class="btn btn-primary">Valider</button>
-        </form>
-
-        {{!-- Bouton de suppression--}}
-
-        <form action="/admin/deleteCharacters/{{ article._id }}" method="GET" class="mt-2">
-            <button type="submit" class="btn btn-danger">Supprimer</button>
-        </form>
-
-    </div>
+        {{!-- Bouton valider --}}
+        <button type="submit" class="btn btn-info">Modifier</button>
+    </form>
 </section>

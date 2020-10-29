@@ -1,4 +1,6 @@
 <section>
+    <div class="container">
+        <h1 class="text-center text-dark">Ajouter Powers</h1>
     {{!--Ajout de l'url et de la méthode--}}
     <form action="/admin/powers" method="POST" enctype="multipart/form-data">
 
@@ -11,7 +13,7 @@
         {{!-- Input Contenu --}}
         <div class="form-group">
             <label for="exampleInputTextarea">Contenu 1</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content1"></textarea>
+            <textarea class="form-control" id="editor" placeholder="example textarea" name="content1"></textarea>
         </div>
 
         {{!-- Input Titre --}}
@@ -49,6 +51,7 @@
         <div>
             <button type="submit" class="btn btn-primary">Valider</button>
             <button type="submit" class="btn btn-secondary">Annuler</button>
+        </div>
         </div>
     </form>
 </section>

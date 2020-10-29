@@ -1,5 +1,5 @@
 <section>
-    <h1 class="text-center">Edition Arcs</h1>
+    <h1 class="text-center text-dark">Edition Arcs</h1>
     {{!--Ajout de l'url et la méthode --}}
     <form action="/admin/editArcs/{{ _id }}" method="POST" enctype="multipart/form-data">
 
@@ -16,13 +16,13 @@
             <p id='ckeditor' hidden> {{ content }} </p>
             <textarea class="form-control" id="editor4" placeholder="example textarea" name="content" value="{{ content }}" ></textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
-            <script>
-                const edArcs  = CKEDITOR.replace('editor4', {
+             <script>
+                const ed  = CKEDITOR.replace('editor4', {
                     entities: false, // Pour la suppression des caractères spéciaux
                     //uiColor: '#00000' // Coloriser les bordures de l'éditeur
                 });
 
-                edArcs.on('change', function (e) {// Modification du contenu de l'éditeur
+                ed.on('change', function (e) {// Modification du contenu de l'éditeur
                     console.log(e.editor.getData())
                 });
 
