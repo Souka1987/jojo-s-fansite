@@ -40,7 +40,7 @@
                                         </thead>
                                         <tbody>
                                             {{!-- Début de la boucle --}}
-                                            {{#each article }}
+                                            {{#each news }}
 
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
@@ -100,13 +100,13 @@
                                             {{!-- Début de la boucle --}}
                                             {{#each arcs }}
 
-                                            {{!-- <tr>
+                                            <tr>
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{title}}</td>
                                                 <td>{{> admin/crudAdmin/arcs/modalEditArcs }}
                                                     {{> admin/crudAdmin/arcs/modalDeleteArcs }}
                                                 </td>
-                                            </tr> --}}
+                                            </tr>
 
                                             {{/each }}
                                             {{!-- Fin de la boucle --}}
@@ -120,7 +120,7 @@
                 </div>
             </div>
         </div>
-{{!-- /arcs --}}
+        {{!-- /arcs --}}
 
 
 

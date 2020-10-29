@@ -103,7 +103,7 @@ router.route('/admin/arcs')
 
 router.route('/admin/editArcs/:id')
     // GET récupéreration du formulaire 
-    .get(arcsController.pageFormEditArcs)
+    .get(arcsController.arcsPageFormEdit)
     // POST formulaire editArcs
     .post(uploadArcs.single('image'), arcsController.editArcs)
 

@@ -44,7 +44,7 @@ module.exports = {
     },
 
     // GET Page du formulaire édition de Arcs ( Admin )
-    pageFormEditArcs: async (req, res) => {
+    arcsPageFormEdit: async (req, res) => {
         const articleID = await Arcs.findById(req.params.id)
         console.log(articleID)
         res.render('admin/arcs/editArcs', {

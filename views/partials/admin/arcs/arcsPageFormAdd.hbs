@@ -1,5 +1,5 @@
 <section>
-    <h1 class="text-center">Arcs</h1>
+    <h1 class="text-center">Ajouter Arcs</h1>
     {{!--Ajout de l'url et la méthode --}}
     <form action="/admin/arcs" method="POST" enctype="multipart/form-data">
 
@@ -12,15 +12,15 @@
         {{!-- Input Contenu --}}
         <div class="form-group">
             <label for="exampleInputTextarea">Contenu</label>
-            <textarea class="form-control" id="content" placeholder="example textarea" name="content"></textarea>
+            <textarea class="form-control" id="editor3" placeholder="example textarea" name="content"></textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
             <script>
-                const ed = CKEDITOR.replace('content', {
-                    entities: false, //pour la suppression des caractères spéciaux
+                const arcs = CKEDITOR.replace('editor3', {
+                    entities: false, // Pour la suppression des caractères spéciaux
                     //uiColor: '#00000' //Coloriser les bordures de l'éditeur
                 });
 
-                ed.on('change', function (e) {//modification du contenu de l'éditeur
+                arcs.on('change', function (e) {// Modification du contenu de l'éditeur
                     console.log(e.editor.getData())
                 })
             </script>

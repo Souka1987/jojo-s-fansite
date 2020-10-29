@@ -9,7 +9,7 @@ module.exports = {
         const dbNews = await News.find({}),
             dbArcs = await Arcs.find({})
         res.render('admin', {
-            article: dbNews,
+            news: dbNews,
             arcs: dbArcs
         })
     }
