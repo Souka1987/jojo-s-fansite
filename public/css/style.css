@@ -4,11 +4,11 @@ section {
   padding: 80px 0px; }
 
 p {
-  font-family: "montserrat", "roboto", "lato", "sans-serif";
-  font-size: small; }
+  font-family: "Montserrat", sans-serif;
+  color: #1A171B; }
 
 h6 {
-  font-family: "lato", "sans-serif"; }
+  font-size: 14px; }
 
 ul > li {
   text-decoration: non; }
@@ -27,20 +27,26 @@ ul > li {
   border-color: #fbfcfd; }
 
 .banner {
-  background-color: #5800e8;
-  border-color: #5800e8; }
+  background-color: #5700E3;
+  border-color: #5700E3; }
 
 .nav-link {
   margin: 10px;
   color: darkgrey;
-  font-family: "lato", "sans-serif";
+  font-family: "montserrat-medium", "sans-serif";
   font-size: 14px; }
 
-.btn-admin {
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125); }
+.img-bg {
+  background: #fff; }
 
-.text-justify {
-  color: black; }
+.news-header {
+  background: #f2f2f2;
+  border-bottom: none; }
+
+.text-news {
+  font-family: "montserrat-light", "sans-serif"; }
+
+.card-text {
+  font-size: 13px; }
 
 /*# sourceMappingURL=style.css.map */
