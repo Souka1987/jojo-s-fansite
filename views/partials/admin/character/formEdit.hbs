@@ -12,11 +12,11 @@
         {{!-- Input Contenu --}}
         <div class="form-group">
             <label for="exampleInputTextarea">Contenu {{ character.content }}</label>
-            <textarea class="form-control" id="content" placeholder="example textarea" name="content"
+            <textarea class="form-control" id="editor6" placeholder="example textarea" name="content"
                 value="{{ character.content }}"></textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
             <script>
-                const ed = CKEDITOR.replace('content', {
+                const ed = CKEDITOR.replace('editor6', {
                     entities: false, //pour la suppression des caractères spéciaux
                     //uiColor: '#00000' //Coloriser les bordures de l'éditeur
                 });

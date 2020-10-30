@@ -16,7 +16,7 @@ const MangaSchema = new mongoose.Schema({
 
 })
 
-// Modèle, pour mettre les infos dans la base de données.
+// Pour récupérer les data de la base de données.
 const Manga = mongoose.model('manga', MangaSchema)
 
 // On peut aussi le faire d'une autre manière

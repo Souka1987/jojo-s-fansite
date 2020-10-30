@@ -27,7 +27,7 @@ module.exports = {
             ...req.body,
 
             // Aller chercher le dossier dans lequel les images seront stockées
-            image: `/assets/images/arcs/${image}`,
+            image: `/assets/images/characters/${image}`,
             imageName: req.file.originalname,
             name: req.body.name
 
@@ -59,17 +59,17 @@ module.exports = {
 
         const image = req.file.originalname
         // Pour modifier l'image
-        Powers.findByIdAndUpdate(q, { // Définir les variables de son article
+        Powers.findByIdAndUpdate(q, { // Demander de chercher la variable selon son ID afin que celui-ci soit modifier
 
-            // Schéma par défaut
+            // Récupérer le schéma par défaut
             ...req.body,
             // Aller chercher le chemin de l'image à modifier
-            image: `assets/images/arcs/${image}`,
+            image: `assets/images/characters/${image}`,
             name: req.body.name
 
         }, (err) => {
             if (err) console.log(err); // Si il y a une erreur, l'afficher
-            res.redirect('/characters') // sinon rediriger sur la page "characters"
+            res.redirect('/characters') // Sinon rediriger sur la page "characters"
 
         })
     },
@@ -90,8 +90,8 @@ module.exports = {
             ciblant que son id*/
 
             if (err) return console.log(err)
-            Powers.deleteOne({ // Pour suprimer un document à la fois par son ID
-                _id: req.params.id // Toujours définir l'ID
+            Powers.deleteOne({ // Supprimer un document à la fois par son ID
+                _id: req.params.id // Chercher l'url du "power" en question
             }, (err) => {
                 if (!err) return res.redirect('/characters') // Rediriger vers la page "characters"
                 else res.send(err) // Sinon afficher l'érreur

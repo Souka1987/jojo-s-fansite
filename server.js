@@ -16,8 +16,7 @@ const
     // Handlebars sert à créer des modèles de pages web réutilisables
     hbs = require('express-handlebars'),
     mongoose = require('mongoose'),
-    expressSession = require('express-session'),
-    MongoStore = require('connect-mongo'),
+    
     
 
     

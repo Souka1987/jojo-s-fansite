@@ -14,8 +14,7 @@
         <div class="form-group">
             <label for="exampleInputTextarea">Contenu</label>
             <p id='ckeditor' hidden> {{ content }} </p>
-            <textarea class="form-control" id="editor2" placeholder="example textarea" name="content"
-                value="{{ content }}"></textarea>
+            <textarea class="form-control" id="editor2" placeholder="example textarea" name="content"></textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
              <script>
                 const edNews = CKEDITOR.replace('editor2', {
