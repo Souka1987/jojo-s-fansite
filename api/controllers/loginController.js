@@ -3,9 +3,7 @@
  * ********************************** */
 
 module.exports = {
-    // GET Page website login ( Utilisateur )
-    getUsers: async (req, res) => {
+    get: async( req, res) => {
         res.render('login')
     }
-
 }

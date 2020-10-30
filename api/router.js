@@ -3,8 +3,8 @@ const express = require('express'),
     router = express.Router(),
     path = require('path'),
     uploadArcs = require('./config/multerArcs'),
-    uploadCharacters = require('./config/multerCharacters'),
-    expressSession = require('express-session')
+    uploadCharacters = require('./config/multerCharacters')
+    // expressSession = require('express-session')
  
 
 
@@ -19,7 +19,6 @@ const homeController = require('./controllers/homeController'),
     mangaController = require('./controllers/mangaController'),
     //imagesController = require('./controllers/imagesController'),
     loginController = require('./controllers/loginController'),
-    loginAuthController = require('./controllers/loginAuthController'),
     // messageController = require('./controllers/messageController'),
     // registerController = require('./controllers/registerController'),
     // profileController = require('./controllers/profileController'),
@@ -74,7 +73,7 @@ router.route('/manga')
 // .get(contactController.get)
 
 router.route('/login')
-    .get(loginController.getUsers)
+    .get(loginController.get)
 
 // router.route('/message')
 // .get(messageController.get)
@@ -206,10 +205,7 @@ router.route('/admin/deleteManga/:id')
 
 /************************************** */
 
-// LoginAuth
-router.route('/admin/loginAuth')
-    // GET récupération du formulaire loginAuth
-    .get(loginAuthController.loginAuth)
+
 
 
 

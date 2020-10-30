@@ -7,6 +7,9 @@ p {
   font-family: "montserrat", "roboto", "lato", "sans-serif";
   font-size: small; }
 
+h6 {
+  font-family: "lato", "sans-serif"; }
+
 ul > li {
   text-decoration: non; }
 
@@ -39,8 +42,5 @@ ul > li {
 
 .text-justify {
   color: black; }
-
-.img {
-  background-image: url("/public/images/bg.png"); }
 
 /*# sourceMappingURL=style.css.map */
