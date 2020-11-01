@@ -5,30 +5,95 @@ section {
 
 p {
   font-family: "Montserrat", sans-serif;
-  color: #1A171B; }
+  color: #1A171B;
+  font-size: 13px; }
+
+li {
+  font-family: "Montserrat", sans-serif;
+  color: #1A171B;
+  font-size: 13px; }
+
+h1 {
+  font-family: "Montserrat", "sans-serif"; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-family: "Montserrat", "sans-serif"; }
 
 h6 {
-  font-size: 14px; }
+  font-size: 14px;
+  font-family: "Montserrat", "sans-serif"; }
 
 ul > li {
   text-decoration: non; }
 
+footer {
+  background-color: #f2f2f2; }
+
+.btn {
+  background-color: #4B0082;
+  border: #4B0082;
+  color: #fff; }
+
+.alert-analyse {
+  font-family: "Montserrat", "sans-serif";
+  font-size: 12px;
+  padding: 1px;
+  border-radius: none;
+  color: #2e0079;
+  background-color: #deccfa;
+  border-color: #d0b8f9; }
+
+.text-analyse {
+  font-size: 11px;
+  margin: 5px;
+  padding: 10px;
+  font-family: "Montserrat-Regular", "sans-serif"; }
+
+.manga-title {
+  border: 1px solid #BA55D3;
+  background: #FFF;
+  padding: 0px 12px;
+  line-height: 28px; }
+
+.tome-title {
+  font-family: "Montserrat", "sans-serif";
+  padding: 0 7px;
+  color: #fff;
+  display: inline-block;
+  background-color: #4B0082; }
+
+.title-story {
+  color: #4B0082; }
+
+.tome-card {
+  background-color: #f1f1f183;
+  padding: 50px; }
+
+.chara-card {
+  background-color: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  border: none; }
+
 .text-author {
-  background-color: #5800e8;
-  border-color: #5800e8; }
+  background-color: #4B0082;
+  border-color: #4B0082; }
+
+.bio {
+  border: 1px solid #BA55D3;
+  background: #FFF;
+  padding: 0px 12px;
+  line-height: 28px; }
 
 .jumbotron-manga {
-  background-color: #5800e8;
-  border-color: #5800e8; }
-
-.alert-light {
-  color: #7c7e81;
-  background-color: #fcfdfe;
-  border-color: #fbfcfd; }
+  background-color: #4B0082;
+  border-color: #4B0082; }
 
 .banner {
-  background-color: #5700E3;
-  border-color: #5700E3; }
+  background-color: #4B0082;
+  border-color: #4B0082; }
 
 .nav-link {
   margin: 10px;
@@ -39,14 +104,13 @@ ul > li {
 .img-bg {
   background: #fff; }
 
-.news-header {
-  background: #f2f2f2;
-  border-bottom: none; }
-
 .text-news {
   font-family: "montserrat-light", "sans-serif"; }
 
 .card-text {
+  font-size: 13px; }
+
+.footer {
   font-size: 13px; }
 
 /*# sourceMappingURL=style.css.map */

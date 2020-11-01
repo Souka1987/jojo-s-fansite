@@ -9,7 +9,8 @@
                 <div class="jumbotron-manga p-4 p-md-5 text-white rounded">
                     <div class="">
                         <h1 class="display-4 font-italic">A propos du manga</h1>
-                        <p class="lead">JoJo's Bizarre Adventure est toujours en publication à l'heure actuelle et a
+                        <p class="text-white">JoJo's Bizarre Adventure est toujours en publication à l'heure actuelle et
+                            a
                             dépassé les 100 volumes, devenant très vite une oeuvre majeure de la bande dessinée
                             japonaise. La
                             série à laissé depuis le début de sa parution une empreinte dans la culture populaire,
@@ -19,36 +20,39 @@
                 </div>
 
 
-                <div class="jumbotron alert alert-light p-4 p-md-5 text-muted rounded mt-5">
-                    
-                        <h5 class="lead">Aperçu</h5>
-                        <p class="text-justify">Jojo's Bizarre Adventure est un manga
-                            de
-                            type
-                            Shonen et a
-                            partir
-                            de la partie 7 de type
-                            Seinen (le Shonen est un manga s'adressant à un public d'adolescents tandis
-                            que
-                            le
-                            Seinen s'adresse à un public adulte du moins plus mature). En tant que tel,
-                            l'accent
-                            est mis sur les combats et les personnages. Cependant,
-                            contrairement à la plupart des autres mangas de ce type, les combats se
-                            remportent
-                            davantage grâce à la réflexion et à l'ingéniosité que par la force brute.
+                <div class="p-4 p-md-5 rounded mt-5">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="manga-title font-weight-bold">APERCU</h4>
+                    </div>
+                    <p class="text-justify">Jojo's Bizarre Adventure est un manga
+                        de
+                        type
+                        Shonen et a
+                        partir
+                        de la partie 7 de type
+                        Seinen (le Shonen est un manga s'adressant à un public d'adolescents tandis
+                        que
+                        le
+                        Seinen s'adresse à un public adulte du moins plus mature). En tant que tel,
+                        l'accent
+                        est mis sur les combats et les personnages. Cependant,
+                        contrairement à la plupart des autres mangas de ce type, les combats se
+                        remportent
+                        davantage grâce à la réflexion et à l'ingéniosité que par la force brute.
 
-                            Cela est rendu possible grâce à la complexité et à la richesse des pouvoirs
-                            des
-                            personnages. En effet, les protagonistes sont la majorité du temps en
-                            désavantage
-                            évident, ce qui les poussent à utiliser intelligemment tous les moyens à
-                            leur
-                            disposition pour surmonter les épreuves auxquelles ils sont
-                            confrontés.</p>
+                        Cela est rendu possible grâce à la complexité et à la richesse des pouvoirs
+                        des
+                        personnages. En effet, les protagonistes sont la majorité du temps en
+                        désavantage
+                        évident, ce qui les poussent à utiliser intelligemment tous les moyens à
+                        leur
+                        disposition pour surmonter les épreuves auxquelles ils sont
+                        confrontés.</p>
                     <br>
                     <br>
-                    <h5 class="lead">L'histoire</h5>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="manga-title font-weight-bold">L'HISTOIRE</h4>
+                    </div>
                     <p class="text-justify">
                         L'histoire de JoJo’s Bizarre Adventure relate la relation mortelle entre
                         Dio
@@ -108,7 +112,9 @@
                     </p>
                     <br>
                     <br>
-                    <h5 class="lead"></h5>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="manga-title font-weight-bold">LES PARTIES</h4>
+                    </div>
                     <p class="text-justify">
                         JoJo's Bizarre Adventure a la particularité d'être découpé en parties
                         distinctes, chacune suivant un protagoniste différent (mais qui ont tous
@@ -129,7 +135,9 @@
                     </p>
                     <br>
                     <br>
-                    <h5 class="lead">Inspirations</h5>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="manga-title font-weight-bold">INSPIRATIONS</h4>
+                    </div>
                     <p class="text-justify">
 
                         Conception
@@ -175,53 +183,147 @@
                         universels et unificateurs33.
                     </p>
                 </div>
-
-
-
-            {{!-- Liste des tomes --}}
-            <div class="container text-center">
-                <h2 class="text-center mt-5">Liste des tomes</h2>
-                <div class="container mt-5 alert alert-dark alert-solid" role="alert">
-                    <h5 class="text-center">Phantom Blood</h5>
-                    <span class="text-center">1987-1988</span>
-                    <p class="justify">Phantom Blood, connu initialement sous le nom Dai Ichi Bu Jonathan Joestar: Sono
-                        Seishun (第一部 ジョナサン·ジョースター ―その青春―, Dai Ichi Bu Jonasan Jōsutā Sono Seishun?, Jonathan Joestar: Sa
-                        jeunesse), est la première partie du manga JoJo's Bizarre Adventure écrit et dessiné par
-                        Hirohiko Araki. Elle a été publiée en 1987 dans le magazine Weekly Shōnen Jump et comporte 44
-                        chapitres compilés dans les volumes 1 à 5.
-                    </p>
-                    <p>
-                        <a href="" class="btn btn-primary my-2">Voir plus</a>
-                    </p>
-                </div>
             </div>
-
-            {{!-- Card --}}
-            <div class="container">
-                <div class="row justify-content-center">
-                    {{!-- Début de la boucle --}}
-                    {{#each manga }}
-                    <div class="card-deck mb-3 text-center col-md-3">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-header">
-                                <a href="/admin/editManga/{{ _id }}">
-                                    <h6 class="my-0 font-weight-normal">{{ title }}</h6>
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <img src="{{ image }}" class="card-img-top" alt="...">
-                                {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
-                                <p class="justify mt-2">{{ stripTags content }}</p>
-                                {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                                <p class="card-text text-muted"><small>Ajouté le:
-                                        {{ moment createDate format="DD-MM-YYYY" }}</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    {{/each }}
-                </div>
-            </div>
-            {{!-- / Card --}}
         </div>
+    </div>
+
+
+
+    {{!-- Liste des tomes --}}
+    <div class="container text-center">
+        <h2 class="text-center mt-5 display-4 tome-title">Liste des tomes</h2>
+    </div>
+
+
+    {{!-- Nav Tabs --}}
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="" data-toggle="tab" href="#" role="tab" aria-controls="home"
+                    aria-selected="true">Phantom Blood</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="" data-toggle="tab" href="#" role="tab" aria-controls="profile"
+                    aria-selected="false">Battle Tendency</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="" data-toggle="tab" href="#" role="tab" aria-controls="contact"
+                    aria-selected="false">Stardust Crusaders</a>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <div class="container text-center">
+        <div class="container tome-card">
+            <h5 class="text-center">1987-1988</h5>
+
+            {{!-- Info --}}
+            <ul class="list-group justify-content-center list-group-horizontal-md">
+                <li class="list-group-item">Type: Shonen</li>
+                <li class="list-group-item">Genre: Nekketsu</li>
+                <li class="list-group-item">Editeur: Shūeisha</li>
+                <li class="list-group-item">Animé: David Production (2012)</li>
+            </ul>
+
+            {{!-- Text --}}
+            <p class="text-justify mt-5">Phantom Blood, connu initialement sous le nom de 1ère partie : La jeunesse de
+                Jonathan
+                Joestar (第1部 ジョナサン·ジョースター ―その青春―, Dai Ichi Bu Jonasan Jōsutā Sono Seishun) est la première partie du
+                manga JoJo's Bizarre Adventure. Elle a été publiée en 1987 dans le magazine Weekly Shōnen Jump et
+                comporte
+                44
+                chapitres compilés dans les volumes 1 à 5. La version française a d'abord été publiée en intégralité par
+                J'ai lu, et est éditée par Tonkam depuis juillet 2014. Cette partie a eu droit à une série animé de 9
+                épisodes par le studio d'animation David Production sortie en 2012.</p>
+
+            <h6 class="font-weight-bold title-story">La petite histoire</h6>
+
+            <p class="text-justify">
+                Nous sommes à la fin du xixe siècle en plein Royaume-Uni de l'ère victorienne. <span
+                    class="font-weight-bold">Lord Joestar</span> voit arriver
+                dans sa
+                maison le jeune <span class="font-weight-bold">Dio Brando</span> , le fils de l'homme dont il croit qui
+                lui a sauvé la vie. Reconnaissant, il
+                l'adopte après la mort de son père, mais le jeune homme s'avère ambitieux et n'a pour seul but que de
+                s'emparer de la fortune de la famille Joestar. Dio fera tout pour nuire et humilier <span
+                    class="font-weight-bold">Jonathan</span>, le fils de
+                Lord
+                Joestar, afin de le détruire psychologiquement et atteindre son but. Voyant que cela s'avère vain et
+                vaincu par sa détermination, il lui laisse un répit de plusieurs années.
+
+                Tous deux désormais à l'université, il semblerait presque être des frères unis. Malgré les bonnes
+                intentions de Dio, Jonathan doute toujours de celui-ci jusqu'à ce qu'il découvre que Dio a commis un
+                parricide et
+                tente désormais d'empoisonner aussi son père adoptif. Lorsqu'un mystérieux masque de pierre antique
+                d'origine aztèque
+                renfermant d'étranges pouvoirs apparaît, leur rivalité latente prend des proportions dramatiques et
+                surnaturelles. Jonathan révèle au grand jour les plans machiavéliques de son frère adoptif. Acculé et
+                sur le point de se retrouver livré à la police, Dio utilise cet étrange artefact. Utilisant le sang de
+                Lord Joestar, il abandonne son humanité et devient un vampire, craignant la
+                lumière du jour et s'abreuvant de sang humain. Il tue les policiers présents avant de s'attaquer au
+                héros encore sous le choc de la mort de son père.
+
+                Seul l'apprentissage d'une ancienne technique martiale tibétaine, l'Onde (hamon en japonais), lui
+                permettra de vaincre celui
+                qui change irrémédiablement sa destinée. Aidé de son nouveau compagnon <span
+                    class="font-weight-bold">Robert E.O Speedwagon</span> et de son maître, le baron <span
+                    class="font-weight-bold">William Antonio Zeppeli</span>, il se prépare enfin à défaire les légions
+                de zombies envoyés par son ancien frère adoptif pour
+                l'exterminer. Le combat qui les oppose atteint son paroxysme en opposant le côté le plus noble de
+                l'humain à son aspect le plus abject.
+            </p>
+            <div class="container">
+                {{!-- Icon --}}
+                <div class="alert alert-analyse" role="alert">
+                    <svg width="30" height="30" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+
+                        <p class="text-analyse"> <span class="font-weight-bold">Point of view</span>: Speedwagon a évoqué
+                            le fait que Dio serait né mauvais. vraiment ? Les êtres-humains
+                            peuvent naître entièment bon ou entièrement mauvais ? Un
+                            être-humain ne naît t-il pas neutre ? Son environnement et son éducation ne façonnent-ils pas sa
+                            personalité et son caractère ? Le débat reste ouvert à ce sujet.</p>
+                    </svg>
+                </div>
+            </div>
+            <p>
+                <a href="https://www.amazon.fr/s?k=phantom+Blood&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss"
+                    target="_blank" class="btn my-2">Voir plus</a>
+            </p>
+        </div>
+    </div>
+
+
+    {{!-- Card --}}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            {{!-- Début de la boucle --}}
+            {{#each manga }}
+            <div class="card-deck mb-3 text-center col-md-3">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        {{!-- <a href="/admin/editManga/{{ _id }}"> --}}
+                            <h6 class="my-0 font-weight-bold">{{ title }}</h6>
+                        {{!-- </a> --}}
+                    </div>
+                    <div class="card-body">
+                        <img src="{{ image }}" class="card-img-top" alt="...">
+                        {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
+                        <p class="justify mt-2">{{ stripTags content }}</p>
+                        {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                        <p class="card-text text-muted"><small>Ajouté le:
+                                {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                    </div>
+                </div>
+            </div>
+            {{/each }}
+        </div>
+    </div>
+    {{!-- / Card --}}
+    </div>
 </section>
 {{!-- / Manga --}}
