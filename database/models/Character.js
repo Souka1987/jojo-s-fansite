@@ -18,7 +18,7 @@ const CharacterSchema = new mongoose.Schema({
     }
 })
 
-// Modèle, pour mettre les infos dans la base de données.
+// Pour récupérer les data de la base de données.
 const Character = mongoose.model('Character', CharacterSchema)
 
 // On peut aussi le faire d'une autre manière

@@ -1,4 +1,5 @@
 <section>
+    <h1 class="text-center text-dark">Ajouter Characters</h1>
     {{!--Ajout de l'url et de la méthode--}}
     <form action="/admin/characters" method="POST" enctype="multipart/form-data">
 
@@ -19,10 +20,10 @@
         {{!-- Input Contenu --}}
         <div class="form-group">
             <label for="exampleInputTextarea">Contenu</label>
-            <textarea class="form-control" id="content" placeholder="example textarea" name="content"></textarea>
+            <textarea class="form-control" id="editor5" placeholder="example textarea" name="content"></textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
             <script>
-                const ed = CKEDITOR.replace('content', {
+                const ed = CKEDITOR.replace('editor5', {
                     entities: false, //pour la suppression des caractères spéciaux
                     //uiColor: '#00000' //Coloriser les bordures de l'éditeur
                 });

@@ -54,8 +54,8 @@
             <div class="row">
                 <ul id="myJojo" class="row justify-content-center">
                     {{!-- Réduction des cards ici, 4 avec "limit" --}}
-                    {{#each  character }}
-                    <li class="list-group-item col-md-6 col-sm-12 col-lg-3 col-xl-3 m-2 p-1">
+                    {{#each character }}
+                    <li class="card-deck list-group-item col-md-6 col-sm-12 col-lg-3 col-xl-3 m-2 p-1 chara-card">
                         <img src="{{ image }}" class="card-img-top" alt="">
                         <div class="card-body">
                             <a href="/admin/editCharacters/{{ _id }}">
@@ -67,7 +67,7 @@
                             <p class="card-text"><small class="text-muted">Ajouté le:
                                     {{ moment createDate format="DD-MM-YYYY" }}</small></p>
                             {{!--  Button trigger modal  --}}
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                            <button type="button" class="btn" data-toggle="modal"
                                 {{!-- Définir l'ID pour le lier au modal --}} data-target="#staticBackdrop{{ _id }}">
                                 Faculté
                             </button>
@@ -91,15 +91,15 @@
                                     <div>
                                         <img src="{{ powers.image }}" class="card-img-top" alt="...">
                                         <div>
-                                            <p class="card-text">{{ powers.content1  }}</p>
+                                            <p class="card-text">{{ stripTags powers.content1  }}</p>
                                         </div>
                                         <div>
                                             <h5>{{ powers.title1 }}</h5>
-                                            <p class="card-text">{{ powers.content2 }}</p>
+                                            <p class="card-text">{{ stripTags powers.content2 }}</p>
                                         </div>
                                         <div>
                                             <h5>{{ powers.title2 }}</h5>
-                                            <p class="card-text">{{ powers.content3 }}</p>
+                                            <p class="card-text">{{ stripTags powers.content3 }}</p>
                                             {{!-- Récupérer le "createDate" pour ajouter la date --}}
                                             <p class="card-text"><small class="text-muted">Ajouté le:
                                                     {{ moment createDate format="DD-MM-YYYY" }}</small></p>
@@ -108,7 +108,7 @@
                                     {{!-- /card --}}
 
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
+                                        <button type="button" class="btn"
                                             data-dismiss="modal">Fermer</button>
                                     </div>
                                 </div>

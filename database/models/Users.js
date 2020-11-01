@@ -1,7 +1,3 @@
-/*
- * Controller Page Utilisateurs
- * ********************************** */
-
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose')
 
@@ -21,27 +17,17 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Le mot de passe est obligatoire']
 
     },
+    imgUser: {
+        type: String,
+        // Une condition par default
+        // Ce sera l'image par défault
+        default: "https://s2.qwant.com/thumbr/0x380/6/e/46f11d586d9cbdb2eb380182ce63468791ede023d2a2ac4fc38ac1e8443d0e/img_210318.png?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_210318.png&q=0&b=1&p=0&a=1"
+    }
 
 })
 
-//Pour sécuriser un mot de passe
-userSchema.pre('save', function (next) {
 
-    // "this" correspond au schéma ci-dessus
-    const user = this
 
-    /* Méthode consistant à casser le password de l'utilisateur en milliers de morceaux lors de l'authentification,
-    puis compare le nombre de morceaux cassés avec le password que l'utilisateur aura rentrer pour voir si
-    celui-ci correspond */
 
-    // ici, on lui demande de mélanger le password 10 fois
-    bcrypt.hash(user.password, 10, (error, encrypted) => {
-
-        user.password = encrypted
-        next()
-    })
-
-})
-
-//Modèle, pour mettre les infos dans la base de données.
+// Pour récupérer les data de la base de données.
 module.exports = mongoose.model('user', userSchema)

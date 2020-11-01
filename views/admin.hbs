@@ -3,8 +3,8 @@
     <div class="container">
 
 
-        <div id="crud-articles" class="container mt-15vh pb-0">
-            <h2 class="container text-center bg-black p-2 ft-45 mb-0 ">Gestion des articles</h2>
+        <div id="" class="container mt-15vh pb-0">
+            <h2 class="container text-center mb-5">Gestion des articles</h2>
         </div>
 
         {{!-- news --}}
@@ -40,7 +40,7 @@
                                         </thead>
                                         <tbody>
                                             {{!-- Début de la boucle --}}
-                                            {{#each article }}
+                                            {{#each news }}
 
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
@@ -63,6 +63,7 @@
             </div>
         </div>
         {{!-- /news --}}
+
         <!---------------------------------->
 
         {{!-- arcs --}}
@@ -100,13 +101,13 @@
                                             {{!-- Début de la boucle --}}
                                             {{#each arcs }}
 
-                                            {{!-- <tr>
+                                            <tr>
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{title}}</td>
                                                 <td>{{> admin/crudAdmin/arcs/modalEditArcs }}
                                                     {{> admin/crudAdmin/arcs/modalDeleteArcs }}
                                                 </td>
-                                            </tr> --}}
+                                            </tr>
 
                                             {{/each }}
                                             {{!-- Fin de la boucle --}}
@@ -120,9 +121,184 @@
                 </div>
             </div>
         </div>
-{{!-- /arcs --}}
+        {{!-- /arcs --}}
 
+        <!---------------------------------->
 
+        {{!-- characters --}}
+        <div class="accordion mt-5" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            PERSONNAGES
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Articles</th>
+                                                <th scope="col">
+
+                                                    {{> admin/crudAdmin/characters/modalAddCharacters }}
+                                                    {{!-- Appel du modal avec un ID dynamique de l'object dans la boucle --}}
+                                                </th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                            {{!-- Début de la boucle --}}
+                                            {{#each character }}
+
+                                            <tr>
+                                                <th scope="row">{{ inc @index }}</th>
+                                                <td>{{title}}</td>
+                                                <td>{{> admin/crudAdmin/characters/modalEditCharacters }}
+                                                    {{> admin/crudAdmin/characters/modalDeleteCharacters }}
+                                                </td>
+                                            </tr>
+
+                                            {{/each }}
+                                            {{!-- Fin de la boucle --}}
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{!-- /characters --}}
+
+        <!---------------------------------->
+
+        {{!-- powers --}}
+        <div class="accordion mt-5" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            CAPACITES
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Articles</th>
+                                                <th scope="col">
+
+                                                    {{> admin/crudAdmin/powers/modalAddPowers }}
+                                                    {{!-- Appel du modal avec un ID dynamique de l'object dans la boucle --}}
+                                                </th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                            {{!-- Début de la boucle --}}
+                                            {{#each powers }}
+
+                                            <tr>
+                                                <th scope="row">{{ inc @index }}</th>
+                                                <td>{{title}}</td>
+                                                <td>{{> admin/crudAdmin/powers/modalEditPowers }}
+                                                    {{> admin/crudAdmin/powers/modalDeletePowers }}
+                                                </td>
+                                            </tr>
+
+                                            {{/each }}
+                                            {{!-- Fin de la boucle --}}
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{!-- /powers --}}
+
+        <!---------------------------------->
+
+        {{!-- manga --}}
+        <div class="accordion mt-5" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            MANGA
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Articles</th>
+                                                <th scope="col">
+
+                                                    {{> admin/crudAdmin/manga/modalAddManga }}
+                                                    {{!-- Appel du modal avec un ID dynamique de l'object dans la boucle --}}
+                                                </th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                            {{!-- Début de la boucle --}}
+                                            {{#each manga }}
+
+                                            <tr>
+                                                <th scope="row">{{ inc @index }}</th>
+                                                <td>{{title}}</td>
+                                                <td>{{> admin/crudAdmin/manga/modalEditManga }}
+                                                    {{> admin/crudAdmin/manga/modalDeleteManga }}
+                                                </td>
+                                            </tr>
+
+                                            {{/each }}
+                                            {{!-- Fin de la boucle --}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {{!-- /manga --}}
 
     </div>
 </section>

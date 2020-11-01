@@ -1,8 +1,8 @@
 {{!-- Arcs Card --}}
-<section class="jumbotron text-center bg-light">
+<section class="text-center">
     <div class="container">
-        <h1>Les différentes parties de Jojo's Bizarre Adventure</h1>
-        <p class="lead text-muted">Cet oeuvre à la particularité d'être découpé en parties distinctes,
+        <h1 class="display-4">Ses différentes parties :</h1>
+        <p class="text-arcs text-justify">Cet oeuvre à la particularité d'être découpé en parties distinctes,
             chacune suivant un
             protagoniste différent (mais qui ont tous pour point commun d'être être surnommés Jojo), son propre casting,
             son
@@ -11,7 +11,7 @@
             certains personnages d'une partie à l'autre. A l'heure actuelle, JoJo's Bizarre Adventure comporte 8 parties
             :</p>
         <p>
-            <a href="/manga" class="btn btn-primary my-2">Voir plus</a>
+            <a href="/manga" class="btn my-2 text-white">Voir plus</a>
         </p>
     </div>
 
@@ -24,9 +24,9 @@
             <div class="card-deck mb-3 text-center col-md-3">
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header">
-                         <a href="/admin/editArcs/{{ _id }}"> 
-                            <h6 class="my-0 font-weight-normal">{{ title }}</h6>
-                         </a> 
+                         {{!-- <a href="/admin/editArcs/{{ _id }}">  --}}
+                            <h6 class="my-0 text-uppercase">{{ title }}</h6>
+                         {{!-- </a>  --}}
                     </div>
                     <div class="card-body">
                         <img src="{{ image }}" class="card-img-top" alt="...">

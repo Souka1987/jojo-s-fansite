@@ -92,7 +92,6 @@ module.exports = {
         // Récupération de l'article grace au params.id
         const articleID = await Character.findById(req.params.id)
 
-
         console.log(req.body)
         console.log(req.file)
 

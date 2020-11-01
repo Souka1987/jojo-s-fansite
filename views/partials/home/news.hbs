@@ -1,37 +1,61 @@
-{{!-- Bouton Search --}}
+{{! Bouton Search }}
 <section>
-    <div class="container mt-5">
-        <form class="form-inline my-2 justify-content-center">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-primary my-2 my-sm-0 text-white" type="submit">Search</button>
-        </form>
-    </div>
+  <div class="container mt-5">
+    <form class="form-inline my-2 justify-content-center">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn my-2 my-sm-0 text-white" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
 
+  <div class="container  mt-5">
+    <p class=" text-news text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+    sunt in culpa qui officia deserunt mollit anim id est laborum</p> 
+  </div>
 
-    {{!-- news --}}
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            {{!-- Début de la boucle --}}
-            {{#each (limit news 3) }}
-            <div class="card-deck mb-3 text-center col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                        <a href="/admin/editNews/{{ _id }}">
-                        <h6 class="my-0 font-weight-normal">{{ title }}</h6>
-                        </a>
-                    </div>
-                    <div class="card-body p-1">
-                        <img src="{{ image }}" class="card-img-top" alt="...">
-                        <p class="justify mt-2">{{ stripTags content }}</p>
-                        {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                        <p class="card-text text-muted"><small>Ajouté le:
-                                {{ moment createDate format="DD-MM-YYYY" }}</small></p>
-                    </div>
-                </div>
+  {{! news }}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      {{! Début de la boucle }}
+      {{#each (limit news 3)}}
+        <div class="card-deck mb-3 text-center col-md-4 frame">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header news-header">
+              {{!-- <a href="/admin/editNews/{{ _id }}"> --}}
+              <h6 class="my-0 text-black text-uppercase">
+                {{title}} 
+              </h6>
+              {{! </a> }}
             </div>
-            {{!-- Fin de la boucle --}}
-            {{/each }}
+            <div class=" p-1">
+              <img src="{{image}}" class="card-img-top" alt="..." />
+              <p class="justify mt-2">
+                {{stripTags content}}
+              </p>
+              {{! Récupérer le "createDate" pour ajouter la date }}
+              <p class="card-text text-muted">
+                <small>
+                  Ajouté le:
+                  {{moment createDate format="DD-MM-YYYY"}}
+                </small>
+              </p>
+            </div>
+          </div>
         </div>
+        {{! Fin de la boucle }}
+      {{/each}}
     </div>
+  </div>
 </section>
-{{!-- / news --}}
+{{! / news }}
+
+
