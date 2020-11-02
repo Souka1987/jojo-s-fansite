@@ -3,7 +3,7 @@
  * ********************************** */
 
 module.exports = {
-    get: async (req, res) => {
+    getUsers: async( req, res) => {
         res.render('login')
     }
 }

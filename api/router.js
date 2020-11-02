@@ -19,8 +19,8 @@ const homeController = require('./controllers/homeController'),
     mangaController = require('./controllers/mangaController'),
     //imagesController = require('./controllers/imagesController'),
     loginController = require('./controllers/loginController'),
-    // messageController = require('./controllers/messageController'),
     registerController = require('./controllers/registerController'),
+    // messageController = require('./controllers/messageController'),
     // profileController = require('./controllers/profileController'),
     adminController = require('./controllers/admin/adminController')
 
@@ -73,7 +73,7 @@ router.route('/manga')
 // .get(contactController.get)
 
 router.route('/login')
-    .get(loginController.get)
+    .get(loginController.getUsers)
 
 // router.route('/message')
 // .get(messageController.get)
@@ -204,6 +204,8 @@ router.route('/admin/deleteManga/:id')
 
 
 /************************************** */
+
+
 
 
 

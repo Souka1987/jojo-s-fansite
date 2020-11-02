@@ -16,10 +16,11 @@ const
     // Handlebars sert à créer des modèles de pages web réutilisables
     hbs = require('express-handlebars'),
     mongoose = require('mongoose'),
-    
-    
+    expressSession = require('express-session'),
+    //MongoStore = require('connect-mongo')
 
-    
+
+
 //MongoStore
 mongoStore = require('connect-mongo'),
     bodyParser = require('body-parser'),
@@ -60,20 +61,19 @@ app.engine('hbs', hbs({
 
 
 //Admin
-//  app.use(expressSession({
-//  secret: 'securite',
-//  name: 'biscuit',
-//  saveUninitialized: true, // Sauvegarde ce qui n'est pas initialisé
-//  resave: false, // Enregistre automatiquement la session même si elle n'est pas modifiée
+// app.use(expressSession({
+//         secret: 'securite',
+//         name: 'biscuit',
+//         saveUninitialized: true, // Sauvegarde ce qui n'est pas initialisé
+//         resave: false, // Enregistre automatiquement la session même si elle n'est pas modifiée
 
-//  Store: new mongoStore({
-//      mongooseConnection: mongoose.connection
-//  })
-//  }))
+//         Store: new mongoStore({
+//             mongooseConnection: mongoose.connection
+//         })
+//     }),
 
-
-// Mongoose pour le lien avec la base de données. "jjba" sera le nom de la base de données.
-mongoose.connect(process.env.MONGO_URI, { // URI = chemin
+    // Mongoose pour le lien avec la base de données. "jjba" sera le nom de la base de données.
+    mongoose.connect(process.env.MONGO_URI, { // URI = chemin
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
@@ -91,6 +91,8 @@ MomentHandler.registerHelpers(Handlebars);
 // Express static permet de diriger un chemin (URL) sur un dossier en particulier
 app.use('/assets', express.static('public'));
 
+//MongoStore
+//const mongoStore = MongoStore(expressSession) //connection du module "MongoStore" dans "expressSession"
 
 
 // Body parser permet de parser les data d'une page à l'autre en passant par les controllers, ... 

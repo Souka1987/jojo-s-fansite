@@ -14,10 +14,10 @@
         <div class="form-group">
             <label for="exampleInputTextarea">Contenu</label>
             <p id='ckeditor' hidden> {{ content }} </p>
-            <textarea class="form-control" id="editor2{{_id}}" placeholder="example textarea" name="content"></textarea>
+            <textarea class="form-control" id="editor2" placeholder="example textarea" name="content"></textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
              <script>
-                const edNews = CKEDITOR.replace('editor2{{_id}}', {
+                const edNews = CKEDITOR.replace('editor2', {
                     entities: false, // Pour la suppression des caractères spéciaux
                     //uiColor: '#00000' // Coloriser les bordures de l'éditeur
                 });
