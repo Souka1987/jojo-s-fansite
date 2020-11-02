@@ -82,7 +82,7 @@ module.exports = {
         console.log(dbPowers)
 
         // Effacer l'image depuis le dossier source "public"
-        fs.unlink(`public/images/arcs/${dbPowers.imageName}`, (err) => {
+        fs.unlink(`public/images/characters/${dbPowers.imageName}`, (err) => {
             /*la méthode "fs.unlink" sert à effacer un fichier
                     depuis le dossier ciblé*/
 

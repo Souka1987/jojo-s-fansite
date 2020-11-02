@@ -1,9 +1,9 @@
 /*
- * Controller Page Login
+ * Controller Page Enregistrement
  * ********************************** */
 
 module.exports = {
     get: async (req, res) => {
-        res.render('login')
+        res.render('register')
     }
 }

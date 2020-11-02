@@ -27,7 +27,5 @@ const userSchema = new mongoose.Schema({
 })
 
 
-
-
 // Pour récupérer les data de la base de données.
 module.exports = mongoose.model('user', userSchema)

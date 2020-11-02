@@ -30,9 +30,10 @@
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
-                                                <th scope="col">
+                                                <th scope="col"> 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target='#modalAdd{{_id}}' data-whatever="">Ajouter</button>
 
-                                                    {{> admin/crudAdmin/modalAdd }}
+                                                    {{> admin/crudAdmin/news/modalAdd }}
                                                     {{!-- Appel du modal avec un ID dynamique de l'object dans la boucle --}}
                                                 </th>
                                             </tr>
@@ -44,9 +45,12 @@
 
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
-                                                <td>{{title}}</td>
-                                                <td>{{> admin/crudAdmin/modalEdit }}
-                                                    {{> admin/crudAdmin/modalDelete }}
+                                                <td>{{ title }}</td>
+                                               <td>{{ image }}</td>
+                                                <td class="text-center"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEdit{{_id}}">Editer</button>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete{{_id}}">Supprimer</button>
+                                              {{> admin/crudAdmin/news/modalEdit }}
+                                                    {{> admin/crudAdmin/news/modalDelete }}
                                                 </td>
                                             </tr>
 
@@ -90,7 +94,7 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
                                                 <th scope="col">
-
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddArcs{{_id}}" data-whatever="@mdo">Ajouter</button>
                                                     {{> admin/crudAdmin/arcs/modalAddArcs }}
                                                     {{!-- Appel du modal avec un ID dynamique de l'object dans la boucle --}}
                                                 </th>
@@ -103,8 +107,12 @@
 
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
-                                                <td>{{title}}</td>
-                                                <td>{{> admin/crudAdmin/arcs/modalEditArcs }}
+                                                <td>{{ title }}</td>
+                                                <td>{{ image }}</td>
+                                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEditArcs{{_id}}">Editer</button>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteArcs{{_id}}">Supprimer</button>
+
+                                                {{> admin/crudAdmin/arcs/modalEditArcs }}
                                                     {{> admin/crudAdmin/arcs/modalDeleteArcs }}
                                                 </td>
                                             </tr>
@@ -149,6 +157,7 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
                                                 <th scope="col">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddCharacters{{_id}}" data-whatever="@mdo">Ajouter</button>
 
                                                     {{> admin/crudAdmin/characters/modalAddCharacters }}
                                                     {{!-- Appel du modal avec un ID dynamique de l'object dans la boucle --}}
@@ -162,8 +171,12 @@
 
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
-                                                <td>{{title}}</td>
-                                                <td>{{> admin/crudAdmin/characters/modalEditCharacters }}
+                                                <td>{{ name }}</td>
+                                                <td>{{ image }}</td>
+                                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEditCharacters{{_id}}">Editer</button>
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteCharacters{{_id}}">Supprimer</button>
+
+                                                {{> admin/crudAdmin/characters/modalEditCharacters }}
                                                     {{> admin/crudAdmin/characters/modalDeleteCharacters }}
                                                 </td>
                                             </tr>
@@ -208,6 +221,7 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
                                                 <th scope="col">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddPowers{{_id}}" data-whatever="@mdo">Ajouter</button>
 
                                                     {{> admin/crudAdmin/powers/modalAddPowers }}
                                                     {{!-- Appel du modal avec un ID dynamique de l'object dans la boucle --}}
@@ -221,8 +235,12 @@
 
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
-                                                <td>{{title}}</td>
-                                                <td>{{> admin/crudAdmin/powers/modalEditPowers }}
+                                                <td>{{ name }}</td>
+                                                <td>{{ image }}</td>
+                                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEditPowers{{_id}}">Editer</button>
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelePowers{{_id}}">Supprimer</button>
+
+                                                {{> admin/crudAdmin/powers/modalEditPowers }}
                                                     {{> admin/crudAdmin/powers/modalDeletePowers }}
                                                 </td>
                                             </tr>
@@ -267,6 +285,7 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
                                                 <th scope="col">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddManga{{_id}}" data-whatever="@mdo">Ajouter</button>
 
                                                     {{> admin/crudAdmin/manga/modalAddManga }}
                                                     {{!-- Appel du modal avec un ID dynamique de l'object dans la boucle --}}
@@ -280,8 +299,12 @@
 
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
-                                                <td>{{title}}</td>
-                                                <td>{{> admin/crudAdmin/manga/modalEditManga }}
+                                                <td>{{ title }}</td>
+                                                <td>{{ image }}</td>
+                                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEditManga{{_id}}">Editer</button>
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteManga{{_id}}">Supprimer</button>
+
+                                                {{> admin/crudAdmin/manga/modalEditManga }}
                                                     {{> admin/crudAdmin/manga/modalDeleteManga }}
                                                 </td>
                                             </tr>
