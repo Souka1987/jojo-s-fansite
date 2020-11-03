@@ -1,4 +1,4 @@
-<section>
+{{!-- <section>
     <div class="container mt-5">
 
         <div class="card-body mx-auto" style="max-width: 700px;">
@@ -29,7 +29,7 @@
 
 
             <div class="">
-                <form method="POST" class="my-login-validation" novalidate="">
+                <form action="/register" method="POST" class="my-login-validation" novalidate="">
                     <div class="row">
                         <div class="col">
                             <label for="text">Nom</label>
@@ -74,4 +74,64 @@
                 </form>
             </div>
         </div>
-</section>
+</section> --}}
+
+
+<div>
+    <h2>Authentification</h2>
+
+    <!-- La div flash est dans la view home.hbs -->
+    {{!-- <div id="flash"></div> --}}
+
+    <!-- Formulaire register / Créer un compte -->
+    <form id='form'  action='/register' method="POST">
+
+        <!-- Condition du formulaire -->
+        <h4>Le mot de passe doit contenir minimum 8 character dont:</h4>
+        <ul>
+            <li> 1 numéro</li>
+            <li> 1 majuscule</li>
+            <li> 1 minuscule</li>
+            <li> 1 caracthère spécial</li>
+        </ul>
+
+        <!-- Username / Email -->
+        <div class="row">
+            <div class="col">
+                <label for="pseudo">Pseudo:</label>
+                <input type="text" name="pseudo" placeholder="Pseudo" required>
+            </div>
+            <div class="col">
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+        </div>
+
+        <!-- Mot de passe -->
+        <div class="row">
+            <div class="col">
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id='password' required>
+            </div>
+            <div class="col">
+                <label for="password">Confirm Mot de passe</label>
+                <input type="password" name="passwordConfirm" id='passwordConfirm' required>
+            </div>
+        </div>
+
+        <!-- Accept condition -->
+        <div class="row">
+            <div class="col">
+                <input type="checkbox" name="accept" id='accept'>
+                <label for="accept">Acceptez les conditions</label>
+            </div>
+            <div class="col">
+                <!-- Boutton submit form -->
+                <button class="w-100 btn" type="submit"> Creer un compte </button>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>
