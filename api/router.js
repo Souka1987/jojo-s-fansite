@@ -4,8 +4,7 @@ const express = require('express'),
     path = require('path'),
     uploadArcs = require('./config/multerArcs'),
     uploadCharacters = require('./config/multerCharacters')
-    // expressSession = require('express-session')
- 
+
 
 
 
@@ -18,9 +17,8 @@ const homeController = require('./controllers/homeController'),
     arcsController = require('./controllers/arcsController'),
     mangaController = require('./controllers/mangaController'),
     //imagesController = require('./controllers/imagesController'),
-    loginController = require('./controllers/loginController'),
+    authController = require('./controllers/authController'),
     // messageController = require('./controllers/messageController'),
-    // registerController = require('./controllers/registerController'),
     // profileController = require('./controllers/profileController'),
     adminController = require('./controllers/admin/adminController')
 
@@ -69,17 +67,22 @@ router.route('/manga')
  * CONTACT
  * ******* */
 
+
 // router.route('/contact')
 // .get(contactController.get)
-
-router.route('/login')
-    .get(loginController.get)
 
 // router.route('/message')
 // .get(messageController.get)
 
-// router.route('/register')
-// .get(registerController.get)
+// Users
+//router.route('/login')
+//    .get(authController.login)
+
+router.route('/register')
+    .get(authController.register)
+
+//router.route('/logout')
+//    .get(loginController.logout)
 
 // router.route('/profile')
 // .get(profileController.get)
@@ -166,7 +169,7 @@ router.route('/admin/powers')
     // GET recupération du formulaire powersPageFormAdd
     .get(powersController.powersPageFormAdd)
     // POST formulaire
-    .post(uploadArcs.single('image'), powersController.powersAdd)
+    .post(uploadCharacters.single('image'), powersController.powersAdd)
 
 router.route('/admin/editPowers/:id')
 // GET recupération du formulaire powersPageFormEdit
@@ -178,7 +181,7 @@ router.route('/admin/editPowers/:id')
     // GET recupération du formulaire powersPageFormEdit
     .get(powersController.powersPageFormEdit)
     // POST formulaire
-    .post(uploadArcs.single('image'), powersController.powersEdit)
+    .post(uploadCharacters.single('image'), powersController.powersEdit)
 
 // GET bouton de suppression
 router.route('/admin/deletePowers/:id')

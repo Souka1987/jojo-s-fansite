@@ -1,8 +1,8 @@
-<section>
+{{!-- <section>
     <div class="container mt-5">
 
         <div class="card-body mx-auto" style="max-width: 700px;">
-            <h1 class="card-title mt-3 text-center">Crée ton compte</h1>
+            <h1 class="card-title mt-3 text-center display-4">S'inscrire</h1>
 
             <p class="small" style="text-align: center;">Et olim licet otiosae sint tribus pacataeque centuriae
                 et
@@ -16,64 +16,122 @@
             <p>
 
                 <!--Socials buttons-->
-                <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Crée ton compte avec
+                <a href="#" class="btn btn-danger btn-block btn-social-danger"><i class="fa fa-google"></i> Crée ton compte avec
                     <b>Google</b></a>
-                <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Crée ton compte avec
+                <a href="#" class="btn btn-primary btn-block btn-social-primary"><i class="fa fa-facebook"></i> Crée ton compte avec
                     with <b>Facebook</b></a>
-                <a href="#" class="btn btn-info btn-block"><i class="fa fa-twitter"></i> Crée ton compte avec
+                <a href="#" class="btn btn-info btn-block btn-social-info"><i class="fa fa-twitter"></i> Crée ton compte avec
                     <b>Twitter</b></a>
             </p>
-            <p class="divider-text">
-                <span class="bg-light">OU</span>
+            <p class="text-center">
+                <span class="font-weight-bold">OU</span>
             </p>
 
 
             <div class="">
-                <form method="POST" class="my-login-validation" novalidate="">
+                <form action="/register" method="POST" class="my-login-validation" novalidate="">
                     <div class="row">
                         <div class="col">
-                            <label for="text">Prénom</label>
-                            <input type="text" class="form-control" placeholder="">
+                            <label for="text">Nom</label>
+                            <input type="text" class="form-control" placeholder="nom">
                         </div>
                         <div class="col">
-                            <label for="text">Nom</label>
-                            <input type="text" class="form-control" placeholder="">
+                            <label for="text">Prénom</label>
+                            <input type="text" class="form-control" placeholder="prénom">
                         </div>
                     </div>
                 </form>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col">
                         <label for="email">Pseudonyme</label>
-                        <input type="text" class="form-control" placeholder="">
+                        <input type="text" class="form-control" placeholder="pseudo">
                     </div>
                     <div class="col">
                         <label for="email">Email</label>
-                        <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                        <input id="email" type="email" class="form-control" placeholder="email" name="email" value="">
                         <div class="invalid-feedback">
-                            Email is invalid
                         </div>
                     </div>
                 </div>
                 <div class="form-group" style="margin-top: 20px;">
                     <label for="password">Mot de passe</label>
-                    <input id="password" type="password" class="form-control" name="password" required data-eye>
+                    <input id="password" type="password" placeholder="mot de passe" class="form-control" name="password">
                     <div class="invalid-feedback">
-                        Password is required
                     </div>
                 </div>
                 <!--buttons-->
                 <div class="form-group m-0">
-                    <button type="submit" class="btn btn-primary btn-block">
-                        Créer
+                    <button type="submit" class="btn text-white btn-block">
+                        Valider
                     </button>
                 </div>
                 <div class="mt-5 text-center login">
                     Tu as déja un compte ? <a href="/login">Login</a>
                 </div>
-                <div class="profile-link">
-                    <a style="text-align: center; mt-5;" class="profile" href="/profile">CREE TON PROFIL</a>
-                </div>
+                {{!-- <div class="profile-link text-center">
+                    <a style="mt-5" class="profile" href="/profile"><button class="btn text-white">CREER VOTRE PROFIL</button></a>
+                </div> --}}
                 </form>
             </div>
         </div>
-</section>
+</section> --}}
+
+
+<div>
+    <h2>Authentification</h2>
+
+    <!-- La div flash est dans la view home.hbs -->
+    {{!-- <div id="flash"></div> --}}
+
+    <!-- Formulaire register / Créer un compte -->
+    <form id='form'  action='/register' method="POST">
+
+        <!-- Condition du formulaire -->
+        <h4>Le mot de passe doit contenir minimum 8 character dont:</h4>
+        <ul>
+            <li> 1 numéro</li>
+            <li> 1 majuscule</li>
+            <li> 1 minuscule</li>
+            <li> 1 caracthère spécial</li>
+        </ul>
+
+        <!-- Username / Email -->
+        <div class="row">
+            <div class="col">
+                <label for="pseudo">Pseudo:</label>
+                <input type="text" name="pseudo" placeholder="Pseudo" required>
+            </div>
+            <div class="col">
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+        </div>
+
+        <!-- Mot de passe -->
+        <div class="row">
+            <div class="col">
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id='password' required>
+            </div>
+            <div class="col">
+                <label for="password">Confirm Mot de passe</label>
+                <input type="password" name="passwordConfirm" id='passwordConfirm' required>
+            </div>
+        </div>
+
+        <!-- Accept condition -->
+        <div class="row">
+            <div class="col">
+                <input type="checkbox" name="accept" id='accept'>
+                <label for="accept">Acceptez les conditions</label>
+            </div>
+            <div class="col">
+                <!-- Boutton submit form -->
+                <button class="w-100 btn" type="submit"> Creer un compte </button>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>

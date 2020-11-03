@@ -16,12 +16,8 @@ const
     // Handlebars sert à créer des modèles de pages web réutilisables
     hbs = require('express-handlebars'),
     mongoose = require('mongoose'),
-    
-    
-
-    
-//MongoStore
-mongoStore = require('connect-mongo'),
+    expressSession = require('express-session'),
+    MongoStore = require('connect-mongo'),
     bodyParser = require('body-parser'),
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
     {
@@ -31,10 +27,42 @@ mongoStore = require('connect-mongo'),
     } = require('./helpers/hbs'),
     port = process.env.PORT || 1870;
 
-
 //ENV
 require('dotenv').config()
 // console.log(process.env);
+
+// Mongoose pour le lien avec la base de données. "jjba" est le nom de la base de données.
+mongoose
+    .connect(process.env.MONGO_URI, { // URI = chemin
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    })
+    .then(() => console.log('Connecté à MongoDB'))
+    .catch(err => console.log(err))
+
+// MongoStore
+const mongoStore = MongoStore(expressSession) // Connection du module "MongoStore" dans "expressSession"
+
+// Handlebars.moment => Pour formater la temporalité (dates/horraires)
+var Handlebars = require("handlebars");
+var MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars);
+
+
+// Admin
+app.use(expressSession({
+    secret: 'securite',
+    name: 'pépito',
+    saveUninitialized: true, // Sauvegarde ce qui n'est pas initialisé
+    resave: false, // Enregistre automatiquement la session même si elle n'est pas modifiée
+
+    Store: new mongoStore({
+        mongooseConnection: mongoose.connection
+    })
+}))
+
 
 // Handlebars
 app.set('view engine', 'hbs');
@@ -58,40 +86,8 @@ app.engine('hbs', hbs({
 // app.use('/article/post', articleValidPost)
 
 
-
-//Admin
-//  app.use(expressSession({
-//  secret: 'securite',
-//  name: 'biscuit',
-//  saveUninitialized: true, // Sauvegarde ce qui n'est pas initialisé
-//  resave: false, // Enregistre automatiquement la session même si elle n'est pas modifiée
-
-//  Store: new mongoStore({
-//      mongooseConnection: mongoose.connection
-//  })
-//  }))
-
-
-// Mongoose pour le lien avec la base de données. "jjba" sera le nom de la base de données.
-mongoose.connect(process.env.MONGO_URI, { // URI = chemin
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: false
-    })
-    .then(() => console.log('Connecter à MongoDB'))
-    .catch(err => console.log(err))
-
-
-//Handlebars.moment => Pour formater la temporalité (dates/horraires)
-var Handlebars = require("handlebars");
-var MomentHandler = require("handlebars.moment");
-MomentHandler.registerHelpers(Handlebars);
-
 // Express static permet de diriger un chemin (URL) sur un dossier en particulier
-app.use('/assets', express.static('public'));
-
-
+app.use('/assets', express.static('public'))
 
 // Body parser permet de parser les data d'une page à l'autre en passant par les controllers, ... 
 // Parser = https://fr.wiktionary.org/wiki/parser
@@ -115,4 +111,4 @@ app.use((req, res) => {
 // Ensuite nous demandons a express (app) de run notre projet.
 app.listen(port, () => {
     console.log("le serveur tourne sur le port: " + port);
-});
+})
