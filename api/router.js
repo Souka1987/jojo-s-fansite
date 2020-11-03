@@ -75,11 +75,12 @@ router.route('/manga')
 // .get(messageController.get)
 
 // Users
-//router.route('/login')
-//    .get(authController.login)
+router.route('/login')
+    .get(authController.login)
 
-router.route('/register')
-    .get(authController.register)
+// router.route('/register')
+//     .get(authController.register)
+
 
 //router.route('/logout')
 //    .get(loginController.logout)
@@ -207,9 +208,6 @@ router.route('/admin/deleteManga/:id')
 
 
 /************************************** */
-
-
-
 
 
 // Exportation du routeur

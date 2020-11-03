@@ -16,6 +16,8 @@ const
     // Handlebars sert à créer des modèles de pages web réutilisables
     hbs = require('express-handlebars'),
     mongoose = require('mongoose'),
+    // le flash est une zone spéciale de la session servant à stocker les datas utilisateur.
+    connectFlash = require('connect-flash'),
     expressSession = require('express-session'),
     MongoStore = require('connect-mongo'),
     bodyParser = require('body-parser'),
@@ -63,6 +65,8 @@ app.use(expressSession({
     })
 }))
 
+//Connect-Flash
+app.use(connectFlash())
 
 // Handlebars
 app.set('view engine', 'hbs');
@@ -109,6 +113,6 @@ app.use((req, res) => {
 })
 
 // Ensuite nous demandons a express (app) de run notre projet.
-app.listen(port, () => {
-    console.log("le serveur tourne sur le port: " + port);
+app.listen(port, function () {
+    console.log(`écoute le port ${port}, lancé le : ${new Date().toLocaleString()}`);
 })

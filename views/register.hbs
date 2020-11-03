@@ -1,21 +1,13 @@
-{{!-- <section>
+<section>
     <div class="container mt-5">
 
         <div class="card-body mx-auto" style="max-width: 700px;">
             <h1 class="card-title mt-3 text-center display-4">S'inscrire</h1>
 
-            <p class="small" style="text-align: center;">Et olim licet otiosae sint tribus pacataeque centuriae
-                et
-                nulla suffragiorum certamina set Pompiliani redierit securitas temporis, per omnes tamen
-                quotquot
-                sunt
-                partes terrarum, ut domina suscipitur et regina et ubique patrum reverenda cum auctoritate
-                canities
-                populique Romani nomen circumspectum et verecundum.
-            </p>
+            <p class="small" style="text-align: center;">...</p>
+           
             <p>
-
-                <!--Socials buttons-->
+                {{!-- Réseaux sociaux --}}
                 <a href="#" class="btn btn-danger btn-block btn-social-danger"><i class="fa fa-google"></i> Crée ton compte avec
                     <b>Google</b></a>
                 <a href="#" class="btn btn-primary btn-block btn-social-primary"><i class="fa fa-facebook"></i> Crée ton compte avec
@@ -23,13 +15,14 @@
                 <a href="#" class="btn btn-info btn-block btn-social-info"><i class="fa fa-twitter"></i> Crée ton compte avec
                     <b>Twitter</b></a>
             </p>
+
             <p class="text-center">
                 <span class="font-weight-bold">OU</span>
             </p>
 
 
             <div class="">
-                <form action="/register" method="POST" class="my-login-validation" novalidate="">
+                <form action="" method="POST" class="my-login-validation" novalidate="">
                     <div class="row">
                         <div class="col">
                             <label for="text">Nom</label>
@@ -59,12 +52,14 @@
                     <div class="invalid-feedback">
                     </div>
                 </div>
-                <!--buttons-->
+                
+                {{!-- Boutton valider --}}
                 <div class="form-group m-0">
                     <button type="submit" class="btn text-white btn-block">
                         Valider
                     </button>
                 </div>
+                
                 <div class="mt-5 text-center login">
                     Tu as déja un compte ? <a href="/login">Login</a>
                 </div>
@@ -74,64 +69,4 @@
                 </form>
             </div>
         </div>
-</section> --}}
-
-
-<div>
-    <h2>Authentification</h2>
-
-    <!-- La div flash est dans la view home.hbs -->
-    {{!-- <div id="flash"></div> --}}
-
-    <!-- Formulaire register / Créer un compte -->
-    <form id='form'  action='/register' method="POST">
-
-        <!-- Condition du formulaire -->
-        <h4>Le mot de passe doit contenir minimum 8 character dont:</h4>
-        <ul>
-            <li> 1 numéro</li>
-            <li> 1 majuscule</li>
-            <li> 1 minuscule</li>
-            <li> 1 caracthère spécial</li>
-        </ul>
-
-        <!-- Username / Email -->
-        <div class="row">
-            <div class="col">
-                <label for="pseudo">Pseudo:</label>
-                <input type="text" name="pseudo" placeholder="Pseudo" required>
-            </div>
-            <div class="col">
-                <label for="email">Email:</label>
-                <input type="email" name="email" placeholder="Email" required>
-            </div>
-        </div>
-
-        <!-- Mot de passe -->
-        <div class="row">
-            <div class="col">
-                <label for="password">Mot de passe</label>
-                <input type="password" name="password" id='password' required>
-            </div>
-            <div class="col">
-                <label for="password">Confirm Mot de passe</label>
-                <input type="password" name="passwordConfirm" id='passwordConfirm' required>
-            </div>
-        </div>
-
-        <!-- Accept condition -->
-        <div class="row">
-            <div class="col">
-                <input type="checkbox" name="accept" id='accept'>
-                <label for="accept">Acceptez les conditions</label>
-            </div>
-            <div class="col">
-                <!-- Boutton submit form -->
-                <button class="w-100 btn" type="submit"> Creer un compte </button>
-            </div>
-        </div>
-
-
-    </form>
-
-</div>
+</section>
