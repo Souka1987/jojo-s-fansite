@@ -54,6 +54,7 @@ MomentHandler.registerHelpers(Handlebars);
 
 
 // Admin
+app.set('trust proxy', 1)
 app.use(expressSession({
     secret: 'securite',
     name: 'pépito',

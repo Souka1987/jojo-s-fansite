@@ -16,11 +16,14 @@ const homeController = require('./controllers/homeController'),
     powersController = require('./controllers/powersController'),
     arcsController = require('./controllers/arcsController'),
     mangaController = require('./controllers/mangaController'),
+    loginController = require('./controllers/loginController'),
+    userController = require('./controllers/userController'),
+    userRegisterController = require('./controllers/userRegisterController'),
     //imagesController = require('./controllers/imagesController'),
-    authController = require('./controllers/authController'),
     // messageController = require('./controllers/messageController'),
     // profileController = require('./controllers/profileController'),
     adminController = require('./controllers/admin/adminController')
+
 
 
 /*
@@ -67,23 +70,26 @@ router.route('/manga')
  * CONTACT
  * ******* */
 
-
-// router.route('/contact')
-// .get(contactController.get)
+router.route('/user')
+    .get(userController.get)
 
 // router.route('/message')
 // .get(messageController.get)
 
 // Users
+
 router.route('/login')
-    .get(authController.login)
+    .get(loginController.login)
 
-// router.route('/register')
-//     .get(authController.register)
+router.route('/loginAuth')
+    .post(loginController.post)
 
+router.route('/register')
+    .get(userRegisterController.register)
 
-//router.route('/logout')
-//    .get(loginController.logout)
+router.route('/create')
+    .post(userRegisterController.create)
+
 
 // router.route('/profile')
 // .get(profileController.get)
@@ -214,6 +220,7 @@ router.route('/admin/deleteManga/:id')
 
 
 /************************************** */
+
 
 
 // Exportation du routeur
