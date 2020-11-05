@@ -20,6 +20,8 @@ const
     connectFlash = require('connect-flash'),
     expressSession = require('express-session'),
     MongoStore = require('connect-mongo'),
+    // Import de nodemailer
+    nodemailer = require('nodemailer'),
     bodyParser = require('body-parser'),
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
     {
@@ -106,6 +108,7 @@ app.use(bodyParser.urlencoded({
 // CRUD = GET / POST / PUT / DELETE
 const ROUTER = require('./api/router')
 app.use('/', ROUTER)
+
 
 
 // Page erreur 404

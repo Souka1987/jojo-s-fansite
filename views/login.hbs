@@ -1,28 +1,79 @@
 {{! login }}
 <section class="mt-5">
     <div class="container">
-        <h1 class="text-center display-4">
-            Se connecter
-        </h1>
-        <form action="/login">
-            <div class="form-group justify-content-center mt-5">
-                <label for="exampleInputEmail">
-                    Email
-                </label>
-                <input type="email" class="form-control" placeholder="email" id="exampleInputEmail"
-                    aria-describedby="emailHelp" value="{{email}}" />
+        <div class="card-body mx-auto" style="max-width: 700px;">
+            <h1 class="text-center display-4">
+                Se connecter
+            </h1>
+            {{!-- Input email --}}
+            <form action="/auth" method="POST">
+                <div class="form-group justify-content-center mt-5">
+                    <label for="exampleInputEmail">
+                        Email
+                    </label>
+                    <input type="email" class="form-control" placeholder="email" id="exampleInputEmail"
+                        aria-describedby="emailHelp" name="email" value="{{ email }}" />
+                </div>
+                {{!-- Input password --}}
+                <div class="form-group">
+                    <label for="exampleInputPassword">
+                        Mot de passe
+                    </label>
+                    <input type="password" class="form-control" placeholder="password" id="exampleInputPassword"
+                        name="password" value="{{ password }}" />
+                </div>
+
+                {{!-- Modal forgotPassword --}}
+                <div class="forgot-password text-right">
+                    <a  data-toggle="modal" data-target="#forgotPassword" href="#" rel="nofollow">
+                        Mot de passe oublié ?
+                    </a>
+                </div>
+                {{!-- Input password --}}
+                <button type="submit" class="btn text-center">
+                    Envoyer
+                </button>
+            </form>
+
+            <div class="mt-2">
+                <a href="/register" data-link-action="display-register-form">
+                    Vous n'avez pas de compte ? 
+                </a>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword">
-                    Mot de passe
-                </label>
-                <input type="password" class="form-control" placeholder="password" id="exampleInputPassword"
-                    value="{{password}}" />
-            </div>
-            <button type="submit" class="btn">
-                Envoyer
-            </button>
-        </form>
+
+        </div>
     </div>
 </section>
 {{! /login }}
+
+<!--------------------------------->
+
+{{!-- modal mot de passe oublié --}}
+<div class="modal fade" id="forgotPassword" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Mot de passe oublié ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Renseignez votre adresse mail:</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Envoyer</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ const UserSchema = new mongoose.Schema({
     },
     pseudo: {
         type: String,
+        required: [true, "Le pseudo est obligatoire"],
         unique: true
     },
     email: {
@@ -28,20 +29,20 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: 'user'
     },
-    // Utilisé un Booleen pour nos middleware est plutot une bonne pratique
-    // Par exemple :
-    // isVerified: {
-    //     type: Boolean,
-    //     default: false
-    // },
-    // isModo: {
-    //     type: Boolean,
-    //     default: false
-    // },
-    // isAdmin: {
-    //     type: Boolean,
-    //     default: false
-    // },
+    //Utilisé un Booleen pour nos middleware est plutot une bonne pratique
+    //Par exemple :
+    isVerified: {
+        type: Boolean,
+        default: false
+    },
+    isModo: {
+        type: Boolean,
+        default: false
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
     // A vous d'éssayer de les attribuer pendant l'authentification ('/authentification') dans ../api/auth.js
     // Et essayer de les faire ressortir dans le middleware du server.js
     // imgUser: {

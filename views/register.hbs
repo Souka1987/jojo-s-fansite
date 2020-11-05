@@ -1,29 +1,29 @@
 {{!-- Inscription --}}
-<section>
+
+<section class="mt-5">
     <div class="container mt-5">
-
-
         <div class="card-body mx-auto" style="max-width: 700px;">
-            <h1 class="card-title mt-3 text-center display-4">S'inscrire</h1>
+            <h1 class="card-title mt-3 text-center display-4">Créer un compte</h1>
 
             <p class="small" style="text-align: center;">...</p>
 
-
-            <form action="/create" method="POST" class="my-login-validation" >
+            <form action="/create" method="POST">
                 <div class="row">
                     <div class="col">
                         <label for="text">Nom</label>
-                        <input type="text" class="form-control" placeholder="firstname" value="{{ firstname }}">
+                        <input type="text" class="form-control" placeholder="firstname" name="firstname"
+                            value="{{ firstname }}">
                     </div>
                     <div class="col">
                         <label for="text">Prénom</label>
-                        <input type="text" class="form-control" placeholder="lastname" value="{{ lastname}}">
+                        <input type="text" class="form-control" placeholder="lastname" name="lastname"
+                            value="{{ lastname}}">
                     </div>
                 </div>
 
                 <div class="col">
-                    <label for="email">Pseudonyme</label>
-                    <input type="text" class="form-control" placeholder="pseudo" value="{{ pseudo }}">
+                    <label for="email">Pseudo</label>
+                    <input type="text" class="form-control" placeholder="pseudo" name="pseudo" value="{{ pseudo }}">
                 </div>
 
                 <div class="col">
@@ -39,7 +39,7 @@
                 </div>
 
                 {{!-- Confirmer le password --}}
-                <div class="form-group" style="margin-top: 20px;">
+                <div class="col">
                     <label for="password">Confirmer le mot de passe</label>
                     <input id="password" type="password" placeholder="passwordConfirm" class="form-control"
                         name="passwordConfirm" value='{{ passwordConfirm }}'>
@@ -47,13 +47,35 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn text-white btn-block">
+
+                <button type="submit" class="btn text-white btn-block mt-5">
                     Valider
                 </button>
+
+
+                <p class="text-center mt-5">
+                    <span class="font-weight-bold">OU</span>
+                </p>
+
+                <p>
+                    {{!-- Réseaux sociaux --}}
+                    <a href="https://www.google.com/account/about/" target="_blank"
+                        class="btn btn-danger btn-block btn-social-danger"><i class="fa fa-google"></i> Créer votre
+                        compte avec
+                        <b>Google</b></a>
+                    <a href="https://www.facebook.com/" target="_blank"
+                        class="btn btn-primary btn-block btn-social-primary"><i class="fa fa-facebook"></i> Créer votre
+                        compte avec
+                        with <b>Facebook</b></a>
+                    <a href="https://twitter.com/login?lang=fr" target="_blank"
+                        class="btn btn-info btn-block btn-social-info"><i class="fa fa-twitter"></i> Créer votre compte
+                        avec
+                        <b>Twitter</b></a>
+                </p>
+
             </form>
         </div>
     </div>
-
 </section>
 
 {{!-- /Inscription --}}

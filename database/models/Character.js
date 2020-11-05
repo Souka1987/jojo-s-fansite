@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 // Schema pour la création  des articles personnages
 const CharacterSchema = new mongoose.Schema({
@@ -15,7 +15,8 @@ const CharacterSchema = new mongoose.Schema({
     powers: {
         type: Schema.Types.ObjectId,
         ref: 'Powers'
-    }
+    },
+   
 })
 
 // Pour récupérer les data de la base de données.

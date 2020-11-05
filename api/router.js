@@ -20,7 +20,7 @@ const homeController = require('./controllers/homeController'),
     userController = require('./controllers/userController'),
     userRegisterController = require('./controllers/userRegisterController'),
     //imagesController = require('./controllers/imagesController'),
-    // messageController = require('./controllers/messageController'),
+    messageController = require('./controllers/messageController'),
     // profileController = require('./controllers/profileController'),
     adminController = require('./controllers/admin/adminController')
 
@@ -56,6 +56,7 @@ router.route('/author')
 router.route('/manga')
     .get(mangaController.getManga)
 
+
 /*
  * Images
  * *********** */
@@ -63,8 +64,8 @@ router.route('/manga')
 // router.route('/images')
 //     .get(imagesController.get)
 
-// router.route('/store')
-// .get(storeController.get)
+
+
 
 /*
  * CONTACT
@@ -73,16 +74,20 @@ router.route('/manga')
 router.route('/user')
     .get(userController.get)
 
-// router.route('/message')
-// .get(messageController.get)
+router.route('/message')
+    .get(messageController.get)
+
 
 // Users
 
 router.route('/login')
     .get(loginController.login)
 
-router.route('/loginAuth')
+router.route('/auth')
     .post(loginController.post)
+
+router.route('/logout')
+    .get(loginController.logout)
 
 router.route('/register')
     .get(userRegisterController.register)
@@ -90,9 +95,6 @@ router.route('/register')
 router.route('/create')
     .post(userRegisterController.create)
 
-
-// router.route('/profile')
-// .get(profileController.get)
 
 
 
@@ -103,7 +105,6 @@ router.route('/create')
 // Page admin
 router.route('/admin')
     .get(adminController.get)
-
 
 
 // Arcs

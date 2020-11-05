@@ -19,7 +19,8 @@
              <script>
                 const edNews = CKEDITOR.replace('editor2', {
                     entities: false, // Pour la suppression des caractères spéciaux
-                    //uiColor: '#00000' // Coloriser les bordures de l'éditeur
+                    language: 'fr',
+                    uiColor: '#680EEA' // Coloriser les bordures de l'éditeur
                 });
 
                 edNews.on('change', function (e) {// Modification du contenu de l'éditeur
