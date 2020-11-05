@@ -12,14 +12,15 @@
         {{!-- Input Contenu --}}
         <div class="form-group">
             <label for="exampleInputTextarea">Contenu </label>
-            <textarea class="form-control" id="editor2" placeholder="example textarea"
+            <textarea class="form-control" id="editor1" placeholder="example textarea"
                 name="content"></textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
 
             <script>
-                const news = CKEDITOR.replace('editor2', {
+                const news = CKEDITOR.replace('editor1', {
                     entities: false, // Pour la suppression des caractères spéciaux
-                    //uiColor: '#00000' // Coloriser les bordures de l'éditeur
+                    language: 'fr',
+                    uiColor: '#680EEA' // Coloriser les bordures de l'éditeur
                 });
 
                 news.on('change', function (e) {// Modification du contenu de l'éditeur

@@ -37,13 +37,14 @@ module.exports = {
                     }
 
                 })
+                // Sinon renvoyer sur la page d'acceuil
             } else {
                 return res.redirect('/')
             }
 
         })
     },
-    
+
     logout: (req, res) => {
         const sess = req.session
         // Desctruction de la session utilisateur

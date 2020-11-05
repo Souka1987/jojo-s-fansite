@@ -3,13 +3,11 @@ const express = require('express'),
     router = express.Router(),
     path = require('path'),
     uploadArcs = require('./config/multerArcs'),
-    uploadCharacters = require('./config/multerCharacters'),
-    // Middleware
-  
-   
+    uploadCharacters = require('./config/multerCharacters')
 
- 
-const authSuccess = require('../middleware/authSuccess')
+
+
+
 // CONTROLLER
 const homeController = require('./controllers/homeController'),
     newsController = require('./controllers/newsController'),
@@ -22,7 +20,7 @@ const homeController = require('./controllers/homeController'),
     userController = require('./controllers/userController'),
     userRegisterController = require('./controllers/userRegisterController'),
     //imagesController = require('./controllers/imagesController'),
-    // messageController = require('./controllers/messageController'),
+    messageController = require('./controllers/messageController'),
     // profileController = require('./controllers/profileController'),
     adminController = require('./controllers/admin/adminController')
 
@@ -76,17 +74,13 @@ router.route('/manga')
 router.route('/user')
     .get(userController.get)
 
-// router.route('/message')
-// .get(messageController.get)
-
-// router.route('/profile')
-// .get(profileController.get)
-
+router.route('/message')
+    .get(messageController.get)
 
 
 // Users
 
-router.route('/login', authSuccess)
+router.route('/login')
     .get(loginController.login)
 
 router.route('/auth')

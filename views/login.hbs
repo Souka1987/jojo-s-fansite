@@ -25,15 +25,21 @@
 
                 {{!-- Modal forgotPassword --}}
                 <div class="forgot-password text-right">
-                    <a class="honey" data-toggle="modal" data-target="#forgotPassword" href="#" rel="nofollow">
+                    <a  data-toggle="modal" data-target="#forgotPassword" href="#" rel="nofollow">
                         Mot de passe oublié ?
                     </a>
                 </div>
-
-                <button type="submit" class="btn">
+                {{!-- Input password --}}
+                <button type="submit" class="btn text-center">
                     Envoyer
                 </button>
             </form>
+
+            <div class="mt-2">
+                <a href="/register" data-link-action="display-register-form">
+                    Vous n'avez pas de compte ? 
+                </a>
+            </div>
 
         </div>
     </div>

@@ -10,11 +10,40 @@
 
 {{> head }}
 
+{{!-- 
+    Cette Condition est faites pour conparez les session
+    if (req.session.status === 'user') {
+        const dbUser = await User.find({})
+        req.session
+   }
+   la session de l'utilisateur est ouverte
+--}}
+{{#if user}}
+
+<style>
+    body {
+        background-color: purple;
+    }
+
+    a {
+        color: yellow
+    }
+
+    h1,
+    h2 {
+        color: lime
+    }
+
+    h3,
+    h4 {
+        color: blue
+    }
+</style>
+
+{{/if }}
+
 {{> navbar }}
 
-{{#if sess.pseudo }}
-    <h4>welcome <strong><u>{{ sess.pseudo }}</u></strong>!!!</h4>
-{{/if}}
 
 {{{ body }}}
 

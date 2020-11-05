@@ -1,56 +1,49 @@
 {{!-- Form --}}
-<section>
+<section class="mt-5">
     <div class="container">
-        <h1 class="text-center">Envoyer un message</h1>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est
-            laborum."</p>
+        <h1 class="text-center display-4">Envoyer un message</h1>
     </div>
-</section>
-
 
 <div class="container mb-5">
-    <form>
-        <div class="row">
-            <div class="col">
-                <label for="exampleInputEmail1">Nom</label>
-                <input type="text" class="form-control" placeholder="">
+    <div class="card-body mx-auto" style="max-width: 700px;">
+        <p>...</p>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label for="exampleInputEmail1">Nom</label>
+                    <input type="text" class="form-control" name="firstname" placeholder="firstname">
+                </div>
+                <div class="col">
+                    <label for="exampleInputEmail1">Prénom</label>
+                    <input type="text" class="form-control" name="lastname" placeholder="lastname">
+                </div>
             </div>
-            <div class="col">
-                <label for="exampleInputEmail1">Prénom</label>
-                <input type="text" class="form-control" placeholder="">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="email" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Mot de passe</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <label for="exampleInputEmail1">Quel est votre partie favorite ?</label>
-        <select class="form-control">
-            <option></option>
-            <option>Phantom Blood</option>
-            <option>Battle Tendency</option>
-            <option>Stardust Crusaders</option>
-            <option>Diamond Is Unbreakable</option>
-            <option>Golden Wind</option>
-            <option>Stone Ocean</option>
-            <option>Steel Ball Run</option>
-            <option>Jojolion</option>
-        </select>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Sujet</label>
+                <input type="text" class="form-control" name="subject" placeholder="subject" >
+            </div>
+            {{!-- <label for="exampleInputEmail1">Quel est votre partie favorite ?</label>
+            <select class="form-control">
+                <option></option>
+                <option>Phantom Blood</option>
+                <option>Battle Tendency</option>
+                <option>Stardust Crusaders</option>
+                <option>Diamond Is Unbreakable</option>
+                <option>Golden Wind</option>
+                <option>Stone Ocean</option>
+                <option>Steel Ball Run</option>
+                <option>Jojolion</option>
+            </select> --}}
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+    </div>
 </div>
 {{!-- /Form --}}

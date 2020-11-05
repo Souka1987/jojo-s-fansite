@@ -10,6 +10,19 @@ const Powers = require('../../database/models/Powers');
 module.exports = {
     // GET page du formulaire création de powers ( Admin )
     powersPageFormAdd: async (req, res) => {
+
+
+        //    MISE EN RELATION AVEC la propriété "populate() de mongoose"
+        Powers.find({})
+            .populate('characters')
+            .exec((err, data) => {
+                if (err) console.log(err)
+                console.log(data)
+                res.render('powers', { // "res.render", rend une vue.
+                    powers: data
+                })
+            })
+    
         const dbPowers = await Powers.find({})
         res.render('admin/powers/powersAdd', {
             powers: dbPowers,

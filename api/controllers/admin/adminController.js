@@ -15,7 +15,7 @@ module.exports = {
             dbPowers = await Powers.find({}),
             dbManga = await Manga.find({})
         res.render('admin', {
-            // layout: 'adminLayout',
+            layout: 'adminLayout',
             news: dbNews,
             arcs: dbArcs,
             character: dbCharacter,
