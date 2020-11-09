@@ -3,25 +3,32 @@
  * ********************************** */
 
 const path = require('path');
-const News = require('../../database/models/News');
 const Manga = require('../../database/models/Manga');
+const Arcs = require('../../database/models/Arcs');
 const fs = require('fs')
 
 
 module.exports = {
     // GET Page website Manga ( Utilisateur )
     getManga: async (req, res) => {
-        const dbManga = await Manga.find({})
 
-        // Demander de rendre la page "characters"
-        res.render('manga', { // "res.render", rend une vue.
-            manga: dbManga
-        })
-    },
+                res.render('manga', { // "res.render", rend une vue.
+                    manga: data
+                })
+            
+        },
+
 
     // GET Page du formulaire creation de Manga ( Admin )
-    mangaFormAdd: (req, res) => {
-        res.render('admin/manga/mangaAdd')
+    mangaFormAdd: async (req, res) => {
+
+        const dbManga = await Manga.find({}),
+            dbArcs = await Arcs.find({})
+
+        res.render('admin/manga/mangaAdd', {
+            manga:dbManga,
+            arcs: dbArcs
+        })
     },
 
     // POST Action du formulaire characterAdd ( Admin )
@@ -58,10 +65,13 @@ module.exports = {
 
     // GET Page du formulaire édition de Characters ( Admin )
     editFormManga: async (req, res) => {
-        const articleID = await Manga.findById(req.params.id)
-        console.log(articleID)
+        const dbManga = await Manga.findById(req.params.id)
+        const dbArcs = await Arcs.find({})
+
+        console.log(dbManga)
         res.render('admin/manga/editManga', {
-            article: articleID
+            manga: dbManga,
+            arcs: dbArcs
         })
     },
 
@@ -72,7 +82,7 @@ module.exports = {
 
 
         // Récupération l'article grace au params.id
-        const articleID = await Manga.findById(req.params.id)
+        const dbManga = await Manga.findById(req.params.id)
         const image = req.file.originalname
 
         console.log(req.body)
@@ -96,12 +106,12 @@ module.exports = {
 
     // GET Pour supprimer un article
     deleteManga: async (req, res) => {
-        const articleID = await Manga.findById(req.params.id)
+        const dbManga = await Manga.findById(req.params.id)
         console.log('Controller Delete One Article')
-        console.log(articleID)
+        console.log(dbManga)
 
         // Effacer l'image depuis le dossier source "public"
-        fs.unlink(`public/images/arcs/${articleID.imageName}`, (err) => {
+        fs.unlink(`public/images/arcs/${dbManga.imageName}`, (err) => {
             /*la méthode "fs.unlink" sert à effacer un fichier
                     depuis le dossier ciblé*/
 

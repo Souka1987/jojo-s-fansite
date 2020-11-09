@@ -1,12 +1,10 @@
 /*
  * App.js
  ******************************/
-const router = require('./api/router');
-
 
 // Import du module http (pour afficher la page dans un naviguateur web)
 // "http" est un protocole de transmission de données (www..)
-//var http = require('http')
+const http = require('http')
 
 // Import de module
 const
@@ -18,10 +16,13 @@ const
     mongoose = require('mongoose'),
     // le flash est une zone spéciale de la session servant à stocker les datas utilisateur.
     connectFlash = require('connect-flash'),
+    // Users
     expressSession = require('express-session'),
+    mocha = require('mocha'),
     MongoStore = require('connect-mongo'),
     // Import de nodemailer
-    nodemailer = require('nodemailer'),
+    //nodemailer = require('nodemailer'),
+    // Import de body-parser
     bodyParser = require('body-parser'),
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
     {
@@ -29,11 +30,59 @@ const
         limit,
         inc
     } = require('./helpers/hbs'),
-    port = process.env.PORT || 1870;
+    //port = process.env.PORT || 1870;
+    TWO_HOURS = 1000 * 60 * 60 * 2,
+    {
+        port = 1870,
+        NODE_ENV = 'developpement',
+        SESS_LIFETIME = TWO_HOURS
+    } = process.env,
+    IN_PROD = NODE_ENV === 'production'
 
 //ENV
 require('dotenv').config()
 // console.log(process.env);
+
+// Nodemailer
+// https://myaccount.google.com/
+// Etape 1
+// let transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     port: 587,
+//     secure: false,
+//     auth: {
+//         user: process.env.EMAIL,
+//         pass: process.env.PASSWORD
+//     }
+// });
+
+// // transporter.use('compile', hbs({
+// //     viewEngine: 'express-handlebars',
+// //     viewPath: './views'
+// // }));
+
+// // Etape 2
+// let mailOptions = {
+//     from: 'soukainataa1987@gmail.com',
+//     to: 'soukainataa1987@gmail.com',
+//     //cc: 'soukainataattoumani@yahoo.fr',
+//     subject: 'Test',
+//     text: 'Welcome to Jojos World community !!!',
+//     html: '<h1>Hello World !</h1>',
+//     // attachments: [{
+//     //     filename: 'pictures.JPG', path: './assets/images/pictures.JPG'
+//     // }]
+//     // template: 'mail'
+// };
+
+// // Etape 3
+// transporter.sendMail(mailOptions, function (err, data) {
+//     if (err) {
+//         console.log('Error Occurs', err);
+//     } else {
+//         console.log('Email sent !!!');
+//     }
+// });
 
 // Mongoose pour le lien avec la base de données. "jjba" est le nom de la base de données.
 mongoose
@@ -55,10 +104,15 @@ var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
 
 
-// Admin
+// Users
 app.set('trust proxy', 1)
 app.use(expressSession({
-    secret: 'securite',
+    cookie: {
+        maxAge: SESS_LIFETIME,
+        sameSite: true,
+        secure: IN_PROD
+    },
+    secret: 'securité',
     name: 'pépito',
     saveUninitialized: true, // Sauvegarde ce qui n'est pas initialisé
     resave: false, // Enregistre automatiquement la session même si elle n'est pas modifiée
@@ -68,7 +122,7 @@ app.use(expressSession({
     })
 }))
 
-//Connect-Flash
+// Connect-Flash
 app.use(connectFlash())
 
 // Handlebars
@@ -93,6 +147,7 @@ app.engine('hbs', hbs({
 // app.use('/article/post', articleValidPost)
 
 
+
 // Express static permet de diriger un chemin (URL) sur un dossier en particulier
 app.use('/assets', express.static('public'))
 
@@ -102,6 +157,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+app.use(express.urlencoded({extended: true}))
+
 
 
 // Notre router permettra de diriger des chemins 'URL' sur les actions 'Controller' qui distriburont nos pages, ... 
@@ -120,3 +178,5 @@ app.use((req, res) => {
 app.listen(port, function () {
     console.log(`écoute le port ${port}, lancé le : ${new Date().toLocaleString()}`);
 })
+
+module.exports = app

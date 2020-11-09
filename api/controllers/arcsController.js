@@ -45,10 +45,11 @@ module.exports = {
 
     // GET Page du formulaire édition de Arcs ( Admin )
     arcsPageFormEdit: async (req, res) => {
-        const articleID = await Arcs.findById(req.params.id)
-        console.log(articleID)
+        const dbArcs = await Arcs.findById(req.params.id)
+        
+        console.log(dbArcs)
         res.render('admin/arcs/editArcs', {
-            article: articleID
+            arcs: dbArcs,
         })
     },
 
@@ -59,7 +60,7 @@ module.exports = {
 
 
         // Récupération l'article grace au params.id
-        const articleID = await Arcs.findById(req.params.id)
+        const dbArcs = await Arcs.findById(req.params.id)
         const image = req.file.originalname
 
         console.log(req.body)
@@ -84,12 +85,12 @@ module.exports = {
 
     // GET Pour supprimer un article
     deleteArcs: async (req, res) => {
-        const articleID = await Arcs.findById(req.params.id)
+        const dbArcs = await Arcs.findById(req.params.id)
         console.log('Controller Delete One Article')
-        console.log(articleID)
+        console.log(dbArcs)
 
         // Effacer l'image depuis le dossier source "public"
-        fs.unlink(`public/images/arcs/${articleID.imageName}`, (err) => {
+        fs.unlink(`public/images/arcs/${dbArcs.imageName}`, (err) => {
             /*la méthode "fs.unlink" sert à effacer un fichier
                     depuis le dossier ciblé*/
 

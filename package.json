@@ -1,54 +1,60 @@
 {
-    "name": "architecture-nodejs-base",
-    "version": "1.0.0",
-    "description": "erfe",
-    "main": "server.js",
-    "scripts": {
-        "test": "nodemon --exec 'mocha ./test/*.js'",
-        "tu": "nodemon --exec 'mocha ./test/*.js --timeout 10000 -R min'",
-        "start": "nodemon server.js",
-        "sass": "sass --watch ./public/css/sass/index.sass:./public/css/style.css",
-        "reinstall": "sudo rm -r node_modules* && npm i && npm start"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/xdrkush/architecture-nodejs-base.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/xdrkush/architecture-nodejs-base/issues"
-    },
-    "homepage": "https://github.com/xdrkush/architecture-nodejs-base#readme",
-    "dependencies": {
-        "bcrypt": "^5.0.0",
-        "body-parser": "^1.19.0",
-        "bootstrap": "^4.5.2",
-        "bootstrap-icons": "^1.0.0",
-        "ckeditor4": "^4.15.0",
-        "connect-flash": "^0.1.1",
-        "connect-mongo": "^3.2.0",
-        "dotenv": "^8.2.0",
-        "express": "^4.17.1",
-        "express-handlebars": "^3.1.0",
-        "express-session": "^1.17.1",
-        "fs": "0.0.1-security",
-        "handlebars-helpers": "^0.10.0",
-        "handlebars.moment": "^1.0.4",
-        "hbs": "^4.1.1",
-        "install": "^0.13.0",
-        "limit-queue": "0.0.6",
-        "mongo-store": "0.0.2",
-        "mongoose": "^5.10.10",
-        "multer": "^1.4.2",
-        "nodemailer": "^6.4.14",
-        "npm": "^6.14.8",
-        "path": "^0.12.7",
-        "sharp": "^0.26.2"
-    },
-    "devDependencies": {
-        "handlebars": "^4.5.0",
-        "nodemon": "^2.0.2"
-    }
+  "name": "jojos-world",
+  "version": "1.0.0",
+  "description": "fansite",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon --exec 'mocha -R Landing ./mocha/demo.js'",
+    "testChai": "nodemon --exec 'mocha ./mocha/testChai*.js'",
+    "testSupertest": "nodemon --exec 'mocha ./mocha/superTest*.js'",
+    "testMocha": "nodemon --exec 'mocha ./mocha/testMocha*.js'",
+    "start": "nodemon server.js",
+    "reinstall": "sudo rm -r node_modules* && npm i && npm start"
+  },
+  
+  "keywords": [],
+  "author": "souka",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.2",
+    "bootstrap-icons": "^1.0.0",
+    "ckeditor4": "^4.15.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.1",
+    "fs": "0.0.1-security",
+    "handlebars-helpers": "^0.10.0",
+    "handlebars.moment": "^1.0.4",
+    "hbs": "^4.1.1",
+    "http": "0.0.1-security",
+    "limit-queue": "0.0.6",
+    "mongo-store": "0.0.2",
+    "mongoose": "^5.10.10",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.15",
+    "npm": "^6.14.8",
+    "path": "^0.12.7",
+    "sharp": "^0.26.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "handlebars": "^4.5.0",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Souka1987/jojo-s-fansite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Souka1987/jojo-s-fansite/issues"
+  },
+  "homepage": "https://github.com/Souka1987/jojo-s-fansite#readme"
 }

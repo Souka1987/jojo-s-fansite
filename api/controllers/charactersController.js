@@ -69,12 +69,12 @@ module.exports = {
 
     // GET Page du formulaire édition de Characters ( Admin )
     pageFormEditCharacter: async (req, res) => {
-        const articleID = await Character.findById(req.params.id)
+        const dbCharacter = await Character.findById(req.params.id)
         const dbPowers = await Powers.find({})
 
         console.log(articleID)
         res.render('admin/character/editCharacters', {
-            article: articleID,
+            character: dbCharacter,
             powers: dbPowers,
 <<<<<<< HEAD
         

@@ -5,6 +5,7 @@
 const multer = require('multer');
 const path = require('path');
 const News = require('../../database/models/News');
+const Arcs = require('../../database/models/Arcs')
 const fs = require('fs');
 
 
@@ -49,10 +50,12 @@ module.exports = {
 
     // GET Page du formulaire édition de Arcs ( Admin )
     editFormNews: async (req, res) => {
-        const articleID = await News.findById(req.params.id)
-        console.log(articleID)
+        const dbNews = await News.findById(req.params.id)
+        const dbArcs = await Arcs.find({})
+        console.log(dbNews)
         res.render('admin/news/editNews', {
-            article: articleID
+            news:dbNews,
+            arcs:dbArcs
         })
     },
 
@@ -63,7 +66,7 @@ module.exports = {
 
 
         // Récupération l'article grace au params.id
-        const articleID = await News.findById(req.params.id)
+        const dbNews = await News.findById(req.params.id)
         const image = req.file.originalname
 
         console.log(req.body)
@@ -88,12 +91,12 @@ module.exports = {
 
     // GET Pour supprimer un article
     deleteNews: async (req, res) => {
-        const articleID = await News.findById(req.params.id)
+        const dbNews = await News.findById(req.params.id)
         console.log('Controller Delete One Article')
-        console.log(articleID)
+        console.log(dbNews)
 
         // Effacer l'image depuis le dossier source "public"
-        fs.unlink(`public/images/arcs/${articleID.imageName}`, (err) => {
+        fs.unlink(`public/images/arcs/${dbNews.imageName}`, (err) => {
             /*la méthode "fs.unlink" sert à effacer un fichier
                     depuis le dossier ciblé*/
 

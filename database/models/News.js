@@ -1,4 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+
 
 //Schema
 const NewsSchema = new mongoose.Schema({
@@ -10,7 +12,14 @@ const NewsSchema = new mongoose.Schema({
     createDate: {
         type: Date,
         default: new Date() // La date sera créé au moment où l'on va créer l'article.
-    }
+    },
+    arcs: {
+        type: Schema.Types.ObjectId,
+        ref: 'Arcs'
+    },
+    character:[],
+    manga:[]
+
 
 
 })
