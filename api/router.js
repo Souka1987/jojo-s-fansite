@@ -102,10 +102,10 @@ router.route('/create')
  * ADMIN
  * ***** */
 
+
 // Page admin
 router.route('/admin')
     .get(adminController.get)
-
 
 // Arcs
 router.route('/admin/arcs')
@@ -213,8 +213,6 @@ router.route('/admin/deleteManga/:id')
     .get(mangaController.deleteManga)
 
 
-
-/************************************** */
 
 
 

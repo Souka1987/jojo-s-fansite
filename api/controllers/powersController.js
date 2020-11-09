@@ -5,6 +5,7 @@
 const path = require('path');
 const fs = require('fs');
 const Powers = require('../../database/models/Powers');
+const Character = require('../../database/models/Character');
 
 
 module.exports = {
@@ -22,10 +23,12 @@ module.exports = {
                     powers: data
                 })
             })
-    
-        const dbPowers = await Powers.find({})
+
+        const dbPowers = await Powers.find({}),
+            dbCharacter = await Character.find({})
         res.render('admin/powers/powersAdd', {
             powers: dbPowers,
+            character: dbCharacter
         })
     },
 
