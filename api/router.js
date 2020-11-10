@@ -22,6 +22,7 @@ const homeController = require('./controllers/homeController'),
     //imagesController = require('./controllers/imagesController'),
     messageController = require('./controllers/messageController'),
     // profileController = require('./controllers/profileController'),
+    nodemailerController = require('./controllers/nodemailerController'),
     adminController = require('./controllers/admin/adminController')
 
 
@@ -71,14 +72,23 @@ router.route('/manga')
  * CONTACT
  * ******* */
 
-router.route('/user')
-    .get(userController.get)
 
+// Nodemailer
+// email test
+router.route('/nodemailerTest')
+    .post(nodemailerController.test)
+
+
+
+
+// Message
 router.route('/message')
     .get(messageController.get)
 
 
 // Users
+router.route('/user')
+    .get(userController.get)
 
 router.route('/login')
     .get(loginController.login)

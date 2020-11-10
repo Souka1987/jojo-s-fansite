@@ -59,10 +59,7 @@
                     "200": {
                         "description": "characters response",
                         "schema": {
-                            "type": "object",
-                            "items": {
-                                "$ref": "/characters"
-                            }
+                            "type": "object"
                         }
                     },
                     "default": {
@@ -80,10 +77,7 @@
                     "in": "body",
                     "name": "body",
                     "description": "Characters object to added",
-                    "required": true,
-                    "schema": {
-                        "$ref": "#/definitions/Characters"
-                    }
+                    "required": true
                 }],
                 "responses": {
                     "200": {
@@ -94,10 +88,7 @@
                         }
                     },
                     "default": {
-                        "description": "error",
-                        "schema": {
-                            "$ref": "/characters"
-                        }
+                        "description": "error"
                     }
                 },
                 "tags": ["characters"]
@@ -160,7 +151,7 @@
         }
     },
     "definitions": {
-        "Characters": {
+        "Character": {
             "type": "object",
             "properties": {
                 "id": {

@@ -21,7 +21,7 @@ const
     mocha = require('mocha'),
     MongoStore = require('connect-mongo'),
     // Import de nodemailer
-    //nodemailer = require('nodemailer'),
+    nodemailer = require('nodemailer'),
     // Import de body-parser
     bodyParser = require('body-parser'),
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
@@ -35,55 +35,15 @@ const
     // Generator en lien avec swagger
     //expressOasGenerator = require('express-oas-generator')
     //expressOasGenerator.init(app, {});
-   
 
-port = process.env.PORT || 1870;
+
+    port = process.env.PORT || 1870;
 
 
 //ENV
 require('dotenv').config()
 // console.log(process.env);
 
-// Nodemailer
-// https://myaccount.google.com/
-// Etape 1
-// let transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     port: 587,
-//     secure: false,
-//     auth: {
-//         user: process.env.EMAIL,
-//         pass: process.env.PASSWORD
-//     }
-// });
-
-// // transporter.use('compile', hbs({
-// //     viewEngine: 'express-handlebars',
-// //     viewPath: './views'
-// // }));
-
-// // Etape 2
-// let mailOptions = {
-//     from: 'soukainataa1987@gmail.com',
-//     to: 'soukainataa1987@gmail.com',
-//     //cc: 'soukainataattoumani@yahoo.fr',
-//     subject: 'Test',
-//     text: 'Welcome to Jojos World community !!!',
-//     html: '<h1>Hello World !</h1>',
-//     // attachments: [{
-//     //     filename: 'pictures.JPG', path: './assets/images/pictures.JPG'
-//     // }]
-//     // template: 'mail'
-// };
-
-// // Etape 3
-// transporter.sendMail(mailOptions, function (err, data) {
-//     if (err) {
-//         console.log('Error Occurs', err);
-//     } else {
-//         console.log('Email sent !!!');
-//     }
-// });
 
 // Mongoose pour le lien avec la base de données. "jjba" est le nom de la base de données.
 mongoose

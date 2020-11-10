@@ -124,12 +124,12 @@ module.exports = {
 
     // GET Pour supprimer un article
     deleteCharacters: async (req, res) => {
-        const articleID = await Character.findById(req.params.id)
+        const dbCharacter = await Character.findById(req.params.id)
         console.log('Controller Delete One Article')
-        console.log(articleID)
+        console.log(dbCharacter)
 
         // Effacer l'image depuis le dossier source "public"
-        fs.unlink(`public/images/characters/${articleID.imageName}`, (err) => {
+        fs.unlink(`public/images/characters/${dbCharacter.imageName}`, (err) => {
             /*la méthode "fs.unlink" sert à effacer un fichier
                     depuis le dossier ciblé*/
 
