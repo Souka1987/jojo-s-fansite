@@ -30,14 +30,15 @@ const
         limit,
         inc
     } = require('./helpers/hbs'),
-    //port = process.env.PORT || 1870;
-    TWO_HOURS = 1000 * 60 * 60 * 2,
-    {
-        port = 1870,
-        NODE_ENV = 'developpement',
-        SESS_LIFETIME = TWO_HOURS
-    } = process.env,
-    IN_PROD = NODE_ENV === 'production'
+    // Swagger
+    swaggerUi = require('swagger-ui-express'),
+    // Generator en lien avec swagger
+    //expressOasGenerator = require('express-oas-generator')
+    //expressOasGenerator.init(app, {});
+   
+
+port = process.env.PORT || 1870;
+
 
 //ENV
 require('dotenv').config()
@@ -105,13 +106,7 @@ MomentHandler.registerHelpers(Handlebars);
 
 
 // Users
-app.set('trust proxy', 1)
 app.use(expressSession({
-    cookie: {
-        maxAge: SESS_LIFETIME,
-        sameSite: true,
-        secure: IN_PROD
-    },
     secret: 'securité',
     name: 'pépito',
     saveUninitialized: true, // Sauvegarde ce qui n'est pas initialisé
@@ -141,12 +136,6 @@ app.engine('hbs', hbs({
 
 }));
 
-// MIDDLEWARE
-// const article = require('./database/models/article');
-// const articleValidPost = require('./middleware/articleValidPost');
-// app.use('/article/post', articleValidPost)
-
-
 
 // Express static permet de diriger un chemin (URL) sur un dossier en particulier
 app.use('/assets', express.static('public'))
@@ -158,7 +147,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({
+    extended: true
+}))
 
 
 
@@ -168,11 +159,14 @@ const ROUTER = require('./api/router')
 app.use('/', ROUTER)
 
 
-
 // Page erreur 404
-app.use((req, res) => {
-    res.render('err404')
-})
+// app.use((req, res) => {
+//     res.render('err404')
+// })
+
+// Swagger
+const swaggerDocument = require('./api/config/swagger.json')
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Ensuite nous demandons a express (app) de run notre projet.
 app.listen(port, function () {

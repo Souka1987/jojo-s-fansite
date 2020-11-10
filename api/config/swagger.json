@@ -1,0 +1,190 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters.",
+        "version": "1.0.0",
+        "title": "jojo's fansite"
+    },
+    "tags": [{
+            "name": "jojo's world",
+            "description": "Everything about jojo's bizarre adventure",
+            "externalDocs": {
+                "description": "Find out more about your favorite manga",
+                "url": "http://localhost:1870/"
+            }
+        }
+    
+    ],
+    "schemes": [
+        "https",
+        "http"
+    ],
+
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Home Page",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": "body",
+                "operationId": "home",
+                "produces": [
+                    "application/json",
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "home response",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "default": {
+                        "description": "error"
+                    }
+                },
+                "tags": ["home"]
+            }
+        },
+
+        "/characters": {
+            "get": {
+                "summary": "Characters page",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "characters response",
+                        "schema": {
+                            "type": "object",
+                            "items": {
+                                "$ref": "/characters"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "error"
+                    }
+                },
+                "tags": ["characters"]
+            },
+            "post": {
+                "summary": "Create characters",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Characters object to added",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/Characters"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "create characters response",
+                        "schema": {
+                            "type": "object"
+
+                        }
+                    },
+                    "default": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "/characters"
+                        }
+                    }
+                },
+                "tags": ["characters"]
+            },
+            "put": {
+                "summary": "Update characters",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Characters object to update",
+                    "required": true
+
+                }],
+
+                "responses": {
+                    "200": {
+                        "description": "create characters response",
+                        "schema": {
+                            "type": "object"
+
+                        }
+                    },
+                    "default": {
+                        "description": "error"
+
+                    }
+                },
+                "tags": ["characters"]
+            }
+        },
+        "/characters/{id}": {
+            "delete": {
+                "summary": "Delete one character",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "delete one characters response",
+                        "schema": {
+                            "type": "object"
+
+                        }
+                    },
+                    "default": {
+                        "description": "error"
+
+                    }
+                },
+                "tags": ["characters"]
+            }
+        }
+    },
+    "definitions": {
+        "Characters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "imgage": {
+                    "type": "string"
+                },
+                "imageName": {
+                    "type": "string"
+                },
+
+                "createDate": {
+                    "type": "Date",
+                    "default": "new Date ()"
+                }
+            }
+        }
+    }
+}

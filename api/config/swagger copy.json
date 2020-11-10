@@ -1,0 +1,544 @@
+{
+    "definitions": {
+        "name": "String",
+        "content": "String",
+        "image": "String",
+        "imageName": "String",
+        "createDate": {
+            "type": "Date",
+            "default": "new Date()"
+        },
+        "powers": {
+            "type": "Schema.Types.ObjectId",
+            "ref": "Powers"
+        },
+        "arcs": [],
+        "manga": [],
+        "news": []
+    },
+    "info": {
+        "title": "jojos-world",
+        "version": "1.0.0",
+        "license": {
+            "name": "ISC"
+        },
+        "description": "Specification JSONs: [v2](/api-spec/v2), [v3](/api-spec/v3).\n\nfansite"
+    },
+    "basePath": "/v2",
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "/",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [{
+                    "name": "home",
+                    "description": "homePage",
+                    "required": true,
+                    "schema": {
+                        "$ref": "index"
+                    }
+                }],
+                "responses": [{
+                        "code": 200,
+                        "message": "OK"
+                    },
+                    {
+                        "code": 404,
+                        "message": "Page not found"
+                    }
+                ],
+                "tags": [
+                    "home"
+                ]
+            }
+        },
+        "/characters": {
+            "get": {
+                "summary": "/characters",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [{
+                    "name": "characters",
+                    "description": "list of characters",
+                    "required": true,
+                    "schema": {
+                        "$ref": "characters"
+                    }
+                }],
+                "responses": [{
+                        "code": 200,
+                        "message": "OK"
+                    },
+                    {
+                        "code": 404,
+                        "message": "Page not found"
+                    }
+                ],
+                "tags": ["characters"]
+            }
+        },
+        "post": {
+            "summary": "/characters",
+            "consumes": [
+                "application/json",
+                "application/xml"
+            ],
+            "parameters": [{
+                "name": "body",
+                "description": "list of characters",
+                "required": true,
+                "type": "string",
+                "schema": {
+                    "$ref": "characters"
+                }
+            }],
+            "responses": [{
+                    "code": 200,
+                    "message": "OK"
+                },
+                {
+                    "code": 404,
+                    "message": "Page not found"
+                }
+            ],
+            "tags": ["characters"]
+        }
+    },
+    "/author": {
+        "get": {
+            "summary": "/author",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/manga": {
+        "get": {
+            "summary": "/manga",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/user": {
+        "get": {
+            "summary": "/user",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/message": {
+        "get": {
+            "summary": "/message",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/login": {
+        "get": {
+            "summary": "/login",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/auth": {
+        "post": {
+            "summary": "/auth",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/logout": {
+        "get": {
+            "summary": "/logout",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/register": {
+        "get": {
+            "summary": "/register",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/create": {
+        "post": {
+            "summary": "/create",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin": {
+        "get": {
+            "summary": "/admin",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/arcs": {
+        "get": {
+            "summary": "/admin/arcs",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        },
+        "post": {
+            "summary": "/admin/arcs",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/editArcs/{id}": {
+        "get": {
+            "summary": "/admin/editArcs/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        },
+        "post": {
+            "summary": "/admin/editArcs/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/deleteArcs/{id}": {
+        "get": {
+            "summary": "/admin/deleteArcs/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/news": {
+        "get": {
+            "summary": "/admin/news",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        },
+        "post": {
+            "summary": "/admin/news",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/editNews/{id}": {
+        "get": {
+            "summary": "/admin/editNews/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        },
+        "post": {
+            "summary": "/admin/editNews/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/deleteNews/{id}": {
+        "get": {
+            "summary": "/admin/deleteNews/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/characters": {
+        "get": {
+            "summary": "/admin/characters",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        },
+        "post": {
+            "summary": "/admin/characters",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/editCharacters/{id}": {
+        "get": {
+            "summary": "/admin/editCharacters/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        },
+        "post": {
+            "summary": "/admin/editCharacters/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/deleteCharacters/{id}": {
+        "get": {
+            "summary": "/admin/deleteCharacters/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/powers": {
+        "get": {
+            "summary": "/admin/powers",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        },
+        "post": {
+            "summary": "/admin/powers",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/editPowers/{id}": {
+        "get": {
+            "summary": "/admin/editPowers/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        },
+        "post": {
+            "summary": "/admin/editPowers/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/deletePowers/{id}": {
+        "get": {
+            "summary": "/admin/deletePowers/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/manga": {
+        "get": {
+            "summary": "/admin/manga",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        },
+        "post": {
+            "summary": "/admin/manga",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/editManga/{id}": {
+        "get": {
+            "summary": "/admin/editManga/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        },
+        "post": {
+            "summary": "/admin/editManga/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        }
+    },
+    "/admin/deleteManga/{id}": {
+        "get": {
+            "summary": "/admin/deleteManga/{id}",
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "required": true
+            }],
+            "responses": {},
+            "tags": []
+        }
+    },
+
+    "swagger": "2.0",
+    "tags": []
+}
