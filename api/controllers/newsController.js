@@ -2,11 +2,11 @@
  * Controller Page Arcs et News Home
  * ********************************** */
 
-const multer = require('multer');
-const path = require('path');
-const News = require('../../database/models/News');
-const Arcs = require('../../database/models/Arcs')
-const fs = require('fs');
+const multer = require('multer'),
+    path = require('path'),
+    News = require('../../database/models/News'),
+    Arcs = require('../../database/models/Arcs'),
+    fs = require('fs')
 
 
 
@@ -54,8 +54,8 @@ module.exports = {
         const dbArcs = await Arcs.find({})
         console.log(dbNews)
         res.render('admin/news/editNews', {
-            news:dbNews,
-            arcs:dbArcs
+            news: dbNews,
+            arcs: dbArcs
         })
     },
 

@@ -12,11 +12,9 @@ module.exports = {
     // GET Page website Manga ( Utilisateur )
     getManga: async (req, res) => {
 
-                res.render('manga', { // "res.render", rend une vue.
-                    manga: data
-                })
-            
-        },
+        res.render('manga') // "res.render", rend une vue.
+
+    },
 
 
     // GET Page du formulaire creation de Manga ( Admin )
@@ -26,7 +24,7 @@ module.exports = {
             dbArcs = await Arcs.find({})
 
         res.render('admin/manga/mangaAdd', {
-            manga:dbManga,
+            manga: dbManga,
             arcs: dbArcs
         })
     },
