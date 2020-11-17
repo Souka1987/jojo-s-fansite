@@ -28,18 +28,18 @@ const transporter = nodemailer.createTransport({
 
 module.exports = {
     // Action test boite mail > nodemailer
-    mail: (req, res) => {
+    email: (req, res) => {
         console.log(req.body)
         // On configure notre mail à envoyer par nodemailer
         const mailOptions = {
-            from: 'jojo1870@gmail.com',
+            from: 'soukainataa1987@gmail.com',
             //cc:'soukainataattoumani@yahoo.fr',
             to: req.body.email,
-            subject: 'Félicitation ! ' + req.body.lastname + ' !',
+            subject: 'Félicitation !, ' + req.body.firstname + req.body.lastname + ' !',
             html: `
-          <h2>${req.body.lastname}, Bienvenue dans le monde de Jojo !!</h2>
-          <h5>Tous sur votre manga préféré jojo's Bizarre Adventure. </h5>
-          <h4>${req.body.subject}</h4>
+          <h2>${req.body.firstname},${req.body.lastname} , Bienvenue dans le monde de Jojo !!</h2>
+          <h3>Tous sur votre manga préféré jojo's Bizarre Adventure. </h3>
+          <h3>${req.body.subject}</h3>
           <p>${req.body.message}</p>
         `
         }

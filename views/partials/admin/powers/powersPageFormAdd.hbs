@@ -1,58 +1,82 @@
 <section>
     <div class="container">
-        <h1 class="text-center text-dark">Ajouter Powers</h1>
-    {{!--Ajout de l'url et de la méthode--}}
-    <form action="/admin/powers" method="POST" enctype="multipart/form-data">
+        <h1 class="text-center text-dark">Ajouter un pouvoir</h1>
+        {{!--Ajout de l'url et de la méthode--}}
+        <form action="/admin/powers" method="POST" enctype="multipart/form-data">
 
-        {{!-- Input Name --}}
-        <div class="form-group">
-            <label for="text">Nom</label>
-            <input type="text" class="form-control" id="exampleInput" name="name">
-        </div>
+            {{!-- Input Name --}}
+            <div class="form-group">
+                <label for="text">Nom de la capacité (stand ou autres ...)</label>
+                <input type="text" class="form-control" id="exampleInput" name="name">
+            </div>
 
-        {{!-- Input Contenu --}}
-        <div class="form-group">
-            <label for="exampleInputTextarea">Contenu 1</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content1"></textarea>
-            
-        </div>
+            {{!-- Input Contenu --}}
+            <div class="form-group">
+                <label for="exampleInputTextarea">Son apparence</label>
+                <textarea class="form-control" id="power" name="content1"></textarea>
+                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+                <script>
+                    const power = CKEDITOR.replace('content1', {
+                        entities: false, // Pour la suppression des caractères spéciaux
+                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                    });
 
-        {{!-- Input Titre --}}
-        <div class="form-group">
-            <label for="text">Titre 1</label>
-            <input type="text" class="form-control" id="exampleInput" name="title1">
-        </div>
+                    power.on('change', function (e) {// Modification du contenu de l'éditeur
+                        console.log(e.editor.getData())
+                    })
+                </script>
+            </div>
 
-        {{!-- Input Contenu --}}
-        <div class="form-group">
-            <label for="exampleInputTextarea">Contenu 2</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content2"></textarea>
-        </div>
+            {{!-- Input Titre --}}
+            <div class="form-group">
+                <label for="text">Type de pouvoir (stand ou autres...)</label>
+                <input type="text" class="form-control" id="exampleInput" name="title1">
+            </div>
 
-        {{!-- Input Titre --}}
-        <div class="form-group">
-            <label for="text">Titre 2</label>
-            <input type="text" class="form-control" id="exampleInput" name="title2">
-        </div>
+            {{!-- Input Contenu --}}
+            <div class="form-group">
+                <label for="exampleInputTextarea">Description de sa ou ses capacité(s)</label>
+                <textarea class="form-control" id="power" name="content2"></textarea>
+                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+                <script>
+                    CKEDITOR.replace('content2', {
+                        entities: false, // Pour la suppression des caractères spéciaux
+                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                    });
+                </script>
+            </div>
 
-        {{!-- Input Contenu --}}
-        <div class="form-group">
-            <label for="exampleInputTextarea">Contenu 3</label>
-            <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content3"></textarea>
-        </div>
+            {{!-- Input Titre --}}
+            <div class="form-group">
+                <label for="text">Son histoire</label>
+                <input type="text" class="form-control" id="exampleInput" name="title2">
+            </div>
+
+            {{!-- Input Contenu --}}
+            <div class="form-group">
+                <label for="exampleInputTextarea">Description de sa personnalité + son histoire</label>
+                <textarea class="form-control" id="power" name="content3"></textarea>
+                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+                <script>
+                    CKEDITOR.replace('content3', {
+                        entities: false, // Pour la suppression des caractères spéciaux
+                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                    });
+                </script>
+            </div>
 
 
-        {{!-- Images --}}
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
-        </div>
+            {{!-- Images --}}
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+            </div>
 
-        {{!-- Boutons --}}
-        <div>
-            <button type="submit" class="btn btn-primary">Valider</button>
-            <button type="submit" class="btn btn-secondary">Annuler</button>
-        </div>
-        </div>
+            {{!-- Boutons --}}
+            <div>
+                <button type="submit" class="btn btn-primary">Valider</button>
+                <button type="submit" class="btn btn-secondary">Annuler</button>
+            </div>
+    </div>
     </form>
 </section>

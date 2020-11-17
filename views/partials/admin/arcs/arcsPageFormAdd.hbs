@@ -5,19 +5,19 @@
 
         {{!-- Input Nom du personnage --}}
         <div class="form-group">
-            <label for="text">Titre</label>
+            <label for="text">Titre de la partie</label>
             <input type="text" class="form-control" id="exampleInput" name="title">
         </div>
 
         {{!-- Input Contenu --}}
         <div class="form-group">
-            <label for="exampleInputTextarea">Contenu</label>
-            <textarea class="form-control" id="editor3" placeholder="example textarea" name="content"></textarea>
+            <label for="exampleInputTextarea">Description de la partie</label>
+            <textarea class="form-control" id="arcs"  name="content" hidden>{{ content }}</textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
             <script>
-                const arcs = CKEDITOR.replace('editor3', {
+                const arcs = CKEDITOR.replace('arcs', {
                     entities: false, // Pour la suppression des caractères spéciaux
-                    //uiColor: '#00000' //Coloriser les bordures de l'éditeur
+                    uiColor: '#B22234' // Coloriser les bordures de l'éditeur
                 });
 
                 arcs.on('change', function (e) {// Modification du contenu de l'éditeur

@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-        <h1 class="text-center text-dark">Ajouter Manga</h1>
+        <h1 class="text-center text-dark">Ajouter un Manga</h1>
         {{!--Ajout de l'url et de la méthode--}}
         <form action="/admin/manga" method="POST" enctype="multipart/form-data">
 
@@ -12,16 +12,16 @@
 
             {{!-- Input Contenu --}}
             <div class="form-group">
-                <label for="exampleInputTextarea">Contenu </label>
-                <textarea class="form-control" id="editor" placeholder="example textarea" name="content"></textarea>
+                <label for="exampleInputTextarea">Description</label>
+                <textarea class="form-control" id="manga" name="content"></textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const ed = CKEDITOR.replace('editor', {
-                        entities: false, //pour la suppression des caractères spéciaux
-                        //uiColor: '#00000' //Coloriser les bordures de l'éditeur
+                    const manga = CKEDITOR.replace('manga', {
+                        entities: false, // Pour la suppression des caractères spéciaux
+                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
                     });
 
-                    ed.on('change', function (e) {//modification du contenu de l'éditeur
+                    manga.on('change', function (e) {// Modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     })
                 </script>

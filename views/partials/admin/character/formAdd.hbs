@@ -5,7 +5,7 @@
 
         {{!-- Input Nom du personnage --}}
         <div class="form-group">
-            <label for="text">Nom</label>
+            <label for="text">Nom du personnage</label>
             <input type="text" class="form-control" id="exampleInput" name="name">
         </div>
 
@@ -19,16 +19,16 @@
 
         {{!-- Input Contenu --}}
         <div class="form-group">
-            <label for="exampleInputTextarea">Contenu</label>
-            <textarea class="form-control" id="editor5" placeholder="example textarea" name="content"></textarea>
+            <label for="exampleInputTextarea">Introduction du personnage</label>
+            <textarea class="form-control" id="chara" name="content"></textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
             <script>
-                const ed = CKEDITOR.replace('editor5', {
-                    entities: false, //pour la suppression des caractères spéciaux
-                    //uiColor: '#00000' //Coloriser les bordures de l'éditeur
+                const chara = CKEDITOR.replace('chara', {
+                    entities: false, // Pour la suppression des caractères spéciaux
+                    uiColor: '#B22234' // Coloriser les bordures de l'éditeur
                 });
 
-                ed.on('change', function (e) {//modification du contenu de l'éditeur
+                chara.on('change', function (e) {//modification du contenu de l'éditeur
                     console.log(e.editor.getData())
                 })
             </script>

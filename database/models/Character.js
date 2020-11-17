@@ -10,7 +10,7 @@ const CharacterSchema = new mongoose.Schema({
     imageName: String,
     createDate: {
         type: Date,
-        default: new Date() // La date sera créé au moment où l'on va créer l'article.
+        default: new Date(), // La date sera créé au moment où l'on va créer l'article.
     },
     powers: {
         type: Schema.Types.ObjectId,
@@ -18,7 +18,7 @@ const CharacterSchema = new mongoose.Schema({
     },
     arcs: [],
     manga: [],
-    news: [],
+    news: []
 
 })
 

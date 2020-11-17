@@ -3,11 +3,14 @@ const express = require('express'),
     router = express.Router(),
     path = require('path'),
     uploadArcs = require('./config/multerArcs'),
-    uploadCharacters = require('./config/multerCharacters')
+    uploadCharacters = require('./config/multerCharacters'),
+    // Middleware
+    auth = require('../middleware/auth')
 
 
 
 
+const commentsContoller = require('./controllers/commentsContoller')
 // CONTROLLER
 const homeController = require('./controllers/homeController'),
     newsController = require('./controllers/newsController'),
@@ -16,12 +19,12 @@ const homeController = require('./controllers/homeController'),
     powersController = require('./controllers/powersController'),
     arcsController = require('./controllers/arcsController'),
     mangaController = require('./controllers/mangaController'),
+    myAccountController = require('./controllers/myAccountController'),
     loginController = require('./controllers/loginController'),
     userController = require('./controllers/userController'),
     userRegisterController = require('./controllers/userRegisterController'),
-    //imagesController = require('./controllers/imagesController'),
     messageController = require('./controllers/messageController'),
-    // profileController = require('./controllers/profileController'),
+    commentsController = require('./controllers/commentsContoller'),
     nodemailerController = require('./controllers/nodemailerController'),
     adminController = require('./controllers/admin/adminController')
 
@@ -58,15 +61,6 @@ router.route('/manga')
     .get(mangaController.getManga)
 
 
-/*
- * Images
- * *********** */
-
-// router.route('/images')
-//     .get(imagesController.get)
-
-
-
 
 /*
  * CONTACT
@@ -74,10 +68,9 @@ router.route('/manga')
 
 
 // Nodemailer
-// email test
-router.route('/nodemailerTest')
-    .post(nodemailerController.test)
-
+// email (page Home)
+router.route('/nodemailer')
+    .post(nodemailerController.mail)
 
 
 
@@ -87,6 +80,7 @@ router.route('/message')
 
 
 // Users
+// Connection
 router.route('/user')
     .get(userController.get)
 
@@ -99,12 +93,23 @@ router.route('/auth')
 router.route('/logout')
     .get(loginController.logout)
 
+
+// Inscription
 router.route('/register')
     .get(userRegisterController.register)
 
 router.route('/create')
     .post(userRegisterController.create)
 
+
+// Comments
+// GET 
+router.route('/comments')
+    .get(commentsController.getComments)
+// POST Ajouter un commentaire
+router.route('/newComments')
+    .post(commentsController.postComments)
+// .delete(commentsController.deleteOne)
 
 
 
@@ -115,7 +120,11 @@ router.route('/create')
 
 // Page admin
 router.route('/admin')
-    .get(adminController.get)
+    .get(auth.isAdmin, adminController.get)
+
+// My Account
+router.route('/myaccount')
+    .get(auth.auth, myAccountController.get)
 
 // Arcs
 router.route('/admin/arcs')

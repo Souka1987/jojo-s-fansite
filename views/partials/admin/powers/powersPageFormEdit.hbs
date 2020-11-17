@@ -64,54 +64,75 @@
     </form>
 =======
     <div class="container">
-        <h1 class="text-center text-dark">Edition Powers</h1>
+        <h1 class="text-center text-dark">Modification de l'article Pouvoir</h1>
         {{!--Ajout de l'url et de la méthode + "multipart/form-data" pour l'ajout de fichiers --}}
         <form action="/admin/editPowers/{{ _id }}" method="POST" enctype="multipart/form-data">
 
             {{!-- Input Name --}}
             <div class="form-group">
-                <label for="text">Nom {{ name }}</label>
+                <label for="text">Nom de la capacité (stand ou autres ...)</label>
                 <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
             </div>
 
             {{!-- Input Contenu --}}
             <div class="form-group">
-                <label for="exampleInputTextarea">Contenu 1 {{ content1 }}</label>
-                <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content1"
-                    value="{{ content1 }}"></textarea>
+                <textarea class="form-control" id="abilitie" name="content1" hidden>{{ content1 }}</textarea>
+                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+                <script>
+                    const power2 = CKEDITOR.replace('abilitie', {
+                        entities: false, // Pour la suppression des caractères spéciaux
+                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                    });
+
+                    power2.on('change', function (e) {//modification du contenu de l'éditeur
+                        console.log(e.editor.getData())
+                    })
+                </script>
             </div>
 
             {{!-- Input Titre --}}
             <div class="form-group">
-                <label for="text">Titre 1 {{ title1 }}</label>
+                <label for="text">Type de pouvoir (stand ou autres...)</label>
                 <input type="text" class="form-control" id="exampleInput" name="title1" value="{{ title1 }}">
             </div>
 
             {{!-- Input Contenu --}}
             <div class="form-group">
-                <label for="exampleInputTextarea">Contenu 2 {{ content2 }}</label>
-                <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content2"
-                    value="{{ content2 }}"></textarea>
+                <label for="exampleInputTextarea">Description de sa ou ses capacité(s)</label>
+                <textarea class="form-control" id="abilitie2" name="content2" hidden>{{ content2 }}</textarea>
+                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+                <script>
+                    CKEDITOR.replace('abilitie2', {
+                        entities: false, // Pour la suppression des caractères spéciaux
+                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                    });
+                </script>
             </div>
 
             {{!-- Input Titre --}}
             <div class="form-group">
-                <label for="text">Titre 2 {{ title2 }}</label>
+                <label for="text">Son histoire</label>
                 <input type="text" class="form-control" id="exampleInput" name="title2" value="{{ title2 }}">
             </div>
 
             {{!-- Input Contenu --}}
             <div class="form-group">
-                <label for="exampleInputTextarea">Contenu 3 {{ content3 }}</label>
-                <textarea class="form-control" id="Textarea" placeholder="example textarea" name="content3"
-                    value="{{ content3 }}"></textarea>
+                <label for="exampleInputTextarea">Description de sa personnalité + son histoire</label>
+                <textarea class="form-control" id="abilitie3" name="content3" hidden>{{ content3 }}</textarea>
+                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+                <script>
+                    CKEDITOR.replace('abilitie3', {
+                        entities: false, // Pour la suppression des caractères spéciaux
+                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                    });
+                </script>
             </div>
 
 
             {{!-- Images --}}
             <div class="form-group">
                 <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">{{ image }}
             </div>
 
             {{!-- Bouton valider --}}

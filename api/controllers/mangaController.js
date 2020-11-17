@@ -2,17 +2,20 @@
  * Controller Page Manga
  * ********************************** */
 
-const path = require('path');
-const Manga = require('../../database/models/Manga');
-const Arcs = require('../../database/models/Arcs');
-const fs = require('fs')
+const path = require('path'),
+    Manga = require('../../database/models/Manga'),
+    Arcs = require('../../database/models/Arcs'),
+    fs = require('fs')
 
 
 module.exports = {
     // GET Page website Manga ( Utilisateur )
-    getManga: async (req, res) => {
 
-        res.render('manga') // "res.render", rend une vue.
+    getManga: async (req, res) => {
+        const dbManga = await Manga.find({})
+        res.render('manga', {
+            manga: dbManga
+        }) // "res.render", rend une vue.
 
     },
 
@@ -63,8 +66,8 @@ module.exports = {
 
     // GET Page du formulaire édition de Characters ( Admin )
     editFormManga: async (req, res) => {
-        const dbManga = await Manga.findById(req.params.id)
-        const dbArcs = await Arcs.find({})
+        const dbManga = await Manga.findById(req.params.id),
+            dbArcs = await Arcs.find({})
 
         console.log(dbManga)
         res.render('admin/manga/editManga', {

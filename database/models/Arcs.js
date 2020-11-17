@@ -12,8 +12,7 @@ const ArcsSchema = new mongoose.Schema({
         default: new Date() // La date sera créé au moment où l'on va créer l'article.
     },
     manga:[],
-    part: Number
-
+    Arcs: Number
 
 })
 

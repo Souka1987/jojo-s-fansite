@@ -5,26 +5,8 @@
 
         {{!-- Input Nom du personnage --}}
         <div class="form-group">
-            <label for="text">Name {{ name }}</label>
-            <input type="text" class="form-control" id="exampleInput" name="name" value="{{ character.name }}">
-        </div>
-
-        {{!-- Input Contenu --}}
-        <div class="form-group">
-            <label for="exampleInputTextarea">Contenu {{ content }}</label>
-            <textarea class="form-control" id="editor6" placeholder="example textarea" name="content"
-                value="{{ character.content }}"></textarea>
-            {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
-            <script>
-                const ed = CKEDITOR.replace('editor6', {
-                    entities: false, //pour la suppression des caractères spéciaux
-                    //uiColor: '#00000' //Coloriser les bordures de l'éditeur
-                });
-
-                ed.on('change', function (e) {//modification du contenu de l'éditeur
-                    console.log(e.editor.getData())
-                })
-            </script>
+            <label for="text">Nom du personnage</label>
+            <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
         </div>
 
         {{!-- Input du Pouvoir --}}
@@ -35,10 +17,27 @@
             {{/each }}
         </select>
 
+        {{!-- Input Contenu --}}
+        <div class="form-group">
+            <label for="exampleInputTextarea">Introduction du personnage</label>
+            <textarea class="form-control" id="chara2" name="content" hidden>{{ content }}</textarea>
+            {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+            <script>
+                const chara2 = CKEDITOR.replace('chara2', {
+                    entities: false, //pour la suppression des caractères spéciaux
+                    uiColor: '#B22234' //Coloriser les bordures de l'éditeur
+                });
+
+                chara2.on('change', function (e) {//modification du contenu de l'éditeur
+                    console.log(e.editor.getData())
+                })
+            </script>
+        </div>
+
         {{!-- Input Images --}}
         <div class="form-group">
             <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">{{ image }}
         </div>
 
         {{!-- Bouton valider --}}
