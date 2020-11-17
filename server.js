@@ -24,6 +24,7 @@ const
     nodemailer = require('nodemailer'),
     // Import de body-parser
     bodyParser = require('body-parser'),
+    morgan = require('morgan'),
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
     {
         stripTags,
@@ -35,8 +36,6 @@ const
     // Generator en lien avec swagger
     //expressOasGenerator = require('express-oas-generator')
     //expressOasGenerator.init(app, {});
-
-
     port = process.env.PORT || 1870;
 
 
@@ -44,6 +43,8 @@ const
 require('dotenv').config()
 // console.log(process.env);
 
+// Morgan => Middleware de journalisation des requêtes HTTP pour node.js
+app.use(morgan('dev'))
 
 // Mongoose pour le lien avec la base de données. "jjba" est le nom de la base de données.
 mongoose
@@ -76,6 +77,12 @@ app.use(expressSession({
         mongooseConnection: mongoose.connection
     })
 }))
+app.use('*', (req, res, next) => {
+    res.locals.user = req.session.userId;
+    res.locals.isAdmin = req.session.isAdmin;
+    console.log("ID Session: " + res.locals.user);
+    next()
+})
 
 // Connect-Flash
 app.use(connectFlash())

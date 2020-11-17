@@ -1,6 +1,6 @@
 {{!-- Titre --}}
 <section>
-        <h1 class="title-author text-center text-black display-4 mt-5">A Propos de l'auteur</h1>
+    <h1 class="title-author text-center text-black display-4 mt-5">A Propos de l'auteur</h1>
 </section>
 
 {{!-- Author --}}
@@ -20,7 +20,8 @@
                     Hirohiko,), né le 7 juin
                     1960 à Sendai dans
                     la préfecture de Miyagi, au Japon,
-                    est un auteur de bande dessinée japonaise (mangaka) et est principalement connu pour son manga JoJo's
+                    est un auteur de bande dessinée japonaise (mangaka) et est principalement connu pour son manga
+                    JoJo's
                     Bizarre
                     Adventure. Son œuvre fut publié dans le Weekly Shonen Jump de 1987 à 2003, avant que la série ne
                     soit transférée à partir de la Partie VII : Steel Ball Run dans le mensuel Ultra Jump en 2004. Son
@@ -145,30 +146,22 @@
         {{!-- Section commentaires --}}
         <h2 class=" mt-5">Commentaires</h2>
         <div class="col-md-10 mt-5">
-            <div class="media mb-4">
-                <img class="d-flex mr-3 rounded-circle" src="..." height="64" width="64" alt="">
-                <div class="media-body">
-                    <h5 class="mt-0">Nom de l'utilisateur</h5>
-                    <p class="small">...</p>
-                </div>
-            </div>
-            {{!-- / Section commentaires --}}
-
-            <!-- Comments Form -->
             <div class="card my-4">
                 <h6 class="card-header smaller ">Laisser un commentaire:</h6>
                 <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn text-white">Envoyer</button>
-                    </form>
+
+                    {{!-- Block de description de l'article--}}
+                    {{!-- {{> comments/descrID }} --}}
+
+                    {{!-- Block Pour ajouter un Commentaire --}}
+                    {{> comments/addComments }}
+
+                    {{!-- Block de la liste de commentaire --}}
+                    {{> comments/listComments }}
+
                 </div>
             </div>
-
+            {{!-- / Section commentaires --}}
         </div>
-        <!-- /Comments Form -->
-    </div>
 </section>
-<!--/Author blog-->
+{{!-- /Author --}}

@@ -2,10 +2,10 @@
  * Controller Page Characters
  * ********************************** */
 
-const path = require('path');
-const Character = require('../../database/models/Character');
-const Powers = require('../../database/models/Powers');
-const fs = require('fs')
+const path = require('path'),
+    Character = require('../../database/models/Character'),
+    Powers = require('../../database/models/Powers'),
+    fs = require('fs')
 
 module.exports = {
     // GET Page website Characters ( Utilisateur )
@@ -86,7 +86,7 @@ module.exports = {
         const q = req.params.id
 
         // Récupération de l'article grace au params.id
-        const articleID = await Character.findById(req.params.id)
+        const dbCharacter = await Character.findById(req.params.id)
 
         console.log(req.body)
         console.log(req.file)

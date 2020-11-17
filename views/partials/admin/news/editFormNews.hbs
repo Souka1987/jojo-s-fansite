@@ -1,45 +1,40 @@
 <section>
-    <h1 class="text-center text-dark">Edition News</h1>
-    {{!--Ajout de l'url et de la méthode--}}
-    <form action="/admin/editNews/{{ _id }}" method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <h1 class="text-center text-dark">Modifier une News</h1>
+        {{!--Ajout de l'url et de la méthode--}}
+        <form action="/admin/editNews/{{ _id }}" method="POST" enctype="multipart/form-data">
 
-        {{!-- Input Titre du manga --}}
-        <div class="form-group">
-            <label for="text">Titre</label>
-            <p id='ckeditor' hidden> {{ title }} </p>
-            <input type="text" class="form-control" id="exampleInput" name="title" value="{{ title }}">
-        </div>
+            {{!-- Input Titre du manga --}}
+            <div class="form-group">
+                <label for="text">Titre</label>
+                <input type="text" class="form-control" id="exampleInput" name="title" value="{{ title }}">
+            </div>
 
-        {{!-- Input Contenu --}}
-        <div class="form-group">
-            <label for="exampleInputTextarea">Contenu</label>
-            <p id='ckeditor' hidden> {{ content }} </p>
-            <textarea class="form-control" id="editor2" placeholder="example textarea" name="content"></textarea>
-            {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
-             <script>
-                const edNews = CKEDITOR.replace('editor2', {
-                    entities: false, // Pour la suppression des caractères spéciaux
-                    language: 'fr',
-                    uiColor: '#680EEA' // Coloriser les bordures de l'éditeur
-                });
+            {{!-- Input Contenu --}}
+            <div class="form-group">
+                <label for="exampleInputTextarea">Description</label>
+                <textarea class="form-control" id="formNews" name="content" hidden>{{ content }}</textarea>
+                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+                <script>
+                    const news = CKEDITOR.replace('formNews', {
+                        entities: false, // Pour la suppression des caractères spéciaux
+                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                    });
 
-                edNews.on('change', function (e) {// Modification du contenu de l'éditeur
-                    console.log(e.editor.getData())
-                });
+                    news.on('change', function (e) {// Modification du contenu de l'éditeur
+                        console.log(e.editor.getData())
+                    });
+                </script>
+            </div>
 
-                // Injecter les data
-                const data{{ _id }} = document.getElementById('ckeditor').innerText
-                CKEDITOR.instances.editor.setData(data{{ _id }})
-            </script>
-        </div>
+            {{!-- Images --}}
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile" name="image">{{ image }}
+            </div>
 
-        {{!-- Images --}}
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile" name="image" value="{{ image }}">
-        </div>
-
-        {{!-- Bouton valider --}}
-        <button type="submit" class="btn btn-info">Modifier</button>
-    </form>
+            {{!-- Bouton valider --}}
+            <button type="submit" class="btn btn-info">Modifier</button>
+        </form>
+    </div>
 </section>

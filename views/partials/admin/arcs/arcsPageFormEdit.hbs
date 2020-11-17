@@ -5,8 +5,7 @@
 
         {{!-- Input Titre --}}
         <div class="form-group">
-            <label for="text">Titre</label>
-            <p id='ckeditor' hidden> {{ title }} </p>
+            <label for="text">Titre du tome</label>
             <input type="text" class="form-control" id="exampleInput" name="title" value="{{ title }}">
         </div>
 
@@ -14,15 +13,15 @@
         <div class="form-group">
             <label for="exampleInputTextarea">Contenu</label>
             <p id='ckeditor' hidden> {{ content }} </p>
-            <textarea class="form-control" id="editor4" placeholder="example textarea" name="content" value="{{ content }}" ></textarea>
+            <textarea class="form-control" id="arcs2" name="content" hidden>{{ content }}</textarea>
             {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
              <script>
-                const ed  = CKEDITOR.replace('editor4', {
+                const arcs2  = CKEDITOR.replace('arcs2', {
                     entities: false, // Pour la suppression des caractères spéciaux
-                    //uiColor: '#00000' // Coloriser les bordures de l'éditeur
+                    uiColor: '#B22234' // Coloriser les bordures de l'éditeur
                 });
 
-                ed.on('change', function (e) {// Modification du contenu de l'éditeur
+                arcs2.on('change', function (e) {// Modification du contenu de l'éditeur
                     console.log(e.editor.getData())
                 });
 
@@ -35,7 +34,7 @@
         {{!-- Input Images --}}
         <div class="form-group">
             <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" value="{{ image }}">
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">{{ image }}
         </div>
 
         {{!-- Bouton valider --}}

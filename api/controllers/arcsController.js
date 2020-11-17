@@ -1,10 +1,10 @@
 /*
  * Controller Page Arcs Home
  * ********************************** */
-const multer = require('multer');
-const path = require('path');
-const Arcs = require('../../database/models/Arcs');
-const fs = require('fs')
+const multer = require('multer'),
+    path = require('path'),
+    Arcs = require('../../database/models/Arcs'),
+    fs = require('fs')
 
 
 module.exports = {
@@ -46,7 +46,7 @@ module.exports = {
     // GET Page du formulaire édition de Arcs ( Admin )
     arcsPageFormEdit: async (req, res) => {
         const dbArcs = await Arcs.findById(req.params.id)
-        
+
         console.log(dbArcs)
         res.render('admin/arcs/editArcs', {
             arcs: dbArcs,

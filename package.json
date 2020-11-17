@@ -4,6 +4,7 @@
   "description": "fansite",
   "main": "server.js",
   "scripts": {
+    "sass": "sass --watch ./css/bootstrap/bootstrap.scss:.public/css/style.css",
     "test": "nodemon --exec 'mocha -R Landing ./mocha/demo.js'",
     "testChai": "nodemon --exec 'mocha ./mocha/testChai*.js'",
     "testSupertest": "nodemon --exec 'mocha ./mocha/superTest*.js'",
@@ -46,6 +47,7 @@
     "express-oas-generator": "^1.0.28",
     "handlebars": "^4.5.0",
     "mocha": "^8.2.1",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
     "supertest": "^6.0.1",
     "swagger-ui-express": "^4.1.4"

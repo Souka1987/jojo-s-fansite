@@ -4,26 +4,29 @@
         <h1 class="text-center display-4">Envoyer un message</h1>
     </div>
 
-<div class="container mb-5">
-    <div class="card-body mx-auto" style="max-width: 700px;">
-        <p>...</p>
-        <form>
-            <div class="row">
-                <div class="col">
-                    <label for="exampleInputEmail1">Pseudo</label>
-                    <input type="text" class="form-control" name="pseudo" placeholder="">
+    <div class="container mb-5">
+        <div class="card-body mx-auto" style="max-width: 700px;">
+            <p>Pour toutes questions relatives au site ou à mon point vu sur le manga, vous avez la possibilité de
+                m'envoyer un message ci-dessous:</p>
+            <form action="" method="">
+                <div class="row">
+                    <div class="col">
+                        <label for="text">Nom</label>
+                        <input type="text" class="form-control" name="name" placeholder="name" required>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Message</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="email"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"
+                        placeholder="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
-</div>
-{{!-- /Form --}}
+    {{!-- /Form --}}

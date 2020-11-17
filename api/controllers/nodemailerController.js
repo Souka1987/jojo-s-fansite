@@ -3,54 +3,56 @@
  * ************************ */
 
 // import nodemailer 
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer'),
+    dotenv = require("dotenv")
 
+dotenv.config()
 
 // https://myaccount.google.com/
 // Etape 1
+// C'est en quelque sorte notre connexion à notre boite mail
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     service: 'gmail',
     port: '587',
-    secure: false,
+    secure: true,
     auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD
     }
 });
 
-
-// Etape 2
 // Ici on genere nos variable en parent pour pouvoir les récupérer au retour de nos data email
 // (Dans la branch nodemailer-advanced il sera générer avec un token type jwt)
-// var rand, mailOptions, host, link;
+//var rand, mailOptions, host, link;
 
 module.exports = {
     // Action test boite mail > nodemailer
-    test: (req, res) => {
+    mail: (req, res) => {
         console.log(req.body)
         // On configure notre mail à envoyer par nodemailer
         const mailOptions = {
-            from: 'soukainataa1987@gmail.com',
-            to: 'soukainataa1987@gmail.com',
-            //cc: 'soukainataattoumani@yahoo.fr',
-            subject: 'Test',
-            text: 'Welcome to Jojos World community !!!',
-            html: '<h1>Hello World !</h1>',
-            // attachments: [{
-            //     filename: 'pictures.JPG', path: './assets/images/pictures.JPG'
-            // }]
-            // template: 'mail'
+            from: 'jojo1870@gmail.com',
+            //cc:'soukainataattoumani@yahoo.fr',
+            to: req.body.email,
+            subject: 'Félicitation ! ' + req.body.lastname + ' !',
+            html: `
+          <h2>${req.body.lastname}, Bienvenue dans le monde de Jojo !!</h2>
+          <h5>Tous sur votre manga préféré jojo's Bizarre Adventure. </h5>
+          <h4>${req.body.subject}</h4>
+          <p>${req.body.message}</p>
+        `
         }
 
-
-        // Etape 3
-        transporter.sendMail(mailOptions, function (err, data) {
-            if (err) {
-                console.log('Error Occurs', err);
-            } else {
-                console.log('Email sent !!!');
+        // On demande à notre transporter d'envoyer notre mail
+        transporter.sendMail(mailOptions, (err, info) => {
+            if (err) console.log(err)
+            else {
+                console.log(info)
+                res.render('index', {
+                    success: "Un email à bien été envoyer à " + req.body.email
+                })
             }
         })
-    }
+    },
 }

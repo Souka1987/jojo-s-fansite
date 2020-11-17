@@ -1,0 +1,14 @@
+{{!-- Partial ajouter un commentaire --}}
+
+
+<form action="/newComments" method="POST">
+    <div class="form-group">
+        <input class="form-control" name="username" placeholder="username">
+    </div>
+
+    <div class="form-group">
+        <textarea class="form-control" name="comment" placeholder="comment"></textarea>
+    </div>
+    {{!-- Boutton envoyer --}}
+    <button type="submit" class="btn text-white">Envoyer</button>
+</form>
