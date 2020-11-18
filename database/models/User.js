@@ -31,14 +31,14 @@ const UserSchema = new mongoose.Schema({
     },
     //Utilisé un Booleen pour nos middleware est plutot une bonne pratique
     //Par exemple :
-    isVerified: {
-        type: Boolean,
-        default: false
-    },
-    isModo: {
-        type: Boolean,
-        default: false
-    },
+    // isVerified: {
+    //     type: Boolean,
+    //     default: false
+    // },
+    // isModo: {
+    //     type: Boolean,
+    //     default: false
+    // },
     isAdmin: {
         type: Boolean,
         default: false

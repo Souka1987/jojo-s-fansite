@@ -3,14 +3,13 @@ const express = require('express'),
     router = express.Router(),
     path = require('path'),
     uploadArcs = require('./config/multerArcs'),
-    uploadCharacters = require('./config/multerCharacters'),
-    // Middleware
-    auth = require('../middleware/auth')
+    uploadCharacters = require('./config/multerCharacters')
+// Middleware
+//auth = require('../middleware/auth')
 
 
 
 
-const commentsContoller = require('./controllers/commentsContoller')
 // CONTROLLER
 const homeController = require('./controllers/homeController'),
     newsController = require('./controllers/newsController'),
@@ -19,7 +18,6 @@ const homeController = require('./controllers/homeController'),
     powersController = require('./controllers/powersController'),
     arcsController = require('./controllers/arcsController'),
     mangaController = require('./controllers/mangaController'),
-    myAccountController = require('./controllers/myAccountController'),
     loginController = require('./controllers/loginController'),
     userController = require('./controllers/userController'),
     userRegisterController = require('./controllers/userRegisterController'),
@@ -79,6 +77,9 @@ router.route('/message')
     .get(messageController.get)
 
 
+/************************************** */
+
+
 // Users
 // Connection
 router.route('/user')
@@ -102,14 +103,28 @@ router.route('/create')
     .post(userRegisterController.create)
 
 
+/************************************** */
+
+
 // Comments
-// GET 
+// GET Récupération du formulaire
 router.route('/comments')
     .get(commentsController.getComments)
+
 // POST Ajouter un commentaire
 router.route('/newComments')
     .post(commentsController.postComments)
-// .delete(commentsController.deleteOne)
+
+// POST Modification commentaires
+router.route('/editComments/:id')
+    // GET récupéreration du formulaire 
+    .get(commentsController.updateComments)
+    // POST modification
+    .post(commentsController.editComments)
+
+// DELETE/GET Suppression commentaires
+router.route('/deleteComments/:id')
+    .get(commentsController.deleteComments)
 
 
 
@@ -120,11 +135,8 @@ router.route('/newComments')
 
 // Page admin
 router.route('/admin')
-    .get(auth.isAdmin, adminController.get)
+    .get(adminController.get)
 
-// My Account
-router.route('/myaccount')
-    .get(auth.auth, myAccountController.get)
 
 // Arcs
 router.route('/admin/arcs')

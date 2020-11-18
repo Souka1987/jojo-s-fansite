@@ -2,8 +2,7 @@
  * Controller Page Manga
  * ********************************** */
 
-const path = require('path'),
-    Manga = require('../../database/models/Manga'),
+const Manga = require('../../database/models/Manga'),
     Arcs = require('../../database/models/Arcs'),
     fs = require('fs')
 

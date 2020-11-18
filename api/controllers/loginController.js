@@ -15,16 +15,18 @@ module.exports = {
 
     // POST
     post: async (req, res) => {
-        // Raccourcie pour la session
-        const sess = req.session
         // Récupérer l'email et le mot de passe se trouvant dans la page 'login'
         const {
             email,
             password
         } = req.body;
 
+        const sess = req.session,
+            isAdmin = req.session.isAdmin
+        console.log(req.body);
         // Chercher le user dans la base de données par rapport à email
         User.findOne({
+
             email
         }, (error, user) => {
             if (user) {
@@ -33,29 +35,30 @@ module.exports = {
                     if (!same) {
                         // Si ce n'est pas le même rester sur la page 'login'
                         res.render('login', {
-                            // envoyer ce message ci-dessous:
-                            errorLogin: "une erreur est survenue veuillez vérifier vos identifiants et vos mots de passe",
+                            // Envoyer ce message ci-dessous:
+                            errorLogin: "une erreur est survenue veuillez vérifier votre identifiant et votre mots de passe",
                             sess: sess
                         })
                     } else {
-                        // Log Success Authentification OK
-                        console.log('Success Authentification OK')
-
-                        
+                        console.log(user);
+                        req.session.userId = user._id
+                        // Si l'user est rééllement l'admin
                         if (user.isAdmin === true) {
-                            console.log("Je suis l'Admin")
-                            sess.isAdmin = user.isAdmin
+                            console.log("je suis l'admin");
+                            console.log(user.isAdmin);
+                            req.session.isAdmin = user.isAdmin
+
                         }
+                        console.log(req.session)
+                        //  rendre la page login
+
+                        res.render('index', {
+                            sess: sess
+                        })
+
                     }
                 })
-                // Sinon rendre la page login
-            } else {
-                return res.render('login', {
-                    success: "vous etes connecter au nom de: " + User.pseudo,
-                    sess: sess
-                })
             }
-
         })
     },
 

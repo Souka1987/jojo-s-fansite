@@ -61,9 +61,9 @@ mongoose
 const mongoStore = MongoStore(expressSession) // Connection du module "MongoStore" dans "expressSession"
 
 // Handlebars.moment => Pour formater la temporalité (dates/horraires)
-var Handlebars = require("handlebars");
-var MomentHandler = require("handlebars.moment");
-MomentHandler.registerHelpers(Handlebars);
+const Handlebars = require("handlebars"),
+    MomentHandler = require("handlebars.moment");
+MomentHandler.registerHelpers(Handlebars)
 
 
 // Users
@@ -81,7 +81,9 @@ app.use('*', (req, res, next) => {
     res.locals.user = req.session.userId;
     res.locals.isAdmin = req.session.isAdmin;
     console.log("ID Session: " + res.locals.user);
+    console.log(req.session);
     next()
+    
 })
 
 // Connect-Flash
