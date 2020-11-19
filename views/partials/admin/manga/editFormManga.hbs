@@ -10,8 +10,13 @@
                 <input type="text" class="form-control" id="exampleInput" name="title" value="{{ title }}">
             </div>
 
+            {{!-- Input saison --}}
+            <div class="form-group">
+                <label for="text">Saison</label>
+                <input type="number" class="form-control" id="exampleInput" name="season" value="{{ season }}">
+            </div>
+
             {{!-- Input Contenu --}}
-            
             <div class="form-group">
                 <label for="exampleInputTextarea">Description</label>
                 <textarea class="form-control" id="manga2" name="content" hidden>{{ content }}</textarea>

@@ -2,16 +2,19 @@ const mongoose = require("mongoose"),
     Schema = mongoose.Schema;
 
 
-const CommentsSchema = new Schema({
-
+const CommentsSchema = new mongoose.Schema({
+    // Déclaration de variable et leur type
     username: String,
-    content: String,
+    image: String,
+    comment: String,
     createDate: {
         type: Date,
-        default: Date.now() // La date sera créé au moment même où le commentaire sera posté
+        default: new Date() // La date sera créé au moment même où le commentaire sera posté
     }
-});
+})
 
-// Et l'on export notre model grace à la passerelle Mongoose
-// Ce qui nous permettra de pouvoir l'utiliser sur d'autre page
-module.exports = mongoose.model("Comment", CommentsSchema);
+// Pour récupérer les data de la base de données.
+const Comments = mongoose.model('Comments', CommentsSchema)
+
+// On export le module
+module.exports = Comments

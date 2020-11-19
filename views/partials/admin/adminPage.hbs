@@ -12,8 +12,9 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button id="news" class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button id="news" class="btn btn-link btn-block text-center" type="button"
+                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
                             NEWS
                         </button>
                     </h2>
@@ -347,6 +348,7 @@
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{ title }}</td>
+                                                <td>Saison: {{ season }}</td>
                                                 <td>{{ image }}</td>
                                                 <td><button type="button" class="btn btn-warning" data-toggle="modal"
                                                         data-target="#modalEditManga{{_id}}">Editer</button>
@@ -374,6 +376,8 @@
             </div>
         </div>
         {{!-- /manga --}}
+
+
 
     </div>
 </section>

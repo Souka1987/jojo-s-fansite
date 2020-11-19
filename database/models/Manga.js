@@ -1,11 +1,12 @@
 // Import de mongoose
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose'),
+    Schema = mongoose.Schema
 
 // Création du shéma Model en utilisant le constructeur de mongoose
 const MangaSchema = new mongoose.Schema({
     // déclaration de variable et leur type
     title: String,
+    season: Number,
     content: String,
     image: String,
     imageName: String,
@@ -13,8 +14,8 @@ const MangaSchema = new mongoose.Schema({
         type: Date,
         default: new Date() // La date sera créé au moment où l'on va créer l'article.
     },
-    character:[],
-    news:[],
+    character: [],
+    news: [],
     arcs: {
         type: Schema.Types.ObjectId,
         ref: 'Arcs'

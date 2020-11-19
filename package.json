@@ -4,7 +4,7 @@
   "description": "fansite",
   "main": "server.js",
   "scripts": {
-    "sass": "sass --watch ./css/bootstrap/bootstrap.scss:.public/css/style.css",
+    "sass": "sass --watch ./public/css/sass/index.sass:./public/css/style.css",
     "test": "nodemon --exec 'mocha -R Landing ./mocha/demo.js'",
     "testChai": "nodemon --exec 'mocha ./mocha/testChai*.js'",
     "testSupertest": "nodemon --exec 'mocha ./mocha/superTest*.js'",

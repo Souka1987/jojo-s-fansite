@@ -32,14 +32,14 @@ module.exports = {
         console.log(req.body)
         // On configure notre mail à envoyer par nodemailer
         const mailOptions = {
-            from: 'jojo1870@gmail.com',
+            from: 'test@gmail.com',
             //cc:'soukainataattoumani@yahoo.fr',
             to: req.body.email,
             subject: 'Félicitation ! ' + req.body.lastname + ' !',
             html: `
           <h2>${req.body.lastname}, Bienvenue dans le monde de Jojo !!</h2>
           <h5>Tous sur votre manga préféré jojo's Bizarre Adventure. </h5>
-          <h4>${req.body.subject}</h4>
+          <h4>Sujet: ${req.body.subject}</h4>
           <p>${req.body.message}</p>
         `
         }
@@ -49,9 +49,7 @@ module.exports = {
             if (err) console.log(err)
             else {
                 console.log(info)
-                res.render('index', {
-                    success: "Un email à bien été envoyer à " + req.body.email
-                })
+                res.redirect('/')
             }
         })
     },

@@ -1,18 +1,36 @@
 {{! login }}
+{{#if error }}
+<script>
+    swal({
+        title: "Attention !",
+        text: "Une erreur est survenue veuillez vérifier votre identifiant et votre mot de passe.",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+</script>
+{{/if}}
+
+{{#if success }}
+<script>
+    swal("Bienvenue sur Jojo's World !!!", "Clickez sur un onglet pour commencer à naviguer.", "success")
+</script>
+{{/if}}
+
 <section class="mt-5">
     <div class="container">
         <div class="card-body mx-auto" style="max-width: 700px;">
             <h1 class="text-center display-4">
                 Se connecter
             </h1>
-            {{!-- Input email --}}
-            <form action="/auth" method="POST" enctype="multipart/form-data">
+            <form action="/auth" method="POST">
                 <div class="form-group justify-content-center mt-5">
+                    {{!-- Input email --}}
                     <label for="exampleInputEmail">
                         Email
                     </label>
                     <input type="email" class="form-control" placeholder="email" id="exampleInputEmail"
-                        aria-describedby="emailHelp" name="email" value="{{ email }}" />
+                        aria-describedby="emailHelp" name="email" value="{{ email }}" required>
                 </div>
                 {{!-- Input password --}}
                 <div class="form-group">
@@ -20,7 +38,7 @@
                         Mot de passe
                     </label>
                     <input type="password" class="form-control" placeholder="password" id="exampleInputPassword"
-                        name="password" value="{{ password }}" />
+                        name="password" value="{{ password }}" required>
                 </div>
 
                 {{!-- Modal forgotPassword --}}
@@ -30,7 +48,7 @@
                     </a>
                 </div>
                 {{!-- Input password --}}
-                <button type="submit" class="btn text-center">
+                <button type="submit" id="myAlert" class="btn text-center">
                     Envoyer
                 </button>
             </form>
@@ -40,7 +58,6 @@
                     Vous n'avez pas de compte ?
                 </a>
             </div>
-
         </div>
     </div>
 </section>

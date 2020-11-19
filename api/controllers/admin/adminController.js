@@ -1,6 +1,7 @@
 /*
  * Controller Page Admin
  * ********************************** */
+
 const News = require('../../../database/models/News'),
     Arcs = require('../../../database/models/Arcs'),
     Character = require('../../../database/models/Character'),

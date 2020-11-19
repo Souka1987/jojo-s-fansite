@@ -1,21 +1,24 @@
-{{!-- Partial liste de commentaire --}}
+{{!-- Partial liste des commentaires --}}
 
+<div class="col-md-10 mt-5">
+    {{!-- <h6 class="card-header smaller">Commentaires ajoutés</h6> --}}
+    {{#each comments  }}
+    <ul class="list-group mt-2">
+        <li class="list-group-item">
+            {{!-- <div class="col-xs-2 col-md-1">
+                            <img src="" class="img-circle img-responsive" alt="" /></div> --}}
 
-{{!-- Ici nous listons les commentaires en référence avec l'ID de notre Article --}}
-{{#each comment }}
-
-{{!-- Ici nous récupérons les informations de notre commentaire --}}
-<h3>ajouter par: {{ username }}</h3>
-<p>Content: {{ content }}</p>
-<p>{{ comments }}</p>
-
-{{!-- Ici le boutton de suppression du commentaire --}}
-<form action="/comment/{{ _id }}/?_method=DELETE" method="GET">
-    <button type="submit">Effacer</button>
-</form>
-
-{{!-- Récupérer le "createDate" pour ajouter la date --}}
-<p class="card-text text-muted"><small>Ajouté le:
-        {{ moment createDate format="DD-MM-YYYY" }}</small></p>
-
-{{/each }}
+            <h6>Par: {{ username }}</h6>
+            le: <small>{{ moment createDate format="DD-MM-YYYY" }}</small>
+            <br>
+            <p>{{ comment }}</p>
+            <div class="action">
+                {{!-- Suppression du commentaire --}}
+                <form class="mt-2" action="/deleteComments/{{ _id }}" method="GET">
+                    <button class="btn-sm btn" type="submit">Supprimer</button>
+                </form>
+            </div>
+        </li>
+        {{/each }}
+    </ul>
+</div>

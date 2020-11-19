@@ -134,34 +134,28 @@
                             <p class="card-text text-justify"> Dans la collection du Musée du Louvre, pour un
                                 partenariat préstigieux avec la marque Gucci en 2013.</p>
                         </li>
-
-
                     </ul>
-
                 </div>
             </div>
         </div>
         {{!-- / Infos --}}
 
         {{!-- Section commentaires --}}
-        <h2 class=" mt-5">Commentaires</h2>
+        <h2 class="mt-5">Commentaires {{ inc @index }}</h2>
+        {{#if user }}
         <div class="col-md-10 mt-5">
             <div class="card my-4">
-                <h6 class="card-header smaller ">Laisser un commentaire:</h6>
+                <h6 class="card-header smaller">Laisser un commentaire:</h6>
                 <div class="card-body">
-
-                    {{!-- Block de description de l'article--}}
-                    {{!-- {{> comments/descrID }} --}}
 
                     {{!-- Block Pour ajouter un Commentaire --}}
                     {{> comments/addComments }}
 
-                    {{!-- Block de la liste de commentaire --}}
-                    {{> comments/listComments }}
-
                 </div>
             </div>
-            {{!-- / Section commentaires --}}
         </div>
+        {{/if }}
+        {{!-- Block de la liste des commentaires --}}
+        {{> comments/listComments }}
 </section>
 {{!-- /Author --}}
