@@ -2,7 +2,8 @@
  * Controller Page Manga
  * ********************************** */
 
-const Manga = require('../../database/models/Manga'),
+const path = require('path'),
+    Manga = require('../../database/models/Manga'),
     Arcs = require('../../database/models/Arcs'),
     fs = require('fs')
 
@@ -11,9 +12,22 @@ module.exports = {
     // GET Page website Manga ( Utilisateur )
 
     getManga: async (req, res) => {
-        const dbManga = await Manga.find({})
+        const dbManga = await Manga.find({}),
+            dbMangaSeason1 = await Manga.find({
+                season: 1
+            }),
+            dbMangaSeason2 = await Manga.find({
+                season: 2
+            }),
+            dbMangaSeason3 = await Manga.find({
+                season: 3
+            })
         res.render('manga', {
-            manga: dbManga
+            manga: dbManga,
+            season1: dbMangaSeason1,
+            season2: dbMangaSeason2,
+            season3: dbMangaSeason3
+
         }) // "res.render", rend une vue.
 
     },
@@ -89,13 +103,14 @@ module.exports = {
         console.log(req.file)
 
         // Pour modifier l'image
-        Manga.findByIdAndUpdate(q, { //Définir les variables de son article
+        Manga.findByIdAndUpdate(q, { // Définir les variables de son article
 
             // Schéma par défaut
             ...req.body,
             // Aller chercher le chemin de l'image à modifier
             image: `assets/images/arcs/${image}`,
-            name: req.body.name
+            name: req.body.name,
+            tome: req.body.tome
 
         }, (err) => {
             if (err) console.log(err); // Si il y a une erreur, l'afficher

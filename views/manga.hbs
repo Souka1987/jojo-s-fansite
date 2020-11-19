@@ -216,6 +216,7 @@
 
 
             <div class="tab-content">
+                 {{!-- Phantom Blood (partie 1) --}}
                 <div role="tabpanel" class="tab-pane active" id="PhantomBlood">
                     <div class="container text-center">
                         <div class="container tome-card">
@@ -339,40 +340,176 @@
                                 <a href="https://www.amazon.fr/s?k=phantom+Blood&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss"
                                     target="_blank" class="btn my-2">Voir plus</a>
                             </p>
-                        </div>
-                    </div>
-                </div>
-
-                {{!-- Card --}}
-                <div class="container mt-5">
-                    <div class="row justify-content-center">
-                        {{!-- Début de la boucle --}}
-                        {{#each manga }}
-                        <div class="card-deck mb-3 text-center col-md-3">
-                            <div class="card mb-4 shadow-sm">
-                                <div class="card-header">
-                                    <h6 class="my-0 font-weight-bold">{{ title }}</h6>
-                                </div>
-                                <div class="card-body">
-                                    <img src="{{ image }}" class="card-img-top" alt="...">
-                                    {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
-                                    <p class="justify mt-2">{{ stripTags content }}</p>
-                                    {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                                    <p class="card-text text-muted"><small>Ajouté le:
-                                            {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                            {{!-- Card --}}
+                            <div class="container mt-5">
+                                <div class="row justify-content-center">
+                                    {{!-- Début de la boucle --}}
+                                    {{#each season1 }}
+                                    <div class="card-deck mb-3 text-center col-md-3">
+                                        <div class="card mb-4 shadow-sm">
+                                            <div class="card-header">
+                                                <h6 class="my-0 font-weight-bold">{{ title }}</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <img src="{{ image }}" class="card-img-top" alt="...">
+                                                {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
+                                                <p class="justify mt-2">{{ stripTags content }}</p>
+                                                {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                                                <p class="card-text text-muted"><small>Ajouté le:
+                                                        {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each }}
                                 </div>
                             </div>
+                            {{!-- / Card --}}
                         </div>
-                        {{/each }}
                     </div>
                 </div>
-                {{!-- / Card --}}
+                {{!-- /Phantom Blood (partie 1) --}}
 
-                <div role="tabpanel" class="tab-pane" id="BattleTendency">Battle Tendency</div>
-                <div role="tabpanel" class="tab-pane" id="StardustCrusaders">Stardust Crusaders</div>
+
+
+                {{!-- Battle Tendency (partie 2) --}}
+                <div role="tabpanel" class="tab-pane" id="BattleTendency">
+                    <div class="container text-center">
+                        <div class="container tome-card">
+                            <h5 class="text-center">...</h5>
+
+                            {{!-- Info --}}
+                            <ul class="list-group justify-content-center list-group-horizontal-md">
+                                <li class="list-group-item">...</li>
+                                <li class="list-group-item">...</li>
+                                <li class="list-group-item">...</li>
+                                <li class="list-group-item">...</li>
+                            </ul>
+
+                            {{!-- Text --}}
+                            <p class="text-justify mt-5">...</p>
+
+                            <h6 class="font-weight-bold title-story">La petite histoire</h6>
+
+                            <p class="text-justify">
+                                ...
+                            </p>
+                            <div class="container">
+                                {{!-- Icon --}}
+                                <div class="alert alert-analyse" role="alert">
+                                    <svg width="30" height="30" viewBox="0 0 16 16" class="bi bi-person"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+
+                                        <p class="text-analyse"> <span class="font-weight-bold">Point of view</span>:
+                                           ...</p>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p>
+                                <a href=""
+                                    target="_blank" class="btn my-2">Voir plus</a>
+                            </p>
+                            {{!-- Card --}}
+                            <div class="container mt-5">
+                                <div class="row justify-content-center">
+                                    {{!-- Début de la boucle --}}
+                                    {{#each season2 }}
+                                    <div class="card-deck mb-3 text-center col-md-3">
+                                        <div class="card mb-4 shadow-sm">
+                                            <div class="card-header">
+                                                <h6 class="my-0 font-weight-bold">{{ title }}</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <img src="{{ image }}" class="card-img-top" alt="...">
+                                                {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
+                                                <p class="justify mt-2">{{ stripTags content }}</p>
+                                                {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                                                <p class="card-text text-muted"><small>Ajouté le:
+                                                        {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each }}
+                                </div>
+                            </div>
+                            {{!-- / Card --}}
+                        </div>
+                    </div>
+                </div>
+                {{!-- /Battle Tendency (partie 2) --}}
+
+
+
+                {{!-- Stardust Crusaders (Partie 3) --}}
+                <div role="tabpanel" class="tab-pane" id="StardustCrusaders">
+                    <div class="container text-center">
+                        <div class="container tome-card">
+                            <h5 class="text-center">...</h5>
+
+                            {{!-- Info --}}
+                            <ul class="list-group justify-content-center list-group-horizontal-md">
+                                <li class="list-group-item">...</li>
+                                <li class="list-group-item">...</li>
+                                <li class="list-group-item">...</li>
+                                <li class="list-group-item">...</li>
+                            </ul>
+
+                            {{!-- Text --}}
+                            <p class="text-justify mt-5">...</p>
+
+                            <h6 class="font-weight-bold title-story">La petite histoire</h6>
+
+                            <p class="text-justify">
+                                ...
+                            </p>
+                            <div class="container">
+                                {{!-- Icon --}}
+                                <div class="alert alert-analyse" role="alert">
+                                    <svg width="30" height="30" viewBox="0 0 16 16" class="bi bi-person"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+
+                                        <p class="text-analyse"> <span class="font-weight-bold">Point of view</span>:
+                                            ...</p>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p>
+                                <a href=""
+                                    target="_blank" class="btn my-2">Voir plus</a>
+                            </p>
+                            {{!-- Card --}}
+                            <div class="container mt-5">
+                                <div class="row justify-content-center">
+                                    {{!-- Début de la boucle --}}
+                                    {{#each season3 }}
+                                    <div class="card-deck mb-3 text-center col-md-3">
+                                        <div class="card mb-4 shadow-sm">
+                                            <div class="card-header">
+                                                <h6 class="my-0 font-weight-bold">{{ title }}</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <img src="{{ image }}" class="card-img-top" alt="...">
+                                                {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
+                                                <p class="justify mt-2">{{ stripTags content }}</p>
+                                                {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                                                <p class="card-text text-muted"><small>Ajouté le:
+                                                        {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each }}
+                                </div>
+                            </div>
+                            {{!-- / Card --}}
+                        </div>
+                    </div>
+                </div>
+                {{!-- /Stardust Crusaders (Partie 3) --}}
             </div>
         </div>
-
     </div>
 </section>
 {{!-- / Manga --}}

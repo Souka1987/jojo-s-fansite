@@ -5,7 +5,6 @@
 const bcrypt = require('bcrypt'),
     User = require('../../database/models/User')
 
-
 module.exports = {
 
     // GET
@@ -23,6 +22,7 @@ module.exports = {
 
         const sess = req.session,
             isAdmin = req.session.isAdmin
+
         console.log(req.body);
         // Chercher le user dans la base de données par rapport à email
         User.findOne({
@@ -36,7 +36,7 @@ module.exports = {
                         // Si ce n'est pas le même rester sur la page 'login'
                         res.render('login', {
                             // Envoyer ce message ci-dessous:
-                            errorLogin: "une erreur est survenue veuillez vérifier votre identifiant et votre mots de passe",
+                            error: "une erreur est survenue veuillez vérifier votre identifiant et votre mots de passe",
                             sess: sess
                         })
                     } else {
@@ -52,7 +52,8 @@ module.exports = {
                         console.log(req.session)
                         //  rendre la page login
 
-                        res.render('index', {
+                        res.render('login', {
+                            success:'Welcome !!!',
                             sess: sess
                         })
 

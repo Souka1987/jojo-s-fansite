@@ -1,11 +1,11 @@
 {{!-- Partial ajouter un commentaire --}}
 
-
 <form action="/newComments" method="POST">
+    {{!-- Nom utilisateur --}}
     <div class="form-group">
         <input class="form-control" name="username" placeholder="username">
     </div>
-
+    {{!-- Commentaire --}}
     <div class="form-group">
         <textarea class="form-control" name="comment" placeholder="comment"></textarea>
     </div>

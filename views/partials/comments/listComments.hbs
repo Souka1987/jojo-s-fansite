@@ -1,26 +1,23 @@
 {{!-- Partial liste des commentaires --}}
 
 <div class="col-md-10 mt-5">
-    <h6 class="card-header smaller">Commentaires ajoutés</h6>
+    {{!-- <h6 class="card-header smaller">Commentaires ajoutés</h6> --}}
     {{#each comments  }}
     <ul class="list-group mt-2">
         <li class="list-group-item">
             {{!-- <div class="col-xs-2 col-md-1">
                             <img src="" class="img-circle img-responsive" alt="" /></div> --}}
-            <div>
-                <div>
-                    Par: {{ username }}
-                    <br>
-                    le:<small>{{ moment createDate format="DD-MM-YYYY" }}</small>
-                </div>
-            </div>
-            <div class="comment-text">
-                {{ comment }}
-            </div>
+
+            <h6>Par: {{ username }}</h6>
+            le: <small>{{ moment createDate format="DD-MM-YYYY" }}</small>
+            <br>
+            <p>{{ comment }}</p>
             <div class="action">
+                {{!-- Suppression du commentaire --}}
+                <form class="mt-2" action="/deleteComments/{{ _id }}" method="GET">
+                    <button class="btn-sm btn" type="submit">Supprimer</button>
+                </form>
             </div>
-            {{> comments/editComments }}
-            {{> comments/deleteComments }}
         </li>
         {{/each }}
     </ul>

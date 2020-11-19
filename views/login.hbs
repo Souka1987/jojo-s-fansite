@@ -1,4 +1,22 @@
 {{! login }}
+{{#if error }}
+<script>
+    swal({
+        title: "Attention !",
+        text: "Une erreur est survenue veuillez vérifier votre identifiant et votre mot de passe.",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+</script>
+{{/if}}
+
+{{#if success }}
+<script>
+    swal("Bienvenue sur Jojo's World !!!", "Clickez sur un onglet pour commencer à naviguer.", "success")
+</script>
+{{/if}}
+
 <section class="mt-5">
     <div class="container">
         <div class="card-body mx-auto" style="max-width: 700px;">
@@ -30,7 +48,7 @@
                     </a>
                 </div>
                 {{!-- Input password --}}
-                <button type="submit" class="btn text-center">
+                <button type="submit" id="myAlert" class="btn text-center">
                     Envoyer
                 </button>
             </form>
@@ -40,7 +58,6 @@
                     Vous n'avez pas de compte ?
                 </a>
             </div>
-
         </div>
     </div>
 </section>

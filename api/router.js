@@ -107,20 +107,17 @@ router.route('/create')
 
 
 // Comments
-// GET Récupération du formulaire
-router.route('/comments')
-    .get(commentsController.getComments)
 
 // POST Ajouter un commentaire
 router.route('/newComments')
     .post(commentsController.postComments)
 
-// POST Modification commentaires
-router.route('/editComments/:id')
-    // GET récupéreration du formulaire 
-    .get(commentsController.updateComments)
-    // POST modification
-    .post(commentsController.editComments)
+// // POST Modification commentaires
+// router.route('/editComments/:id')
+//     // GET récupéreration du formulaire 
+//     .get(commentsController.updateComments)
+//     // POST modification
+//     .post(commentsController.editComments)
 
 // DELETE/GET Suppression commentaires
 router.route('/deleteComments/:id')

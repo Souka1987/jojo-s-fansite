@@ -10,7 +10,7 @@ module.exports = {
     register: (req, res) => {
 
         res.render('register', {
-            errors: req.flash('registerError'),
+            error: req.flash('registerError'),
             // Garder les data de l'utilisateur
             data: req.flash('data')[0]
         })
@@ -71,7 +71,7 @@ module.exports = {
                         else {
                             // Redirection
                             res.render('register', {
-                                success: 'Votre compte à bien été créé ;)',
+                                success: 'Votre compte à bien été créé',
                                 sess: sess
                             })
                         }

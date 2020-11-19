@@ -1,5 +1,6 @@
 {{!-- Inscription --}}
 
+
 <section class="mt-5">
     <div class="container mt-5">
         <div class="card-body mx-auto" style="max-width: 700px;">
@@ -11,47 +12,44 @@
                 <div class="row">
                     <div class="col">
                         <label for="text">Nom</label>
-                        <input type="text" class="form-control" placeholder="firstname" name="firstname"
-                            value="{{ firstname }}">
+                        <input type="text" class="form-control" placeholder="firstname" name="firstname">
                     </div>
                     <div class="col">
                         <label for="text">Prénom</label>
-                        <input type="text" class="form-control" placeholder="lastname" name="lastname"
-                            value="{{ lastname }}">
+                        <input type="text" class="form-control" placeholder="lastname" name="lastname">
                     </div>
                 </div>
 
                 <div class="col">
                     <label for="email">Pseudo</label>
-                    <input type="text" class="form-control" placeholder="pseudo" name="pseudo" value="{{ pseudo }}">
+                    <input type="text" class="form-control" placeholder="pseudo" name="pseudo" required>
                 </div>
 
                 <div class="col">
                     <label for="email">Email</label>
-                    <input id="email" type="email" class="form-control" placeholder="email" name="email"
-                        value="{{ email }}">
+                    <input id="email" type="email" class="form-control" placeholder="email" name="email" required>
                 </div>
 
                 <div class="col">
                     <label for="password">Mot de passe</label>
                     <input id="password" type="password" placeholder='password' class="form-control" name="password"
-                        value="{{ password }}">
+                        required>
                 </div>
 
                 {{!-- Confirmer le password --}}
                 <div class="col">
                     <label for="password">Confirmer le mot de passe</label>
                     <input id="password" type="password" placeholder="passwordConfirm" class="form-control"
-                        name="passwordConfirm" value='{{ passwordConfirm }}'>
+                        name="passwordConfirm" required>
                     <div class="invalid-feedback">
                     </div>
                 </div>
 
 
+                {{!--  Boutton envoyer --}}
                 <button type="submit" class="btn text-white btn-block mt-5">
                     Valider
                 </button>
-
 
                 <p class="text-center mt-5">
                     <span class="font-weight-bold">OU</span>
@@ -72,10 +70,8 @@
                         avec
                         <b>Twitter</b></a>
                 </p>
-
             </form>
         </div>
     </div>
 </section>
-
 {{!-- /Inscription --}}

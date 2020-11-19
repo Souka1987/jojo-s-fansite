@@ -33,6 +33,7 @@ module.exports = {
         res.render('admin/character/characterAdd', {
             character: dbCharacter,
             powers: dbPowers
+
         })
     },
 

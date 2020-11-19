@@ -6,6 +6,7 @@ const mongoose = require('mongoose'),
 const MangaSchema = new mongoose.Schema({
     // déclaration de variable et leur type
     title: String,
+    season: Number,
     content: String,
     image: String,
     imageName: String,
@@ -24,3 +25,6 @@ const MangaSchema = new mongoose.Schema({
 
 // Pour récupérer les data de la base de données.
 const Manga = mongoose.model('Manga', MangaSchema)
+
+// On peut aussi le faire d'une autre manière
+module.exports = Manga
