@@ -24,6 +24,8 @@ const homeController = require('./controllers/homeController'),
     messageController = require('./controllers/messageController'),
     commentsController = require('./controllers/commentsContoller'),
     nodemailerController = require('./controllers/nodemailerController'),
+
+    // ADMIN CONTROLLERS
     adminController = require('./controllers/admin/adminController')
 
 
@@ -241,7 +243,7 @@ router.route('/admin/deleteManga/:id')
     .get(mangaController.deleteManga)
 
 
-
+/************************************** */
 
 
 // Exportation du routeur

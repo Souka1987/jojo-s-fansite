@@ -2,19 +2,13 @@
 <section class="mt-5">
     <div class="container">
 
-
-        <div class="container mt-15vh pb-0">
-            <h2 class="container text-center mb-5">Gestion des articles</h2>
-        </div>
-
         {{!-- news --}}
         <div class="accordion" id="accordionExample">
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button id="news" class="btn btn-link btn-block text-center" type="button"
-                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne">
+                        <button id="admin-title" class="btn  btn-block text-center" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             NEWS
                         </button>
                     </h2>
@@ -32,13 +26,14 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
                                                 <th scope="col">
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                        data-target='#modalAdd{{_id}}' data-whatever="">Ajouter</button>
+                                                    <button type="button" class="btn btn-add" data-toggle="modal"
+                                                        data-target='#modalAdd{{_id}}' data-whatever="">
+                                                        <i class="fas fa-plus"></i></button>
                                                     {{>
                                                     admin/crudAdmin/news/modalAdd
                                                     }}
                                                     {{!-- Appel du modal avec un
-                                                    ID dynamique de l'object
+                                                    ID dynamique de l<i class="fas fa-plus"></i>
                                                     dans la boucle --}}
                                                 </th>
                                             </tr>
@@ -53,10 +48,12 @@
                                                 <td>{{ title }}</td>
                                                 <td>{{ image }}</td>
                                                 <td class="text-center"><button type="button" class="btn
-                                                        btn-warning" data-toggle="modal"
-                                                        data-target="#modalEdit{{_id}}">Editer</button>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                        data-target="#modalDelete{{_id}}">Supprimer</button>
+                                                        btn-edit" data-toggle="modal"
+                                                        data-target="#modalEdit{{_id}}"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                        data-target="#modalDelete{{_id}}"><i
+                                                            class="fas fa-trash-alt"></i></button>
                                                     {{>
                                                     admin/crudAdmin/news/modalEdit
                                                     }}
@@ -87,7 +84,7 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
                             data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             ARCS
                         </button>
@@ -106,9 +103,9 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
                                                 <th scope="col">
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                        data-target="#modalAddArcs{{_id}}"
-                                                        data-whatever="@mdo">Ajouter</button>
+                                                    <button type="button" class="btn btn-add" data-toggle="modal"
+                                                        data-target="#modalAddArcs{{_id}}" data-whatever="@mdo"><i
+                                                            class="fas fa-plus"></i></button>
                                                     {{>
                                                     admin/crudAdmin/arcs/modalAddArcs
                                                     }}
@@ -127,10 +124,12 @@
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{ title }}</td>
                                                 <td>{{ image }}</td>
-                                                <td><button type="button" class="btn btn-warning" data-toggle="modal"
-                                                        data-target="#modalEditArcs{{_id}}">Editer</button>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                        data-target="#modalDeleteArcs{{_id}}">Supprimer</button>
+                                                <td><button type="button" class="btn btn-edit" data-toggle="modal"
+                                                        data-target="#modalEditArcs{{_id}}"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                        data-target="#modalDeleteArcs{{_id}}"><i
+                                                            class="fas fa-trash-alt"></i></button>
                                                     {{>
                                                     admin/crudAdmin/arcs/modalEditArcs
                                                     }}
@@ -161,7 +160,7 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
                             data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             PERSONNAGES
                         </button>
@@ -180,9 +179,9 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
                                                 <th scope="col">
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                        data-target="#modalAddCharacters{{_id}}"
-                                                        data-whatever="@mdo">Ajouter</button>
+                                                    <button type="button" class="btn btn-add" data-toggle="modal"
+                                                        data-target="#modalAddCharacters{{_id}}" data-whatever="@mdo"><i
+                                                            class="fas fa-plus"></i></button>
                                                     {{>
                                                     admin/crudAdmin/characters/modalAddCharacters
                                                     }}
@@ -201,10 +200,12 @@
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{ name }}</td>
                                                 <td>{{ image }}</td>
-                                                <td><button type="button" class="btn btn-warning" data-toggle="modal"
-                                                        data-target="#modalEditCharacters{{_id}}">Editer</button>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                        data-target="#modalDeleteCharacters{{_id}}">Supprimer</button>
+                                                <td><button type="button" class="btn btn-edit" data-toggle="modal"
+                                                        data-target="#modalEditCharacters{{_id}}"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                        data-target="#modalDeleteCharacters{{_id}}"><i
+                                                            class="fas fa-trash-alt"></i></button>
                                                     {{>
                                                     admin/crudAdmin/characters/modalEditCharacters
                                                     }}
@@ -235,7 +236,7 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
                             data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             CAPACITES
                         </button>
@@ -254,9 +255,9 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
                                                 <th scope="col">
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                        data-target="#modalAddPowers{{_id}}"
-                                                        data-whatever="@mdo">Ajouter</button>
+                                                    <button type="button" class="btn btn-add" data-toggle="modal"
+                                                        data-target="#modalAddPowers{{_id}}" data-whatever="@mdo"><i
+                                                            class="fas fa-plus"></i></button>
                                                     {{>
                                                     admin/crudAdmin/powers/modalAddPowers
                                                     }}
@@ -275,10 +276,12 @@
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{ name }}</td>
                                                 <td>{{ image }}</td>
-                                                <td><button type="button" class="btn btn-warning" data-toggle="modal"
-                                                        data-target="#modalEditPowers{{_id}}">Editer</button>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                        data-target="#modalDelePowers{{_id}}">Supprimer</button>
+                                                <td><button type="button" class="btn btn-edit" data-toggle="modal"
+                                                        data-target="#modalEditPowers{{_id}}"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                        data-target="#modalDelePowers{{_id}}"><i
+                                                            class="fas fa-trash-alt"></i></button>
                                                     {{>
                                                     admin/crudAdmin/powers/modalEditPowers
                                                     }}
@@ -309,7 +312,7 @@
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
                             data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             MANGA
                         </button>
@@ -328,9 +331,9 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
                                                 <th scope="col">
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                        data-target="#modalAddManga{{_id}}"
-                                                        data-whatever="@mdo">Ajouter</button>
+                                                    <button type="button" class="btn btn-add" data-toggle="modal"
+                                                        data-target="#modalAddManga{{_id}}" data-whatever="@mdo"><i
+                                                            class="fas fa-plus"></i></button>
                                                     {{>
                                                     admin/crudAdmin/manga/modalAddManga
                                                     }}
@@ -350,10 +353,12 @@
                                                 <td>{{ title }}</td>
                                                 <td>Saison: {{ season }}</td>
                                                 <td>{{ image }}</td>
-                                                <td><button type="button" class="btn btn-warning" data-toggle="modal"
-                                                        data-target="#modalEditManga{{_id}}">Editer</button>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                                        data-target="#modalDeleteManga{{_id}}">Supprimer</button>
+                                                <td><button type="button" class="btn btn-edit" data-toggle="modal"
+                                                        data-target="#modalEditManga{{_id}}"><i
+                                                            class="fas fa-edit"></i></button>
+                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                        data-target="#modalDeleteManga{{_id}}"><i
+                                                            class="fas fa-trash-alt"></i></button>
                                                     {{>
                                                     admin/crudAdmin/manga/modalEditManga
                                                     }}
@@ -376,9 +381,6 @@
             </div>
         </div>
         {{!-- /manga --}}
-
-
-
     </div>
 </section>
 {{!-- / Admin --}}

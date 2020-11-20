@@ -6,7 +6,8 @@ const News = require('../../../database/models/News'),
     Arcs = require('../../../database/models/Arcs'),
     Character = require('../../../database/models/Character'),
     Powers = require('../../../database/models/Powers'),
-    Manga = require('../../../database/models/Manga')
+    Manga = require('../../../database/models/Manga'),
+    User = require('../../../database/models/User')
 
 module.exports = {
     get: async (req, res) => {
@@ -14,15 +15,16 @@ module.exports = {
             dbArcs = await Arcs.find({}),
             dbCharacter = await Character.find({}),
             dbPowers = await Powers.find({}),
-            dbManga = await Manga.find({})
+            dbManga = await Manga.find({}),
+            dbUser = await User.find({})
         res.render('admin', {
             layout: 'adminLayout',
             news: dbNews,
             arcs: dbArcs,
             character: dbCharacter,
             powers: dbPowers,
-            manga:dbManga
+            manga: dbManga,
+            users: dbUser
         })
     }
 }
-
