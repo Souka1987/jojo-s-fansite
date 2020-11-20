@@ -1,0 +1,36 @@
+{{!-- Inscription --}}
+<section>
+    <div class="container">
+        <h1 class="text-center text-dark">Ajouter un utilisateur</h1>
+        {{!--Ajout de l'url et de la méthode + multipart/form-data pour ajouter des fichiers--}}
+        <form action="/create" method="POST">
+
+            <div class="col">
+                <label for="text">Nom</label>
+                <input type="text" class="form-control" placeholder="firstname" name="firstname">
+            </div>
+
+            <div class="col">
+                <label for="text">Prénom</label>
+                <input type="text" class="form-control" placeholder="lastname" name="lastname">
+            </div>
+
+
+            <div class="col">
+                <label for="email">Pseudo</label>
+                <input type="text" class="form-control" placeholder="pseudo" name="pseudo" required>
+            </div>
+
+            <div class="col">
+                <label for="email">Email</label>
+                <input id="email" type="email" class="form-control" placeholder="email" name="email" required>
+            </div>
+
+            {{!--  Boutton envoyer --}}
+            <button type="submit" class="btn btn-primary mt-2">Valider</button>
+            <button type="submit" class="btn btn-secondary mt-2">Annuler</button>
+        </form>
+    </div>
+    </div>
+</section>
+{{!-- /Inscription --}}

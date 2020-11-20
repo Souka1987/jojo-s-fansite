@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-        <h1 class="text-center text-dark">Ajouter une News</h1>
+        <h6 class="text-center">Ajouter une News</h6>
         {{!--Ajout de l'url et de la méthode + multipart/form-data pour ajouter des fichiers--}}
         <form action="/admin/news" method="POST" enctype="multipart/form-data">
 
@@ -18,7 +18,7 @@
                 <script>
                     const ed = CKEDITOR.replace('editor', {
                         entities: false, // Pour la suppression des caractères spéciaux
-                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                        uiColor: ' #040620' // Coloriser les bordures de l'éditeur
                     });
 
                     ed.on('change', function (e) {// Modification du contenu de l'éditeur
@@ -35,8 +35,7 @@
 
             {{!-- Bouttons --}}
             <div>
-                <button type="submit" class="btn btn-primary">Valider</button>
-                <button type="submit" class="btn btn-secondary">Annuler</button>
+                <button type="submit" class="btn btn-ok"><i class="fas fa-check"></i></button>
             </div>
         </form>
     </div>
