@@ -9,7 +9,6 @@ const multer = require('multer'),
 
 
 module.exports = {
-
     // GET Page home Arcs + ajout des news ( Utilisateur )
     getArcs: async (req, res) => {
         const dbArcs = await Arcs.find({}),

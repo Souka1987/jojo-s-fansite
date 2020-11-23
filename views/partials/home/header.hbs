@@ -1,34 +1,31 @@
-{{!-- <img src="/assets/jojolion_wou.jpeg" class="img-fluid" alt="Responsive image"> --}}
+<header>
+    {{!-- <img src="/assets/images/jojo.jpg" class="img-fluid" id="jojo-img" alt="Responsive image"> --}}
 
-{{!-- Video --}}
-<header style='width: 100%'>
-    <video autoplay muted preload="auto" loop="loop" id="myVideo" style='width: 100%'>
-        <source src="assets/VIDEOS/head2.mp4" type="video/mp4">
-    </video>
-    <div class="container-fluid title">
-        <div class="row d-flex justify-content-center text-center">
-            <div class="col-md-6 col-sm-12">
-                <h1 class="text-white mt-5 display-4">Le monde de Jojo</h1>
-                <p class="text-white">Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo,
-                    eum cu
-                    recteque expetendis
-                    neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore
-                    latine
-                    molestiae, ad mutat oblique delicatissimi pro.</p>
-                {{!-- Boutton pour démarrer et arréter la vidéo avec Javascript --}}
-                <button type="button" class="btn mb-5 text-white" id="myBtn" onclick="myFunction()">Pause</button>
+    {{!-- Video --}}
+    {{!-- <header style='width: 100%'> --}}
+        <video autoplay muted preload="auto" loop="loop" id="myVideo" style='width: 100%'>
+            <source src="assets/VIDEOS/head2.mp4" type="video/mp4">
+        </video>
+        <div class="container-fluid title">
+            <div class="row d-flex justify-content-center text-center">
+                <div class="col-md-6 col-sm-12">
+                    <h1 class="text-white mt-5 display-4">Le monde de Jojo</h1>
+                    <p class="text-white">Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te
+                        duo,
+                        eum cu.</p>
+                    {{!-- Boutton pour démarrer et arréter la vidéo avec Javascript --}}
+                    <button type="button" class="btn mb-5 text-white btn-primary" id="myBtn"
+                        onclick="myFunction()">Pause</button>
+                </div>
             </div>
         </div>
-    </div>
-
     <style>
         .title {
-            position: absolute;
-            top: 90vh;
+            position: relative;
+            bottom: 10vh;
             background-color: black;
-            font-family: 'montserrat', sans-serif;
-
-
+            font-family: 'Lato', sans-serif;
+            font-size: 11px;
         }
     </style>
 
@@ -50,6 +47,5 @@
             }
         }
     </script>
-
     {{!-- /Video --}}
-    {{! </header> --}}
+</header>

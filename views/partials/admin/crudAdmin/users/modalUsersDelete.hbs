@@ -1,15 +1,14 @@
-{{!-- modalDeleteCharacter --}}
-<div class="modal fade" id="modalDeleteCharacters{{_id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+{{!-- modalUsersDelete --}}
+<div class="modal fade" id='modalUsersDelete{{_id}}' tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"></h5>
       </div>
       <div class="modal-body-admin">
-        {{> admin/character/formDelete }}
+        <p>{{> admin/users/usersFormDelete}}</p>
       </div>
     </div>
   </div>
 </div>
-{{!-- /modalDeleteCharacter --}}
+{{!-- /modalUsersDelete --}}

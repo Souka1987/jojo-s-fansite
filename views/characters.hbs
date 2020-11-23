@@ -63,7 +63,7 @@
                             <p class="card-text">{{ stripTags content }}</p>
                             {{!-- Récupérer le "createDate" pour ajouter la date --}}
                             <p class="card-text"><small class="text-muted">Ajouté le:
-                                    {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                                    {{ moment createDate format="DD.MM.YYYY" }}</small></p>
                             {{!--  Button trigger modal  --}}
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                 {{!-- Définir l'ID pour le lier au modal --}} data-target="#staticBackdrop{{ _id }}">
@@ -100,7 +100,7 @@
                                             <p class="card-text">{{ stripTags powers.content3 }}</p>
                                             {{!-- Récupérer le "createDate" pour ajouter la date --}}
                                             <p class="card-text"><small class="text-muted">Ajouté le:
-                                                    {{ moment createDate format="DD-MM-YYYY" }}</small></p>
+                                                    {{ moment createDate format="DD.MM.YYYY" }}</small></p>
                                         </div>
                                     </div>
                                     {{!-- /card --}}

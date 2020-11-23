@@ -77,11 +77,7 @@ module.exports = {
         res.render('admin/character/editCharacters', {
             character: dbCharacter,
             powers: dbPowers,
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 5bf9a65f8dcd1d17de11ce1b4ae890d319bb58ab
         })
     },
 
@@ -108,7 +104,7 @@ module.exports = {
                 res.redirect('/characters') // Sinon renvoyer sur la page "characters"
 
             })
-        } else { 
+        } else {
             const image = req.file.originalname
             // Pour modifier l'image
             Character.findByIdAndUpdate(q, { // Définir les variables de son article

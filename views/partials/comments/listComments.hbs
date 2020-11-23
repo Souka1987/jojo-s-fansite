@@ -9,15 +9,9 @@
                             <img src="" class="img-circle img-responsive" alt="" /></div> --}}
 
             <h6>Par: {{ username }}</h6>
-            le: <small>{{ moment createDate format="DD-MM-YYYY" }}</small>
+            <p class="card-text text-muted"><small>le: {{ moment createDate format="DD.MM.YYYY" }}</small></p>
             <br>
             <p>{{ comment }}</p>
-            <div class="action">
-                {{!-- Suppression du commentaire --}}
-                <form class="mt-2" action="/deleteComments/{{ _id }}" method="GET">
-                    <button class="btn-sm btn btn-danger" type="submit">Supprimer</button>
-                </form>
-            </div>
         </li>
         {{/each }}
     </ul>

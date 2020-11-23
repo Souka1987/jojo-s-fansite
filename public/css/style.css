@@ -1,74 +1,3 @@
-<<<<<<< HEAD
-/*
-Error: File to import not found or unreadable: ./bootstrap.
-        on line 5 of /home/art4/Documents/dev/gh/jojo-s-fansite/public/css/sass/style.sass
-        from line 1 of /home/art4/Documents/dev/gh/jojo-s-fansite/public/css/sass/index.sass
-
-1: @import './style.sass'
-2: @import '../bootstrap'
-
-Backtrace:
-/home/art4/Documents/dev/gh/jojo-s-fansite/public/css/sass/style.sass:5
-/home/art4/Documents/dev/gh/jojo-s-fansite/public/css/sass/index.sass:1
-/usr/lib/ruby/vendor_ruby/sass/tree/import_node.rb:67:in `rescue in import'
-/usr/lib/ruby/vendor_ruby/sass/tree/import_node.rb:44:in `import'
-/usr/lib/ruby/vendor_ruby/sass/tree/import_node.rb:28:in `imported_file'
-/usr/lib/ruby/vendor_ruby/sass/tree/import_node.rb:37:in `css_import?'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:313:in `visit_import'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:160:in `block in visit'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:79:in `block in with_base'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:115:in `with_frame'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:79:in `with_base'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:160:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:328:in `map'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:328:in `block in visit_import'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:88:in `block in with_import'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:115:in `with_frame'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:88:in `with_import'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:325:in `visit_import'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:160:in `block in visit'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:79:in `block in with_base'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:115:in `with_frame'
-/usr/lib/ruby/vendor_ruby/sass/stack.rb:79:in `with_base'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:160:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:52:in `map'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:181:in `with_environment'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:168:in `visit_children'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:188:in `visit_root'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/base.rb:36:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:159:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/visitors/perform.rb:8:in `visit'
-/usr/lib/ruby/vendor_ruby/sass/tree/root_node.rb:36:in `css_tree'
-/usr/lib/ruby/vendor_ruby/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/usr/lib/ruby/vendor_ruby/sass/engine.rb:381:in `_render_with_sourcemap'
-/usr/lib/ruby/vendor_ruby/sass/engine.rb:298:in `render_with_sourcemap'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:209:in `each'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:473:in `on_file_changed'
-/usr/lib/ruby/vendor_ruby/sass/plugin/compiler.rb:331:in `block in watch'
-/usr/lib/ruby/vendor_ruby/listen/event/config.rb:23:in `call'
-/usr/lib/ruby/vendor_ruby/listen/event/processor.rb:115:in `_process_changes'
-/usr/lib/ruby/vendor_ruby/listen/event/processor.rb:19:in `block in loop_for'
-/usr/lib/ruby/vendor_ruby/listen/event/processor.rb:15:in `loop'
-/usr/lib/ruby/vendor_ruby/listen/event/processor.rb:15:in `loop_for'
-/usr/lib/ruby/vendor_ruby/listen/event/loop.rb:84:in `_wait_for_changes'
-/usr/lib/ruby/vendor_ruby/listen/event/loop.rb:42:in `block in setup'
-/usr/lib/ruby/vendor_ruby/listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: ./bootstrap.\A         on line 5 of /home/art4/Documents/dev/gh/jojo-s-fansite/public/css/sass/style.sass\A         from line 1 of /home/art4/Documents/dev/gh/jojo-s-fansite/public/css/sass/index.sass\A \A 1: @import './style.sass'\A 2: @import '../bootstrap'"; }
-=======
 /*!
  * Bootstrap v4.5.2 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -7865,7 +7794,17 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 /* body */
 section {
-  padding: 80px 0px; }
+  padding: 30px 0px; }
+
+h6 {
+  text-transform: uppercase;
+  color: #000000; }
+
+p {
+  color: #000000; }
+
+a {
+  color: #000000; }
 
 /* ADMIN */
 th {
@@ -7881,27 +7820,22 @@ td {
   color: #f4f4f599;
   font-weight: 500; }
 
-h6 {
-  color: #f4f4f599;
+li, a, button {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  color: #edf0f1;
+  text-decoration: none;
   text-transform: uppercase; }
 
+button {
+  padding: 9px 25px;
+  background-color: #8e0fc9;
+  border: none;
+  border-radius: 20px; }
+
 /* ADMIN */
-.nav-admin {
-  color: #f4f4f5;
-  background: #3600ff; }
-
-.nav-back {
-  color: #f4f4f5;
-  font-size: 13px;
-  text-transform: uppercase;
-  font-weight: 600; }
-
-#admin-title {
-  font-size: 13px;
-  transition: opacity 0.3s ease-in-out;
-  font-weight: 600;
-  color: #f4f4f5e6; }
-
+/* Background */
 .bg-admin {
   background: radial-gradient(farthest-side ellipse at 10% 0, #333867 20%, #17193b);
   background-attachment: fixed;
@@ -7912,6 +7846,24 @@ h6 {
   font-weight: 300;
   line-height: 1.5;
   font-family: open sans, sans-serif; }
+
+/* Navbar */
+.nav-admin {
+  color: #f4f4f5;
+  background: #3600ff; }
+
+.nav-back {
+  color: #f4f4f5;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+/* Accordion */
+#admin-title {
+  font-size: 13px;
+  transition: opacity 0.3s ease-in-out;
+  font-weight: 600;
+  color: #f4f4f5e6; }
 
 .accordion > .card > .card-header {
   background: rgba(0, 0, 0, 0.15);
@@ -7927,6 +7879,7 @@ h6 {
   color: rgba(244, 244, 245, 0.6);
   border-radius: 10px; }
 
+/* Table */
 .table-bordered {
   width: 100%;
   margin-bottom: 1rem;
@@ -7945,9 +7898,11 @@ h6 {
   border-left: 1px solid rgba(0, 0, 0, 0.125);
   border-right: 1px solid rgba(0, 0, 0, 0.125); }
 
+/* Card */
 .card {
   border: none; }
 
+/* Buttons */
 .btn-add {
   background-color: #2477ff;
   border: rgba(0, 0, 0, 0.125);
@@ -7966,6 +7921,7 @@ h6 {
   color: #fff;
   font-size: 10px; }
 
+/* Footer */
 .footer-admin {
   color: #f4f4f5;
   background: #3600ff;
@@ -7973,7 +7929,8 @@ h6 {
   text-transform: uppercase;
   font-weight: 600; }
 
-.modal-body {
+/* Modals */
+.modal-body-admin {
   background: radial-gradient(farthest-side ellipse at 10% 0, #333867 20%, #17193b); }
 
 .form-control-file, .form-control-range {
@@ -7989,5 +7946,28 @@ h6 {
   font-size: 10px;
   border: rgba(0, 0, 0, 0.125); }
 
+/* Home Page */
+/* Navbar */
+.nav {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #000000; }
+
+.navbar-nav {
+  list-style: none; }
+
+.navbar-nav li {
+  display: inline-block;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
+
+.navbar-nav li a {
+  transition: all 0.3s ease 0s; }
+
+.navbar-nav li a:hover {
+  color: #ff00ea; }
+
 /*# sourceMappingURL=style.css.map */
->>>>>>> 2bba6cecae35fcd21688290f9e237c4f2c4e7fe5

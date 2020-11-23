@@ -1,4 +1,29 @@
 {{!-- Inscription --}}
+{{#if error }}
+<script>
+     swal({
+        title: "Oops !",
+        text: "Tu es déjà inscrit !",
+        icon: "error",
+        buttons: true,
+        dangerMode: true,
+    });
+     swal({
+        title: "Attention !",
+        text: "N'oublies pas de remplir correctement les champs.",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+</script>
+{{/if}}
+
+{{#if success }}
+<script>
+    swal("Félicitation ! Ton compte à bien été créé !", "Bienvenue sur Jojo's World.", "success")
+</script>
+{{/if}}
+
 <section class="mt-5">
     <div class="container mt-5">
         <div class="card-body mx-auto" style="max-width: 700px;">
@@ -45,7 +70,7 @@
 
 
                 {{!--  Boutton envoyer --}}
-                <button type="submit" class="btn text-white btn-block mt-5">
+                <button type="submit" class="btn btn-primary text-white btn-block mt-5">
                     Valider
                 </button>
 

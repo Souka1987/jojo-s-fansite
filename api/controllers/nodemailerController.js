@@ -35,9 +35,9 @@ module.exports = {
             from: 'test@gmail.com',
             //cc:'soukainataattoumani@yahoo.fr',
             to: req.body.email,
-            subject: 'Félicitation ! ' + req.body.lastname + ' !',
+            subject: 'Félicitation ! ' + req.body.name + ' !',
             html: `
-          <h2>${req.body.lastname}, Bienvenue dans le monde de Jojo !!</h2>
+          <h2>${req.body.name}, Bienvenue dans le monde de Jojo !!</h2>
           <h5>Tous sur votre manga préféré jojo's Bizarre Adventure. </h5>
           <h4>Sujet: ${req.body.subject}</h4>
           <p>${req.body.message}</p>

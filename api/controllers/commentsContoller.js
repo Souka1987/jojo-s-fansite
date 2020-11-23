@@ -30,38 +30,6 @@ module.exports = {
     },
 
 
-    // GET formulaire modif commentaires
-    // updateComments: async (req, res) => {
-    //     // Aller chercher les commentaires dans la dase de données
-    //     const dbComments = await Comments.findById(req.params.id)
-
-    //     console.log(dbComments)
-    //     res.render('/comments/editComments', {
-    //         comments: dbComments
-    //     })
-    // },
-    // // POST formulaire de modification
-    // editComments: async (req, res) => {
-    //     const q = req.params.id
-    //     // Récupération d'un commentaire grâce au params.id
-    //     const dbComments = await Comments.findById(req.params.id)
-
-    //     console.log(req.body)
-    //     Comments.findByIdAndUpdate(q, { // Définir les variables de son article
-
-    //         // Schéma par défaut
-    //         ...req.body,
-
-    //     }, (err) => {
-    //         if (err) console.log(err); // Si il y a une erreur, l'afficher
-    //         // sinon rediriger sur la page "author"
-    //         res.redirect('/author', {
-    //             comments: dbComments
-    //         })
-
-    //     })
-    // },
-
     // GET/DELETE Suppression commentaire
     deleteComments: async (req, res) => {
 

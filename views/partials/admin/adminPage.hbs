@@ -85,13 +85,13 @@
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
                         <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
                             ARCS
                         </button>
                     </h2>
                 </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne"
                     data-parent="#accordionExample">
                     <div class="card-body">
                         <div class="container">
@@ -161,13 +161,13 @@
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
                         <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
                             PERSONNAGES
                         </button>
                     </h2>
                 </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                <div id="collapseThree" class="collapse show" aria-labelledby="headingOne"
                     data-parent="#accordionExample">
                     <div class="card-body">
                         <div class="container">
@@ -237,13 +237,13 @@
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
                         <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
                             CAPACITES
                         </button>
                     </h2>
                 </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                <div id="collapseFour" class="collapse show" aria-labelledby="headingOne"
                     data-parent="#accordionExample">
                     <div class="card-body">
                         <div class="container">
@@ -313,13 +313,13 @@
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
                         <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
                             MANGA
                         </button>
                     </h2>
                 </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                <div id="collapseFive" class="collapse show" aria-labelledby="headingOne"
                     data-parent="#accordionExample">
                     <div class="card-body">
                         <div class="container">
@@ -330,6 +330,7 @@
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
+                                                <th scope="col">Saison</th>
                                                 <th scope="col">
                                                     <button type="button" class="btn btn-add" data-toggle="modal"
                                                         data-target="#modalAddManga{{_id}}" data-whatever="@mdo"><i
@@ -351,7 +352,7 @@
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{ title }}</td>
-                                                <td>Saison: {{ season }}</td>
+                                                <td>{{ season }}</td>
                                                 <td>{{ image }}</td>
                                                 <td><button type="button" class="btn btn-edit" data-toggle="modal"
                                                         data-target="#modalEditManga{{_id}}"><i
@@ -377,7 +378,139 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        {{!-- /manga --}}
 
+        <!---------------------------------->
+
+        {{!-- users --}}
+        <div class="accordion mt-5" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
+                            data-target="#collapseSix" aria-expanded="true" aria-controls="collapseOne">
+                            UTILISATEURS
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseSix" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Nom</th>
+                                                <th scope="col">Prénom</th>
+                                                <th scope="col">Pseudo</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                            {{!-- Début de la boucle --}}
+                                            {{#each users }}
+
+                                            <tr>
+                                                <th scope="row">{{ inc @index }}</th>
+                                                <td>{{ firstname }}</td>
+                                                <td>{{ lastname }}</td>
+                                                <td>{{ pseudo }}</td>
+                                                <td>{{ email }}</td>
+                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                        data-target="#modalUsersDelete{{_id}}"><i
+                                                            class="fas fa-trash-alt"></i></button>
+                                                    {{>
+                                                    admin/crudAdmin/users/modalUsersDelete
+                                                    }}
+                                                </td>
+                                            </tr>
+
+                                            {{/each }}
+                                            {{!-- Fin de la boucle --}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{!-- /users --}}
+
+        <!---------------------------------->
+
+        {{!-- manga --}}
+        <div class="accordion mt-5" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
+                            data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseOne">
+                            COMMENTAIRES
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseSeven" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Pseudo</th>
+                                                <th scope="col">Commentaires</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                            {{!-- Début de la boucle --}}
+                                            {{#each comments }}
+
+                                            <tr>
+                                                <th scope="row">{{ inc @index }}</th>
+                                                <td>{{ username }}</td>
+                                                <td>{{ comment }}</td>
+                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                        data-target="#modalDeleteComments{{_id}}"><i
+                                                            class="fas fa-trash-alt"></i></button>
+                                                    {{>
+                                                    admin/crudAdmin/comments/modalAddComments
+                                                    }}
+                                                    {{>
+                                                    admin/crudAdmin/comments/modalDeleteComments
+                                                    }}
+                                                </td>
+                                            </tr>
+
+                                            {{/each }}
+                                            {{!-- Fin de la boucle --}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         {{!-- /manga --}}

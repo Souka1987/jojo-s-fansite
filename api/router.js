@@ -27,6 +27,9 @@ const homeController = require('./controllers/homeController'),
 
     // ADMIN CONTROLLERS
     adminController = require('./controllers/admin/adminController')
+const {
+    route
+} = require('../server')
 
 
 
@@ -61,17 +64,15 @@ router.route('/manga')
     .get(mangaController.getManga)
 
 
-
 /*
  * CONTACT
  * ******* */
 
 
 // Nodemailer
-// email (page Home)
+// email (page Message)
 router.route('/nodemailer')
     .post(nodemailerController.mail)
-
 
 
 // Message
@@ -85,7 +86,8 @@ router.route('/message')
 // Users
 // Connection
 router.route('/user')
-    .get(userController.get)
+    .get(userController.getUser)
+
 
 router.route('/login')
     .get(loginController.login)
@@ -114,16 +116,10 @@ router.route('/create')
 router.route('/newComments')
     .post(commentsController.postComments)
 
-// // POST Modification commentaires
-// router.route('/editComments/:id')
-//     // GET récupéreration du formulaire 
-//     .get(commentsController.updateComments)
-//     // POST modification
-//     .post(commentsController.editComments)
-
 // DELETE/GET Suppression commentaires
 router.route('/deleteComments/:id')
     .get(commentsController.deleteComments)
+
 
 
 
@@ -137,6 +133,7 @@ router.route('/admin')
     .get(adminController.get)
 
 
+// C.R.U.D
 // Arcs
 router.route('/admin/arcs')
     // GET récupération du formulaire formAdd
@@ -210,12 +207,6 @@ router.route('/admin/powers')
     .post(uploadCharacters.single('image'), powersController.powersAdd)
 
 router.route('/admin/editPowers/:id')
-// GET recupération du formulaire powersPageFormEdit
-.get(powersController.powersPageFormEdit)
-// POST formulaire
-.post(uploadArcs.single('image'), powersController.powersEdit)
-
-router.route('/admin/editPowers/:id')
     // GET recupération du formulaire powersPageFormEdit
     .get(powersController.powersPageFormEdit)
     // POST formulaire
@@ -250,6 +241,11 @@ router.route('/admin/deleteManga/:id')
 
 
 /************************************** */
+
+// Users
+    router.route('/admin/userDelete/:id')
+    .get(userController.userDelete)
+
 
 
 // Exportation du routeur

@@ -58,16 +58,16 @@ module.exports = {
         console.log(dbPowers)
         res.render('admin/powers/powersEdit', {
             powers: dbPowers,
-        
+
         })
     },
 
-    // POST Modifier l'article
-    // Syncroniser l"url "/" avec la base de données avec la méthode "async"
+    // // POST Modifier l'article
+    // // Syncroniser l"url "/" avec la base de données avec la méthode "async"
     powersEdit: async (req, res) => {
         const q = req.params.id
 
-        // Récupération l'article grace au params.id
+        // Récupération l'article grâce au params.id
         const dbPowers = await Powers.findById(req.params.id)
 
         console.log(req.body)
@@ -89,30 +89,6 @@ module.exports = {
 
         })
     },
-
-        // Récupération l'article grâce au params.id
-        const dbPowers = await Powers.findById(req.params.id)
-
-        console.log(req.body)
-        console.log(req.file)
-
-        const image = req.file.originalname
-        // Pour modifier l'image
-        Powers.findByIdAndUpdate(q, { // Définir les variables de son article
-
-            // Schéma par défaut
-            ...req.body,
-            // Aller chercher le chemin de l'image à modifier
-            image: `assets/images/arcs/${image}`,
-            name: req.body.name
-
-        }, (err) => {
-            if (err) console.log(err); // Si il y a une erreur, l'afficher
-            res.redirect('/characters') // sinon rediriger sur la page "characters"
-
-        })
-
-    }
 
 
     // GET Pour supprimer un article
@@ -140,3 +116,4 @@ module.exports = {
 
     }
 
+}
