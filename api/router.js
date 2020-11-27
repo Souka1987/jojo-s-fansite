@@ -3,9 +3,9 @@ const express = require('express'),
     router = express.Router(),
     path = require('path'),
     uploadArcs = require('./config/multerArcs'),
-    uploadCharacters = require('./config/multerCharacters')
-// Middleware
-//auth = require('../middleware/auth')
+    uploadCharacters = require('./config/multerCharacters'),
+    // Middleware
+    auth = require('../middleware/auth')
 
 
 
@@ -26,10 +26,10 @@ const homeController = require('./controllers/homeController'),
     nodemailerController = require('./controllers/nodemailerController'),
 
     // ADMIN CONTROLLERS
-    adminController = require('./controllers/admin/adminController')
-const {
-    route
-} = require('../server')
+    adminController = require('./controllers/admin/adminController'),
+    {
+        route
+    } = require('../server')
 
 
 
@@ -75,6 +75,7 @@ router.route('/nodemailer')
     .post(nodemailerController.mail)
 
 
+
 // Message
 router.route('/message')
     .get(messageController.get)
@@ -86,7 +87,7 @@ router.route('/message')
 // Users
 // Connection
 router.route('/user')
-    .get(userController.getUser)
+    .get(auth.isUser, userController.getUser)
 
 
 router.route('/login')
@@ -111,15 +112,13 @@ router.route('/create')
 
 
 // Comments
-
 // POST Ajouter un commentaire
 router.route('/newComments')
     .post(commentsController.postComments)
 
-// DELETE/GET Suppression commentaires
+// /GET Suppression commentaires 
 router.route('/deleteComments/:id')
-    .get(commentsController.deleteComments)
-
+    .get(auth.isUser, commentsController.deleteComments)
 
 
 
@@ -130,26 +129,26 @@ router.route('/deleteComments/:id')
 
 // Page admin
 router.route('/admin')
-    .get(adminController.get)
+    .get(auth.isAdmin, adminController.get)
 
 
 // C.R.U.D
 // Arcs
 router.route('/admin/arcs')
     // GET récupération du formulaire formAdd
-    .get(homeController.arcsPageFormAdd)
+    .get(auth.isAdmin, homeController.arcsPageFormAdd)
     // POST formulaire addArcs
-    .post(uploadArcs.single('image'), arcsController.addArcs)
+    .post(uploadArcs.single('image'), auth.isAdmin, arcsController.addArcs)
 
 router.route('/admin/editArcs/:id')
     // GET récupéreration du formulaire 
-    .get(arcsController.arcsPageFormEdit)
+    .get(auth.isAdmin, arcsController.arcsPageFormEdit)
     // POST formulaire editArcs
-    .post(uploadArcs.single('image'), arcsController.editArcs)
+    .post(uploadArcs.single('image'), auth.isAdmin, arcsController.editArcs)
 
 // Bouton de suppression
 router.route('/admin/deleteArcs/:id')
-    .get(arcsController.deleteArcs)
+    .get(auth.isAdmin, arcsController.deleteArcs)
 
 
 /************************************** */
@@ -158,21 +157,21 @@ router.route('/admin/deleteArcs/:id')
 // News
 router.route('/admin/news')
     // GET récupération du formulaire newsFormAdd
-    .get(homeController.newsFormAdd)
+    .get(auth.isAdmin, homeController.newsFormAdd)
     // POST formulaire newsAdd
-    .post(uploadArcs.single('image'), newsController.newsAdd)
+    .post(uploadArcs.single('image'), auth.isAdmin, newsController.newsAdd)
 
 
 router.route('/admin/editNews/:id')
     // GET récupéreration du formulaire 
-    .get(newsController.editFormNews)
+    .get(auth.isAdmin, newsController.editFormNews)
     // POST formulaire editNews
-    .post(uploadArcs.single('image'), newsController.editNews)
+    .post(uploadArcs.single('image'), auth.isAdmin, newsController.editNews)
 
 
 // Bouton de suppression
 router.route('/admin/deleteNews/:id')
-    .get(newsController.deleteNews)
+    .get(auth.isAdmin, newsController.deleteNews)
 
 
 /************************************** */
@@ -181,19 +180,19 @@ router.route('/admin/deleteNews/:id')
 // Characters
 router.route('/admin/characters')
     // GET recupération du formulaire formAdd
-    .get(charactersController.formAddCharacter)
+    .get(auth.isAdmin, charactersController.formAddCharacter)
     // POST formulaire characterAdd
-    .post(uploadCharacters.single('image'), charactersController.characterAdd)
+    .post(uploadCharacters.single('image'), auth.isAdmin, charactersController.characterAdd)
 
 router.route('/admin/editCharacters/:id')
     // GET récupération du formulaire FormEdit
-    .get(charactersController.pageFormEditCharacter)
+    .get(auth.isAdmin, charactersController.pageFormEditCharacter)
     // POST formulaire editCharacters
-    .post(uploadCharacters.single('image'), charactersController.editCharacters)
+    .post(uploadCharacters.single('image'), auth.isAdmin, charactersController.editCharacters)
 
 // GET bouton de suppression
 router.route('/admin/deleteCharacters/:id')
-    .get(charactersController.deleteCharacters)
+    .get(auth.isAdmin, charactersController.deleteCharacters)
 
 
 /************************************** */
@@ -202,19 +201,19 @@ router.route('/admin/deleteCharacters/:id')
 // Powers
 router.route('/admin/powers')
     // GET recupération du formulaire powersPageFormAdd
-    .get(powersController.powersPageFormAdd)
+    .get(auth.isAdmin, powersController.powersPageFormAdd)
     // POST formulaire
-    .post(uploadCharacters.single('image'), powersController.powersAdd)
+    .post(uploadCharacters.single('image'), auth.isAdmin, powersController.powersAdd)
 
 router.route('/admin/editPowers/:id')
     // GET recupération du formulaire powersPageFormEdit
-    .get(powersController.powersPageFormEdit)
+    .get(auth.isAdmin, powersController.powersPageFormEdit)
     // POST formulaire
-    .post(uploadCharacters.single('image'), powersController.powersEdit)
+    .post(uploadCharacters.single('image'), auth.isAdmin, powersController.powersEdit)
 
 // GET bouton de suppression
 router.route('/admin/deletePowers/:id')
-    .get(powersController.deletePowers)
+    .get(auth.isAdmin, powersController.deletePowers)
 
 
 
@@ -225,26 +224,26 @@ router.route('/admin/deletePowers/:id')
 // Manga
 router.route('/admin/manga')
     // GET récupération du formulaire mangaFormAdd
-    .get(mangaController.mangaFormAdd)
+    .get(auth.isAdmin, mangaController.mangaFormAdd)
     // POST formulaire mangaAdd
-    .post(uploadArcs.single('image'), mangaController.mangaAdd)
+    .post(uploadArcs.single('image'), auth.isAdmin, mangaController.mangaAdd)
 
 router.route('/admin/editManga/:id')
     // GET récupération du formulaire editFormMAnga
-    .get(mangaController.editFormManga)
+    .get(auth.isAdmin, mangaController.editFormManga)
     // POST formulaire editManga
-    .post(uploadArcs.single('image'), mangaController.editManga)
+    .post(uploadArcs.single('image'), auth.isAdmin, mangaController.editManga)
 
 // GET bouton de suppression
 router.route('/admin/deleteManga/:id')
-    .get(mangaController.deleteManga)
+    .get(auth.isAdmin, mangaController.deleteManga)
 
 
 /************************************** */
 
 // Users
-    router.route('/admin/userDelete/:id')
-    .get(userController.userDelete)
+router.route('/admin/userDelete/:id')
+    .get(auth.isAdmin, userController.userDelete)
 
 
 

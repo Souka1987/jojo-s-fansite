@@ -4,8 +4,9 @@ const mongoose = require("mongoose"),
 
 const CommentsSchema = new mongoose.Schema({
     // Déclaration de variable et leur type
-    username: String,
-    image: String,
+    author: String,
+    authorId: String,
+    //image: String,
     comment: String,
     createDate: {
         type: Date,

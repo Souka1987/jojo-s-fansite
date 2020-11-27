@@ -13,9 +13,19 @@
 
 {{#if success }}
 <script>
-    swal("Félicitation !!!", "Clic sur un onglet pour commencer à naviguer.", "success")
+    /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
+    swal({
+        title: "Fécilitation !",
+        text: "Connexion réussie",
+        icon: "success"
+    }).then(function () {
+        window.location = "/";
+    }).then(function () {
+        window.location = "/admin";
+    })
 </script>
 {{/if}}
+
 
 <section class="mt-5">
     <div class="container">
@@ -48,7 +58,7 @@
                     </a>
                 </div>
                 {{!-- Input password --}}
-                <button type="submit"  class="btn btn-primary text-center">
+                <button type="submit" class="btn btn-primary text-center">
                     Envoyer
                 </button>
             </form>

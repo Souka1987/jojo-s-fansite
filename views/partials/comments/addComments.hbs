@@ -2,13 +2,12 @@
 <form action="/newComments" method="POST">
     {{!-- Nom utilisateur --}}
     <div class="form-group">
-        <input class="form-control" name="username" placeholder="username">
+        <input class="form-control" name="author" placeholder="author" value="{{session.pseudo}}" type="hidden" />
     </div>
     {{!-- Commentaire --}}
     <div class="form-group">
-        <textarea class="form-control" name="comment" placeholder="comment"></textarea>
+        <textarea class="form-control" name="comment" placeholder="commentaire" /></textarea>
     </div>
-
     {{!-- Boutton envoyer --}}
     <button type="submit" class="btn btn-primary text-white">Envoyer</button>
 </form>

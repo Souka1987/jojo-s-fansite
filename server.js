@@ -30,7 +30,8 @@ const
     {
         stripTags,
         limit,
-        inc
+        inc,
+        ifCond
     } = require('./helpers/hbs'),
     // Swagger
     swaggerUi = require('swagger-ui-express'),
@@ -83,13 +84,14 @@ app.use(expressSession({
 }))
 app.use('*', (req, res, next) => {
     res.locals.user = req.session.userId;
+    res.locals.session = req.session;
     res.locals.isAdmin = req.session.isAdmin;
     console.log("ID Session: " + res.locals.user);
     console.log(req.session);
     next()
-
 })
-
+// Pour la suppression du boutton dans l'espace commentaires par l'utilisateur
+// const { ifCond } = require('./helpers/hbs')
 
 // Connect-Flash
 app.use(connectFlash())
@@ -102,7 +104,8 @@ app.engine('hbs', hbs({
         limit: limit, //"limit", pour la réduction des cards
         /* Pour l'édition de texte afin de le faire passer dans le
                 moteur de templating "app.engine" */
-        inc: inc
+        inc: inc, /*incrémentation*/
+        ifCond: ifCond /*user condition*/
     },
     extname: 'hbs',
     defaultLayout: 'main',
@@ -133,10 +136,12 @@ const ROUTER = require('./api/router')
 app.use('/', ROUTER)
 
 
-// Page erreur 404
-// app.use((req, res) => {
-//     res.render('err404')
-// })
+//Page erreur 404
+app.use((req, res) => {
+    res.render('err404', {
+        layout: false
+    })
+})
 
 // Swagger
 const swaggerDocument = require('./api/config/swagger.json')
@@ -144,7 +149,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Ensuite nous demandons a express (app) de run notre projet.
 app.listen(port, function () {
-    console.log(`écoute le port ${port}, lancé le : ${new Date().toLocaleString()}`);
+    console.log(`Ecoute le port ${port}, lancé le : ${new Date().toLocaleString()}`);
 })
 
 module.exports = app

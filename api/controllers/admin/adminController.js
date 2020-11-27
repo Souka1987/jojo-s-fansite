@@ -12,6 +12,7 @@ const News = require('../../../database/models/News'),
 
 module.exports = {
     get: async (req, res) => {
+        // Récupération des datas dans la database
         const dbNews = await News.find({}),
             dbArcs = await Arcs.find({}),
             dbCharacter = await Character.find({}),
@@ -20,6 +21,7 @@ module.exports = {
             dbUser = await User.find({}),
             dbComments = await Comments.find({})
         res.render('admin', {
+            // Affiche des datas dans la page Admin
             layout: 'adminLayout',
             news: dbNews,
             arcs: dbArcs,

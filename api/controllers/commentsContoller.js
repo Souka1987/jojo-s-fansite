@@ -3,6 +3,7 @@
  * ********************************** */
 
 const Comments = require('../../database/models/Comments'),
+    User = require('../../database/models/User'),
     path = require('path')
 
 
@@ -11,15 +12,20 @@ module.exports = {
     // Method Post (create + add)
     postComments: async (req, res) => {
         // Aller chercher les commentaires dans la dase de données
-        const dbComments = await Comments.find({})
+        const authorId = await User.findOne({
+            pseudo: req.body.author
+        })
 
+
+        console.log('post controller comment');
         console.log(req.body);
+        console.log(authorId);
         // Ajouter un commentaire
         Comments.create({
 
             // ...req.body prend par défaut tout le schéma
             ...req.body,
-
+            authorId: authorId._id
         }, (err) => {
             if (err) console.log(err)
             // Renvoyer à la page 'auteur'
@@ -30,7 +36,7 @@ module.exports = {
     },
 
 
-    // GET/DELETE Suppression commentaire
+    // GET Suppression commentaire
     deleteComments: async (req, res) => {
 
         const dbComments = await Comments.findById(req.params.id)
@@ -43,5 +49,5 @@ module.exports = {
             if (!err) return res.redirect('/author') // Rediriger vers la page "author"
             else res.send(err) // Sinon afficher l'érreur
         })
-    }
+    },
 }

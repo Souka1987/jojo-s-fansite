@@ -3,7 +3,8 @@
  * ********************************** */
 
 const bcrypt = require('bcrypt'),
-    User = require('../../database/models/User')
+    User = require('../../database/models/User');
+const session = require('express-session');
 
 module.exports = {
 
@@ -23,10 +24,9 @@ module.exports = {
         const sess = req.session,
             isAdmin = req.session.isAdmin
 
-        console.log(req.body);
+        console.log(session);
         // Chercher le user dans la base de données par rapport à email
         User.findOne({
-
             email
         }, (error, user) => {
             if (user) {
@@ -40,20 +40,21 @@ module.exports = {
                             sess: sess
                         })
                     } else {
-                        console.log(user);
+                        //console.log(isAdmin);
                         req.session.userId = user._id
+                        req.session.pseudo = user.pseudo
+                        //console.log(pseudo);
                         // Si l'user est rééllement l'admin
                         if (user.isAdmin === true) {
-                            console.log("je suis l'admin");
-                            console.log(user.isAdmin);
+                            //console.log("je suis l'admin");
+                            //console.log(user.isAdmin);
                             req.session.isAdmin = user.isAdmin
-
                         }
                         console.log(req.session)
                         //  rendre la page login
 
                         res.render('login', {
-                            success:'Welcome !!!',
+                            success: 'Welcome !!!',
                             sess: sess
                         })
 

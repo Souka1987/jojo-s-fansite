@@ -3,11 +3,11 @@
  * Middleware Authentification
  ******************************/
 
-// const User = require('../database/models/User')
+const User = require('../database/models/User')
 
 module.exports = {
     // Middleware authentifié
-    auth: (req, res, next) => {
+    isUser: (req, res, next) => {
         // Connecte l'utilisateur dans la base de donné
         User.findById(req.session.userId, (err, user) => {
             console.log('middleware');

@@ -7796,6 +7796,9 @@ a.text-dark:hover, a.text-dark:focus {
 section {
   padding: 30px 0px; }
 
+body {
+  font-family: "Montserrat", sans-serif; }
+
 h6 {
   text-transform: uppercase;
   color: #000000; }
@@ -7804,7 +7807,11 @@ p {
   color: #000000; }
 
 a {
-  color: #000000; }
+  color: #000000;
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
 
 /* ADMIN */
 th {
@@ -7823,16 +7830,8 @@ td {
 li, a, button {
   font-family: "Lato", sans-serif;
   font-weight: 500;
-  font-size: 11px;
-  color: #edf0f1;
-  text-decoration: none;
-  text-transform: uppercase; }
-
-button {
-  padding: 9px 25px;
-  background-color: #8e0fc9;
-  border: none;
-  border-radius: 20px; }
+  font-size: 13px;
+  text-decoration: none; }
 
 /* ADMIN */
 /* Background */
@@ -7946,28 +7945,6 @@ button {
   font-size: 10px;
   border: rgba(0, 0, 0, 0.125); }
 
-/* Home Page */
-/* Navbar */
-.nav {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: #000000; }
-
-.navbar-nav {
-  list-style: none; }
-
-.navbar-nav li {
-  display: inline-block;
-  padding: 0px 20px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; }
-
-.navbar-nav li a {
-  transition: all 0.3s ease 0s; }
-
-.navbar-nav li a:hover {
-  color: #ff00ea; }
+/* SITE */
 
 /*# sourceMappingURL=style.css.map */

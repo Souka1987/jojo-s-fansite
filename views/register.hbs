@@ -1,14 +1,14 @@
 {{!-- Inscription --}}
 {{#if error }}
 <script>
-     swal({
+    swal({
         title: "Oops !",
         text: "Tu es déjà inscrit !",
         icon: "error",
         buttons: true,
         dangerMode: true,
     });
-     swal({
+    swal({
         title: "Attention !",
         text: "N'oublies pas de remplir correctement les champs.",
         icon: "warning",
@@ -20,7 +20,10 @@
 
 {{#if success }}
 <script>
-    swal("Félicitation ! Ton compte à bien été créé !", "Bienvenue sur Jojo's World.", "success")
+    /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
+    swal("Félicitation ! Ton compte à bien été créé !", "Bienvenue sur Jojo's World.", "success").then(function () {
+        window.location = "/";
+    })
 </script>
 {{/if}}
 
@@ -68,6 +71,13 @@
                     </div>
                 </div>
 
+                <!-- Accept condition -->
+                {{!-- <div class="row">
+                    <div class="col">
+                        <input type="checkbox" name="accept" id='accept'>
+                        <label for="accept">Acceptez les conditions</label>
+                    </div>
+                </div> --}}
 
                 {{!--  Boutton envoyer --}}
                 <button type="submit" class="btn btn-primary text-white btn-block mt-5">
@@ -78,18 +88,20 @@
                     <span class="font-weight-bold">OU</span>
                 </p>
 
-                <p>
+                <p class="mt-5">
                     {{!-- Réseaux sociaux --}}
                     <a href="https://www.google.com/account/about/" target="_blank"
-                        class="btn btn-danger btn-block btn-social-danger"><i class="fa fa-google"></i> Créer votre
+                        class="btn btn-danger btn-block btn-social-danger"><i class="fab fa-google"></i> Créer votre
                         compte avec
                         <b>Google</b></a>
                     <a href="https://www.facebook.com/" target="_blank"
-                        class="btn btn-primary btn-block btn-social-primary"><i class="fa fa-facebook"></i> Créer votre
+                        class="btn btn-primary btn-block btn-social-primary"><i class="fab fa-facebook-f"></i> Créer
+                        votre
                         compte avec
                         with <b>Facebook</b></a>
                     <a href="https://twitter.com/login?lang=fr" target="_blank"
-                        class="btn btn-info btn-block btn-social-info"><i class="fa fa-twitter"></i> Créer votre compte
+                        class="btn btn-info btn-block btn-social-info"><i class="fab fa-twitter"></i> Créer votre
+                        compte
                         avec
                         <b>Twitter</b></a>
                 </p>

@@ -12,7 +12,6 @@ module.exports = {
     // GET page du formulaire création de powers ( Admin )
     powersPageFormAdd: async (req, res) => {
 
-
         //    MISE EN RELATION AVEC la propriété "populate() de mongoose"
         Powers.find({})
             .populate('characters')

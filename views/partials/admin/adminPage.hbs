@@ -25,6 +25,8 @@
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
+                                                <th scope="col">Fichiers</th>
+                                                <th scope="col">Dates</th>
                                                 <th scope="col">
                                                     <button type="button" class="btn btn-add" data-toggle="modal"
                                                         data-target='#modalAdd{{_id}}' data-whatever="">
@@ -42,11 +44,11 @@
                                         <tbody>
                                             {{!-- Début de la boucle --}}
                                             {{#each news }}
-
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{ title }}</td>
                                                 <td>{{ image }}</td>
+                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
                                                 <td class="text-center"><button type="button" class="btn
                                                         btn-edit" data-toggle="modal"
                                                         data-target="#modalEdit{{_id}}"><i
@@ -102,6 +104,8 @@
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
+                                                <th scope="col">Fichiers</th>
+                                                <th scope="col">Dates</th>
                                                 <th scope="col">
                                                     <button type="button" class="btn btn-add" data-toggle="modal"
                                                         data-target="#modalAddArcs{{_id}}" data-whatever="@mdo"><i
@@ -124,6 +128,7 @@
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{ title }}</td>
                                                 <td>{{ image }}</td>
+                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
                                                 <td><button type="button" class="btn btn-edit" data-toggle="modal"
                                                         data-target="#modalEditArcs{{_id}}"><i
                                                             class="fas fa-edit"></i></button>
@@ -178,6 +183,8 @@
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
+                                                <th scope="col">Fichiers</th>
+                                                <th scope="col">Dates</th>
                                                 <th scope="col">
                                                     <button type="button" class="btn btn-add" data-toggle="modal"
                                                         data-target="#modalAddCharacters{{_id}}" data-whatever="@mdo"><i
@@ -200,6 +207,7 @@
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{ name }}</td>
                                                 <td>{{ image }}</td>
+                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
                                                 <td><button type="button" class="btn btn-edit" data-toggle="modal"
                                                         data-target="#modalEditCharacters{{_id}}"><i
                                                             class="fas fa-edit"></i></button>
@@ -254,6 +262,8 @@
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Articles</th>
+                                                <th scope="col">Fichiers</th>
+                                                <th scope="col">Dates</th>
                                                 <th scope="col">
                                                     <button type="button" class="btn btn-add" data-toggle="modal"
                                                         data-target="#modalAddPowers{{_id}}" data-whatever="@mdo"><i
@@ -276,6 +286,7 @@
                                                 <th scope="row">{{ inc @index }}</th>
                                                 <td>{{ name }}</td>
                                                 <td>{{ image }}</td>
+                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
                                                 <td><button type="button" class="btn btn-edit" data-toggle="modal"
                                                         data-target="#modalEditPowers{{_id}}"><i
                                                             class="fas fa-edit"></i></button>
@@ -295,7 +306,6 @@
                                             {{!-- Fin de la boucle --}}
                                         </tbody>
                                     </table>
-
                                 </div>
                             </div>
                         </div>
@@ -329,8 +339,10 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Articles</th>
-                                                <th scope="col">Saison</th>
+                                                <th scope="col">Titre des tomes</th>
+                                                <th scope="col">Saisons</th>
+                                                <th scope="col">Fichiers</th>
+                                                <th scope="col">Dates</th>
                                                 <th scope="col">
                                                     <button type="button" class="btn btn-add" data-toggle="modal"
                                                         data-target="#modalAddManga{{_id}}" data-whatever="@mdo"><i
@@ -354,6 +366,7 @@
                                                 <td>{{ title }}</td>
                                                 <td>{{ season }}</td>
                                                 <td>{{ image }}</td>
+                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
                                                 <td><button type="button" class="btn btn-edit" data-toggle="modal"
                                                         data-target="#modalEditManga{{_id}}"><i
                                                             class="fas fa-edit"></i></button>
@@ -406,11 +419,11 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Nom</th>
-                                                <th scope="col">Prénom</th>
-                                                <th scope="col">Pseudo</th>
-                                                <th scope="col">Email</th>
-                                                <th scope="col">Date</th>
+                                                <th scope="col">Noms</th>
+                                                <th scope="col">Prénoms</th>
+                                                <th scope="col">Pseudos</th>
+                                                <th scope="col">Emails</th>
+                                                <th scope="col">Dates</th>
                                                 <th scope="col">Actions</th>
                                             </tr>
 
@@ -473,9 +486,9 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Pseudo</th>
+                                                <th scope="col">Pseudos</th>
                                                 <th scope="col">Commentaires</th>
-                                                <th scope="col">Date</th>
+                                                <th scope="col">Dates</th>
                                                 <th scope="col">Actions</th>
                                             </tr>
 
@@ -483,10 +496,9 @@
                                         <tbody>
                                             {{!-- Début de la boucle --}}
                                             {{#each comments }}
-
                                             <tr>
                                                 <th scope="row">{{ inc @index }}</th>
-                                                <td>{{ username }}</td>
+                                                <td>{{ author }}</td>
                                                 <td>{{ comment }}</td>
                                                 <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
                                                 <td>
@@ -501,7 +513,6 @@
                                                     }}
                                                 </td>
                                             </tr>
-
                                             {{/each }}
                                             {{!-- Fin de la boucle --}}
                                         </tbody>

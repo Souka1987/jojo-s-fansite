@@ -22,7 +22,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// Ici on genere nos variable en parent pour pouvoir les récupérer au retour de nos data email
+// Ici on génère nos variables en parent pour pouvoir les récupérer au retour de nos datas email
 // (Dans la branch nodemailer-advanced il sera générer avec un token type jwt)
 //var rand, mailOptions, host, link;
 
@@ -53,4 +53,5 @@ module.exports = {
             }
         })
     },
+
 }

@@ -13,8 +13,15 @@ module.exports = {
         }
         return arr.slice(0, limit);
     },
-
+    // Incrémentation 
     inc: (value, option) => {
         return parseInt(value) + 1
+    },
+    // Pour les users
+    ifCond: (v1, v2, options) => {
+        if (v1 === v2) {
+            return options.fn(this);
+        }
+        return options.inverse(this);
     }
 }

@@ -9,9 +9,11 @@ const path = require('path'),
 
 
 module.exports = {
-    // GET Page website Manga ( Utilisateur )
+    /*GET Page website Manga ( Utilisateur ) + 
+    ajout des saisons pour la navigation avec la navtabs*/
 
     getManga: async (req, res) => {
+        // Recherche dans la database par saisons
         const dbManga = await Manga.find({}),
             dbMangaSeason1 = await Manga.find({
                 season: 1
@@ -22,14 +24,13 @@ module.exports = {
             dbMangaSeason3 = await Manga.find({
                 season: 3
             })
-        res.render('manga', {
+        res.render('manga', { // rend une vue + récupération des datas
             manga: dbManga,
             season1: dbMangaSeason1,
             season2: dbMangaSeason2,
             season3: dbMangaSeason3
 
-        }) // "res.render", rend une vue.
-
+        })
     },
 
 
