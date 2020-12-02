@@ -71,7 +71,9 @@ module.exports = {
             res.clearCookie('cookie-sess')
             console.log(req.session)
             // Retour sur la page home
-            res.redirect('/')
+            res.render('login', {
+                isUser: "Vous êtes bien déconnecté"
+            })
         })
     }
 }

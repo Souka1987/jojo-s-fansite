@@ -1,5 +1,5 @@
 /*
- * App.js
+ * Server.js
  ******************************/
 
 // Import du module http (pour afficher la page dans un naviguateur web)
@@ -45,11 +45,10 @@ const
 require('dotenv').config()
 // console.log(process.env);
 
+
 // Morgan => Middleware de journalisation des requêtes HTTP pour node.js
 app.use(morgan('dev'))
 
-// Cookie-Parser
-//app.use(cookieParser())
 
 // Mongoose pour le lien avec la base de données. "jjba" est le nom de la base de données.
 mongoose
@@ -90,8 +89,6 @@ app.use('*', (req, res, next) => {
     console.log(req.session);
     next()
 })
-// Pour la suppression du boutton dans l'espace commentaires par l'utilisateur
-// const { ifCond } = require('./helpers/hbs')
 
 // Connect-Flash
 app.use(connectFlash())
@@ -104,8 +101,10 @@ app.engine('hbs', hbs({
         limit: limit, //"limit", pour la réduction des cards
         /* Pour l'édition de texte afin de le faire passer dans le
                 moteur de templating "app.engine" */
-        inc: inc, /*incrémentation*/
-        ifCond: ifCond /*user condition*/
+        inc: inc,
+        /*incrémentation*/
+        ifCond: ifCond,
+        /*user condition*/
     },
     extname: 'hbs',
     defaultLayout: 'main',
@@ -127,8 +126,6 @@ app.use(bodyParser.urlencoded({
 app.use(express.urlencoded({
     extended: true
 }))
-
-
 
 // Notre router permettra de diriger des chemins 'URL' sur les actions 'Controller' qui distriburont nos pages, ... 
 // CRUD = GET / POST / PUT / DELETE

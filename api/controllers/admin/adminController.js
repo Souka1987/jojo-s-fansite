@@ -1,6 +1,7 @@
 /*
  * Controller Page Admin
  * ********************************** */
+const $ = require('jquery')
 
 const News = require('../../../database/models/News'),
     Arcs = require('../../../database/models/Arcs'),
@@ -9,6 +10,7 @@ const News = require('../../../database/models/News'),
     Manga = require('../../../database/models/Manga'),
     User = require('../../../database/models/User'),
     Comments = require('../../../database/models/Comments')
+
 
 module.exports = {
     get: async (req, res) => {

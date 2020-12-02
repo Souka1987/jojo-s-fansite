@@ -141,7 +141,7 @@ module.exports = {
             Character.deleteOne({ // Pour suprimer un document à la fois par son ID
                 _id: req.params.id // Toujours définir l'ID
             }, (err) => {
-                if (!err) return res.redirect('/characters') // Rediriger vers la page "characters"
+                if (!err) return res.redirect('/admin') // Rediriger vers la page "characters"
                 else res.send(err) // Sinon afficher l'érreur
             })
         })

@@ -20,511 +20,514 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Articles</th>
-                                                <th scope="col">Fichiers</th>
-                                                <th scope="col">Dates</th>
-                                                <th scope="col">
-                                                    <button type="button" class="btn btn-add" data-toggle="modal"
-                                                        data-target='#modalAdd{{_id}}' data-whatever="">
-                                                        <i class="fas fa-plus"></i></button>
-                                                    {{>
+                                    <div class="form-group">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Articles</th>
+                                                    <th scope="col">Fichiers</th>
+                                                    <th scope="col">Dates</th>
+                                                    <th scope="col">
+                                                        <button type="button" class="btn btn-add" data-toggle="modal"
+                                                            data-target='#modalAdd{{_id}}' data-whatever="">
+                                                            <i class="fas fa-plus"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/news/modalAdd
                                                     }}
-                                                    {{!-- Appel du modal avec un
+                                                        {{!-- Appel du modal avec un
                                                     ID dynamique de l<i class="fas fa-plus"></i>
                                                     dans la boucle --}}
-                                                </th>
-                                            </tr>
-
-                                        </thead>
-                                        <tbody>
-                                            {{!-- Début de la boucle --}}
-                                            {{#each news }}
-                                            <tr>
-                                                <th scope="row">{{ inc @index }}</th>
-                                                <td>{{ title }}</td>
-                                                <td>{{ image }}</td>
-                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
-                                                <td class="text-center"><button type="button" class="btn
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{!-- Début de la boucle --}}
+                                                {{#each news }}
+                                                <tr>
+                                                    <th scope="row">{{ inc @index }}</th>
+                                                    <td>{{ title }}</td>
+                                                    <td>{{ image }}</td>
+                                                    <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                    <td class="text-center"><button type="button" class="btn
                                                         btn-edit" data-toggle="modal"
-                                                        data-target="#modalEdit{{_id}}"><i
-                                                            class="fas fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
-                                                        data-target="#modalDelete{{_id}}"><i
-                                                            class="fas fa-trash-alt"></i></button>
-                                                    {{>
+                                                            data-target="#modalEdit{{_id}}"><i
+                                                                class="fas fa-edit"></i></button>
+                                                        <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                            data-target="#modalDelete{{_id}}"><i
+                                                                class="fas fa-trash-alt"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/news/modalEdit
                                                     }}
-                                                    {{>
+                                                        {{>
                                                     admin/crudAdmin/news/modalDelete
                                                     }}
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
 
-                                            {{/each }}
-                                            {{!-- Fin de la boucle --}}
-                                        </tbody>
-                                    </table>
+                                                {{/each }}
+                                                {{!-- Fin de la boucle --}}
+                                            </tbody>
+                                        </table>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {{!-- /news --}}
+            {{!-- /news --}}
 
-        <!---------------------------------->
+            <!---------------------------------->
 
-        {{!-- arcs --}}
-        <div class="accordion mt-5" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
-                            ARCS
-                        </button>
-                    </h2>
-                </div>
+            {{!-- arcs --}}
+            <div class="accordion mt-5" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button id="admin-title" class="btn btn-block text-center" type="button"
+                                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                ARCS
+                            </button>
+                        </h2>
+                    </div>
 
-                <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Articles</th>
-                                                <th scope="col">Fichiers</th>
-                                                <th scope="col">Dates</th>
-                                                <th scope="col">
-                                                    <button type="button" class="btn btn-add" data-toggle="modal"
-                                                        data-target="#modalAddArcs{{_id}}" data-whatever="@mdo"><i
-                                                            class="fas fa-plus"></i></button>
-                                                    {{>
+                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Articles</th>
+                                                    <th scope="col">Fichiers</th>
+                                                    <th scope="col">Dates</th>
+                                                    <th scope="col">
+                                                        <button type="button" class="btn btn-add" data-toggle="modal"
+                                                            data-target="#modalAddArcs{{_id}}" data-whatever="@mdo"><i
+                                                                class="fas fa-plus"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/arcs/modalAddArcs
                                                     }}
-                                                    {{!-- Appel du modal avec un
+                                                        {{!-- Appel du modal avec un
                                                     ID dynamique de l'object
                                                     dans la boucle --}}
-                                                </th>
-                                            </tr>
+                                                    </th>
+                                                </tr>
 
-                                        </thead>
-                                        <tbody>
-                                            {{!-- Début de la boucle --}}
-                                            {{#each arcs }}
+                                            </thead>
+                                            <tbody>
+                                                {{!-- Début de la boucle --}}
+                                                {{#each arcs }}
 
-                                            <tr>
-                                                <th scope="row">{{ inc @index }}</th>
-                                                <td>{{ title }}</td>
-                                                <td>{{ image }}</td>
-                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
-                                                <td><button type="button" class="btn btn-edit" data-toggle="modal"
-                                                        data-target="#modalEditArcs{{_id}}"><i
-                                                            class="fas fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
-                                                        data-target="#modalDeleteArcs{{_id}}"><i
-                                                            class="fas fa-trash-alt"></i></button>
-                                                    {{>
+                                                <tr>
+                                                    <th scope="row">{{ inc @index }}</th>
+                                                    <td>{{ title }}</td>
+                                                    <td>{{ image }}</td>
+                                                    <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                    <td><button type="button" class="btn btn-edit" data-toggle="modal"
+                                                            data-target="#modalEditArcs{{_id}}"><i
+                                                                class="fas fa-edit"></i></button>
+                                                        <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                            data-target="#modalDeleteArcs{{_id}}"><i
+                                                                class="fas fa-trash-alt"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/arcs/modalEditArcs
                                                     }}
-                                                    {{>
+                                                        {{>
                                                     admin/crudAdmin/arcs/modalDeleteArcs
                                                     }}
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
 
-                                            {{/each }}
-                                            {{!-- Fin de la boucle --}}
-                                        </tbody>
-                                    </table>
+                                                {{/each }}
+                                                {{!-- Fin de la boucle --}}
+                                            </tbody>
+                                        </table>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {{!-- /arcs --}}
+            {{!-- /arcs --}}
 
-        <!---------------------------------->
+            <!---------------------------------->
 
-        {{!-- characters --}}
-        <div class="accordion mt-5" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
-                            PERSONNAGES
-                        </button>
-                    </h2>
-                </div>
+            {{!-- characters --}}
+            <div class="accordion mt-5" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button id="admin-title" class="btn btn-block text-center" type="button"
+                                data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                PERSONNAGES
+                            </button>
+                        </h2>
+                    </div>
 
-                <div id="collapseThree" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Articles</th>
-                                                <th scope="col">Fichiers</th>
-                                                <th scope="col">Dates</th>
-                                                <th scope="col">
-                                                    <button type="button" class="btn btn-add" data-toggle="modal"
-                                                        data-target="#modalAddCharacters{{_id}}" data-whatever="@mdo"><i
-                                                            class="fas fa-plus"></i></button>
-                                                    {{>
+                    <div id="collapseThree" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Articles</th>
+                                                    <th scope="col">Fichiers</th>
+                                                    <th scope="col">Dates</th>
+                                                    <th scope="col">
+                                                        <button type="button" class="btn btn-add" data-toggle="modal"
+                                                            data-target="#modalAddCharacters{{_id}}"
+                                                            data-whatever="@mdo"><i class="fas fa-plus"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/characters/modalAddCharacters
                                                     }}
-                                                    {{!-- Appel du modal avec un
+                                                        {{!-- Appel du modal avec un
                                                     ID dynamique de l'object
                                                     dans la boucle --}}
-                                                </th>
-                                            </tr>
+                                                    </th>
+                                                </tr>
 
-                                        </thead>
-                                        <tbody>
-                                            {{!-- Début de la boucle --}}
-                                            {{#each character }}
-
-                                            <tr>
-                                                <th scope="row">{{ inc @index }}</th>
-                                                <td>{{ name }}</td>
-                                                <td>{{ image }}</td>
-                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
-                                                <td><button type="button" class="btn btn-edit" data-toggle="modal"
-                                                        data-target="#modalEditCharacters{{_id}}"><i
-                                                            class="fas fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
-                                                        data-target="#modalDeleteCharacters{{_id}}"><i
-                                                            class="fas fa-trash-alt"></i></button>
-                                                    {{>
+                                            </thead>
+                                            <tbody>
+                                                {{!-- Début de la boucle --}}
+                                                {{#each character }}
+                                                <tr>
+                                                    <th scope="row">{{ inc @index }}</th>
+                                                    <td>{{ name }}</td>
+                                                    <td>{{ image }}</td>
+                                                    <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                    <td><button type="button" class="btn btn-edit" data-toggle="modal"
+                                                            data-target="#modalEditCharacters{{_id}}"><i
+                                                                class="fas fa-edit"></i></button>
+                                                        <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                            data-target="#modalDeleteCharacters{{_id}}"><i
+                                                                class="fas fa-trash-alt"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/characters/modalEditCharacters
                                                     }}
-                                                    {{>
+                                                        {{>
                                                     admin/crudAdmin/characters/modalDeleteCharacters
                                                     }}
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
 
-                                            {{/each }}
-                                            {{!-- Fin de la boucle --}}
-                                        </tbody>
-                                    </table>
-
+                                                {{/each }}
+                                                {{!-- Fin de la boucle --}}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {{!-- /characters --}}
+            {{!-- /characters --}}
 
-        <!---------------------------------->
+            <!---------------------------------->
+            {{!-- powers --}}
+            <div class="accordion mt-5" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button id="admin-title" class="btn btn-block text-center" type="button"
+                                data-toggle="collapse" data-target="#collapseFour" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                CAPACITES
+                            </button>
+                        </h2>
+                    </div>
 
-        {{!-- powers --}}
-        <div class="accordion mt-5" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
-                            CAPACITES
-                        </button>
-                    </h2>
-                </div>
-
-                <div id="collapseFour" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Articles</th>
-                                                <th scope="col">Fichiers</th>
-                                                <th scope="col">Dates</th>
-                                                <th scope="col">
-                                                    <button type="button" class="btn btn-add" data-toggle="modal"
-                                                        data-target="#modalAddPowers{{_id}}" data-whatever="@mdo"><i
-                                                            class="fas fa-plus"></i></button>
-                                                    {{>
+                    <div id="collapseFour" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Articles</th>
+                                                    <th scope="col">Fichiers</th>
+                                                    <th scope="col">Dates</th>
+                                                    <th scope="col">
+                                                        <button type="button" class="btn btn-add" data-toggle="modal"
+                                                            data-target="#modalAddPowers{{_id}}" data-whatever="@mdo"><i
+                                                                class="fas fa-plus"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/powers/modalAddPowers
                                                     }}
-                                                    {{!-- Appel du modal avec un
+                                                        {{!-- Appel du modal avec un
                                                     ID dynamique de l'object
                                                     dans la boucle --}}
-                                                </th>
-                                            </tr>
+                                                    </th>
+                                                </tr>
 
-                                        </thead>
-                                        <tbody>
-                                            {{!-- Début de la boucle --}}
-                                            {{#each powers }}
+                                            </thead>
+                                            <tbody>
+                                                {{!-- Début de la boucle --}}
+                                                {{#each powers }}
 
-                                            <tr>
-                                                <th scope="row">{{ inc @index }}</th>
-                                                <td>{{ name }}</td>
-                                                <td>{{ image }}</td>
-                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
-                                                <td><button type="button" class="btn btn-edit" data-toggle="modal"
-                                                        data-target="#modalEditPowers{{_id}}"><i
-                                                            class="fas fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
-                                                        data-target="#modalDelePowers{{_id}}"><i
-                                                            class="fas fa-trash-alt"></i></button>
-                                                    {{>
+                                                <tr>
+                                                    <th scope="row">{{ inc @index }}</th>
+                                                    <td>{{ name }}</td>
+                                                    <td>{{ image }}</td>
+                                                    <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                    <td><button type="button" class="btn btn-edit" data-toggle="modal"
+                                                            data-target="#modalEditPowers{{_id}}"><i
+                                                                class="fas fa-edit"></i></button>
+                                                        <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                            data-target="#modalDelePowers{{_id}}"><i
+                                                                class="fas fa-trash-alt"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/powers/modalEditPowers
                                                     }}
-                                                    {{>
+                                                        {{>
                                                     admin/crudAdmin/powers/modalDeletePowers
                                                     }}
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
 
-                                            {{/each }}
-                                            {{!-- Fin de la boucle --}}
-                                        </tbody>
-                                    </table>
+                                                {{/each }}
+                                                {{!-- Fin de la boucle --}}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {{!-- /powers --}}
+            {{!-- /powers --}}
 
-        <!---------------------------------->
+            <!---------------------------------->
 
-        {{!-- manga --}}
-        <div class="accordion mt-5" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
-                            MANGA
-                        </button>
-                    </h2>
-                </div>
+            {{!-- manga --}}
+            <div class="accordion mt-5" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button id="admin-title" class="btn btn-block text-center" type="button"
+                                data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                MANGA
+                            </button>
+                        </h2>
+                    </div>
 
-                <div id="collapseFive" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Titre des tomes</th>
-                                                <th scope="col">Saisons</th>
-                                                <th scope="col">Fichiers</th>
-                                                <th scope="col">Dates</th>
-                                                <th scope="col">
-                                                    <button type="button" class="btn btn-add" data-toggle="modal"
-                                                        data-target="#modalAddManga{{_id}}" data-whatever="@mdo"><i
-                                                            class="fas fa-plus"></i></button>
-                                                    {{>
+                    <div id="collapseFive" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Titre des tomes</th>
+                                                    <th scope="col">Saisons</th>
+                                                    <th scope="col">Fichiers</th>
+                                                    <th scope="col">Dates</th>
+                                                    <th scope="col">
+                                                        <button type="button" class="btn btn-add" data-toggle="modal"
+                                                            data-target="#modalAddManga{{_id}}" data-whatever="@mdo"><i
+                                                                class="fas fa-plus"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/manga/modalAddManga
                                                     }}
-                                                    {{!-- Appel du modal avec un
+                                                        {{!-- Appel du modal avec un
                                                     ID dynamique de l'object
                                                     dans la boucle --}}
-                                                </th>
-                                            </tr>
+                                                    </th>
+                                                </tr>
 
-                                        </thead>
-                                        <tbody>
-                                            {{!-- Début de la boucle --}}
-                                            {{#each manga }}
+                                            </thead>
+                                            <tbody>
+                                                {{!-- Début de la boucle --}}
+                                                {{#each manga }}
 
-                                            <tr>
-                                                <th scope="row">{{ inc @index }}</th>
-                                                <td>{{ title }}</td>
-                                                <td>{{ season }}</td>
-                                                <td>{{ image }}</td>
-                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
-                                                <td><button type="button" class="btn btn-edit" data-toggle="modal"
-                                                        data-target="#modalEditManga{{_id}}"><i
-                                                            class="fas fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
-                                                        data-target="#modalDeleteManga{{_id}}"><i
-                                                            class="fas fa-trash-alt"></i></button>
-                                                    {{>
+                                                <tr>
+                                                    <th scope="row">{{ inc @index }}</th>
+                                                    <td>{{ title }}</td>
+                                                    <td>{{ season }}</td>
+                                                    <td>{{ image }}</td>
+                                                    <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                    <td><button type="button" class="btn btn-edit" data-toggle="modal"
+                                                            data-target="#modalEditManga{{_id}}"><i
+                                                                class="fas fa-edit"></i></button>
+                                                        <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                            data-target="#modalDeleteManga{{_id}}"><i
+                                                                class="fas fa-trash-alt"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/manga/modalEditManga
                                                     }}
-                                                    {{>
+                                                        {{>
                                                     admin/crudAdmin/manga/modalDeleteManga
                                                     }}
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
 
-                                            {{/each }}
-                                            {{!-- Fin de la boucle --}}
-                                        </tbody>
-                                    </table>
+                                                {{/each }}
+                                                {{!-- Fin de la boucle --}}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {{!-- /manga --}}
+            {{!-- /manga --}}
 
-        <!---------------------------------->
+            <!---------------------------------->
 
-        {{!-- users --}}
-        <div class="accordion mt-5" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseSix" aria-expanded="true" aria-controls="collapseOne">
-                            UTILISATEURS
-                        </button>
-                    </h2>
-                </div>
+            {{!-- users --}}
+            <div class="accordion mt-5" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button id="admin-title" class="btn btn-block text-center" type="button"
+                                data-toggle="collapse" data-target="#collapseSix" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                UTILISATEURS
+                            </button>
+                        </h2>
+                    </div>
 
-                <div id="collapseSix" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Noms</th>
-                                                <th scope="col">Prénoms</th>
-                                                <th scope="col">Pseudos</th>
-                                                <th scope="col">Emails</th>
-                                                <th scope="col">Dates</th>
-                                                <th scope="col">Actions</th>
-                                            </tr>
+                    <div id="collapseSix" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Noms</th>
+                                                    <th scope="col">Prénoms</th>
+                                                    <th scope="col">Pseudos</th>
+                                                    <th scope="col">Emails</th>
+                                                    <th scope="col">Dates</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
 
-                                        </thead>
-                                        <tbody>
-                                            {{!-- Début de la boucle --}}
-                                            {{#each users }}
+                                            </thead>
+                                            <tbody>
+                                                {{!-- Début de la boucle --}}
+                                                {{#each users }}
 
-                                            <tr>
-                                                <th scope="row">{{ inc @index }}</th>
-                                                <td>{{ firstname }}</td>
-                                                <td>{{ lastname }}</td>
-                                                <td>{{ pseudo }}</td>
-                                                <td>{{ email }}</td>
-                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
-                                                        data-target="#modalUsersDelete{{_id}}"><i
-                                                            class="fas fa-trash-alt"></i></button>
-                                                    {{>
+                                                <tr>
+                                                    <th scope="row">{{ inc @index }}</th>
+                                                    <td>{{ firstname }}</td>
+                                                    <td>{{ lastname }}</td>
+                                                    <td>{{ pseudo }}</td>
+                                                    <td>{{ email }}</td>
+                                                    <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                            data-target="#modalUsersDelete{{_id}}"><i
+                                                                class="fas fa-trash-alt"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/users/modalUsersDelete
                                                     }}
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
 
-                                            {{/each }}
-                                            {{!-- Fin de la boucle --}}
-                                        </tbody>
-                                    </table>
+                                                {{/each }}
+                                                {{!-- Fin de la boucle --}}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {{!-- /users --}}
+            {{!-- /users --}}
 
-        <!---------------------------------->
+            <!---------------------------------->
 
-        {{!-- manga --}}
-        <div class="accordion mt-5" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button id="admin-title" class="btn btn-block text-center" type="button" data-toggle="collapse"
-                            data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseOne">
-                            COMMENTAIRES
-                        </button>
-                    </h2>
-                </div>
+            {{!-- manga --}}
+            <div class="accordion mt-5" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button id="admin-title" class="btn btn-block text-center" type="button"
+                                data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                COMMENTAIRES
+                            </button>
+                        </h2>
+                    </div>
 
-                <div id="collapseSeven" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Pseudos</th>
-                                                <th scope="col">Commentaires</th>
-                                                <th scope="col">Dates</th>
-                                                <th scope="col">Actions</th>
-                                            </tr>
+                    <div id="collapseSeven" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Pseudos</th>
+                                                    <th scope="col">Commentaires</th>
+                                                    <th scope="col">Dates</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
 
-                                        </thead>
-                                        <tbody>
-                                            {{!-- Début de la boucle --}}
-                                            {{#each comments }}
-                                            <tr>
-                                                <th scope="row">{{ inc @index }}</th>
-                                                <td>{{ author }}</td>
-                                                <td>{{ comment }}</td>
-                                                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-delete" data-toggle="modal"
-                                                        data-target="#modalDeleteComments{{_id}}"><i
-                                                            class="fas fa-trash-alt"></i></button>
-                                                    {{>
+                                            </thead>
+                                            <tbody>
+                                                {{!-- Début de la boucle --}}
+                                                {{#each comments }}
+                                                <tr>
+                                                    <th scope="row">{{ inc @index }}</th>
+                                                    <td>{{ author }}</td>
+                                                    <td>{{ comment }}</td>
+                                                    <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                            data-target="#modalDeleteComments{{_id}}"><i
+                                                                class="fas fa-trash-alt"></i></button>
+                                                        {{>
                                                     admin/crudAdmin/comments/modalAddComments
                                                     }}
-                                                    {{>
+                                                        {{>
                                                     admin/crudAdmin/comments/modalDeleteComments
                                                     }}
-                                                </td>
-                                            </tr>
-                                            {{/each }}
-                                            {{!-- Fin de la boucle --}}
-                                        </tbody>
-                                    </table>
+                                                    </td>
+                                                </tr>
+                                                {{/each }}
+                                                {{!-- Fin de la boucle --}}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {{!-- /manga --}}
         </div>
-        {{!-- /manga --}}
-    </div>
 </section>
 {{!-- / Admin --}}

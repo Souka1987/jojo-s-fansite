@@ -81,3 +81,16 @@
         transition: all ease 0.2s;
     }
 </style>
+
+{{#if isUser }}
+<script>
+    /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
+    swal({
+        title: "Super !",
+        text: "Tu es bien déconnecté",
+        icon: "success"
+    }).then(function () {
+        window.location = "/";
+    })
+</script>
+{{/if}}

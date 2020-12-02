@@ -118,7 +118,7 @@ router.route('/newComments')
 
 // /GET Suppression commentaires 
 router.route('/deleteComments/:id')
-    .get(auth.isUser, commentsController.deleteComments)
+    .get(commentsController.deleteComments)
 
 
 
@@ -180,19 +180,19 @@ router.route('/admin/deleteNews/:id')
 // Characters
 router.route('/admin/characters')
     // GET recupération du formulaire formAdd
-    .get(auth.isAdmin, charactersController.formAddCharacter)
+    .get(auth.isAdmin,charactersController.formAddCharacter)
     // POST formulaire characterAdd
     .post(uploadCharacters.single('image'), auth.isAdmin, charactersController.characterAdd)
 
 router.route('/admin/editCharacters/:id')
     // GET récupération du formulaire FormEdit
-    .get(auth.isAdmin, charactersController.pageFormEditCharacter)
+    .get(auth.isAdmin,charactersController.pageFormEditCharacter)
     // POST formulaire editCharacters
     .post(uploadCharacters.single('image'), auth.isAdmin, charactersController.editCharacters)
 
 // GET bouton de suppression
 router.route('/admin/deleteCharacters/:id')
-    .get(auth.isAdmin, charactersController.deleteCharacters)
+    .get(auth.isAdmin,charactersController.deleteCharacters)
 
 
 /************************************** */
