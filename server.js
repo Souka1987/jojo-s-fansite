@@ -26,6 +26,9 @@ const
     // Import de body-parser
     bodyParser = require('body-parser'),
     morgan = require('morgan'),
+    // Pour l'authentification avec les réseaux sociaux
+    //passport = require('passport'),
+    //GoogleStrategy = require('passport-google-oauth').OAuthStrategy,
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
     {
         stripTags,

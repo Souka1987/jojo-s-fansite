@@ -10,6 +10,7 @@ const MangaSchema = new mongoose.Schema({
     content: String,
     image: String,
     imageName: String,
+    author: String,
     createDate: {
         type: Date,
         default: new Date() // La date sera créé au moment où l'on va créer l'article.
@@ -19,6 +20,13 @@ const MangaSchema = new mongoose.Schema({
     arcs: {
         type: Schema.Types.ObjectId,
         ref: 'Arcs'
+    },
+    releaseDate: {
+        type: String,
+        default: new Date()
+    },
+    publishingDate: {
+        type: String
     },
 
 })
