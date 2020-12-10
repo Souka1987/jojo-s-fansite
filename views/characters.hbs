@@ -82,7 +82,7 @@
                         {{!--  Button trigger modal  --}}
                         <div class="text-center">
                             <button type="button" class="btn" data-toggle="modal"
-                                {{!-- Définir l'ID pour le lier au modal --}} data-target="#staticBackdrop{{ _id }}">
+                                {{!-- Définir l'ID pour le lier au modal --}} data-target="#exampleModalLong{{ _id }}">
                                 Faculté
                             </button>
                         </div>
@@ -91,87 +91,68 @@
                 </li>
 
                 {{!-- Modal --}}
-                <div class="modal fade " id="staticBackdrop{{ _id }}" data-backdrop="static" data-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade " id="exampleModalLong{{ _id }}" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title font-weight-bolder">{{ powers.name }}</h5>
+                                <h5 class="modal-title font-weight-bolder" id="exampleModalLongTitle">{{ powers.name }}
+                                </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+
+                            <style>
+                                .div-powers {
+                                    background-image: linear-gradient(to bottom, #5363ad09, #012ba0),
+                                    url({{ powers.image }});
+                                    background-repeat: no-repeat;
+                                    background-position: right top;
+                                    height: 700px;
+                                    width: auto;
+                                    background-size: contain;
+
+                                }
+                            </style>
+                            <div class="div-powers rounded"></div>
                             <div>
-                                <img src="{{ powers.image }}" class="card-img-top" alt="...">
-                            </div>
-                            <div>
-                                <p class="card-text text-center mt-5">{{ stripTags powers.content1  }}</p>
+                                <p class="card-text text-center small mt-5">{{ stripTags powers.content1  }}</p>
                             </div>
                             <div class="modal-body p-1">
-                                <div id="accordion" class="container">
-                                    <div class="card">
-                                        <div class="card-header top rounded" id="headingOne">
-                                            <h5 class="mb-0">
-                                                <button class="btn-accordion collapsed" data-toggle="collapse"
-                                                    data-target="#collapseOne" aria-expanded="true"
-                                                    aria-controls="collapseOne">
-                                                    {{ powers.title2 }}
-                                                </button>
-                                            </h5>
-                                        </div>
-
-                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                            data-parent="#accordion">
-                                            <div class="card-body">
-                                                {{ stripTags powers.content2 }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-header top rounded" id="headingTwo">
-                                            <h5 class="mb-0">
-                                                <button class="btn-accordion collapsed" data-toggle="collapse"
-                                                    data-target="#collapseTwo" aria-expanded="false"
-                                                    aria-controls="collapseTwo">
-                                                    {{ powers.title2 }}
-                                                </button>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                            data-parent="#accordion">
-                                            <div class="card-body">
-                                                {{ stripTags powers.content3 }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{!-- /card --}}
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Fermer</button>
-                                    </div>
-                                </div>
+                                <ul class="list-group text-center mt-5">
+                                    <li class="list-group-item lead">{{ powers.title2 }}</li>
+                                    <li class="list-group-item">{{ stripTags powers.content2 }}</li>
+                                    <li class="list-group-item lead">{{ powers.title2 }}</li>
+                                    <li class="list-group-item"> {{ stripTags powers.content3 }}</li>
+                                </ul>
+                            </div>
+                            {{!-- /card --}}
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                             </div>
                         </div>
                     </div>
-                    {{!-- /Modal --}}
                 </div>
-                {{!-- Fin de la boucle --}}
-                {{/each }}
-            </ul>
-            {{!-- </div> --}}
         </div>
-        {{!--  Pagination  --}}
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="page">1</a></li>
-            <li class="page-item"><a class="page-link" href="page1">2</a></li>
-            <li class="page-item"><a class="page-link" href="page2">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-        {{!-- /Pagination --}}
+        {{!-- /Modal --}}
+    </div>
+    {{!-- Fin de la boucle --}}
+    {{/each }}
+    </ul>
+    {{!-- </div> --}}
+    </div>
+    {{!--  Pagination  --}}
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="page">1</a></li>
+        <li class="page-item"><a class="page-link" href="page1">2</a></li>
+        <li class="page-item"><a class="page-link" href="page2">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+    {{!-- /Pagination --}}
 </section>
 {{!-- /Page personnages --}}
 

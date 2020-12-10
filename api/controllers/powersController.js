@@ -89,28 +89,28 @@ module.exports = {
 
 
     // GET Pour supprimer un article
-    // deletePowers: async (req, res) => {
-    //     const dbPowers = await Powers.findById(req.params.id)
-    //     console.log('Controller Delete One Article')
-    //     console.log(dbPowers)
+    deletePowers: async (req, res) => {
+        const dbPowers = await Powers.findById(req.params.id)
+        console.log('Controller Delete One Article')
+        console.log(dbPowers)
 
-    //     // Effacer l'image depuis le dossier source "public"
-    //     fs.unlink(`public/images/characters/${dbPowers.imageName}`, (err) => {
-    //         /*la méthode "fs.unlink" sert à effacer un fichier
-    //                 depuis le dossier ciblé*/
+        // Effacer l'image depuis le dossier source "public"
+        fs.unlink(`public/images/characters/${dbPowers.imageName}`, (err) => {
+            /*la méthode "fs.unlink" sert à effacer un fichier
+                    depuis le dossier ciblé*/
 
-    //         /* Procéder à la suppression de l'article entier en ne 
-    //         ciblant que son id*/
+            /* Procéder à la suppression de l'article entier en ne 
+            ciblant que son id*/
 
-    //         if (err) return console.log(err)
-    //         Powers.deleteOne({ // Supprimer un document à la fois par son ID
-    //             _id: req.params.id // Chercher l'url du "power" en question
-    //         }, (err) => {
-    //             if (!err) return res.redirect('/admin') // Rediriger vers la page "admin"
-    //             else res.send(err) // Sinon afficher l'érreur
-    //         })
-    //     })
+            if (err) return console.log(err)
+            Powers.deleteOne({ // Supprimer un document à la fois par son ID
+                _id: req.params.id // Chercher l'url du "power" en question
+            }, (err) => {
+                if (!err) return res.redirect('/admin') // Rediriger vers la page "admin"
+                else res.send(err) // Sinon afficher l'érreur
+            })
+        })
 
-    // }
+    }
 
 }

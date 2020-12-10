@@ -211,9 +211,9 @@ router.route('/admin/editPowers/:id')
     // POST formulaire
     .post(uploadCharacters.single('image'), auth.isAdmin, powersController.powersEdit)
 
-// GET bouton de suppression
-// router.route('/admin/deletePowers/:id')
-//     .get(auth.isAdmin, powersController.deletePowers)
+//GET bouton de suppression
+router.route('/admin/deletePowers/:id')
+    .get(auth.isAdmin, powersController.deletePowers)
 
 
 
