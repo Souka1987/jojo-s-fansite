@@ -528,6 +528,74 @@
                 </div>
             </div>
             {{!-- /manga --}}
+
+            <!---------------------------------->
+
+            {{!-- messages --}}
+            <div class="accordion mt-5" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button id="admin-title" class="btn btn-block text-center" type="button"
+                                data-toggle="collapse" data-target="#collapseEight" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                MESSAGERIE
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseEight" class="collapse show" aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Auteurs</th>
+                                                    <th scope="col">Emails</th>
+                                                    <th scope="col">Sujets</th>
+                                                    <th scope="col">Messages</th>
+                                                    <th scope="col">Dates</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+
+                                            </thead>
+                                            <tbody>
+                                                {{!-- Début de la boucle --}}
+                                                {{#each message }}
+
+                                                <tr>
+                                                    <th scope="row">{{ inc @index }}</th>
+                                                    <td>{{ lastname }}</td>
+                                                    <td>{{ email }}</td>
+                                                    <td>{{ subject }}</td>
+                                                    <td>{{ message }}</td>
+                                                    <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                    {{!-- <td>
+                                                        <button type="button" class="btn btn-delete" data-toggle="modal"
+                                                            data-target="#modalUsersDelete{{_id}}"><i
+                                                                class="fas fa-trash-alt"></i></button>
+                                                        {{>
+                                                    admin/crudAdmin/users/modalUsersDelete
+                                                    }}
+                                                    </td> --}}
+                                                </tr>
+
+                                                {{/each }}
+                                                {{!-- Fin de la boucle --}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- /messages --}}
         </div>
 </section>
 {{!-- / Admin --}}

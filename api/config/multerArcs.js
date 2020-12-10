@@ -1,6 +1,7 @@
 // Import de Multer
 const multer = require('multer')
 
+
 // Ici nous définissons la config de stockage de multer
 const storage = multer.diskStorage({
   // Ici la destination (ou seront stocker nos fichiers par default)
@@ -16,7 +17,7 @@ const storage = multer.diskStorage({
     cb(null, ext)
   },
 
-})
+});
 
 
 

@@ -9,7 +9,8 @@ const News = require('../../../database/models/News'),
     Powers = require('../../../database/models/Powers'),
     Manga = require('../../../database/models/Manga'),
     User = require('../../../database/models/User'),
-    Comments = require('../../../database/models/Comments')
+    Comments = require('../../../database/models/Comments'),
+    Message = require('../../../database/models/Message')
 
 
 module.exports = {
@@ -21,7 +22,8 @@ module.exports = {
             dbPowers = await Powers.find({}),
             dbManga = await Manga.find({}),
             dbUser = await User.find({}),
-            dbComments = await Comments.find({})
+            dbComments = await Comments.find({}),
+            dbMessage = await Message.find({})
         res.render('admin', {
             // Affiche des datas dans la page Admin
             layout: 'adminLayout',
@@ -31,7 +33,8 @@ module.exports = {
             powers: dbPowers,
             manga: dbManga,
             users: dbUser,
-            comments: dbComments
+            comments: dbComments,
+            message: dbMessage
         })
     }
 }
