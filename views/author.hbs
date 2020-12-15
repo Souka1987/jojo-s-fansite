@@ -1,6 +1,6 @@
 {{!-- Titre --}}
 <section>
-    <h1 class="title-author text-center text-black display-4 mt-5">A Propos de l'auteur</h1>
+    <h1 class=" text-center mt-5">A Propos de l'auteur</h1>
 </section>
 
 {{!-- Author --}}
@@ -10,13 +10,25 @@
         <div class="col-md-10">
 
             {{!-- Image --}}
-            <img class="img-fluid rounded" src="../assets/images/H.Araki.jpg" alt="Hirohiko Araki">
+            <div id="draw" class="rounded card-img-top img-fluid" alt="Hirohiko Araki"></div>
 
+            <style>
+                #draw {
+                    background-image: linear-gradient(to bottom, #ad538900, #6801a0),
+                        url(../assets/images/dessin.jpg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 500px;
+                    width: auto;
+                    background-size: cover;
+
+                }
+            </style>
             {{!-- About --}}
             <div class="p-4 mt-5 text-author ">
                 <div class="d-flex w-100 justify-content-between"></div>
 
-                <p class=" p-4 mb-3 rounded text-justify text-white bg-dark">Hirohiko Araki (荒木 飛呂彦, Araki
+                <p class=" author p-4 mb-3 rounded text-justify text-white">Hirohiko Araki (荒木 飛呂彦, Araki
                     Hirohiko,), né le 7 juin
                     1960 à Sendai dans
                     la préfecture de Miyagi, au Japon,
@@ -32,9 +44,9 @@
             {{!-- / About --}}
 
             {{!-- Biography --}}
-            <div class="p-4 mt-5">
-                <div class="d-flex w-100 justify-content-between">
-                    <h4 class="bio font-weight-bold">BIOGRAPHIE</h4>
+            <div class="p-4 mt-2">
+                <div class="w-100 text-center">
+                    <h4 class="font-weight-bold">BIOGRAPHIE</h4>
                 </div>
                 <p class=" p-4 mb-3 rounded text-justify"> Araki passe sa jeunesse avec ses
                     parents et ses deux
@@ -68,7 +80,7 @@
                     conciliant et le rassura sur la qualité de son travail, lui conseillant même de s’améliorer pour les
                     Tezuka Awards cinq jours plus tard.</p>
 
-                <div class="d-flex w-100 justify-content-between">
+                <div class=" w-100 text-center">
                     <h4 class="bio justify-centent-center font-weight-bold">LE SUCCES DE JOJO'S BIZARRE ADVENTURE</h4>
                 </div>
                 <p class=" p-4 mb-3 rounded text-justify text-decoration-none">Publié dans Weekly Shonen Jump
@@ -92,11 +104,25 @@
             <div class="row">
                 <div class="card">
 
-                    <img src="assets/images/H.Araki2.jpg" class="card-img-top" alt="">
+                    {{!-- Images --}}
+                    <div id="author2" class="card-img-top img-fluid" alt="Hirohiko Araki"></div>
 
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item alert-primary">
-                            <h6 class="card-first-title smaller text-center">LISTE DES OEUVRES<h6>
+                    <style>
+                        #author2 {
+                            background-image: linear-gradient(to bottom, #ad538900, #6801a0),
+                                url(../assets/images/H.Araki2.jpg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            height: 150px;
+                            width: auto;
+                            background-size: cover;
+
+                        }
+                    </style>
+
+                    <ul class="list-group ">
+                        <li class="list-group-item">
+                            <h6 class="card-first-title  text-center">LISTE DES OEUVRES<h6>
                         </li>
                         <li class="list-group-item">
                             <h6 class="card-title font-weight-bold text-center">Busou poker - 1981</h6>
@@ -158,3 +184,43 @@
 </section>
 {{!-- /Author --}}
 
+<style>
+    h1 {
+        color: #191941;
+        font-family: "Nunito", sans-serif;
+        letter-spacing: .015rem;
+        margin-top: 0;
+        font-size: 50px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px #e2e6fc, -2px -2px 4px #fff;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    .author {
+        background-color: darkslateblue
+    }
+
+    .text-white {
+        color: #fff !important;
+        font-size: small;
+        font-weight: normal;
+    }
+
+    .text-justify {
+        text-align: justify !important;
+        font-size: small;
+        font-weight: 500;
+    }
+
+    .card-text:last-child {
+        margin-bottom: 0;
+        font-size: smaller;
+    }
+
+    .font-weight-bold {
+        font-weight: 700 !important;
+        font-size: small;
+    }
+</style>

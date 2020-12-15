@@ -16,6 +16,7 @@ const
     hbs = require('express-handlebars'),
     // Lien avec la base de données
     mongoose = require('mongoose'),
+    morgan = require('morgan'),
     // Users
     expressSession = require('express-session'),
     mocha = require('mocha'),
@@ -24,7 +25,8 @@ const
     nodemailer = require('nodemailer'),
     // Import de body-parser
     bodyParser = require('body-parser'),
-    morgan = require('morgan'),
+    //morgan = require('morgan'),
+    handlebars = require('handlebars'),
     // Pour l'authentification avec les réseaux sociaux
     //passport = require('passport'),
     //GoogleStrategy = require('passport-google-oauth').OAuthStrategy,
@@ -92,8 +94,6 @@ app.use('*', (req, res, next) => {
     next()
 })
 
-// Connect-Flash
-//app.use(connectFlash())
 
 // Handlebars
 app.set('view engine', 'hbs');

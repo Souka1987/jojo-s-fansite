@@ -49,86 +49,111 @@
         </script>
 
         {{!-- Card  --}}
-        <div class="container">
-            {{!-- <div class=""> --}}
-            <ul id="myJojo" class="row">
-                {{#each character }}
-                <li class="list-group-item col m-2 p-1 rounded shadow border-light">
-                    <div class="div-characters rounded"></div>
-                    <style>
-                        .div-characters {
-                            background: linear-gradient(to bottom, #ad538900, #6801a0),
-                            url({{image}});
-                            background-repeat: no-repeat;
-                            background-position: center;
-                            height: 200px;
-                            width: auto;
-                            background-size: cover;
-                        }
-                    </style>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">{{ name }}</h5>
-                        {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
-                        <p class="card-text text-center">{{ stripTags content }}</p>
-                        {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                        <p class="card-text text-center"><small class="text-muted">Ajouté le:
-                                {{ moment createDate format="DD.MM.YYYY" }}</small></p>
-                        {{!--  Button trigger modal  --}}
-                        <div class="text-center">
-                            <button type="button" class="btn" data-toggle="modal"
-                                {{!-- Définir l'ID pour le lier au modal --}} data-target="#exampleModalLong{{ _id }}">
-                                Faculté
-                            </button>
-                        </div>
-                        {{!-- /Button trigger modal --}}
-                    </div>
-                </li>
-
-                {{!-- Modal --}}
-                <div class="modal fade " id="exampleModalLong{{ _id }}" data-backdrop="static" data-keyboard="false"
-                    tabindex="-1" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title font-weight-bolder" id="exampleModalLongTitle">{{ powers.name }}
-                                </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
+        <div class="container justify-content-center">
+            <div class="card-deck">
+                <div class="card mb-4">
+                    {{!-- <div class=""> --}}
+                    <ul id="myJojo" class="row">
+                        {{#each character }}
+                        <li class="list-group-item col m-2 p-1 rounded shadow border-light">
+                            <div id="characters" class="rounded card-img-top img-fluid"
+                                style="background-image: url({{image}})"></div>
 
                             <style>
-                                .div-powers {
-                                    background: linear-gradient(to bottom, #8d2de250, #4a00e0),
-                                    url({{powers.image}});
+                                #characters {
+                                    background-image: linear-gradient(to bottom, #ad538900, #6801a0);
                                     background-repeat: no-repeat;
-                                    background-position: top;
-                                    height: 500px;
+                                    background-position: center;
+                                    height: 200px;
                                     width: auto;
                                     background-size: cover;
+                                    content: none;
+                                }
 
+                                .row {
+                                    display: flex;
+                                    flex: 1 0 auto;
                                 }
                             </style>
-                            <div class="div-powers rounded"></div>
-                            <div class="modal-body p-1">
-                                <div class="list-group text-center mt-5">
-                                    <p class="list-group-item small rounded alert alert-info">{{ stripTags powers.content1  }}</p>
-                                    <div class="list-group-item lead1 bold">{{ powers.title2 }}</div>
-                                    <p class="list-group-item content2 small">{{ stripTags powers.content2 }}</p>
-                                    <div class="list-group-item lead2 bold">{{ powers.title2 }}</div>
-                                    <p class="list-group-item content3 small"> {{ stripTags powers.content3 }}</p>
+
+
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{ name }}</h5>
+                                {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
+                                <p class="card-text scroll text-justify">{{ stripTags content }}</p>
+
+
+                                {{!--  Button trigger modal  --}}
+                                <div class="text-center">
+                                    <button type="button" class="btn" data-toggle="modal"
+                                        {{!-- Définir l'ID pour le lier au modal --}}
+                                        data-target="#exampleModalLong{{ _id }}">
+                                        Faculté
+                                    </button>
+                                </div>
+                                {{!-- /Button trigger modal --}}
+
+                                <div class="card-footer mt-2">
+                                    {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                                    <p class="card-text text-center"><small class="text-muted">Ajouté le:
+                                            {{ moment createDate format="DD.MM.YYYY" }}</small></p>
                                 </div>
                             </div>
-                            {{!-- /card --}}
-                            <div class="modal-footer">
-                                <button type="button" class="btn" data-dismiss="modal">Fermer</button>
+                        </li>
+
+                        {{!-- Modal --}}
+                        <div class="modal fade " id="exampleModalLong{{ _id }}" data-backdrop="static"
+                            data-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLongTitle"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title font-weight-bolder" id="exampleModalLongTitle">
+                                            {{ powers.name }}
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <div id="powers" class="rounded" style="background-image: url({{powers.image}})">
+                                    </div>
+                                    <style>
+                                        #powers {
+                                            background: linear-gradient(to bottom, #8d2de250, #4a00e0);
+                                            background-repeat: no-repeat;
+                                            background-position: top;
+                                            height: 500px;
+                                            width: auto;
+                                            background-size: cover;
+
+                                        }
+                                    </style>
+                                    <div class="modal-body p-1">
+                                        {{!-- <img src="" alt=""> --}}
+                                        <div class="list-group text-center mt-5">
+                                            <p class="list-group-item small rounded alert alert-info">
+                                                {{ stripTags powers.content1  }}</p>
+                                            <div class="list-group-item lead1 bold">{{ powers.title2 }}</div>
+                                            <p class="list-group-item content2 small">{{ stripTags powers.content2 }}
+                                            </p>
+                                            <div class="list-group-item lead2 bold">{{ powers.title2 }}</div>
+                                            <p class="list-group-item content3 small"> {{ stripTags powers.content3 }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {{!-- /card --}}
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn" data-dismiss="modal">Fermer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        {{!-- Fin de la boucle --}}
+                        {{/each }}
+                    </ul>
                 </div>
-                {{!-- Fin de la boucle --}}
-                {{/each }}
-            </ul>
+            </div>
         </div>
         {{!--  Pagination  --}}
         {{!-- <ul class="pagination justify-content-center">
@@ -153,8 +178,13 @@
 
     .card-title {
         color: #191941;
-        font-family: 'Montserrat', sans-serif;
         font-weight: bold;
+    }
+
+    .card-footer {
+        padding: .75rem 1.25rem;
+        background-color: white;
+        border-top: none
     }
 
     .btn {
@@ -167,9 +197,16 @@
         box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
         background-size: 400%;
         color: #fff;
-        font-size: 15px;
-        letter-spacing: 4px;
+        font-size: 12px;
+        font-weight:bold;
         text-transform: uppercase;
+    }
+
+    .scroll {
+        max-height: 200px;
+        overflow-y: auto;
+        font-size: 13px;
+        font-weight: 500;
     }
 
     .btn::before {
@@ -271,10 +308,6 @@
 
     .top {
         background: black;
-    }
-
-    .list-group-item {
-        font-family: 'Montserrat', sans-serif;
     }
 
     .content2,
