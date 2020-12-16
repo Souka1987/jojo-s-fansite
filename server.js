@@ -27,6 +27,8 @@ const
     bodyParser = require('body-parser'),
     //morgan = require('morgan'),
     handlebars = require('handlebars'),
+    // Pagination
+    paginateHelper = require('express-handlebars-paginate'),
     // Pour l'authentification avec les réseaux sociaux
     //passport = require('passport'),
     //GoogleStrategy = require('passport-google-oauth').OAuthStrategy,
@@ -35,7 +37,8 @@ const
         stripTags,
         limit,
         inc,
-        ifCond
+        ifCond,
+        pagination
     } = require('./helpers/hbs'),
     // Swagger
     swaggerUi = require('swagger-ui-express'),
@@ -71,8 +74,10 @@ const mongoStore = MongoStore(expressSession) // Connection du module "MongoStor
 // Handlebars.moment => Pour formater la temporalité (dates/horraires)
 const Handlebars = require("handlebars"),
     MomentHandler = require("handlebars.moment");
-MomentHandler.registerHelpers(Handlebars)
+MomentHandler.registerHelpers(Handlebars),
 
+    // Pagination
+    Handlebars.registerHelper('paginateHelper', paginateHelper);
 
 // Users
 app.use(expressSession({
@@ -103,10 +108,13 @@ app.engine('hbs', hbs({
         limit: limit, //"limit", pour la réduction des cards
         /* Pour l'édition de texte afin de le faire passer dans le
                 moteur de templating "app.engine" */
-        inc: inc,
+
         /*incrémentation*/
-        ifCond: ifCond,
+        inc: inc,
         /*user condition*/
+        ifCond: ifCond,
+        /*Pagination*/
+        paginateHelper: pagination
     },
     extname: 'hbs',
     defaultLayout: 'main',

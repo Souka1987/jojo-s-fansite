@@ -29,6 +29,7 @@
     "downsize": "0.0.8",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
+    "express-handlebars-paginate": "^1.0.3",
     "express-session": "^1.17.1",
     "fs": "0.0.1-security",
     "handlebars-helpers": "^0.10.0",
