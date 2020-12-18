@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-        <h1 class="text-center text-dark">Ajouter un pouvoir</h1>
+        <h6 class="text-center text-white">Ajouter un pouvoir</h6>
         {{!--Ajout de l'url et de la méthode--}}
         <form action="/admin/powers" method="POST" enctype="multipart/form-data">
 
@@ -13,15 +13,15 @@
             {{!-- Input Contenu --}}
             <div class="form-group">
                 <label for="exampleInputTextarea">Son apparence</label>
-                <textarea class="form-control" id="power" name="content1"></textarea>
+                <textarea class="ckeditor" id="editor8" name="content1"></textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const power = CKEDITOR.replace('content1', {
+                    const ed8 = CKEDITOR.replace('editor8', {
                         entities: false, // Pour la suppression des caractères spéciaux
-                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                        uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                     });
 
-                    power.on('change', function (e) {// Modification du contenu de l'éditeur
+                    ed8.on('change', function (e) {// Modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     })
                 </script>
@@ -36,12 +36,12 @@
             {{!-- Input Contenu --}}
             <div class="form-group">
                 <label for="exampleInputTextarea">Description de sa ou ses capacité(s)</label>
-                <textarea class="form-control" id="power" name="content2"></textarea>
+                <textarea class="ckeditor" id="editor9" name="content2"></textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    CKEDITOR.replace('content2', {
+                    CKEDITOR.replace('editor9', {
                         entities: false, // Pour la suppression des caractères spéciaux
-                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                        uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                     });
                 </script>
             </div>
@@ -55,16 +55,15 @@
             {{!-- Input Contenu --}}
             <div class="form-group">
                 <label for="exampleInputTextarea">Description de sa personnalité + son histoire</label>
-                <textarea class="form-control" id="power" name="content3"></textarea>
+                <textarea class="ckeditor" id="editor10" name="content3"></textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    CKEDITOR.replace('content3', {
+                    CKEDITOR.replace('editor10', {
                         entities: false, // Pour la suppression des caractères spéciaux
-                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                        uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                     });
                 </script>
             </div>
-
 
             {{!-- Images --}}
             <div class="form-group">
@@ -72,11 +71,10 @@
                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
             </div>
 
-            {{!-- Boutons --}}
-            <div>
-                <button type="submit" class="btn btn-primary">Valider</button>
-                <button type="submit" class="btn btn-secondary">Annuler</button>
+            {{!-- Bouttons --}}
+            <div class="text-center">
+                <button type="submit" class="btn btn-ok"><i class="fas fa-check"></i></button>
             </div>
+        </form>
     </div>
-    </form>
 </section>

@@ -36,7 +36,7 @@
                                                     admin/crudAdmin/news/modalAdd
                                                     }}
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l<i class="fas fa-plus"></i>
+                                                    ID dynamique de l'objet
                                                     dans la boucle --}}
                                                     </th>
                                                 </tr>
@@ -64,12 +64,10 @@
                                                     }}
                                                     </td>
                                                 </tr>
-
                                                 {{/each }}
                                                 {{!-- Fin de la boucle --}}
                                             </tbody>
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +107,7 @@
                                                     <th scope="col">Dates</th>
                                                     <th scope="col">
                                                         <button type="button" class="btn btn-add" data-toggle="modal"
-                                                            data-target="#modalAddArcs{{_id}}" data-whatever="@mdo"><i
+                                                            data-target="#modalAddArcs{{_id}}" data-whatever=""><i
                                                                 class="fas fa-plus"></i></button>
                                                         {{>
                                                     admin/crudAdmin/arcs/modalAddArcs
@@ -119,7 +117,6 @@
                                                     dans la boucle --}}
                                                     </th>
                                                 </tr>
-
                                             </thead>
                                             <tbody>
                                                 {{!-- Début de la boucle --}}

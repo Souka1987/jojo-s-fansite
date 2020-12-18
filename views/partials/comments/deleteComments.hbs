@@ -1,7 +1,9 @@
-<div class="action">
-    <h1 class="text-center">Supprimer un commentaire</h1>
+<section>
+    <h6 class="text-center text-white">Supprimer un commentaire</h6>
     {{!-- Suppression d'un commentaire --}}
-    <form class="mt-2 text-center" action="/deleteComments/{{ _id }}" method="GET">
-        <button class="btn btn-delete" type="submit"><i class="fas fa-trash-alt"></i></button>
-    </form>
-</div>
+    <div class="container">
+        <form class="mt-2 text-center" action="/deleteComments/{{ _id }}" method="GET">
+            <button class="btn btn-delete" type="submit"><i class="fas fa-trash-alt"></i></button>
+        </form>
+    </div>
+</section>

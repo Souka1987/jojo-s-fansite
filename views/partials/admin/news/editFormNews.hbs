@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-        <h6 class="text-center">Modifier une news</h6>
+        <h6 class="text-center text-white">Modifier une news</h6>
         {{!--Ajout de l'url et de la méthode--}}
         <form action="/admin/editNews/{{ _id }}" method="POST" enctype="multipart/form-data">
 
@@ -17,12 +17,12 @@
                 <textarea class="ckeditor" id="editor2" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const ed = CKEDITOR.replace('editor2', {
+                    const ed2 = CKEDITOR.replace('editor2', {
                         entities: false, // Pour la suppression des caractères spéciaux
                         uiColor: '#FFF205'  // Coloriser les bordures de l'éditeur
                     });
 
-                    ed.on('change', function (e) {// Modification du contenu de l'éditeur
+                    ed2.on('change', function (e) {// Modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     });
                 </script>
@@ -36,8 +36,8 @@
             </div>
 
             {{!-- Bouttons --}}
-            <div>
-                <button type="submit" class="btn btn-info">modifier</button>
+            <div class="text-center">
+                <button type="submit" class="btn btn-edit"><i class="fas fa-edit"></i></button>
             </div>
         </form>
     </div>

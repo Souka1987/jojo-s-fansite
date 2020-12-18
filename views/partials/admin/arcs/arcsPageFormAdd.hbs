@@ -1,41 +1,42 @@
 <section>
-    <h1 class="text-center text-dark">Ajouter Arcs</h1>
-    {{!--Ajout de l'url et la méthode --}}
-    <form action="/admin/arcs" method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <h6 class="text-center text-white">Ajouter une saison (page d'acceuil)</h6>
+        {{!--Ajout de l'url et la méthode --}}
+        <form action="/admin/arcs" method="POST" enctype="multipart/form-data">
 
-        {{!-- Input Nom du personnage --}}
-        <div class="form-group">
-            <label for="text">Titre de la partie</label>
-            <input type="text" class="form-control" id="exampleInput" name="title">
-        </div>
+            {{!-- Input Nom du personnage --}}
+            <div class="form-group">
+                <label for="text">Titre de la partie</label>
+                <input type="text" class="form-control" id="exampleInput" name="title">
+            </div>
 
-        {{!-- Input Contenu --}}
-        <div class="form-group">
-            <label for="exampleInputTextarea">Description de la partie</label>
-            <textarea class="form-control" id="arcs"  name="content" hidden>{{ content }}</textarea>
-            {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
-            <script>
-                const arcs = CKEDITOR.replace('arcs', {
-                    entities: false, // Pour la suppression des caractères spéciaux
-                    uiColor: '#B22234' // Coloriser les bordures de l'éditeur
-                });
+            {{!-- Input Contenu --}}
+            <div class="form-group">
+                <label for="exampleInputTextarea">Description de la partie</label>
+                <textarea class="ckeditor" id="editor4" name="content" hidden>{{ content }}</textarea>
+                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
+                <script>
+                    const ed4 = CKEDITOR.replace('editor4', {
+                        entities: false, // Pour la suppression des caractères spéciaux
+                        uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
+                    });
 
-                arcs.on('change', function (e) {// Modification du contenu de l'éditeur
-                    console.log(e.editor.getData())
-                })
-            </script>
-        </div>
+                    ed4.on('change', function (e) {// Modification du contenu de l'éditeur
+                        console.log(e.editor.getData())
+                    })
+                </script>
+            </div>
 
-        {{!-- Input Images --}}
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
-        </div>
+            {{!-- Input Images --}}
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+            </div>
 
-        {{!-- Bouttons --}}
-        <div>
-            <button type="submit" class="btn btn-primary">Valider</button>
-            <button type="submit" class="btn btn-secondary">Annuler</button>
-        </div>
-    </form>
+            {{!-- Bouttons --}}
+            <div class="text-center">
+                <button type="submit" class="btn btn-ok"><i class="fas fa-check"></i></button>
+            </div>
+        </form>
+    </div>
 </section>

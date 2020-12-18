@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-        <h1 class="text-center text-dark">Edition Manga</h1>
+        <h6 class="text-center text-white">Edition Manga</h6>
         {{!--Ajout de l'url et de la méthode--}}
         <form action="/admin/editManga/{{ _id }}" method="POST" enctype="multipart/form-data">
 
@@ -19,15 +19,15 @@
             {{!-- Input Contenu --}}
             <div class="form-group">
                 <label for="exampleInputTextarea">Description</label>
-                <textarea class="form-control" id="manga2" name="content" hidden>{{ content }}</textarea>
+                <textarea class="form-control" id="editor15" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const manga2 = CKEDITOR.replace('manga2', {
+                    const ed15 = CKEDITOR.replace('editor15', {
                         entities: false, // Pour la suppression des caractères spéciaux
-                        uiColor: '#B22234' // Coloriser les bordures de l'éditeur
+                        uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                     });
 
-                    manga2.on('change', function (e) {//modification du contenu de l'éditeur
+                    ed15.on('change', function (e) {//modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     })
                 </script>
@@ -39,8 +39,10 @@
                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">{{ image }}
             </div>
 
-            {{!-- Bouton valider --}}
-            <button type="submit" class="btn btn-info">Modifier</button>
+            {{!-- Bouttons --}}
+            <div class="text-center">
+                <button type="submit" class="btn btn-edit"><i class="fas fa-edit"></i></button>
+            </div>
         </form>
     </div>
 </section>

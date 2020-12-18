@@ -131,8 +131,8 @@ router.route('/deleteComments/:id')
 router.route('/admin')
     .get(auth.isAdmin, adminController.get)
 
-
 // C.R.U.D
+
 // Arcs
 router.route('/admin/arcs')
     // GET récupération du formulaire formAdd
