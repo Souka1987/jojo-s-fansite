@@ -27,19 +27,15 @@ const
     bodyParser = require('body-parser'),
     //morgan = require('morgan'),
     handlebars = require('handlebars'),
-    // Pagination
-    paginateHelper = require('express-handlebars-paginate'),
-    // Pour l'authentification avec les réseaux sociaux
-    //passport = require('passport'),
-    //GoogleStrategy = require('passport-google-oauth').OAuthStrategy,
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
     {
         stripTags,
         limit,
         inc,
         ifCond,
-        pagination
+        formatDate,
     } = require('./helpers/hbs'),
+    flash = require('express-flash'),
     // Swagger
     swaggerUi = require('swagger-ui-express'),
     // Generator en lien avec swagger
@@ -52,10 +48,8 @@ const
 require('dotenv').config()
 // console.log(process.env);
 
-
 // Morgan => Middleware de journalisation des requêtes HTTP pour node.js
-app.use(morgan('dev'))
-
+//app.use(morgan('dev'))
 
 // Mongoose pour le lien avec la base de données. "jjba" est le nom de la base de données.
 mongoose
@@ -73,11 +67,9 @@ const mongoStore = MongoStore(expressSession) // Connection du module "MongoStor
 
 // Handlebars.moment => Pour formater la temporalité (dates/horraires)
 const Handlebars = require("handlebars"),
-    MomentHandler = require("handlebars.moment");
-MomentHandler.registerHelpers(Handlebars),
+    MomentHandler = require("handlebars.moment")
+MomentHandler.registerHelpers(Handlebars);
 
-    // Pagination
-    Handlebars.registerHelper('paginateHelper', paginateHelper);
 
 // Users
 app.use(expressSession({
@@ -94,10 +86,11 @@ app.use('*', (req, res, next) => {
     res.locals.user = req.session.userId;
     res.locals.session = req.session;
     res.locals.isAdmin = req.session.isAdmin;
-    console.log("ID Session: " + res.locals.user);
-    console.log(req.session);
+    // console.log("ID Session: " + res.locals.user);
+    // console.log(req.session);
     next()
 })
+
 
 
 // Handlebars
@@ -113,8 +106,9 @@ app.engine('hbs', hbs({
         inc: inc,
         /*user condition*/
         ifCond: ifCond,
-        /*Pagination*/
-        paginateHelper: pagination
+        /*datess*/
+        formatDate: formatDate
+
     },
     extname: 'hbs',
     defaultLayout: 'main',

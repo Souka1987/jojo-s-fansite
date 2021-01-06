@@ -33,11 +33,11 @@
                                                             data-target='#modalAdd{{_id}}' data-whatever="">
                                                             <i class="fas fa-plus"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/news/modalAdd
-                                                    }}
+                                                        admin/crudAdmin/news/modalAdd
+                                                        }}
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l'objet
-                                                    dans la boucle --}}
+                                                        ID dynamique de l'objet
+                                                        dans la boucle --}}
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -57,11 +57,11 @@
                                                             data-target="#modalDelete{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/news/modalEdit
-                                                    }}
+                                                        admin/crudAdmin/news/modalEdit
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/news/modalDelete
-                                                    }}
+                                                        admin/crudAdmin/news/modalDelete
+                                                        }}
                                                     </td>
                                                 </tr>
                                                 {{/each }}
@@ -110,11 +110,11 @@
                                                             data-target="#modalAddArcs{{_id}}" data-whatever=""><i
                                                                 class="fas fa-plus"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/arcs/modalAddArcs
-                                                    }}
+                                                        admin/crudAdmin/arcs/modalAddArcs
+                                                        }}
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l'object
-                                                    dans la boucle --}}
+                                                        ID dynamique de l'object
+                                                        dans la boucle --}}
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -134,11 +134,11 @@
                                                             data-target="#modalDeleteArcs{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/arcs/modalEditArcs
-                                                    }}
+                                                        admin/crudAdmin/arcs/modalEditArcs
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/arcs/modalDeleteArcs
-                                                    }}
+                                                        admin/crudAdmin/arcs/modalDeleteArcs
+                                                        }}
                                                     </td>
                                                 </tr>
 
@@ -189,11 +189,11 @@
                                                             data-target="#modalAddCharacters{{_id}}"
                                                             data-whatever="@mdo"><i class="fas fa-plus"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/characters/modalAddCharacters
-                                                    }}
+                                                        admin/crudAdmin/characters/modalAddCharacters
+                                                        }}
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l'object
-                                                    dans la boucle --}}
+                                                        ID dynamique de l'object
+                                                        dans la boucle --}}
                                                     </th>
                                                 </tr>
 
@@ -213,17 +213,33 @@
                                                             data-target="#modalDeleteCharacters{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/characters/modalEditCharacters
-                                                    }}
+                                                        admin/crudAdmin/characters/modalEditCharacters
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/characters/modalDeleteCharacters
-                                                    }}
+                                                        admin/crudAdmin/characters/modalDeleteCharacters
+                                                        }}
                                                     </td>
                                                 </tr>
 
                                                 {{/each }}
                                                 {{!-- Fin de la boucle --}}
                                             </tbody>
+
+
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-center">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">Next</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+
                                         </table>
                                     </div>
                                 </div>
@@ -266,11 +282,11 @@
                                                             data-target="#modalAddPowers{{_id}}" data-whatever="@mdo"><i
                                                                 class="fas fa-plus"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/powers/modalAddPowers
-                                                    }}
+                                                        admin/crudAdmin/powers/modalAddPowers
+                                                        }}
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l'object
-                                                    dans la boucle --}}
+                                                        ID dynamique de l'object
+                                                        dans la boucle --}}
                                                     </th>
                                                 </tr>
 
@@ -291,11 +307,11 @@
                                                             data-target="#modalDelePowers{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/powers/modalEditPowers
-                                                    }}
+                                                        admin/crudAdmin/powers/modalEditPowers
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/powers/modalDeletePowers
-                                                    }}
+                                                        admin/crudAdmin/powers/modalDeletePowers
+                                                        }}
                                                     </td>
                                                 </tr>
 
@@ -339,18 +355,19 @@
                                                     <th scope="col">#</th>
                                                     <th scope="col">Titre des tomes</th>
                                                     <th scope="col">Saisons</th>
-                                                    <th scope="col">Fichiers</th>
+                                                    {{!-- <th scope="col">Images</th> --}}
                                                     <th scope="col">Dates</th>
                                                     <th scope="col">
                                                         <button type="button" class="btn btn-add" data-toggle="modal"
                                                             data-target="#modalAddManga{{_id}}" data-whatever="@mdo"><i
                                                                 class="fas fa-plus"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/manga/modalAddManga
-                                                    }}
+                                                        admin/crudAdmin/manga/modalAddManga
+                                                        }}
+
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l'object
-                                                    dans la boucle --}}
+                                                        ID dynamique de l'object
+                                                        dans la boucle --}}
                                                     </th>
                                                 </tr>
 
@@ -363,7 +380,7 @@
                                                     <th scope="row">{{ inc @index }}</th>
                                                     <td>{{ title }}</td>
                                                     <td>{{ season }}</td>
-                                                    <td>{{ image }}</td>
+                                                    {{!-- <td>{{ image }}</td> --}}
                                                     <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
                                                     <td><button type="button" class="btn btn-edit" data-toggle="modal"
                                                             data-target="#modalEditManga{{_id}}"><i
@@ -372,11 +389,11 @@
                                                             data-target="#modalDeleteManga{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/manga/modalEditManga
-                                                    }}
+                                                        admin/crudAdmin/manga/modalEditManga
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/manga/modalDeleteManga
-                                                    }}
+                                                        admin/crudAdmin/manga/modalDeleteManga
+                                                        }}
                                                     </td>
                                                 </tr>
 
@@ -394,6 +411,8 @@
             {{!-- /manga --}}
 
             <!---------------------------------->
+
+
 
             {{!-- users --}}
             <div class="accordion mt-5" id="accordionExample">
@@ -443,8 +462,8 @@
                                                             data-target="#modalUsersDelete{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/users/modalUsersDelete
-                                                    }}
+                                                        admin/crudAdmin/users/modalUsersDelete
+                                                        }}
                                                     </td>
                                                 </tr>
 
@@ -463,7 +482,7 @@
 
             <!---------------------------------->
 
-            {{!-- manga --}}
+            {{!-- commentaires --}}
             <div class="accordion mt-5" id="accordionExample">
                 <div class="card">
                     <div class="card-header" id="headingOne">
@@ -506,11 +525,11 @@
                                                             data-target="#modalDeleteComments{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/comments/modalAddComments
-                                                    }}
+                                                        admin/crudAdmin/comments/modalAddComments
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/comments/modalDeleteComments
-                                                    }}
+                                                        admin/crudAdmin/comments/modalDeleteComments
+                                                        }}
                                                     </td>
                                                 </tr>
                                                 {{/each }}
@@ -524,7 +543,7 @@
                     </div>
                 </div>
             </div>
-            {{!-- /manga --}}
+            {{!-- /commentaires --}}
 
             <!---------------------------------->
 
@@ -576,8 +595,8 @@
                                                             data-target="#modalUsersDelete{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/users/modalUsersDelete
-                                                    }}
+                                                        admin/crudAdmin/users/modalUsersDelete
+                                                        }}
                                                     </td> --}}
                                                 </tr>
 

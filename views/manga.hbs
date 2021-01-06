@@ -6,22 +6,11 @@
             {{!-- Contenu --}}
             <div class="">
 
-                <div class="jumbotron-manga p-4 p-md-5 text-white bg-dark rounded">
-                    <div class="">
-                        <h1 class="display-4 font-italic">A propos du manga</h1>
-                        <p class="text-white">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                            veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
-                            quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-                            qui.
-                        </p>
-                    </div>
-                </div>
+                <h1 class="text-center">A propos du manga</h1>
 
-
-                <div class="p-4 p-md-5 rounded mt-5">
+                <div class="p-4 rounded mt-2">
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="manga-title font-weight-bold">APERCU</h4>
+                        <h5 class="manga-title font-weight-bold">APERCU</h5>
                     </div>
                     <p class="text-justify">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                         doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
@@ -35,10 +24,9 @@
                         dolorem eum fugiat quo voluptas nulla pariatur?"
 
                     </p>
-                    <br>
-                    <br>
+                    </br>
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="manga-title font-weight-bold">L'HISTOIRE</h4>
+                        <h5 class="manga-title font-weight-bold">L'HISTOIRE</h5>
                     </div>
                     <p class="text-justify">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                         doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
@@ -51,10 +39,9 @@
                         reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui
                         dolorem eum fugiat quo voluptas nulla pariatur?"
                     </p>
-                    <br>
-                    <br>
+                    </br>
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="manga-title font-weight-bold">INSPIRATIONS</h4>
+                        <h5 class="manga-title font-weight-bold">INSPIRATIONS</h5>
                     </div>
                     <p class="text-justify">
                         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -71,189 +58,264 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
 
-    {{!-- Liste des tomes --}}
-    <div class="container text-center">
-        <h2 class="text-center mt-5 display-4 tome-title">Liste des Saisons</h2>
-    </div>
+
+        {{!-- Liste des tomes --}}
+        <div class="container text-center">
+            <h2 class=" mt-5">Liste des Saisons</h2>
+        </div>
 
 
-    {{!-- Nav Tabs --}}
+        {{!-- Nav Tabs --}}
 
-    <div id="table-nav-tabs">
-        <div class="container">
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" role="tab" href="#PhantomBlood" data-toggle="tab">Saison 1<br>
-                        <small>Phantom Blood</small></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" role="tab" href="#BattleTendency" data-toggle="tab">Saison 2<br>
-                        <small>Battle Tendency</small></a>
-                </li>
-            </ul>
+        <div id="table-nav-tabs">
+            <div class="container">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" role="tab" href="#PhantomBlood" data-toggle="tab">Saison 1<br>
+                            <small>Phantom Blood</small></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" role="tab" href="#BattleTendency" data-toggle="tab">Saison 2<br>
+                            <small>Battle Tendency</small></a>
+                    </li>
+                </ul>
 
 
 
-            <div class="tab-content">
-                {{!-- Phantom Blood (partie 1) --}}
-                <div role="tabpanel" class="tab-pane active" id="PhantomBlood">
-                    <!-- Page Content -->
-                    <div class="container">
-                        <div class="row">
-                            <!-- Post Content Column -->
-                            <div class="col-lg-8">
-                                <!-- Title -->
-                                <h3 class="mt-4">PHANTOM BLOOD</h3>
-                                <h1 class="small">ファントムブラッド</h1>
-                                <!-- Author -->
-                                <p class="lead">
-                                    Par:
-                                    <small>Admin</small>
-                                </p>
-                                <hr>
-                                <!-- Date -->
-                                <p>Posté le: {{moment d " DD/MM/YYYY " }} à {{moment d " hh:mm.ss "}}</p>
-                                <hr>
-                                <!-- Preview Image -->
-                                <img class="img-fluid rounded"
-                                    src="/assets/images/pĥantom-blood.png" height="300" width="auto"
-                                    alt="">
-                                <hr>
+                <div class="tab-content">
 
-                                <!-- Post Content -->
-                                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero,
-                                    obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia
-                                    corporis
-                                    eligendi eos magni recusandae laborum minus inventore?</p>
+                    <div role="tabpanel" class="tab-pane active" id="PhantomBlood">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    {{!-- Titre --}}
+                                    <h3 class="mt-4">Phantom Blood</h3>
+                                    <h1 class="small">ファントムブラッド</h1>
+                                    {{!-- Auteur --}}
+                                    <p class="lead">
+                                        Par:
+                                        <small>Admin</small>
+                                    </p>
+                                    <hr>
+                                    {{!-- Date --}}
+                                    <p>Posté le: {{moment d " DD/MM/YYYY " }} à {{moment d " hh:mm.ss "}}</p>
+                                    <hr>
+                                    {{!-- image d'acceuil blog --}}
+                                    <img class="img-fluid rounded" src="/assets/images/arcs/dioVSjojo.jpg" height="300"
+                                        width="auto" alt="">
+                                    <hr>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus
-                                    doloremque
-                                    laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil
-                                    dicta
-                                    earum fugiat. Temporibus, voluptatibus.</p>
+                                    {{!-- Citation --}}
+                                    <blockquote class="blockquote">
+                                        <p class="font-italic small">"Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit, sed
+                                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            minim
+                                            veniam, quis nostrud exercitation"</p>
+                                        <footer class="blockquote-footer">
+                                            <cite title="Source Title">Hirohiko Araki</cite>
+                                        </footer>
+                                    </blockquote>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem
-                                    iusto
-                                    blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro
-                                    optio
-                                    ratione repellat perspiciatis. Enim, iure!</p>
 
-                                <blockquote class="blockquote">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                                        posuere
-                                        erat a ante.</p>
-                                    <footer class="blockquote-footer">Someone famous in
-                                        <cite title="Source Title">Source Title</cite>
-                                    </footer>
-                                </blockquote>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid,
-                                    animi, ut
-                                    quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab
-                                    quo
-                                    voluptatem obcaecati?</p>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt,
-                                    ut,
-                                    explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas
-                                    illo saepe
-                                    quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-
-                                <hr>
-                            </div>
-
-                            <!-- Sidebar Widgets Column -->
-                            <div class="col-md-4">
-                                <!-- Categories Widget -->
-                                <div class="card my-4">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <ul class="list-group">
-                                                    <li class="list-group-item active">INFORMATIONS</li>
-                                                    <li class="list-group-item">Type: Shōnen <br>
-                                                        Genre: Nekketsu
-                                                    </li>
-                                                    <li class="list-group-item list-group-item-secondary">Manga</li>
-                                                    <li class="list-group-item">Auteur: Hirohiko Araki <br>
-                                                        Éditeur japonais: Shūeisha
-                                                    </li>
-                                                    <li class="list-group-item">Vestibulum at eros</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {{!-- Résumé de la saison --}}
+                                    <p class="text-justify">Sed ut perspiciatis unde omnis iste natus error sit
+                                        voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                                        veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                                        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                                        consequuntur
+                                        magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+                                        est,
+                                        qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+                                        numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                                        voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                                        suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel
+                                        eum
+                                        iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                        consequatur,
+                                        vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+                                    </p>
+                                    <div class="text-center"><button type="button" class="btn btn-dark mt-5">Voir
+                                            plus</button></div>
+                                    <hr>
                                 </div>
 
-                                <!-- Side Widget -->
-                                <div class="card my-4">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <ul class="list-group">
-                                                    <li class="list-group-item active">PERSONNAGES</li>
-                                                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                                                    <li class="list-group-item">Morbi leo risus</li>
-                                                    <li class="list-group-item">Porta ac consectetur ac</li>
-                                                    <li class="list-group-item">Vestibulum at eros</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.row -->
-
-                        {{!-- Card --}}
-                        <div class="container mt-5">
-                            <div class="row justify-content-center">
-                                {{!-- Début de la boucle --}}
-                                {{#each season1 }}
-                                <div class="card-deck mb-3 text-center col-md-3">
-                                    <div class="card mb-4 shadow-sm">
-                                        <div class="card-header">
-                                            <h6 class="my-0 font-weight-bold">{{ title }}</h6>
-                                        </div>
+                                <!-- Sidebar Widgets Column -->
+                                <div class="col-md-4">
+                                    <!-- Categories Widget -->
+                                    <div class="card my-4">
                                         <div class="card-body">
-                                            <img src="{{ image }}" class="card-img-top" alt="...">
-                                            {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
-                                            <p class="justify mt-2">{{ stripTags content }}</p>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item active">INFORMATIONS</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                            {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                                            <p class="card-text text-muted"><small>Ajouté le:
-                                                    {{ moment createDate format="DD.MM.YYYY" }}</small>
-                                            </p>
-
+                                    <!-- Side Widget -->
+                                    <div class="card my-4">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item active">PERSONNAGES</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                {{/each }}
                             </div>
-                        </div>
-                        {{!-- / Card --}}
-                    </div>
-                </div>
-
-                {{!-- /Phantom Blood (partie 1) --}}
-
-
-
-                {{!-- Battle Tendency (partie 2) --}}
-                <div role="tabpanel" class="tab-pane" id="BattleTendency">
-                    <div class="container text-center">
-                        <div class="container tome-card">
-
+                            <!-- /.row -->
 
                             {{!-- Card --}}
                             <div class="container mt-5">
+                                <div class="row">
+                                    {{!-- Début de la boucle partie 1--}}
+                                    {{#each season1 }}
+                                    <div class="card-deck col-md-6 col-sm-12 col-lg-3">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="card-title text-center text-uppercase">{{ title }}</h5>
+                                            </div>
+                                            <img class="card-img-top" src="{{ image }}" alt="Card image cap">
+                                            <div class="card-body">
+                                                <p class="card-text"> {{ stripTags content }}</p>
+                                                <p class="card-text"><small class="text-muted">Ajouté le: {{ moment
+                                                        createDate
+                                                        format="DD.MM.YYYY" }}</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each }}
+                                    {{!-- /Phantom Blood (partie 1) + fin de la boucle --}}
+                                    {{!-- / Card --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---------------------------------->
+
+                    <div role="tabpanel" class="tab-pane active" id="BattleTendency">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    {{!-- Titre --}}
+                                    <h3 class="mt-4">Battle Tendency</h3>
+                                    <h1 class="small">戦闘潮流</h1>
+                                    {{!-- Auteur --}}
+                                    <p class="lead">
+                                        Par:
+                                        <small>Admin</small>
+                                    </p>
+                                    <hr>
+                                    {{!-- Date --}}
+                                    <p>Posté le: {{moment d " DD/MM/YYYY " }} à {{moment d " hh:mm.ss "}}</p>
+                                    <hr>
+                                    {{!-- image d'acceuil blog --}}
+                                    <img class="img-fluid rounded" src="/assets/images/joseph.jpg" height="300"
+                                        width="auto" alt="">
+                                    <hr>
+
+                                    {{!-- Citation --}}
+                                    <blockquote class="blockquote">
+                                        <p class="small font-italic">"Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit, sed
+                                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            minim
+                                            veniam, quis nostrud exercitation"</p>
+                                        <footer class="blockquote-footer">
+                                            <cite title="Source Title">Hirohiko Araki</cite>
+                                        </footer>
+                                    </blockquote>
+
+
+                                    {{!-- Résumé de la saison --}}
+                                    <p class="text-justify small">Sed ut perspiciatis unde omnis iste natus error sit
+                                        voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                                        veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                                        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                                        consequuntur
+                                        magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+                                        est,
+                                        qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+                                        numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                                        voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                                        suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel
+                                        eum
+                                        iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                        consequatur,
+                                        vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+
+                                    </p>
+                                    <hr>
+                                </div>
+
+                                <!-- Sidebar Widgets Column -->
+                                <div class="col-md-4">
+                                    <!-- Categories Widget -->
+                                    <div class="card my-4">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item active">INFORMATIONS</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Side Widget -->
+                                    <div class="card my-4">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item active">PERSONNAGES</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                        <li class="list-group-item">Lorem ipsum</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+
+                            {{!-- Card --}}
+                            {{!-- Début de la boucle partie 1--}}
+                            {{#each season2 }}
+                            <div class="container mt-5">
                                 <div class="row justify-content-center">
-                                    {{!-- Début de la boucle --}}
-                                    {{#each season2 }}
                                     <div class="card-deck mb-3 text-center col-md-3">
                                         <div class="card mb-4 shadow-sm">
                                             <div class="card-header">
@@ -263,21 +325,24 @@
                                                 <img src="{{ image }}" class="card-img-top" alt="...">
                                                 {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
                                                 <p class="justify mt-2">{{ stripTags content }}</p>
+
                                                 {{!-- Récupérer le "createDate" pour ajouter la date --}}
                                                 <p class="card-text text-muted"><small>Ajouté le:
                                                         {{ moment createDate format="DD.MM.YYYY" }}</small>
                                                 </p>
+
                                             </div>
                                         </div>
                                     </div>
-                                    {{/each }}
                                 </div>
                             </div>
+                            {{/each }}
+                            {{!-- /Phantom Blood (partie 1) + fin de la boucle --}}
                             {{!-- / Card --}}
                         </div>
                     </div>
+
                 </div>
-                {{!-- /Battle Tendency (partie 2) --}}
             </div>
         </div>
     </div>

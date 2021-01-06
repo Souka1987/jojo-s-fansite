@@ -1,48 +1,48 @@
 <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
     {{!-- <a class="navbar-brand" href="#">Navbar</a> --}}
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
 
-    <div class="collapse navbar-collapse justify-content-md-center m-2" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
-            </li>
+<div class="collapse navbar-collapse justify-content-md-center m-2" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+        </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/author">Auteur</a>
-            </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/author">Auteur</a>
+        </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/characters">Personnages</a>
-            </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/characters">Personnages</a>
+        </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/manga">Manga</a>
-            </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/manga">Manga</a>
+        </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/message">Message</a>
-            </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/message">Message</a>
+        </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/login">Login</a>
-            </li>
-            {{#if user }}
-            <li>
-                <a class="nav-link" href="/logout">Logout</a>
-            </li>
-            {{/if }}
+        <li class="nav-item active">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+        {{#if user }}
+        <li>
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        {{/if }}
 
-            {{#if isAdmin }}
-            <li>
-                <a class="nav-link" href="/admin">Admin</a>
-            </li>
-            {{/if }}
-        </ul>
-    </div>
+        {{#if isAdmin }}
+        <li>
+            <a class="nav-link" href="/admin">Admin</a>
+        </li>
+        {{/if }}
+    </ul>
+</div>
 </nav>
 
 <style>
@@ -95,3 +95,4 @@
     })
 </script>
 {{/if}}
+

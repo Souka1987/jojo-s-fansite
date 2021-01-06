@@ -10,9 +10,7 @@ module.exports = {
     register: (req, res) => {
 
         res.render('register', {
-            error: req.flash('registerError'),
-            // Garder les data de l'utilisateur
-            data: req.flash('data')[0]
+            
         })
     },
 

@@ -7797,13 +7797,11 @@ section {
   padding: 80px 0px; }
 
 body {
-  font-family: "Montserrat", "Open-sans", sans-serif; }
-
-h6 {
-  text-transform: uppercase; }
+  font-family: "Source Sans Pro", "Lato", "Montserrat", "Open-sans", sans-serif; }
 
 p {
-  color: #000000; }
+  color: #000000;
+  font-size: 13px; }
 
 a {
   color: #000000;

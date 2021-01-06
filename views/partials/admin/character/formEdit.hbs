@@ -11,12 +11,15 @@
             </div>
 
             {{!-- Input du Pouvoir --}}
-            <select class="custom-select custom-select-sm" name="powers">
-                <option>Selectionner un pouvoir</option>
+            <div class="form-group">
+                <label for="text">Pouvoir</label>
+            <input class="form-control" id="exampleInput" name="powers" value="{{ powers }}">
+                {{!-- <option>Selectionner un pouvoir</option>
                 {{#each powers }}
                 <option value="{{name}}">{{powers}}</option>
-                {{/each }}
-            </select>
+                {{/each }} --}}
+            {{!-- </select> --}}
+            </div>
 
             {{!-- Input Contenu --}}
             <div class="form-group mt-2">
@@ -24,14 +27,7 @@
                 <textarea class="ckeditor" id="editor7" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const ed7 = CKEDITOR.replace('editor7', {
-                        entities: false, //pour la suppression des caractères spéciaux
-                        uiColor: '#FFF205' //Coloriser les bordures de l'éditeur
-                    });
-
-                    ed7.on('change', function (e) {//modification du contenu de l'éditeur
-                        console.log(e.editor.getData())
-                    })
+                    CKEDITOR.replace('editor7')
                 </script>
             </div>
 

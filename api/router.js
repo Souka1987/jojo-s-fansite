@@ -56,6 +56,8 @@ router.route('/characters')
 router.route('/author')
     .get(authorController.get)
 
+
+
 /*
  * Manga
  * *********** */
@@ -73,6 +75,19 @@ router.route('/manga')
 // email (page Message)
 router.route('/nodemailer')
     .post(nodemailerController.mail)
+
+// email de verification
+router.route('/verification')
+    .post(nodemailerController.sendVerif)
+
+// Mot de passe oublier
+router.route('/lostpassword')
+    .post(nodemailerController.lostPassword)
+
+// Page de mot de passe oublier
+router.route('/lostpassword/:id')
+    .get(nodemailerController.editPassword)
+
 
 
 
@@ -96,8 +111,19 @@ router.route('/login')
 router.route('/auth')
     .post(loginController.post)
 
+// Déconnexion
 router.route('/logout')
     .get(loginController.logout)
+
+// Mot de passe oublier
+router.route('/editPassword/:id')
+    .post(loginController.editPasswordPost)
+
+// Page de vérification
+router.route('/verify/:id')
+    .get(nodemailerController.verifMail)
+    .post(loginController.verifMailPost)
+
 
 
 // Inscription
@@ -118,8 +144,11 @@ router.route('/newComments')
 
 // /GET Suppression commentaires 
 router.route('/deleteComments/:id')
-    .get(commentsController.deleteComments)
+    .get(auth.isAdmin, commentsController.deleteComments)
 
+// /GET Suppression commentaires 
+// router.route('/deleteComments/:id')
+//     .get(auth.isUser, authorController.deleteComments)
 
 
 /*
@@ -227,6 +256,7 @@ router.route('/admin/manga')
     .get(auth.isAdmin, mangaController.mangaFormAdd)
     // POST formulaire mangaAdd
     .post(uploadArcs.single('image'), auth.isAdmin, mangaController.mangaAdd)
+
 
 router.route('/admin/editManga/:id')
     // GET récupération du formulaire editFormMAnga

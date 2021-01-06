@@ -1,95 +1,207 @@
 {{!-- Inscription --}}
-{{#if error }}
-<script>
-    swal({
-        title: "Oops !",
-        text: "Tu es déjà inscrit !",
-        icon: "error",
-        buttons: true,
-        dangerMode: true,
-    });
-    swal({
-        title: "Attention !",
-        text: "N'oublies pas de remplir correctement les champs.",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-    })
-</script>
-{{/if}}
+
+
+
 
 {{#if success }}
 <script>
     /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
-    swal("Félicitation ! Ton compte à bien été créé !", "Bienvenue sur Jojo's World.", "success").then(function () {
+    swal({
+        title: "Fécilitation !",
+        text: "Ton compte a bien été créé. Merci.",
+        icon: "success"
+    }).then(function () {
         window.location = "/";
     })
 </script>
 {{/if}}
 
+
+
+
+
 <section class="mt-5">
     <div class="container mt-5">
         <div class="card-body mx-auto" style="max-width: 700px;">
-            <h1 class="card-title mt-3 text-center display-4">Créer un compte</h1>
+            <h1 class="card-title mt-3 text-center">Créer un compte</h1>
 
-            <p class="small" style="text-align: center;">...</p>
+            <p class="small" style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+            </p>
 
             <form action="/create" method="POST">
-                <div class="row">
-                    <div class="col">
-                        <label for="text">Nom</label>
-                        <input type="text" class="form-control" placeholder="firstname" name="firstname">
-                    </div>
-                    <div class="col">
-                        <label for="text">Prénom</label>
-                        <input type="text" class="form-control" placeholder="lastname" name="lastname">
-                    </div>
-                </div>
 
                 <div class="col">
-                    <label for="email">Pseudo</label>
+                    <label for="text">Nom</label>
+                    <input type="text" class="form-control" placeholder="firstname" name="firstname">
+                </div>
+                <div class="col">
+                    <label for="text" class="mt-2">Prénom</label>
+                    <input type="text" class="form-control" placeholder="lastname" name="lastname">
+                </div>
+
+
+                <div class="col">
+                    <label for="email" class="mt-2">Pseudo</label>
                     <input type="text" class="form-control" placeholder="pseudo" name="pseudo" required>
                 </div>
 
                 <div class="col">
-                    <label for="email">Email</label>
+                    <label for="email" class="mt-2">Email</label>
                     <input id="email" type="email" class="form-control" placeholder="email" name="email" required>
                 </div>
 
                 <div class="col">
-                    <label for="password">Mot de passe</label>
-                    <input id="password" type="password" placeholder='password' class="form-control" name="password"
+                    <label for="password" class="mt-2">Mot de passe</label>
+                    <input type="password" id="password" name="password" placeholder='Mot de passe' class="form-control"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        title="Attention ! Vérifies qu'il ne manque pas, 1 lettre miniscule, 1 lettre majuscule, 1 nombre, 1 cractère spécial et que le mot de passe fait bien 8 caractères."
                         required>
                 </div>
 
+
                 {{!-- Confirmer le password --}}
                 <div class="col">
-                    <label for="password">Confirmer le mot de passe</label>
-                    <input id="password" type="password" placeholder="passwordConfirm" class="form-control"
+                    <label for="password" class="mt-2">Confirmer le mot de passe</label>
+                    <input id="password" type="password" placeholder="Confirmes le..." class="form-control"
                         name="passwordConfirm" required>
                     <div class="invalid-feedback">
                     </div>
                 </div>
 
-                <!-- Accept condition -->
-                {{!-- <div class="row">
-                    <div class="col">
-                        <input type="checkbox" name="accept" id='accept'>
-                        <label for="accept">Acceptez les conditions</label>
-                    </div>
-                </div> --}}
 
-                {{!--  Boutton envoyer --}}
-                <button type="submit" class="btn btn-primary text-white btn-block mt-5">
-                    Valider
-                </button>
+                {{!-- Message pour le mot de passe --}}
+                <div id="message">
+                    <p>Le mot de passe doit contenir au moins:</p>
+                    <p id="letter" class="invalid">Une lettre <b>miniscule</b></p>
+                    <p id="capital" class="invalid">Une lettre <b>majuscule</b></p>
+                    <p id="number" class="invalid">Un <b>nombre </b></p>
+                    <p id="length" class="invalid">Au minimum<b> 8 caractères</b></p>
+                </div>
+
+
+                {{!-- Boutton envoyer --}}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary text-white mt-5" value="submit">
+                        Valider
+                    </button>
+                </div>
+
+
+                <!--------------------------->
+                <script>
+
+                    // Définir les variables
+                    const myInput = document.getElementById("password"),
+                        letter = document.getElementById("letter"),
+                        capital = document.getElementById("capital"),
+                        number = document.getElementById("number"),
+                        length = document.getElementById("length");
+
+                    // Lorsque l'utilisateur clique sur le champ du mot de passe, la boîte de dialogue "message" apparaît
+                    myInput.onfocus = function () {
+                        document.getElementById("message").style.display = "block";
+                    }
+
+                    // Lorsque l'utilisateur clique en dehors du champ du mot de passe, la boîte de dialogue "message" disparaît
+                    myInput.onblur = function () {
+                        document.getElementById("message").style.display = "none";
+                    }
+
+                    // Lorsque l'utilisateur commence à taper quelque chose dans le champ du mot de passe
+                    myInput.onkeyup = function () {
+                        // Validation des lettres minuscules
+                        var lowerCaseLetters = /[a-z]/g;
+                        if (myInput.value.match(lowerCaseLetters)) {
+                            letter.classList.remove("invalid");
+                            letter.classList.add("valid");
+                        } else {
+                            letter.classList.remove("valid");
+                            letter.classList.add("invalid");
+                        }
+
+                        // Validation des lettres majuscules
+                        var upperCaseLetters = /[A-Z]/g;
+                        if (myInput.value.match(upperCaseLetters)) {
+                            capital.classList.remove("invalid");
+                            capital.classList.add("valid");
+                        } else {
+                            capital.classList.remove("valid");
+                            capital.classList.add("invalid");
+                        }
+
+                        // Validation des nombres
+                        var numbers = /[0-9]/g;
+                        if (myInput.value.match(numbers)) {
+                            number.classList.remove("invalid");
+                            number.classList.add("valid");
+                        } else {
+                            number.classList.remove("valid");
+                            number.classList.add("invalid");
+                        }
+
+                        // Validation de la longueur du mot de passe ici, fixé à 8 caractères
+                        if (myInput.value.length >= 8) {
+                            length.classList.remove("invalid");
+                            length.classList.add("valid");
+                        } else {
+                            length.classList.remove("valid");
+                            length.classList.add("invalid");
+                        }
+                    }
+                </script>
+
+                <style>
+                    /* The message box is shown when the user clicks on the password field */
+                    #message {
+                        display: none;
+                        color: #000;
+                        position: relative;
+                        padding: 20px;
+                        margin-top: 10px;
+                    }
+
+                    #message p {
+                        font-size: 13px;
+                    }
+
+                    /* couleur verte lorsque c'est ok */
+                    .valid {
+                        color: #7cff01;
+                        /*background: #b10adb;*/
+                    }
+
+                    .valid:before {
+                        position: relative;
+                        left: -35px;
+                        content: "✔";
+                    }
+
+                    /* couleur rouge lorsqu'il y a une erreur */
+                    .invalid {
+                        color: #FE0000;
+
+                    }
+
+                    .invalid:before {
+                        position: relative;
+                        left: -35px;
+                        content: "✖";
+                    }
+                </style>
+
+                <!----------------------------->
+                {{!-- Réseaux sociaux --}}
 
                 <p class="text-center mt-5">
                     <span class="font-weight-bold">OU</span>
                 </p>
 
                 <p class="mt-5">
-                    {{!-- Réseaux sociaux --}}
                     <a href="https://www.google.com/account/about/" target="_blank"
                         class="btn btn-danger btn-block btn-social-danger"><i class="fab fa-google"></i> Créer votre
                         compte avec

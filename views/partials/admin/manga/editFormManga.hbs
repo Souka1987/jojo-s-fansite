@@ -24,6 +24,7 @@
                 <script>
                     const ed15 = CKEDITOR.replace('editor15', {
                         entities: false, // Pour la suppression des caractères spéciaux
+                        language: 'fr',
                         uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                     });
 
@@ -33,7 +34,7 @@
                 </script>
             </div>
 
-            {{!-- Images --}}
+            {{!-- Image --}}
             <div class="form-group">
                 <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">{{ image }}

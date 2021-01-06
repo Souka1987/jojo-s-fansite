@@ -29,7 +29,7 @@
 <section class="mt-5">
     <div class="container">
         <div class="card-body mx-auto" style="max-width: 700px;">
-            <h1 class="text-center display-4">
+            <h1 class="text-center">
                 Se connecter
             </h1>
             <form action="/auth" method="POST">
@@ -41,14 +41,16 @@
                     <input type="email" class="form-control" placeholder="email" id="exampleInputEmail"
                         aria-describedby="emailHelp" name="email" value="{{ email }}" required>
                 </div>
+
                 {{!-- Input password --}}
                 <div class="form-group">
-                    <label for="exampleInputPassword">
+                    <label for="password">
                         Mot de passe
                     </label>
                     <input type="password" class="form-control" placeholder="password" id="exampleInputPassword"
                         name="password" value="{{ password }}" required>
                 </div>
+
 
                 {{!-- Modal forgotPassword --}}
                 <div class="forgot-password text-right">
@@ -56,7 +58,9 @@
                         Mot de passe oublié ?
                     </a>
                 </div>
-                {{!-- Input password --}}
+
+
+                {{!-- Input button --}}
                 <button type="submit" class="btn btn-primary text-center">
                     Envoyer
                 </button>
@@ -72,6 +76,7 @@
 </section>
 {{! /login }}
 
+
 <!--------------------------------->
 
 {{!-- modal mot de passe oublié --}}
@@ -85,21 +90,24 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-
-
-                <form action="/reset" method="POST">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Renseignez votre adresse mail:</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            {{!-- formulaire mot de passe oublié --}}
+            <form action="/lostpassword" method="POST">
+                <div class="container">
+                    <div class="form-group mt-5">
+                        <label for="exampleInputEmail1">Entre ton adresse e-mail:</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="email" required>
+                        <small id="emailHelp" class="form-text text-muted">Afin que tu puisse recevoir un nouveau mot de
+                            passe, j'ai besion de ton adresse email.</small>
                     </div>
-                </form>
 
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Envoyer</button>
-            </div>
+                    <div class="text-center mb-5">
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </div>
+                </div>
+            </form>
+            {{!-- /formulaire --}}
         </div>
     </div>
 </div>
+{{!-- modal --}}

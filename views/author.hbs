@@ -1,12 +1,12 @@
 {{!-- Titre --}}
 <section>
-    <h1 class=" text-center mt-5">A Propos de l'auteur</h1>
+    <h1 class="text-center mt-5">A Propos de l'auteur</h1>
 </section>
 
 {{!-- Author --}}
 <section class="container">
     <div class="row">
-        {{!-- Colonne contenu  --}}
+        {{!-- Colonne contenu --}}
         <div class="col-md-10">
 
             {{!-- Image --}}
@@ -14,8 +14,7 @@
 
             <style>
                 #draw {
-                    background-image: linear-gradient(to bottom, #ad538900, #6801a0),
-                        url(../assets/images/dessin.jpg);
+                    background-image:url(../assets/images/protagonists.jpg);
                     background-repeat: no-repeat;
                     background-position: center;
                     height: 500px;
@@ -28,7 +27,7 @@
             <div class="p-4 mt-5 text-author ">
                 <div class="d-flex w-100 justify-content-between"></div>
 
-                <p class=" author p-4 mb-3 rounded text-justify text-white">Hirohiko Araki (荒木 飛呂彦, Araki
+                <p class=" author p-4 mb-3 rounded text-justify">Hirohiko Araki (荒木 飛呂彦, Araki
                     Hirohiko,), né le 7 juin
                     1960 à Sendai dans
                     la préfecture de Miyagi, au Japon,
@@ -78,7 +77,8 @@
                     page, l’homme trouvait un nouveau défaut. Épuisé d'avoir travaillé toute la nuit, Araki eut
                     l’impression de mourir. Cependant, après qu'il ait terminé la lecture, l’éditeur se montra plus
                     conciliant et le rassura sur la qualité de son travail, lui conseillant même de s’améliorer pour les
-                    Tezuka Awards cinq jours plus tard.</p>
+                    Tezuka Awards cinq jours plus tard.
+                </p>
 
                 <div class=" w-100 text-center">
                     <h4 class="bio justify-centent-center font-weight-bold">LE SUCCES DE JOJO'S BIZARRE ADVENTURE</h4>
@@ -109,8 +109,7 @@
 
                     <style>
                         #author2 {
-                            background-image: linear-gradient(to bottom, #ad538900, #6801a0),
-                                url(../assets/images/H.Araki2.jpg);
+                            background-image: url(../assets/images/Araki.jpg);
                             background-repeat: no-repeat;
                             background-position: center;
                             height: 150px;
@@ -183,44 +182,3 @@
         {{> comments/listComments }}
 </section>
 {{!-- /Author --}}
-
-<style>
-    h1 {
-        color: #191941;
-        font-family: "Nunito", sans-serif;
-        letter-spacing: .015rem;
-        margin-top: 0;
-        font-size: 50px;
-        position: relative;
-        z-index: 1;
-        text-shadow: 2px 2px 4px #e2e6fc, -2px -2px 4px #fff;
-        font-weight: 800;
-        text-transform: uppercase;
-    }
-
-    .author {
-        background-color: darkslateblue
-    }
-
-    .text-white {
-        color: #fff !important;
-        font-size: small;
-        font-weight: normal;
-    }
-
-    .text-justify {
-        text-align: justify !important;
-        font-size: small;
-        font-weight: 500;
-    }
-
-    .card-text:last-child {
-        margin-bottom: 0;
-        font-size: smaller;
-    }
-
-    .font-weight-bold {
-        font-weight: 700 !important;
-        font-size: small;
-    }
-</style>

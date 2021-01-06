@@ -19,6 +19,7 @@
                     const ed5 = CKEDITOR.replace('editor5', {
                         entities: false, // Pour la suppression des caractères spéciaux
                         uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
+
                     });
 
                     ed5.on('change', function (e) {// Modification du contenu de l'éditeur
@@ -26,8 +27,8 @@
                     });
 
                     // Injecter les data
-                    const data{{ _id }} = document.getElementById('ckeditor').innerText
-                    CKEDITOR.instances.editor.setData(data{{ _id }})
+                    //const data{{ _id }} = document.getElementById('ckeditor').innerText
+                    //CKEDITOR.instances.editor.setData(data{{ _id }})
                 </script>
             </div>
 
