@@ -27,7 +27,15 @@
                 <textarea class="ckeditor" id="editor7" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    CKEDITOR.replace('editor7')
+                    const chara = CKEDITOR.replace('editor7', {
+                        entities: false, // Pour la suppression des caractères spéciaux
+                        //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
+                        
+                    });
+
+                    chara.on('change', function (e) {//modification du contenu de l'éditeur
+                        console.log(e.editor.getData())
+                    })
                 </script>
             </div>
 

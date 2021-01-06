@@ -35,7 +35,6 @@ const
         ifCond,
         formatDate,
     } = require('./helpers/hbs'),
-    flash = require('express-flash'),
     // Swagger
     swaggerUi = require('swagger-ui-express'),
     // Generator en lien avec swagger
@@ -91,9 +90,8 @@ app.use('*', (req, res, next) => {
     next()
 })
 
-
-
 // Handlebars
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs', hbs({
     helpers: {
@@ -102,20 +100,20 @@ app.engine('hbs', hbs({
         /* Pour l'édition de texte afin de le faire passer dans le
                 moteur de templating "app.engine" */
 
-        /*incrémentation*/
+        // Incrémentation
         inc: inc,
-        /*user condition*/
+        // User condition
         ifCond: ifCond,
-        /*datess*/
-        formatDate: formatDate
-
+        // Dates
+        formatDate: formatDate,
+        // Pagination
+        paginator: require('express-paginatorjs')
     },
     extname: 'hbs',
     defaultLayout: 'main',
     adminLayout: 'adminLayout'
 
 }));
-
 
 // Express static permet de diriger un chemin (URL) sur un dossier en particulier
 app.use('/assets', express.static('public'))

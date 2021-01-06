@@ -80,7 +80,7 @@
                         <div class="card-body">
                             <h5 class="card-title text-center font-weight-bolder">{{ name }}</h5>
                             {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
-                            <p class=" text-justify">{{ stripTags content }}</p>
+                            <p class=" text-justify">{{{ stripTags content }}}</p>
 
 
                             {{!-- Button trigger modal --}}
@@ -106,13 +106,13 @@
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
                                 {{!-- <div class="modal-header"> --}}
-                                    {{!-- <h4 class="modal-title font-weight-bolder" id="exampleModalLongTitle">
+                                {{!-- <h4 class="modal-title font-weight-bolder" id="exampleModalLongTitle">
                                         {{ powers.name }}
                                     </h4> --}}
-                                    {{!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                {{!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button> --}}
-                                    {{!-- </div> --}}
+                                {{!-- </div> --}}
 
                                 <div id="powers" class="rounded p-0" style="background-image: url({{powers.image}})">
                                 </div>
@@ -133,14 +133,14 @@
                                             {{ powers.name }}
                                         </h4>
                                         <p class="mt-2">
-                                            {{ stripTags powers.content1 }}</p>
+                                            {{{ stripTags powers.content1 }}}</p>
                                         <h5 class="mt-5"> <span> Type:</span> {{ powers.title1 }}</h5>
                                         <hr>
-                                        <p class="mt-2">{{ stripTags powers.content2 }}
+                                        <p class="mt-2">{{{ stripTags powers.content2 }}}
                                         </p>
                                         <h5 class="mt-5">{{ powers.title2 }}</h5>
                                         <hr>
-                                        <p class="mt-2"> {{ stripTags powers.content3 }}
+                                        <p class="mt-2"> {{{ stripTags powers.content3 }}}
                                         </p>
                                     </div>
                                 </div>
@@ -156,13 +156,36 @@
                 </ul>
             </div>
         </div>
-
-       
     </div>
 </section>
 {{!-- /Page personnages --}}
 
+{{!-- Pagination --}}
+<section>
+    {{#if paginator}}
+    <div class="nav justify-content-center" aria-label="page navigation">
+        <ul class="pagination">
 
+            {{!-- Cela rend le lien précédent--}}
+            {{#paginator paginator type="prev"}}
+            <li class="page-item"><a class="page-link" href="{{prev}}">Previous</a></li>
+            {{/paginator}}
+
+            {{!-- Cela rend les éléments de la liste avec leurs numéros --}}
+            {{#paginator paginator type="links" limit="5"}}
+            <li class="page-item {{#if active}}active{{/if}}"><a class="page-link" href="{{href}}">{{n}}</a></li>
+            {{/paginator}}
+            
+            {{!-- Cela rend le lien suivant --}}
+            {{#paginator paginator type="next"}}
+            <li class="page-item"><a class="page-link" href="{{next}}">Next</a></li>
+            {{/paginator}}
+
+        </ul>
+    </div>
+    {{/if}}
+</section>
+{{!-- /pagination --}}
 
 
 <style>

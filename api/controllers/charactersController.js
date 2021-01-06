@@ -18,7 +18,14 @@ module.exports = {
                 if (err) console.log(err)
                 console.log(data)
                 res.render('characters', { // "res.render", rend une vue.
-                    character: data
+                    character: data,
+                    // Pour la pagination
+                    paginator: {
+                        limit: 5, // Pour la naviguation à 5 pages
+                        defaultPage: 'characters', // Définir la page
+                        currentPage: req.params.page, // Définir le chemin
+                        totalPages: 50, // Nombre total de pages voulu
+                    }
                 })
             })
     },
@@ -33,6 +40,13 @@ module.exports = {
 
         res.render('admin/character/characterAdd', {
             character: dbCharacter,
+            // Pour la pagination
+            paginator: {
+                limit: 5, 
+                defaultPage: 'characters', 
+                currentPage: req.params.page, 
+                totalPages: 50, 
+            },
             powers: dbPowers
 
         });

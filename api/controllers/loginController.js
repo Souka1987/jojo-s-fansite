@@ -108,6 +108,7 @@ module.exports = {
         } else res.redirect('/')
     },
 
+    // Déconnexion
     logout: (req, res) => {
         // Desctruction de la session utilisateur
         req.session.destroy(() => {

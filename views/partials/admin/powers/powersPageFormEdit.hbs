@@ -15,12 +15,12 @@
                 <textarea class="ckeditor" id="editor11" name="content1" hidden>{{ content1 }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const ed11 = CKEDITOR.replace('editor11', {
+                    const edPowers = CKEDITOR.replace('editor11', {
                         entities: false, // Pour la suppression des caractères spéciaux
-                        uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
+                        //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                     });
 
-                    ed11.on('change', function (e) {//modification du contenu de l'éditeur
+                    edPowers.on('change', function (e) {//modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     })
                 </script>
@@ -40,7 +40,7 @@
                 <script>
                     CKEDITOR.replace('editor12', {
                         entities: false, // Pour la suppression des caractères spéciaux
-                        uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
+                        //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                     });
                 </script>
             </div>
@@ -59,7 +59,7 @@
                 <script>
                     CKEDITOR.replace('editor13', {
                         entities: false, // Pour la suppression des caractères spéciaux
-                        uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
+                        //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                     });
                 </script>
             </div>

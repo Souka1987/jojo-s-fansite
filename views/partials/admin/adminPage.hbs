@@ -87,7 +87,7 @@
                             <button id="admin-title" class="btn btn-block text-center" type="button"
                                 data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
                                 aria-controls="collapseOne">
-                                ARCS
+                                ARCS (les saisons)
                             </button>
                         </h2>
                     </div>
@@ -141,12 +141,10 @@
                                                         }}
                                                     </td>
                                                 </tr>
-
                                                 {{/each }}
                                                 {{!-- Fin de la boucle --}}
                                             </tbody>
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +175,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="myTable" class="display">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -224,22 +222,6 @@
                                                 {{/each }}
                                                 {{!-- Fin de la boucle --}}
                                             </tbody>
-
-
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination justify-content-center">
-                                                    <li class="page-item disabled">
-                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">Next</a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-
                                         </table>
                                     </div>
                                 </div>
@@ -270,7 +252,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="myTable2" class="display">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -349,7 +331,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="myTable3" class="display">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -412,8 +394,6 @@
 
             <!---------------------------------->
 
-
-
             {{!-- users --}}
             <div class="accordion mt-5" id="accordionExample">
                 <div class="card">
@@ -433,7 +413,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="myTable4" class="display">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -501,7 +481,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="myTable5" class="display">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -615,3 +595,116 @@
         </div>
 </section>
 {{!-- / Admin --}}
+
+
+
+
+
+
+<style>
+    <style>li,
+    a,
+    button {
+        font-size: 12px;
+        color: white;
+        margin: 5px;
+        padding: 7px;
+
+    }
+
+    label {
+        font-size: 12px
+    }
+
+    li,
+    a,
+    button {
+        padding: 5px;
+        margin: 5px;
+        color: #FFF205;
+        border-radius: 10px;
+        background-color: #17193b;
+    }
+
+    input,
+    button,
+    select,
+    optgroup,
+    textarea {
+        background: #333867;
+        border: #333867;
+        color: white;
+        border-radius: 10px;
+    }
+</style>
+
+
+<script>
+    jQuery(document).ready(function ($) {
+        $('#myTable').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
+        $('#myTable2').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
+        $('#myTable3').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
+        $('#myTable4').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
+        $('#myTable5').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
+    });
+</script>

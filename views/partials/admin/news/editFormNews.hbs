@@ -17,12 +17,12 @@
                 <textarea class="ckeditor" id="editor2" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const ed2 = CKEDITOR.replace('editor2', {
+                    const edNews = CKEDITOR.replace('editor2', {
                         entities: false, // Pour la suppression des caractères spéciaux
-                        uiColor: '#FFF205'  // Coloriser les bordures de l'éditeur
+                       // uiColor: '#FFF205'  // Coloriser les bordures de l'éditeur
                     });
 
-                    ed2.on('change', function (e) {// Modification du contenu de l'éditeur
+                    edNews.on('change', function (e) {// Modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     });
                 </script>

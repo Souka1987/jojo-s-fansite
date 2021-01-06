@@ -19,13 +19,12 @@
             {{!-- Input Contenu --}}
             <div class="form-group">
                 <label for="exampleInputTextarea">Description</label>
-                <textarea class="form-control" id="editor15" name="content" hidden>{{ content }}</textarea>
+                <textarea class="form-control ckeditor" id="editor15" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
                     const ed15 = CKEDITOR.replace('editor15', {
                         entities: false, // Pour la suppression des caractères spéciaux
-                        language: 'fr',
-                        uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
+                        //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                     });
 
                     ed15.on('change', function (e) {//modification du contenu de l'éditeur
