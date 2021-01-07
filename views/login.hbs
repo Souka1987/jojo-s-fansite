@@ -15,8 +15,7 @@
 <script>
     /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
     swal({
-        title: "Fécilitation !",
-        text: "Connexion réussie",
+        title: "Goooooood !",
         icon: "success"
     }).then(function () {
         window.location = "/";
@@ -47,10 +46,15 @@
                     <label for="password">
                         Mot de passe
                     </label>
-                    <input type="password" class="form-control" placeholder="password" id="exampleInputPassword"
-                        name="password" value="{{ password }}" required>
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div type="button" class="input-group-text toggle" id="btnToggle"><i
+                                    class="fas fa-eye-slash" id="eyeIcon"></i></div>
+                        </div>
+                        <input type="password" class="form-control" placeholder="mot de passe" id="password"
+                            name="password" value="{{ password }}" required>
+                    </div>
                 </div>
-
 
                 {{!-- Modal forgotPassword --}}
                 <div class="forgot-password text-right">
@@ -59,6 +63,24 @@
                     </a>
                 </div>
 
+                {{!-- Pour voir le mot de passe --}}
+                <script>
+                    let passwordInput = document.getElementById('password'),
+                        toggle = document.getElementById('btnToggle'),
+                        icon = document.getElementById('eyeIcon');
+
+                    function togglePassword() {
+                        if (passwordInput.type === 'password') {
+                            passwordInput.type = 'text';
+                            icon.classList.add("fas fa-eye-slash");
+                        } else {
+                            passwordInput.type = 'password';
+                            icon.classList.remove("fas fa-eye-slash");
+                        }
+                    }
+                    toggle.addEventListener('click', togglePassword, false);
+                    passwordInput.addEventListener('keyup', checkInput, false);
+                </script>
 
                 {{!-- Input button --}}
                 <button type="submit" class="btn btn-primary text-center">

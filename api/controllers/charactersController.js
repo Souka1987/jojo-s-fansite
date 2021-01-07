@@ -41,12 +41,12 @@ module.exports = {
         res.render('admin/character/characterAdd', {
             character: dbCharacter,
             // Pour la pagination
-            paginator: {
-                limit: 5, 
-                defaultPage: 'characters', 
-                currentPage: req.params.page, 
-                totalPages: 50, 
-            },
+            // paginator: {
+            //     limit: 5, 
+            //     defaultPage: 'characters', 
+            //     currentPage: req.params.page, 
+            //     totalPages: 50, 
+            // },
             powers: dbPowers
 
         });

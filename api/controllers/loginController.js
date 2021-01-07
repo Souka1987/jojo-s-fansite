@@ -85,7 +85,9 @@ module.exports = {
                     if (err) console.log(err)
 
                     console.log(req.body)
-                    res.redirect('/login')
+                    res.render('login', {
+                        success: "Mot de passe modifié"
+                    })
                 })
             })
         }

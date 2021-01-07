@@ -196,7 +196,7 @@ module.exports = {
                 console.log("l'email a été vérifié")
                 // res.end("<h1>Email " + mailOptions.to + " is been Successfully verified")
                 res.render('editPassword', {
-                    mailOptions
+                    mailOptions,
                 })
 
             } else {
