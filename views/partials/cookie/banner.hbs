@@ -1,0 +1,28 @@
+{{!-- 
+    Banner pour le cookie ptiGato
+    import layout main.hbs
+    :banner
+--}}
+
+{{!-- Si il ya le cookie --}}
+{{#if CPtiGato }}
+{{!-- Sinon si il n'y a pas le cookie --}}
+{{else}}
+<div style='width: 100%; background: lime; height: auto; text-align: center'>
+  <div class="itm">
+    <a href="/newPtiGato">Créé mon cookie</a>
+    <div class="cookie-text">This website uses cookies to personalize content and analyse traffic in
+      order to offer you a better experience.</div>
+    {{!-- <div class="buttons d-flex flex-column flex-lg-row">
+      <a href="#a" class="btn btn-success btn-sm" data-dismiss="modal">I accept</a>
+      <a href="#a" class="btn btn-secondary btn-sm" data-dismiss="modal">Learn More</a>
+    </div> --}}
+    {{> cookie/btn }}
+  </div>
+</div>
+{{/if}}
+
+{{!-- Si il y a le cookie "cookie" controller home --}}
+{{#if cook }}
+<h4>cook: {{ cook.path }}</h4>
+{{/if}}

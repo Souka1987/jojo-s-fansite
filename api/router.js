@@ -24,6 +24,7 @@ const homeController = require('./controllers/homeController'),
     messageController = require('./controllers/messageController'),
     commentsController = require('./controllers/commentsContoller'),
     nodemailerController = require('./controllers/nodemailerController'),
+    cookieController = require('./controllers/cookieController'),
 
     // ADMIN CONTROLLERS
     adminController = require('./controllers/admin/adminController'),
@@ -39,6 +40,7 @@ const homeController = require('./controllers/homeController'),
 
 router.route('/')
     .get(homeController.getArcs)
+
 
 
 /*
@@ -96,6 +98,29 @@ router.route('/message')
     .get(messageController.get)
 
 
+
+/*
+ * COOKIES
+ * ******* */
+
+// Suppression de cookie PtiGato & Cookie
+router.route('/cookie')
+    .post(cookieController.cookie)
+
+// Supprimer tous les cookies
+router.route('/clearCookie')
+    .get(cookieController.clearCookie)
+
+// Créer un nouveau cookie
+router.route('/newCookie')
+    .get(cookieController.newCookie)
+
+// Créer un nouveau PtiGato
+router.route('/newPtiGato')
+    .get(cookieController.newPtiGato)
+
+
+
 /************************************** */
 
 
@@ -151,6 +176,10 @@ router.route('/deleteComments/:id')
 //     .get(auth.isUser, authorController.deleteComments)
 
 
+
+
+
+
 /*
  * ADMIN
  * ***** */
@@ -159,6 +188,9 @@ router.route('/deleteComments/:id')
 // Page admin
 router.route('/admin')
     .get(auth.isAdmin, adminController.get)
+
+
+
 
 // C.R.U.D
 

@@ -1,0 +1,37 @@
+{{!-- 
+    1) Clear Tout les Cookie
+--}}
+<a href="/clearCookie">
+  <button>Supprimer tous les cookies</button>
+</a>
+
+{{!-- 
+    2) New Cookie
+--}}
+<a href="/newCookie">
+  <button>New Cookie</button>
+</a>
+
+{{!-- 
+    3) New ptiGato
+--}}
+<a href="/newPtiGato">
+  <button>New ptiGato</button>
+</a>
+
+
+{{!-- 
+    Kill cookie:
+      - Cookie
+      - ptiGAto
+--}}
+<form action="/cookie" method="post">
+  <button type='submit' name='clearCookie' value="killCookie">Clear Cookie</button>
+  <button type='submit' name='clearPtiGato' value="killPtiGato">Clear ptiGato</button>
+</form>
+
+{{!-- 
+    Appelle des json (render)
+ --}}
+<h3> {{ allCookie }} </h3> </br>
+<h4> {{ CSession }} {{ CPtiGato }} {{ CCookie }} </h4>

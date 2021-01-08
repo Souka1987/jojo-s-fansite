@@ -1,48 +1,70 @@
 <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
     {{!-- <a class="navbar-brand" href="#">Navbar</a> --}}
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="collapse navbar-collapse justify-content-md-center m-2" id="navbarNav">
-    <ul class="navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-        </li>
+    <div class="collapse navbar-collapse justify-content-md-center m-2" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
 
-        <li class="nav-item active">
-            <a class="nav-link" href="/author">Auteur</a>
-        </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/author">Auteur</a>
+            </li>
 
-        <li class="nav-item active">
-            <a class="nav-link" href="/characters">Personnages</a>
-        </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/characters">Personnages</a>
+            </li>
 
-        <li class="nav-item active">
-            <a class="nav-link" href="/manga">Manga</a>
-        </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/manga">Manga</a>
+            </li>
 
-        <li class="nav-item active">
-            <a class="nav-link" href="/message">Message</a>
-        </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/message">Message</a>
+            </li>
 
-        <li class="nav-item active">
-            <a class="nav-link" href="/login">Login</a>
-        </li>
-        {{#if user }}
-        <li>
-            <a class="nav-link" href="/logout">Logout</a>
-        </li>
-        {{/if }}
 
-        {{#if isAdmin }}
-        <li>
-            <a class="nav-link" href="/admin">Admin</a>
-        </li>
-        {{/if }}
-    </ul>
-</div>
+            <li class="nav-item active">
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+
+            {{#if user }}
+            <button type="submit" class="nav-item active" style="
+        border-radius: 1.6em;
+        color: #fff;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+        border: solid 1px#3600ff;
+        background-color: #3600ff;
+        box-shadow: 0 5px 20px #2f2163;
+        margin: 5px">
+                <a class="nav-link" href="/logout">Logout</a>
+            </button>
+            {{/if }}
+
+            {{#if isAdmin }}
+            <button type="submit" class="nav-item active" style="
+        border-radius: 1.6em;
+        color: #fff;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+        border: solid 1px#6f00ff;
+        background-color: #6f00ff;
+        box-shadow: 0 5px 20px #241636;
+        margin: 5px">
+                <a class="nav-link" href="/admin">Admin</a>
+            </button>
+            {{/if }}
+        </ul>
+    </div>
 </nav>
 
 <style>
@@ -65,18 +87,20 @@
         padding: 0px;
     }
 
+    
+
     nav ul li a {
         margin: 8px;
         padding: 0px 22px;
         display: flex;
-        font-size: 11px;
+        font-size: 10px;
         text-transform: uppercase;
         font-weight: 500;
         letter-spacing: 1px;
     }
 
     nav ul li a:hover {
-        background-color: #FF1178;
+        background-color: #cf2a72;
         color: #fff;
         box-shadow: 5px 10px 30px rgba(255, 17, 120, 0.5);
         transition: all ease 0.2s;
@@ -95,4 +119,3 @@
     })
 </script>
 {{/if}}
-

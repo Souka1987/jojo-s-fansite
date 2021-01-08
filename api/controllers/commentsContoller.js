@@ -17,8 +17,8 @@ module.exports = {
         })
 
 
-        console.log('post controller comment');
-        console.log(req.body);
+        //console.log('post controller comment');
+        //console.log(req.body);
         console.log(authorId);
         // Ajouter un commentaire
         Comments.create({
@@ -44,9 +44,10 @@ module.exports = {
         console.log(dbComments)
 
         Comments.deleteOne({
+
             _id: req.params.id // Toujours définir l'ID
         }, (err) => {
-            if (!err) return res.redirect('/admin') // Rediriger vers la page "admin"
+            if (!err) return res.redirect('/author') // Rediriger vers la page "admin"
             else res.send(err) // Sinon afficher l'érreur
         })
     },

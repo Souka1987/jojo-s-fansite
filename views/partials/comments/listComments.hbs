@@ -9,15 +9,18 @@
                             <img src="" class="img-circle img-responsive" alt="" /></div> --}}
 
             <h6>Par: {{author}}</h6>
-            <p class="card-text text-muted"><small>le: {{ moment createDate format='DD/MM/YYYY à HH:mm:ss' }}</small></p>
+            <p class="card-text text-muted"><small>le: {{ moment createDate format='DD/MM/YYYY à HH:mm:ss' }}</small>
+            </p>
             <br>
             <p>{{ comment }}</p>
             <div class="action">
                 {{!-- Suppression d'un commentaire --}}
                 {{#ifCond ../session.userId authorId }}
-                <form class="mt-2" action="/deleteCommentsUser/{{ _id }}" method="GET">
-                    <button class="btn btn-delete" type="submit"><i class="fas fa-trash-alt"></i></button>
-                </form>
+                <div class="container">
+                    <form class="mt-2 text-center" action="/deleteComments/{{ _id }}" method="GET">
+                        <button type="submit" class="btn btn-delete" ><i class="fas fa-trash-alt"></i></button>
+                    </form>
+                </div>
                 {{/ifCond}}
             </div>
         </li>

@@ -9,7 +9,7 @@ const http = require('http')
 // Import de module
 const
     express = require('express'),
-    //cookieParser = require('cookie-parser'),
+    cookieParser = require('cookie-parser'),
     app = express(),
     path = require('path'),
     // Handlebars sert à créer des modèles de pages web réutilisables
@@ -49,6 +49,9 @@ require('dotenv').config()
 
 // Morgan => Middleware de journalisation des requêtes HTTP pour node.js
 //app.use(morgan('dev'))
+
+// Cookie-Parser
+app.use(cookieParser())
 
 // Mongoose pour le lien avec la base de données. "jjba" est le nom de la base de données.
 mongoose
@@ -106,8 +109,6 @@ app.engine('hbs', hbs({
         ifCond: ifCond,
         // Dates
         formatDate: formatDate,
-        // Pagination
-        paginator: require('express-paginatorjs')
     },
     extname: 'hbs',
     defaultLayout: 'main',

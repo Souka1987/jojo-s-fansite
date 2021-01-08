@@ -84,7 +84,7 @@
 
                         {{!-- Button trigger modal --}}
                         <div class="text-center">
-                            <button type="button" class="btn" data-toggle="modal" {{!-- Définir l'ID pour le lier au
+                            <button type="button" class="btn btn-primary" data-toggle="modal" {{!-- Définir l'ID pour le lier au
                                     modal --}} data-target="#exampleModalLong{{ _id }}">
                                 Faculté
                             </button>
@@ -145,7 +145,7 @@
                             </div>
                             {{!-- /card --}}
                             <div class="modal-footer">
-                                <button type="button" class="btn" data-dismiss="modal">Fermer</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
                             </div>
                         </div>
                     </div>
@@ -195,57 +195,8 @@
         border-top: none
     }
 
-    .btn {
-        position: relative;
-        cursor: pointer;
-        border: none;
-        border-radius: 50px;
-        outline: none;
-        background: linear-gradient(90deg, #FF1178, #FE0000, #FFF205, #FF1178);
-        box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
-        background-size: 400%;
-        color: #fff;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-
-    .btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        background: linear-gradient(90deg, #FF1178, #FE0000, #FFF205, #FF1178);
-        background-size: 400%;
-        border-radius: 50px;
-        opacity: 0;
-        transition: .5s;
-    }
-
-    .btn:hover {
-        animation: animate 10s linear infinite;
-        color: white;
-    }
-
-    .btn:hover::before {
-        filter: blur(25px);
-        opacity: .8;
-        animation: animate 10s linear infinite;
-    }
-
-    @keyframes animate {
-        0% {
-            background-position: 0%;
-        }
-
-        100% {
-            background-position: 400%;
-        }
-    }
+    
+    
 </style>
 
 
