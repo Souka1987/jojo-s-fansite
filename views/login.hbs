@@ -24,11 +24,14 @@
     })
 </script>
 {{/if}}
-
-<section class="mt-5">
-    <div class="container">
-        <div class="card-body mx-auto" style="max-width: 700px;">
-            <h1 class="text-center">
+<section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container mt-5">
+        <div class="card-body mx-auto" style="max-width: 700px">
+            <h1 class="text-center mt-5">
                 Se connecter
             </h1>
             <form action="/auth" method="POST">
@@ -49,7 +52,7 @@
                     <div class="input-group mb-2 mr-sm-2">
                         <div class="input-group-prepend">
                             <div type="button" class="input-group-text toggle" id="btnToggle"><i
-                                    class="fas fa-eye-slash" id="eyeIcon"></i></div>
+                                    class="far fa-eye-slash" id="eyeIcon"></i></div>
                         </div>
                         <input type="password" class="form-control" placeholder="mot de passe" id="password"
                             name="password" value="{{ password }}" required>
@@ -72,14 +75,13 @@
                     function togglePassword() {
                         if (passwordInput.type === 'password') {
                             passwordInput.type = 'text';
-                            icon.classList.add("fa-eye-slash");
+                            icon.classList.add("fa-eye");
                         } else {
                             passwordInput.type = 'password';
                             icon.classList.remove("fa-eye-slash");
                         }
                     }
                     toggle.addEventListener('click', togglePassword, false);
-                    passwordInput.addEventListener('keyup', checkInput, false);
                 </script>
 
                 {{!-- Input button --}}
@@ -96,6 +98,12 @@
         </div>
     </div>
 </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 {{! /login }}
 
 

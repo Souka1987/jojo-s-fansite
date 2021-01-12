@@ -7,7 +7,7 @@
             {{!-- Input Titre --}}
             <div class="form-group">
                 <label for="text">Titre du tome</label>
-                <input type="text" class="form-control" id="exampleInput" name="title" value="{{ title }}">
+                <input type="text" class="form-control"  name="title" value="{{ title }}">
             </div>
 
             {{!-- Input Contenu --}}
@@ -16,13 +16,13 @@
                 <textarea class="ckeditor" id="editor5" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const ed5 = CKEDITOR.replace('editor5', {
+                    const ed = CKEDITOR.replace('editor5', {
                         entities: false, // Pour la suppression des caractères spéciaux
                         //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
 
                     });
 
-                    ed5.on('change', function (e) {// Modification du contenu de l'éditeur
+                    ed.on('change', function (e) {// Modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     });
 

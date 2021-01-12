@@ -23,7 +23,7 @@ module.exports = {
   },
   // Method newCookie (Ajoute le cookie Cookie)
   newCookie: async (req, res, next) => {
-    console.log('test nouveau cookie')
+    console.log('Nouveau cookie')
     // Ici on créé un cookie: Cookie avec c'est parametre
     res.cookie('Cookie', {
       domain: '.coucou',

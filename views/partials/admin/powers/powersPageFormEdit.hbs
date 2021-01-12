@@ -7,12 +7,12 @@
             {{!-- Input Name --}}
             <div class="form-group">
                 <label for="text">Nom de la capacité (stand ou autres ...)</label>
-                <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
+                <input type="text" class="form-control"  name="name" value="{{ name }}">
             </div>
 
             {{!-- Input Contenu --}}
             <div class="form-group">
-                <textarea class="ckeditor" id="editor11" name="content1" hidden>{{ content1 }}</textarea>
+                <textarea class="form-control ckeditor" id="editor11" name="content1" hidden>{{ content1 }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
                     const edPowers = CKEDITOR.replace('editor11', {
@@ -29,7 +29,7 @@
             {{!-- Input Titre --}}
             <div class="form-group">
                 <label for="text">Type de pouvoir (stand ou autres...)</label>
-                <input type="text" class="form-control" id="exampleInput" name="title1" value="{{ title1 }}">
+                <input type="text" class="form-control" name="title1" value="{{ title1 }}">
             </div>
 
             {{!-- Input Contenu --}}

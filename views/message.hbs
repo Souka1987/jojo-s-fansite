@@ -1,12 +1,11 @@
 {{!-- Form --}}
-<section class="mt-5">
-    <div class="container">
+<section>
+    </br>
+    <div class="container mt-5">
         <h1 class="text-center">Envoyer un message</h1>
-    </div>
-
-    <div class="container mb-5">
         <div class="card-body mx-auto" style="max-width: 700px;">
-            <p>Pour toutes questions relatives au site ou à mon point vu sur le manga, vous avez la possibilité de
+            <p class="text-center mt-5">Pour toutes questions relatives au site ou à mon point vu sur le manga, vous avez la
+                possibilité de
                 m'envoyer un message ci-dessous:</p>
             <form action="/nodemailer" method="POST">
                 <div class="row">
@@ -20,7 +19,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
+                    <label for="exampleInputEmail1" class="mt-2">Email</label>
                     <input type="email" class="form-control" name="email" placeholder="email"
                         aria-describedby="emailHelp">
                 </div>
@@ -38,4 +37,5 @@
             </form>
         </div>
     </div>
-    {{!-- /Form --}}
+</section>
+{{!-- /Form --}}

@@ -7,7 +7,7 @@
             {{!-- Input Nom du personnage --}}
             <div class="form-group">
                 <label for="text">Titre de la partie</label>
-                <input type="text" class="form-control" id="exampleInput" name="title">
+                <input type="text" class="form-control"  name="title">
             </div>
 
             {{!-- Input Contenu --}}
@@ -17,12 +17,12 @@
                     hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const ed4 = CKEDITOR.replace('editor4', {
+                    const ed = CKEDITOR.replace('editor4', {
                         entities: false, // Pour la suppression des caractères spéciaux
                         //uiColor: '#FFF205'; // Coloriser les bordures de l'éditeur
                     });
 
-                    ed4.on('change', function (e) {// Modification du contenu de l'éditeur
+                    ed.on('change', function (e) {// Modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     })
                 </script>
