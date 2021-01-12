@@ -7,7 +7,7 @@
             {{!-- Input Nom du personnage --}}
             <div class="form-group">
                 <label for="text">Nom du personnage</label>
-                <input type="text" class="form-control" id="exampleInput" name="name">
+                <input type="text" class="form-control" name="name">
             </div>
 
             {{!-- Input du Pouvoir --}}
@@ -20,11 +20,11 @@
 
             {{!-- Input Contenu --}}
             <div class="form-group mt-2">
-                <label for="exampleInputTextarea">Introduction du personnage</label>
-                <textarea class="ckeditor form-control" id="editor6" name="content"></textarea>
+                <label>Introduction du personnage</label>
+                <textarea class="ckeditor form-control" id="editor" name="content"></textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const chara = CKEDITOR.replace('editor6', {
+                    const chara = CKEDITOR.replace('editor', {
                         entities: false, // Pour la suppression des caractères spéciaux
                         //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                         
@@ -38,7 +38,7 @@
 
             {{!-- Images --}}
             <div class="form-group">
-                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
+                <label for='imageAdd' id='imageAdd'>Envoyer une image au format jpeg</label>
                 <input type="file" class="form-control-file" name="image">
             </div>
 

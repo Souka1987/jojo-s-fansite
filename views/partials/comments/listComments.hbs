@@ -1,9 +1,8 @@
 {{!-- Partial liste des commentaires --}}
 
 <div class="col-md-10 mt-5">
-    {{!-- <h6 class="card-header smaller">Commentaires ajoutés</h6> --}}
     {{#each comments  }}
-    <ul class="list-group mt-2">
+    <ol class="list-group mt-2">
         <li class="list-group-item">
             {{!-- <div class="col-xs-2 col-md-1">
                             <img src="" class="img-circle img-responsive" alt="" /></div> --}}
@@ -17,13 +16,13 @@
                 {{!-- Suppression d'un commentaire --}}
                 {{#ifCond ../session.userId authorId }}
                 <div class="container">
-                    <form class="mt-2 text-center" action="/deleteComments/{{ _id }}" method="GET">
-                        <button type="submit" class="btn btn-delete" ><i class="fas fa-trash-alt"></i></button>
+                    <form class="mt-2" action="/deleteComments/{{ ../_id }}" method="GET">
+                        <button type="submit" class="btn btn-delete"><i class="fas fa-trash-alt"></i></button>
                     </form>
                 </div>
                 {{/ifCond}}
             </div>
         </li>
         {{/each }}
-    </ul>
+    </ol>
 </div>

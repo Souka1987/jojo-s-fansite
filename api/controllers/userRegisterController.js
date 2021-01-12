@@ -37,10 +37,10 @@ module.exports = {
                 error: "Vous êtes déjà inscrit"
             })
         } else {
-            console.log('new user OK')
+            console.log('User not Exist')
 
             // Ici on compare les 2 mots de passe
-            if (req.body.password !== req.body.passwordConfirm) {
+            if (req.body.password[0] !== req.body.password[1]) {
                 console.log('error password')
                 res.render('register', {
                     error: 'Nous rencontrons un problème avec votre mot de passe !',
@@ -62,11 +62,15 @@ module.exports = {
                     User.create({
                         // On récupère notre formulaire
                         ...req.body,
+                        password: b.password[0]
                         // Au cas ou une err survient en force
                     }, (err, user) => {
                         // Si il y a une err
                         if (err) console.log(err)
                         else {
+                            console.log('envoie mail verif REGISTER')
+                            // Envoie du mail de verification
+                            require('./nodemailerController').sendVerif(req, res, req.body.email)
                             // Redirection
                             res.render('register', {
                                 success: 'Votre compte à bien été créé',

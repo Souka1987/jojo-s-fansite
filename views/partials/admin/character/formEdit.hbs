@@ -7,13 +7,13 @@
             {{!-- Input Nom du personnage --}}
             <div class="form-group">
                 <label for="text">Nom du personnage</label>
-                <input type="text" class="form-control" id="exampleInput" name="name" value="{{ name }}">
+                <input type="text" class="form-control" name="name" value="{{ name }}">
             </div>
 
             {{!-- Input du Pouvoir --}}
             <div class="form-group">
                 <label for="text">Pouvoir</label>
-            <input class="form-control" id="exampleInput" name="powers" value="{{ powers }}">
+            <input class="form-control"name="powers" value="{{ powers }}">
                 {{!-- <option>Selectionner un pouvoir</option>
                 {{#each powers }}
                 <option value="{{name}}">{{powers}}</option>
@@ -23,7 +23,7 @@
 
             {{!-- Input Contenu --}}
             <div class="form-group mt-2">
-                <label for="exampleInputTextarea">Introduction du personnage</label>
+                <label>Introduction du personnage</label>
                 <textarea class="ckeditor form-control" id="editor7" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
@@ -41,8 +41,8 @@
 
             {{!-- Input Images --}}
             <div class="form-group">
-                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">{{ image }}
+                <label >Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" name="image">{{ image }}
             </div>
 
             {{!-- Bouttons --}}

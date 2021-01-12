@@ -1,8 +1,4 @@
 {{!-- Inscription --}}
-
-
-
-
 {{#if success }}
 <script>
     /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
@@ -15,10 +11,6 @@
     })
 </script>
 {{/if}}
-
-
-
-
 
 <section class="mt-5">
     <div class="container mt-5">
@@ -46,7 +38,7 @@
 
 
                 <div class="col">
-                    <label for="email" class="mt-2">Pseudo</label>
+                    <label for="text" class="mt-2">Pseudo</label>
                     <input type="text" class="form-control" placeholder="pseudo" name="pseudo" required>
                 </div>
 
@@ -70,7 +62,6 @@
                             required>
                     </div>
                 </div>
-
 
 
                 {{!-- Confirmer le password --}}
@@ -100,7 +91,6 @@
                         }
                     }
                     toggle.addEventListener('click', togglePassword, false);
-                    passwordInput.addEventListener('keyup', checkInput, false);
                 </script>
 
                 {{!-- Message pour le mot de passe --}}
@@ -115,13 +105,15 @@
 
                 {{!-- Boutton envoyer --}}
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary text-white mt-5" value="submit">
+                    <button type="submit" class="btn btn-primary text-white mt-5">
                         Valider
                     </button>
                 </div>
 
 
-                <!--------------------------->
+                <!--==========================--->
+
+
                 <script>
 
                     // Définir les variables
@@ -184,46 +176,8 @@
                     }
                 </script>
 
-                <style>
-                    /* The message box is shown when the user clicks on the password field */
-                    #message {
-                        display: none;
-                        color: #000;
-                        position: relative;
-                        padding: 20px;
-                        margin-top: 10px;
-                    }
+                <!--==========================--->
 
-                    #message p {
-                        font-size: 13px;
-                    }
-
-                    /* couleur verte lorsque c'est ok */
-                    .valid {
-                        color: #7cff01;
-                        /*background: #b10adb;*/
-                    }
-
-                    .valid:before {
-                        position: relative;
-                        left: -35px;
-                        content: "✔";
-                    }
-
-                    /* couleur rouge lorsqu'il y a une erreur */
-                    .invalid {
-                        color: #FE0000;
-
-                    }
-
-                    .invalid:before {
-                        position: relative;
-                        left: -35px;
-                        content: "✖";
-                    }
-                </style>
-
-                <!----------------------------->
                 {{!-- Réseaux sociaux --}}
 
                 {{!-- <p class="text-center mt-5">

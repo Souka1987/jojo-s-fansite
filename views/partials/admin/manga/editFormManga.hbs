@@ -7,27 +7,27 @@
             {{!-- Input Titre du manga --}}
             <div class="form-group">
                 <label for="text">Titre du tome</label>
-                <input type="text" class="form-control" id="exampleInput" name="title" value="{{ title }}">
+                <input type="text" class="form-control" name="title" value="{{ title }}">
             </div>
 
             {{!-- Input saison --}}
             <div class="form-group">
                 <label for="text">Saison</label>
-                <input type="number" class="form-control" id="exampleInput" name="season" value="{{ season }}">
+                <input type="number" class="form-control" name="season" value="{{ season }}">
             </div>
 
             {{!-- Input Contenu --}}
             <div class="form-group">
-                <label for="exampleInputTextarea">Description</label>
-                <textarea class="form-control ckeditor" id="editor15" name="content" hidden>{{ content }}</textarea>
+                <label>Description</label>
+                <textarea class="form-control ckeditor" id="editorManga{{_id}}" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const ed15 = CKEDITOR.replace('editor15', {
+                    const ed{{_id}} = CKEDITOR.replace(`editorManga{{_id}}`, {
                         entities: false, // Pour la suppression des caractères spéciaux
                         //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                     });
 
-                    ed15.on('change', function (e) {//modification du contenu de l'éditeur
+                    ed{{_id}}.on('change', function (e) {//modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     })
                 </script>
@@ -35,8 +35,8 @@
 
             {{!-- Image --}}
             <div class="form-group">
-                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">{{ image }}
+                <label>Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" name="image">{{ image }}
             </div>
 
             {{!-- Bouttons --}}

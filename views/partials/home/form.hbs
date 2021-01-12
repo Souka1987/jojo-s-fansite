@@ -1,4 +1,3 @@
-
 {{#if success }}
 <script>
     /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
@@ -16,7 +15,6 @@
     <div class="container">
         <h2 class="text-center">Envoyer un message</h2>
     </div>
-
     <div class="container mb-5">
         <div class="card-body mx-auto" style="max-width: 700px;">
             <p>Pour toutes questions relatives au site ou à mon point vu sur le manga, vous avez la possibilité de
@@ -24,17 +22,18 @@
             <form action="/nodemailer" method="POST">
                 <div class="row">
                     <div class="col">
-                        <label for="text">Nom</label>
-                        <input type="text" class="form-control" name="name" placeholder="name" required>
+                        <label >Nom</label>
+                        <input type="text" class="form-control" name="name" placeholder="name"
+                            required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="email"
+                    <label >Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="email"
                         required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Sujet</label>
+                    <label >Sujet</label>
                     <input type="text" class="form-control" name="subject" placeholder="subject">
                 </div>
                 <div class="form-group">
@@ -42,8 +41,11 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"
                         placeholder="message" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form>
         </div>
     </div>
-    {{!-- /Form --}}
+</section>
+{{!-- /Form --}}

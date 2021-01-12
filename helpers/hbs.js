@@ -18,7 +18,7 @@ module.exports = {
     inc: (value, option) => {
         return parseInt(value) + 1
     },
-    // Pour les messages
+    // Pour les commentaires
     ifCond: (v1, v2, options) => {
         if (v1 === v2) {
             return options.fn(this);

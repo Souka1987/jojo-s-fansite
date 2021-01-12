@@ -7,22 +7,22 @@
             {{!-- Input Titre du manga --}}
             <div class="form-group">
                 <label for="text">Titre</label>
-                <input type="text" class="form-control" id="exampleInput" name="title" value="{{ title }}">
+                <input type="text" class="form-control" name="title" value="{{ title }}">
             </div>
 
             {{!-- Input Contenu --}}
             <div class="form-group">
-                <label for="exampleInputTextarea">Description</label>
+                <label>Description</label>
 
-                <textarea class="ckeditor" id="editor2" name="content" hidden>{{ content }}</textarea>
+                <textarea class="ckeditor" id="editor{{ _id }}" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const edNews = CKEDITOR.replace('editor2', {
+                    const edNews{{_id}} = CKEDITOR.replace(`editor{{ _id }}`, {
                         entities: false, // Pour la suppression des caractères spéciaux
                        // uiColor: '#FFF205'  // Coloriser les bordures de l'éditeur
                     });
 
-                    edNews.on('change', function (e) {// Modification du contenu de l'éditeur
+                    edNews{{_id}}.on('change', function (e) {// Modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     });
                 </script>
@@ -30,8 +30,8 @@
 
             {{!-- Images --}}
             <div class="form-group">
-                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile" src="{{image}}"
+                <label >Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" src="{{image}}"
                     name="image">{{ image }}
             </div>
 

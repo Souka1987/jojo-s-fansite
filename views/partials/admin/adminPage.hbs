@@ -30,7 +30,7 @@
                                                     <th scope="col">Dates</th>
                                                     <th scope="col">
                                                         <button type="button" class="btn btn-add" data-toggle="modal"
-                                                            data-target='#modalAdd{{_id}}' data-whatever="">
+                                                            data-target='#modalAdd' data-whatever="">
                                                             <i class="fas fa-plus"></i></button>
                                                         {{>
                                                         admin/crudAdmin/news/modalAdd
@@ -638,6 +638,19 @@
 
 <script>
     jQuery(document).ready(function ($) {
+        $('.myTable').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
         $('#myTable').DataTable({
             language: {
                 lengthMenu: "Il y en a _MENU_ par page",

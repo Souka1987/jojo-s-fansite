@@ -12,8 +12,8 @@
 
             {{!-- Input Contenu --}}
             <div class="form-group">
-                <label for="exampleInputTextarea">Contenu</label>
-                <textarea class="ckeditor" id="editor5" name="content" hidden>{{ content }}</textarea>
+                <label>Contenu</label>
+                <textarea class="ckeditor" id="editorArc{{_id}}" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
                     CKEDITOR.replace('content');
@@ -22,8 +22,8 @@
 
             {{!-- Input Images --}}
             <div class="form-group">
-                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">{{ image }}
+                <label>Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" name="image">{{ image }}
             </div>
 
             {{!-- Bouttons --}}
