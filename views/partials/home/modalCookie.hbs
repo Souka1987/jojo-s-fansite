@@ -1,31 +1,13 @@
-<!-- START Bootstrap-Cookie-Alert -->
+{{!--  START Bootstrap-Cookie-Alert  --}}
 <div class="alert text-center cookiealert" role="alert">
     <div class="container">
         <br>
-        <b>Vous aimez les cookies ?</b> &#x1F36A; Ce site utilise des cookies pour vous garantir la meilleure
-        expérience.</b>
-        {{!-- href="https://cookiesandyou.com/" target="_blank">Learn more</> --}}
+        <b>Vous aimez les cookies ? &#x1F36A;</b> Ce site utilise des cookies pour vous garantir la meilleure
+        expérience.</p>
 
         {{!-- New Cookie--}}
-        <a href="/newCookie">
-            <button class="btn btn-primary btn-sm acceptcookies">J'accepte</button>
-        </a>
-
-        <a href="/newPtiGato">
-            <button class="btn btn-primary btn-sm" aria-label="Close">New
-                ptiGato</button>
-        </a>
-
-        <a href="/clearCookie">
-            <button class="btn btn-danger btn-sm" aria-label="Close">Supprimer tous les cookies</button>
-        </a>
-
-        {{!-- <form action="/cookie" method="post">
-            <button type='submit' name='clearCookie' class="btn btn-warning mt-2 btn-sm acceptcookies"
-                value="killCookie">Clear Cookie</button>
-            <button type='submit' name='clearPtiGato' class="btn btn-warning mt-2 btn-sm acceptcookies"
-                value="killPtiGato">Clear ptiGato</button>
-        </form> --}}
+        <a href="/newCookie" class="btn btn-primary btn-sm acceptcookies" role="button"
+            aria-pressed="true">J'accepte</a>
         <br>
         <br>
     </div>

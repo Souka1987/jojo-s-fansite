@@ -6,11 +6,9 @@
       {{#each (limit news 3) }}
       <div class="col-md-6 col-lg-4">
         <div class="card border-light mb-4">
-          <img src="{{ image }}" class="card-img-top" alt="jojo's news"></a>
+          <img src="{{ image }}" class="card-img-top" alt="jojo's news">
           <div class="card-body">
-
             <h5 class="font-weight-normal text-center">{{ title }}</h5>
-
             <p class="text-justify mt-2">
               {{{ stripTags content }}}
             </p>
