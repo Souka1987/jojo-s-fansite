@@ -10,12 +10,10 @@
             époque et son scénario, tout en s'inscrivant dans une continuité globale. Cela permet de suivre l'évolution
             de l'histoire sur différentes périodes et lieux, tout en retrouvant
             certains personnages d'une partie à l'autre. A l'heure actuelle, JoJo's Bizarre Adventure comporte 8 parties
-            :</p>
-        <button type="submit" class="btn btn-primary">
-            <a href="/manga">Voir plus</a>
-        </button>
+        <div class="text-center">
+            <a href="/manga" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Voir plus</a>
+        </div>
     </div>
-
 
     {{!-- Arcs List --}}
     <div class="container mt-5">
@@ -28,8 +26,6 @@
                         <img src="{{ image }}" class="card-img-top" alt="...">
                         <h6 class="mt-3 text-uppercase">{{ title }}</h6>
                         <p class="justify mt-2 text-arcs">{{{ stripTags content }}}</p>
-                        {{!-- <p class="text-center text-muted"> <strong>Par: Admin</strong> | {{ moment createDate format="DD.MM.YYYY"
-                            }}</p> --}}
                     </div>
                 </div>
             </div>

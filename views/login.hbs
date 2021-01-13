@@ -37,10 +37,10 @@
             <form action="/auth" method="POST">
                 <div class="form-group justify-content-center mt-5">
                     {{!-- Input email --}}
-                    <label for="exampleInputEmail">
+                    <label>
                         Email
                     </label>
-                    <input type="email" class="form-control" placeholder="email" id="exampleInputEmail"
+                    <input type="email" class="form-control" placeholder="email"
                         aria-describedby="emailHelp" name="email" value="{{ email }}" required>
                 </div>
 
@@ -51,8 +51,8 @@
                     </label>
                     <div class="input-group mb-2 mr-sm-2">
                         <div class="input-group-prepend">
-                            <div type="button" class="input-group-text toggle" id="btnToggle"><i
-                                    class="far fa-eye-slash" id="eyeIcon"></i></div>
+                            <div type="submit" class="input-group-text toggle" id="btnToggle"><i
+                                    class="fas fa-eye-slash" id="eyeIcon"></i></div>
                         </div>
                         <input type="password" class="form-control" placeholder="mot de passe" id="password"
                             name="password" value="{{ password }}" required>
@@ -85,7 +85,7 @@
                 </script>
 
                 {{!-- Input button --}}
-                <button type="submit" class="btn btn-primary text-center">
+                <button type="submit" class="btn btn-primary">
                     Envoyer
                 </button>
             </form>
@@ -107,7 +107,7 @@
 {{! /login }}
 
 
-<!--------------------------------->
+<!-- ________________________ --->
 
 {{!-- modal mot de passe oublié --}}
 <div class="modal fade" id="forgotPassword" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -124,8 +124,8 @@
             <form action="/lostpassword" method="POST">
                 <div class="container">
                     <div class="form-group mt-5">
-                        <label for="exampleInputEmail1">Entre ton adresse e-mail:</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                        <label >Entre ton adresse e-mail:</label>
+                        <input type="email" name="email" class="form-control"
                             aria-describedby="emailHelp" placeholder="email" required>
                         <small id="emailHelp" class="form-text text-muted">Afin que tu puisse recevoir un nouveau mot de
                             passe, j'ai besion de ton adresse email.</small>

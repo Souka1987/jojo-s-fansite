@@ -53,29 +53,11 @@
         {{!-- Card --}}
 
         <div class="container">
-            <ul id="myJojo" class="row">
+            <ol id="myJojo" class="row">
                 {{#each character }}
                 <li class="list-group-item col-sm-6 col-md-6 col-lg-4  p-0 rounded">
                     <div id="characters" class="rounded card-img-top img-fluid"
                         style="background-image: url({{image}})"></div>
-
-                    <style>
-                        #characters {
-                            background-repeat: no-repeat;
-                            background-position: center;
-                            height: 200px;
-                            width: auto;
-                            background-size: cover;
-                            content: none;
-                        }
-
-                        .row {
-                            display: flex;
-                            flex: 1 0 auto;
-                        }
-                    </style>
-
-
                     <div class="card-body">
                         <h5 class="card-title text-center font-weight-bolder">{{ name }}</h5>
                         {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
@@ -101,30 +83,11 @@
 
                 {{!-- Modal --}}
                 <div class="modal fade " id="exampleModalLong{{ _id }}" data-backdrop="static" data-keyboard="false"
-                    tabindex="-1" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
-                            {{!-- <div class="modal-header"> --}}
-                            {{!-- <h4 class="modal-title font-weight-bolder" id="exampleModalLongTitle">
-                                        {{ powers.name }}
-                                    </h4> --}}
-                            {{!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button> --}}
-                            {{!-- </div> --}}
-
                             <div id="powers" class="rounded p-0" style="background-image: url({{powers.image}})">
                             </div>
-                            <style>
-                                #powers {
-                                    background-repeat: no-repeat;
-                                    background-position: top;
-                                    height: 500px;
-                                    width: auto;
-                                    background-size: cover;
-
-                                }
-                            </style>
                             <div class="modal-body p-1">
                                 {{!-- <img src="" alt=""> --}}
                                 <div class="list-group text-center mt-5">
@@ -152,39 +115,11 @@
                 </div>
                 {{!-- Fin de la boucle --}}
                 {{/each }}
-            </ul>
+            </ol>
         </div>
     </div>
 </section>
 {{!-- /Page personnages --}}
-
-{{!-- Pagination --}}
-<section>
-    {{#if paginator}}
-    <div class="nav justify-content-center" aria-label="page navigation">
-        <ul class="pagination">
-
-            {{!-- Cela rend le lien précédent--}}
-            {{#paginator paginator type="prev"}}
-            <li class="page-item"><a class="page-link" href="{{prev}}">Previous</a></li>
-            {{/paginator}}
-
-            {{!-- Cela rend les éléments de la liste avec leurs numéros --}}
-            {{#paginator paginator type="links" limit="5"}}
-            <li class="page-item {{#if active}}active{{/if}}"><a class="page-link" href="{{href}}">{{n}}</a></li>
-            {{/paginator}}
-
-            {{!-- Cela rend le lien suivant --}}
-            {{#paginator paginator type="next"}}
-            <li class="page-item"><a class="page-link" href="{{next}}">Next</a></li>
-            {{/paginator}}
-
-        </ul>
-    </div>
-    {{/if}}
-</section>
-{{!-- /pagination --}}
-
 
 <style>
     /* CARD PERSONNAGES*/
@@ -194,10 +129,4 @@
         background-color: white;
         border-top: none
     }
-
-    
-    
 </style>
-
-
-

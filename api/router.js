@@ -81,7 +81,9 @@ router.route('/nodemailer')
 // email de verification
 router.route('/verification')
     .post(nodemailerController.sendVerif)
-
+router.route('/verifuser')
+    .post(nodemailerController.verifMailPost)
+    
 // Mot de passe oublier
 router.route('/lostpassword')
     .post(nodemailerController.lostPassword)
@@ -169,14 +171,7 @@ router.route('/newComments')
 
 // /GET Suppression commentaires 
 router.route('/deleteComments/:id')
-    .get(auth.isAdmin, commentsController.deleteComments)
-
-// /GET Suppression commentaires 
-// router.route('/deleteComments/:id')
-//     .get(auth.isUser, authorController.deleteComments)
-
-
-
+    .get(auth.isUser, auth.isAdmin, commentsController.deleteComments)
 
 
 

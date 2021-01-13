@@ -24,6 +24,11 @@ const transporter = nodemailer.createTransport({
 var rand, mailOptions, host, link;
 
 module.exports = {
+    transporter,
+    rand,
+    mailOptions,
+    host,
+    link,
     // Action test boite mail > nodemailer
     mail: (req, res) => {
         console.log(req.body)
@@ -61,7 +66,8 @@ module.exports = {
     },
 
     // Envoie du message de vérification
-    sendVerif: (req, res) => {
+    sendVerif: (req, res, user) => {
+        console.log(user)
 
         // génération d'un chiffre random
         rand = Math.floor((Math.random() * 100) + 54)
@@ -76,10 +82,10 @@ module.exports = {
             subject: "Confirmation d'adresse mail.",
             rand: rand,
             html: `
-        <h2>Tu y es presque</h2><br>
-        <h5>Cliques sur le lien suivant afin de finir la procédure de validation de mail.</h5><br>
-        <a href=" ` + link + ` ">Cliques ici</a>
-      `
+                <h2>Tu y es presque</h2><br>
+                <h5>Cliques sur le lien suivant afin de finir la procédure de validation de mail.</h5><br>
+                <a href=" ` + link + ` ">Cliques ici</a>
+            `
         }
         console.log(mailOptions)
 
@@ -92,13 +98,14 @@ module.exports = {
 
             } else {
                 console.log("Message Envoyer")
-                next()
+                // next()
+
+                // Response
+                res.render('index', {
+                    success: "Un email de vérification à bien été envoyer à " + req.body.email
+                })
 
             }
-        })
-        // Response
-        res.render('index', {
-            success: "Un email de vérification à bien été envoyer à " + req.body.email
         })
     },
 
@@ -119,7 +126,8 @@ module.exports = {
                 console.log("l'email a été vérifié")
                 res.render('verifId', {
                     email: mailOptions.to,
-                    user: user
+                    user: user,
+                    info: mailOptions
                 })
 
             } else {
@@ -135,6 +143,23 @@ module.exports = {
             })
 
         }
+    },
+
+    // Génération de la page ID (Unique)
+    verifMailPost: async (req, res) => {
+        console.log(req.body)
+        const user = await User.findOne({
+            email: req.body.email
+        })
+
+        if (!user) res.redirect('/')
+
+        User.findByIdAndUpdate(user._id, {
+            isVerified: true
+        }, (err) => {
+            if (err) console.log(err)
+            res.render('index')
+        })
     },
 
     // Mot de passe oublié: Envoie du mail

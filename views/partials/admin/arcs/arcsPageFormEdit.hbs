@@ -7,35 +7,23 @@
             {{!-- Input Titre --}}
             <div class="form-group">
                 <label for="text">Titre du tome</label>
-                <input type="text" class="form-control"  name="title" value="{{ title }}">
+                <input type="text" class="form-control" name="title" value="{{ title }}">
             </div>
 
             {{!-- Input Contenu --}}
             <div class="form-group">
-                <label for="exampleInputTextarea">Contenu</label>
-                <textarea class="ckeditor" id="editor5" name="content" hidden>{{ content }}</textarea>
+                <label>Contenu</label>
+                <textarea class="ckeditor" id="editorArc{{_id}}" name="content" hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const ed = CKEDITOR.replace('editor5', {
-                        entities: false, // Pour la suppression des caractères spéciaux
-                        //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
-
-                    });
-
-                    ed.on('change', function (e) {// Modification du contenu de l'éditeur
-                        console.log(e.editor.getData())
-                    });
-
-                    // Injecter les data
-                    //const data{{ _id }} = document.getElementById('ckeditor').innerText
-                    //CKEDITOR.instances.editor.setData(data{{ _id }})
+                    CKEDITOR.replace('content');
                 </script>
             </div>
 
             {{!-- Input Images --}}
             <div class="form-group">
-                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">{{ image }}
+                <label>Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" name="image">{{ image }}
             </div>
 
             {{!-- Bouttons --}}

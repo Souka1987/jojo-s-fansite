@@ -12,12 +12,12 @@
 
             {{!-- Input Contenu --}}
             <div class="form-group">
-                <label for="exampleInputTextarea">Description de la partie</label>
-                <textarea class="ckeditor" id="editor4" name="content" rows="10" cols="80"
+                <label>Description de la partie</label>
+                <textarea class="ckeditor" id="editorAddArc" name="content" rows="10" cols="80"
                     hidden>{{ content }}</textarea>
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const ed = CKEDITOR.replace('editor4', {
+                    const ed4 = CKEDITOR.replace(`editorAddArc`, {
                         entities: false, // Pour la suppression des caractères spéciaux
                         //uiColor: '#FFF205'; // Coloriser les bordures de l'éditeur
                     });
@@ -30,8 +30,8 @@
 
             {{!-- Input Images --}}
             <div class="form-group">
-                <label for="exampleFormControlFile1">Envoyer une image au format jpeg</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+                <label>Envoyer une image au format jpeg</label>
+                <input type="file" class="form-control-file" name="image">
             </div>
 
             {{!-- Bouttons --}}
