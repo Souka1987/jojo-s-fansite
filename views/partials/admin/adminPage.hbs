@@ -559,18 +559,18 @@
                                                 </tr>
 
                                             </thead> --}}
-                                            {{!-- <tbody>
+            {{!-- <tbody>
                                                 {{!-- Début de la boucle --}}
-                                                {{#each message }}
+            {{#each message }}
 
-                                                <tr>
-                                                    <th scope="row">{{ inc @index }}</th>
-                                                    <td>{{ lastname }}</td>
-                                                    <td>{{ email }}</td>
-                                                    <td>{{ subject }}</td>
-                                                    <td>{{ message }}</td>
-                                                    <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
-                                                    {{!-- <td>
+            <tr>
+                <th scope="row">{{ inc @index }}</th>
+                <td>{{ lastname }}</td>
+                <td>{{ email }}</td>
+                <td>{{ subject }}</td>
+                <td>{{ message }}</td>
+                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                {{!-- <td>
                                                         <button type="button" class="btn btn-delete" data-toggle="modal"
                                                             data-target="#modalUsersDelete{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
@@ -578,11 +578,11 @@
                                                         admin/crudAdmin/users/modalUsersDelete
                                                         }}
                                                     </td> --}}
-                                                </tr>
+            </tr>
 
-                                                {{/each }}
-                                                {{!-- Fin de la boucle --}}
-                                            {{!-- </tbody> 
+            {{/each }}
+            {{!-- Fin de la boucle --}}
+            {{!-- </tbody> 
                                         </table>
                                     </div>
                                 </div>
@@ -638,19 +638,6 @@
 
 <script>
     jQuery(document).ready(function ($) {
-        $('.myTable').DataTable({
-            language: {
-                lengthMenu: "Il y en a _MENU_ par page",
-                info: "Page numéro: _PAGE_ sur _PAGES_",
-                search: "Rechercher",
-                paginate: {
-                    first: "first",
-                    last: "last",
-                    next: "next",
-                    previous: "previous"
-                }
-            }
-        });
         $('#myTable').DataTable({
             language: {
                 lengthMenu: "Il y en a _MENU_ par page",
