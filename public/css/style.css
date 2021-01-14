@@ -8167,4 +8167,10 @@ div.dataTables_wrapper div.dataTables_info {
   left: -35px;
   content: "✖"; }
 
+/* card */
+.card-footer {
+  padding: 0.75rem 1.25rem;
+  background-color: white;
+  border-top: none; }
+
 /*# sourceMappingURL=style.css.map */

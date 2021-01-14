@@ -6,7 +6,7 @@
         <div class="col-md-10">
 
             {{!-- Image --}}
-            <img src="../assets/images/protagonists.jpg" class="rounded card-img-top img-fluid mt-5" />
+            <img src="../assets/images/protagonists.jpg" class="rounded card-img-top img-fluid mt-5" alt="jojo">
             {{!-- About --}}
             <div class="p-4 mt-5 text-author ">
                 <div class="d-flex w-100 justify-content-between"></div>
@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="card">
                     {{!-- Image --}}
-                    <img src="../assets/images/Araki.jpg" class="rounded card-img-top img-fluid mt-5" />
+                    <img src="../assets/images/Araki.jpg" class="rounded card-img-top img-fluid mt-5" alt="jojo">
                     <ul class="list-group ">
                         <li class="list-group-item">
                             <h5 class="card-first-title  text-center">LISTE DES OEUVRES</h5>
@@ -133,22 +133,23 @@
                 </div>
             </div>
         </div>
-        {{!-- / Infos --}}
+    </div>
+    {{!-- / Infos --}}
 
-        {{!-- Section commentaires --}}
-        <h2 class="mt-5">Commentaires</h2>
-        {{#if user }}
-        <div class="col-md-10 mt-5">
-            <div class="card my-4">
-                <h6 class="card-header smaller">Laisser un commentaire:</h6>
-                <div class="card-body">
-                    {{!-- Block Pour ajouter un Commentaire --}}
-                    {{> comments/addComments }}
-                </div>
+    {{!-- Section commentaires --}}
+    <h2 class="mt-5">Commentaires</h2>
+    {{#if user }}
+    <div class="col-md-10 mt-5">
+        <div class="card my-4">
+            <h6 class="card-header smaller">Laisser un commentaire:</h6>
+            <div class="card-body">
+                {{!-- Block Pour ajouter un Commentaire --}}
+                {{> comments/addComments }}
             </div>
         </div>
-        {{/if }}
-        {{!-- Block de la liste des commentaires --}}
-        {{> comments/listComments }}
+    </div>
+    {{/if }}
+    {{!-- Block de la liste des commentaires --}}
+    {{> comments/listComments }}
 </section>
 {{!-- /Author --}}
