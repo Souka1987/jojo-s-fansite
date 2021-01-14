@@ -152,7 +152,7 @@ module.exports = {
             email: req.body.email
         })
 
-        if (!user) res.redirect('/')
+        if (!user._id) res.redirect('/')
 
         User.findByIdAndUpdate(user._id, {
             isVerified: true
