@@ -40,8 +40,8 @@
                     <label>
                         Email
                     </label>
-                    <input type="email" class="form-control" placeholder="email"
-                        aria-describedby="emailHelp" name="email" value="{{ email }}" required>
+                    <input type="email" class="form-control" placeholder="email" aria-describedby="emailHelp"
+                        name="email" value="{{ email }}" required>
                 </div>
 
                 {{!-- Input password --}}
@@ -51,11 +51,11 @@
                     </label>
                     <div class="input-group mb-2 mr-sm-2">
                         <div class="input-group-prepend">
-                            <div  class="input-group-text toggle" id="btnToggle"><i
-                                    class="fas fa-eye-slash" id="eyeIcon"></i></div>
+                            <div class="input-group-text toggle" id="btnToggle"><i class="fas fa-eye"
+                                    id="eyeIcon"></i></div>
                         </div>
-                        <input type="password" class="form-control" placeholder="mot de passe" id="password"
-                            name="password" value="{{ password }}" required>
+                        <input id="password" type="text" class="form-control" placeholder="mot de passe" name="password"
+                            value="{{ password }}" required>
                     </div>
                 </div>
 
@@ -67,10 +67,11 @@
                 </div>
 
                 {{!-- Pour voir le mot de passe --}}
-                <script>
-                    let passwordInput = document.getElementById('password'),
+                <script type="text/javascript">
+                    let passwordInput = document.getElementById('hybrid').type = 'password',
                         toggle = document.getElementById('btnToggle'),
                         icon = document.getElementById('eyeIcon');
+
 
                     function togglePassword() {
                         if (passwordInput.type === 'password') {
@@ -124,9 +125,9 @@
             <form action="/lostpassword" method="POST">
                 <div class="container">
                     <div class="form-group mt-5">
-                        <label >Entre ton adresse e-mail:</label>
-                        <input type="email" name="email" class="form-control"
-                            aria-describedby="emailHelp" placeholder="email" required>
+                        <label>Entre ton adresse e-mail:</label>
+                        <input type="email" name="email" class="form-control" aria-describedby="emailHelp"
+                            placeholder="email" required>
                         <small id="emailHelp" class="form-text text-muted">Afin que tu puisse recevoir un nouveau mot de
                             passe, j'ai besion de ton adresse email.</small>
                     </div>

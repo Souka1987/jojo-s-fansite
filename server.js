@@ -135,8 +135,10 @@ app.use(express.urlencoded({
 const ROUTER = require('./api/router')
 app.use('/', ROUTER)
 
+// Backup
+const cron = require('./api/config/backup/cron')
 
-//Page erreur 404
+// Page erreur 404
 app.use((req, res) => {
     res.render('err404', {
         layout: false
