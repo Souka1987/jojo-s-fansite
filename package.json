@@ -25,6 +25,7 @@
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",
+    "cron": "^1.8.2",
     "date-format": "^3.0.0",
     "dotenv": "^8.2.0",
     "downsize": "0.0.8",
