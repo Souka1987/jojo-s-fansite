@@ -53,6 +53,7 @@ require('dotenv').config()
 // Cookie-Parser
 app.use(cookieParser())
 
+
 // Mongoose pour le lien avec la base de données. "jjba" est le nom de la base de données.
 mongoose
     .connect(process.env.MONGO_URI, { // URI = chemin

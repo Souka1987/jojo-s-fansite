@@ -49,14 +49,16 @@
 
                 <div class="col">
                     <label for="password" class="mt-2">Mot de passe</label>
-
                     <div class="input-group mb-2 mr-sm-2">
                         <div class="input-group-prepend">
-                            <div  class="input-group-text toggle" id="btnToggle"><i
-                                    class="fas fa-eye-slash" id="eyeIcon"></i></div>
+                            <div class="input-group-text toggle"><label for="inputPasswordCreate"><i id="stylePw"
+                                        type="button" style="color:#000000;background:transparent;float: right;"
+                                        onclick="togglePwd('inputPasswordCreate','stylePw');"
+                                        class="far fa-eye-slash"></i></label></div>
+
                         </div>
 
-                        <input type="password" id="password" name="password" placeholder='Mot de passe'
+                        <input name="password" type="password" id="inputPasswordCreate" placeholder='Mot de passe'
                             class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                             title="Attention ! Vérifies qu'il ne manque pas, 1 lettre miniscule, 1 lettre majuscule, 1 nombre, 1 cractère spécial et que le mot de passe fait bien 8 caractères."
                             required>
@@ -67,7 +69,6 @@
                 {{!-- Confirmer le password --}}
                 <div class="col">
                     <label for="password" class="mt-2">Confirmer le mot de passe</label>
-
                     <input id="passwordConfirm" type="password" placeholder="Confirmes le..." class="form-control"
                         name="password" required>
                     <div class="invalid-feedback">
@@ -76,21 +77,20 @@
                 </div>
 
                 {{!-- Pour voir le mot de passe --}}
-                <script>
-                    let passwordInput = document.getElementById('password', 'passwordConfirm'),
-                        toggle = document.getElementById('btnToggle'),
-                        icon = document.getElementById('eyeIcon');
-
-                    function togglePassword() {
-                        if (passwordInput.type === 'password') {
-                            passwordInput.type = 'text';
-                            icon.classList.add("fas fa-eye-slash");
+                <script type="text/javascript">
+                    function togglePwd(id, idStyle) {
+                        let x = document.getElementById(id);
+                        let icon = document.getElementById(idStyle);
+                        if (x.type === "password") {
+                            x.type = "text"
+                            icon.classList.remove("fa-eye-slash")
+                            icon.classList.add("fa-eye")
                         } else {
-                            passwordInput.type = 'password';
-                            icon.classList.remove("fas fa-eye-slash");
+                            x.type = "password"
+                            icon.classList.remove("fa-eye")
+                            icon.classList.add("fa-eye-slash")
                         }
                     }
-                    toggle.addEventListener('click', togglePassword, false);
                 </script>
 
                 {{!-- Message pour le mot de passe --}}
@@ -117,7 +117,7 @@
                 <script>
 
                     // Définir les variables
-                    const myInput = document.getElementById("password"),
+                    const myInput = document.getElementById("inputPasswordCreate"),
                         letter = document.getElementById("letter"),
                         capital = document.getElementById("capital"),
                         number = document.getElementById("number"),

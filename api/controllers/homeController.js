@@ -47,6 +47,7 @@ module.exports = {
     // GET Page du formulaire création des News ( Admin )
     newsFormAdd: async (req, res) => {
 
+
         const dbNews = await News.find({})
         res.render('admin/news/newsAdd', {
             news: dbNews

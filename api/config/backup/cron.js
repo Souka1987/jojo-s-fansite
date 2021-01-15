@@ -24,7 +24,7 @@ let dbBackupTask = cron.schedule('* * * * *', () => {
         if (code)
             console.log('Processus de sauvegarde terminé avec le code ', code);
         else if (signal)
-            console.error('Le processus de sauvegarde a été tué avec sigal ', signal);
+            console.error('Le processus de sauvegarde a été tué avec signal ', signal);
         else
             console.log('Sauvegarde réussie de la base de données')
     });
