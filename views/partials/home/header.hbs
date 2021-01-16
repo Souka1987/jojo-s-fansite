@@ -1,53 +1,49 @@
-{{!-- Video --}}
-<header style='width: 100%'>
-    <video autoplay muted preload="auto" loop="loop" id="myVideo" style='width: 100%'>
-        <source src="assets/VIDEOS/head2.mp4" type="video/mp4">
-    </video>
-    <div class="container-fluid title">
-        <div class="row d-flex justify-content-center text-center">
-            <div class="col-md-6 col-sm-12">
-                <h1 class="text-white mt-5 display-4">Le monde de Jojo</h1>
-                <p class="text-white">Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo,
-                    eum cu
-                    recteque expetendis
-                    neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore
-                    latine
-                    molestiae, ad mutat oblique delicatissimi pro.</p>
-                {{!-- Boutton pour démarrer et arréter la vidéo avec Javascript --}}
-                <button type="button" class="btn mb-5 text-white" id="myBtn" onclick="myFunction()">Pause</button>
-            </div>
-        </div>
+<section class="ov-hidden pt-5 pb-5  position-relative showcase"
+    style="min-height:100vh; background-image: url(/assets/VIDEOS/head2.mp4); background-size: cover;">
+
+    <header>
+        <h6 class="logo">JOJO'S BIZARRE ADVENTURE FANSITE</h6>
+        <div class="toggle"></div>
+    </header>
+    <video src="/assets/VIDEOS/head2.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+    <div class="text">
+        <h2>JOJO'S WORLD </h2>
+        <h3>Exploring The World</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+        <a href="https://jojo-portal.com/" class="rounded" target="_blank">VOIR PLUS</a>
     </div>
-</header>
+    {{!-- <ul class="social">
+        <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+        <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+        <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+    </ul> --}}
+</section>
 
-<style>
-    .title {
-        position: absolute;
-        top: 100vh;
-        background-color: #000000;
-        font-family: 'montserrat', sans-serif;
+{{!-- <style>
+   
+     
+    toggle {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        background: url(https://i.ibb.co/HrfVRcx/menu.png);
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position: center;
+        cursor: pointer;
     }
-    p{
-        font-size: 13px;
+
+    .toggle.active {
+        background: url(https://i.ibb.co/rt3HybH/close.png);
+        background-repeat: no-repeat;
+        background-size: 25px;
+        background-position: center;
+        cursor: pointer;
     }
-</style>
 
-<script>
-    // Get Récupérer la vidéo
-    var video = document.getElementById("myVideo");
-
-    // Get Récupérer le boutton
-    var btn = document.getElementById("myBtn");
-
-    // Démarrer et arréter la vidéo on peut aussi ajouter du texte "".
-    function myFunction() {
-        if (video.paused) {
-            video.play();
-            btn.innerHTML = "Pause";
-        } else {
-            video.pause();
-            btn.innerHTML = "Play";
-        }
-    }
-</script>
-{{!-- /Video --}}
+    
+</style> --}}

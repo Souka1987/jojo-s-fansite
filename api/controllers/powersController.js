@@ -2,11 +2,10 @@
  * Controller Page Powers
  * ********************************** */
 
-const path = require('path');
-const fs = require('fs');
-const Powers = require('../../database/models/Powers');
-const Character = require('../../database/models/Character');
-
+const path = require('path'),
+    fs = require('fs'),
+    Powers = require('../../database/models/Powers'),
+    Character = require('../../database/models/Character')
 
 module.exports = {
     // GET page du formulaire création de powers ( Admin )
@@ -34,7 +33,6 @@ module.exports = {
     powersAdd: (req, res) => {
         console.log(req.file);
         console.log(req.body)
-
         // Définir le fichier image
         const image = req.file.originalname
         Powers.create({
@@ -48,8 +46,8 @@ module.exports = {
 
         }, (err) => {
             if (err) console.log(err)
-            res.redirect('/characters')
-        })
+            res.redirect('/admin')
+        });
     },
 
     powersPageFormEdit: async (req, res) => {
@@ -84,7 +82,7 @@ module.exports = {
 
         }, (err) => {
             if (err) console.log(err); // Si il y a une erreur, l'afficher
-            res.redirect('/characters') // Sinon rediriger sur la page "characters"
+            res.redirect('/admin') // Sinon rediriger sur la page "admin"
 
         })
     },
@@ -108,7 +106,7 @@ module.exports = {
             Powers.deleteOne({ // Supprimer un document à la fois par son ID
                 _id: req.params.id // Chercher l'url du "power" en question
             }, (err) => {
-                if (!err) return res.redirect('/characters') // Rediriger vers la page "characters"
+                if (!err) return res.redirect('/admin') // Rediriger vers la page "admin"
                 else res.send(err) // Sinon afficher l'érreur
             })
         })

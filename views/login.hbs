@@ -15,8 +15,7 @@
 <script>
     /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
     swal({
-        title: "Fécilitation !",
-        text: "Connexion réussie",
+        title: "Goooooood !",
         icon: "success"
     }).then(function () {
         window.location = "/";
@@ -29,25 +28,35 @@
 <section class="mt-5">
     <div class="container">
         <div class="card-body mx-auto" style="max-width: 700px;">
-            <h1 class="text-center display-4">
+            <h1 class="text-center">
                 Se connecter
             </h1>
             <form action="/auth" method="POST">
                 <div class="form-group justify-content-center mt-5">
                     {{!-- Input email --}}
-                    <label for="exampleInputEmail">
+                    <label>
                         Email
                     </label>
-                    <input type="email" class="form-control" placeholder="email" id="exampleInputEmail"
-                        aria-describedby="emailHelp" name="email" value="{{ email }}" required>
+                    <input type="email" class="form-control" placeholder="email" aria-describedby="emailHelp"
+                        name="email" value="{{ email }}" required>
                 </div>
+
                 {{!-- Input password --}}
                 <div class="form-group">
-                    <label for="exampleInputPassword">
+                    <label for="password">
                         Mot de passe
                     </label>
-                    <input type="password" class="form-control" placeholder="password" id="exampleInputPassword"
-                        name="password" value="{{ password }}" required>
+                    <div class="input-group mb-2 mr-sm-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text toggle"><label
+                                    for="inputPasswordCreate"><i id="stylePw"
+                                        type="button" style="color:#000000;background:transparent;float: right;"
+                                        onclick="togglePwd('inputPasswordCreate','stylePw');"
+                                        class="far fa-eye-slash"></i></label></div>
+                        </div>
+                        <input name="password" type="password" id="inputPasswordCreate"
+                            class="form-control" placeholder="mot de passe" required>
+                    </div>
                 </div>
 
                 {{!-- Modal forgotPassword --}}
@@ -56,8 +65,26 @@
                         Mot de passe oublié ?
                     </a>
                 </div>
-                {{!-- Input password --}}
-                <button type="submit" class="btn btn-primary text-center">
+
+                {{!-- Pour voir le mot de passe --}}
+                <script type="text/javascript">
+                    function togglePwd(id, idStyle) {
+                        let x = document.getElementById(id);
+                        let icon = document.getElementById(idStyle);
+                        if (x.type === "password") {
+                            x.type = "text"
+                            icon.classList.remove("fa-eye-slash")
+                            icon.classList.add("fa-eye")
+                        } else {
+                            x.type = "password"
+                            icon.classList.remove("fa-eye")
+                            icon.classList.add("fa-eye-slash")
+                        }
+                    }
+                </script>
+
+                {{!-- Input button --}}
+                <button type="submit" class="btn btn-primary">
                     Envoyer
                 </button>
             </form>
@@ -72,7 +99,8 @@
 </section>
 {{! /login }}
 
-<!--------------------------------->
+
+<!--===============================-->
 
 {{!-- modal mot de passe oublié --}}
 <div class="modal fade" id="forgotPassword" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -85,21 +113,24 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-
-
-                <form action="/reset" method="POST">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Renseignez votre adresse mail:</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            {{!-- formulaire mot de passe oublié --}}
+            <form action="/lostpassword" method="POST">
+                <div class="container">
+                    <div class="form-group mt-5">
+                        <label>Entre ton adresse e-mail:</label>
+                        <input type="email" name="email" class="form-control" aria-describedby="emailHelp"
+                            placeholder="email" required>
+                        <small id="emailHelp" class="form-text text-muted">Afin que tu puisse recevoir un nouveau mot de
+                            passe, j'ai besion de ton adresse email.</small>
                     </div>
-                </form>
 
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Envoyer</button>
-            </div>
+                    <div class="text-center mb-5">
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </div>
+                </div>
+            </form>
+            {{!-- /formulaire --}}
         </div>
     </div>
 </div>
+{{!-- modal --}}
