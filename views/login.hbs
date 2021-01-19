@@ -24,11 +24,14 @@
     })
 </script>
 {{/if}}
-
-<section class="mt-5">
-    <div class="container">
-        <div class="card-body mx-auto" style="max-width: 700px;">
-            <h1 class="text-center">
+<section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container mt-5">
+        <div class="card-body mx-auto" style="max-width: 700px">
+            <h1 class="text-center mt-5">
                 Se connecter
             </h1>
             <form action="/auth" method="POST">
@@ -68,6 +71,7 @@
 
                 {{!-- Pour voir le mot de passe --}}
                 <script type="text/javascript">
+<<<<<<< HEAD
                     function togglePwd(id, idStyle) {
                         let x = document.getElementById(id);
                         let icon = document.getElementById(idStyle);
@@ -75,6 +79,17 @@
                             x.type = "text"
                             icon.classList.remove("fa-eye-slash")
                             icon.classList.add("fa-eye")
+=======
+                    let passwordInput = document.getElementById('hybrid').type = 'password',
+                        toggle = document.getElementById('btnToggle'),
+                        icon = document.getElementById('eyeIcon');
+
+
+                    function togglePassword() {
+                        if (passwordInput.type === 'password') {
+                            passwordInput.type = 'text';
+                            icon.classList.add("fa-eye");
+>>>>>>> 8c6d35f4227c9fd914da1f9c66c34fa17878b85a
                         } else {
                             x.type = "password"
                             icon.classList.remove("fa-eye")
@@ -97,6 +112,12 @@
         </div>
     </div>
 </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 {{! /login }}
 
 

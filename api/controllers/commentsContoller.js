@@ -17,8 +17,8 @@ module.exports = {
         })
 
 
-        //console.log('post controller comment');
-        //console.log(req.body);
+        console.log('post controller comment');
+        console.log(req.body);
         console.log(authorId);
         // Ajouter un commentaire
         Comments.create({
@@ -47,7 +47,7 @@ module.exports = {
 
             _id: req.params.id // Toujours définir l'ID
         }, (err) => {
-            if (!err) return res.redirect('/author') // Rediriger vers la page "admin"
+            if (!err) return res.redirect('/author') // Rediriger vers la page "author"
             else res.send(err) // Sinon afficher l'érreur
         })
     },

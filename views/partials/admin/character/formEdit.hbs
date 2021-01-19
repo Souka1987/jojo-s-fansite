@@ -7,13 +7,21 @@
             {{!-- Input Nom du personnage --}}
             <div class="form-group">
                 <label for="text">Nom du personnage</label>
+<<<<<<< HEAD
+                <input type="text" class="form-control"  name="name" value="{{ name }}">
+=======
                 <input type="text" class="form-control" name="name" value="{{ name }}">
+>>>>>>> ee28d828d9e5f4dc82b077e81634dd9fcf5b229a
             </div>
 
             {{!-- Input du Pouvoir --}}
             <div class="form-group">
                 <label for="text">Pouvoir</label>
+<<<<<<< HEAD
+            <input class="form-control"  name="powers" value="{{ powers }}">
+=======
             <input class="form-control"name="powers" value="{{ powers }}">
+>>>>>>> ee28d828d9e5f4dc82b077e81634dd9fcf5b229a
                 {{!-- <option>Selectionner un pouvoir</option>
                 {{#each powers }}
                 <option value="{{name}}">{{powers}}</option>
@@ -23,17 +31,22 @@
 
             {{!-- Input Contenu --}}
             <div class="form-group mt-2">
+<<<<<<< HEAD
+                <label for="exampleInputTextarea">Introduction du personnage</label>
+                <textarea class="form-control  ckeditor" id="editor7" name="content" hidden>{{ content }}</textarea>
+=======
                 <label>Introduction du personnage</label>
                 <textarea class="ckeditor form-control" id="editor7" name="content" hidden>{{ content }}</textarea>
+>>>>>>> ee28d828d9e5f4dc82b077e81634dd9fcf5b229a
                 {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
                 <script>
-                    const chara = CKEDITOR.replace('editor7', {
+                    const edchara = CKEDITOR.replace('editor7', {
                         entities: false, // Pour la suppression des caractères spéciaux
                         //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
                         
                     });
 
-                    chara.on('change', function (e) {//modification du contenu de l'éditeur
+                    edchara.on('change', function (e) {//modification du contenu de l'éditeur
                         console.log(e.editor.getData())
                     })
                 </script>
