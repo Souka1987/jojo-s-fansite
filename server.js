@@ -1,6 +1,5 @@
-/*
- * Server.js
- ******************************/
+/* Server.js
+ ****************************/
 
 // Import du module http (pour afficher la page dans un naviguateur web)
 // "http" est un protocole de transmission de données (www..)

@@ -51,14 +51,13 @@
                     </label>
                     <div class="input-group mb-2 mr-sm-2">
                         <div class="input-group-prepend">
-                            <div class="input-group-text toggle"><label
-                                    for="inputPasswordCreate"><i id="stylePw"
+                            <div class="input-group-text toggle"><label for="inputPasswordCreate"><i id="stylePw"
                                         type="button" style="color:#000000;background:transparent;float: right;"
                                         onclick="togglePwd('inputPasswordCreate','stylePw');"
                                         class="far fa-eye-slash"></i></label></div>
                         </div>
-                        <input name="password" type="password" id="inputPasswordCreate"
-                            class="form-control" placeholder="mot de passe" required>
+                        <input name="password" type="password" id="inputPasswordCreate" class="form-control"
+                            placeholder="mot de passe" required>
                     </div>
                 </div>
 
@@ -71,15 +70,6 @@
 
                 {{!-- Pour voir le mot de passe --}}
                 <script type="text/javascript">
-<<<<<<< HEAD
-                    function togglePwd(id, idStyle) {
-                        let x = document.getElementById(id);
-                        let icon = document.getElementById(idStyle);
-                        if (x.type === "password") {
-                            x.type = "text"
-                            icon.classList.remove("fa-eye-slash")
-                            icon.classList.add("fa-eye")
-=======
                     let passwordInput = document.getElementById('hybrid').type = 'password',
                         toggle = document.getElementById('btnToggle'),
                         icon = document.getElementById('eyeIcon');
@@ -89,7 +79,6 @@
                         if (passwordInput.type === 'password') {
                             passwordInput.type = 'text';
                             icon.classList.add("fa-eye");
->>>>>>> 8c6d35f4227c9fd914da1f9c66c34fa17878b85a
                         } else {
                             x.type = "password"
                             icon.classList.remove("fa-eye")
