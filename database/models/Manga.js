@@ -10,7 +10,6 @@ const MangaSchema = new mongoose.Schema({
     content: String,
     image: String,
     imageName: String,
-    author: String,
     createDate: {
         type: Date,
         default: new Date() // La date sera créé au moment où l'on va créer l'article.

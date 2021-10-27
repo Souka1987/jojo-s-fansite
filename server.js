@@ -14,9 +14,8 @@ const
     path = require('path'),
     // Handlebars sert à créer des modèles de pages web réutilisables
     hbs = require('express-handlebars'),
+    // Lien avec la base de données
     mongoose = require('mongoose'),
-    // le flash est une zone spéciale de la session servant à stocker les datas utilisateur.
-    connectFlash = require('connect-flash'),
     // Users
     expressSession = require('express-session'),
     mocha = require('mocha'),
@@ -94,7 +93,7 @@ app.use('*', (req, res, next) => {
 })
 
 // Connect-Flash
-app.use(connectFlash())
+//app.use(connectFlash())
 
 // Handlebars
 app.set('view engine', 'hbs');

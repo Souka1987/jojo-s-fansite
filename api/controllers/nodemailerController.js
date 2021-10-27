@@ -38,7 +38,7 @@ module.exports = {
             subject: 'Félicitation ! ' + req.body.name + ' !',
             html: `
           <h2>${req.body.name}, Bienvenue dans le monde de Jojo !!</h2>
-          <h5>Tous sur votre manga préféré jojo's Bizarre Adventure. </h5>
+          <h5>Tous sur ton manga préféré jojo's Bizarre Adventure. </h5>
           <h4>Sujet: ${req.body.subject}</h4>
           <p>${req.body.message}</p>
         `
@@ -49,7 +49,9 @@ module.exports = {
             if (err) console.log(err)
             else {
                 console.log(info)
-                res.redirect('/')
+                res.render('index', {
+                    success: 'Ton message a bien été envoyé.'
+                })
             }
         })
     },

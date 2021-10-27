@@ -1,7 +1,7 @@
 {{!-- Arcs Card --}}
-<section class="text-center">
+<section class="text-center bg">
     <div class="container">
-        <h1 class="display-4">Ses différentes saisons :</h1>
+        <h1 class="display-4">Les différentes saisons ou parties:</h1>
         <p class="text-arcs text-justify">Cet oeuvre à la particularité d'être découpé en parties distinctes,
             chacune suivant un
             protagoniste différent (mais qui ont tous pour point commun d'être être surnommés Jojo), son propre casting,
@@ -22,13 +22,14 @@
             {{!-- Début de la boucle --}}
             {{#each (limit arcs 8) }}
             <div class="card-deck mb-3 text-center col-md-3">
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                            <h6 class="my-0 text-uppercase">{{ title }}</h6>
-                    </div>
+                <div class="card mb-4">
+                    {{!-- <div class="card-header"> --}}
+
+                    {{!-- </div> --}}
                     <div class="card-body">
                         <img src="{{ image }}" class="card-img-top" alt="...">
-                        <p class="justify mt-2">{{ stripTags content }}</p>
+                        <h6 class="mt-5 text-uppercase">{{ title }}</h6>
+                        <p class="justify mt-2 text-arcs">{{ stripTags content }}</p>
                         {{!-- Récupérer le "createDate" pour ajouter la date --}}
                         <p class="card-text text-muted"><small>Ajouté le:
                                 {{ moment createDate format="DD.MM.YYYY" }}</small></p>
@@ -39,4 +40,34 @@
             {{/each }}
         </div>
     </div>
+    <style>
+        .bg {
+            background-color: #f5f7fe;
+        }
+
+        .card-body {
+            padding: 40px 30px;
+            background-color: #fff;
+            background-clip: border-box;
+
+        }
+
+        img {
+            box-shadow: 4px 4px 8px #e2e6fc, -4px -4px 8px #fff !important;
+        }
+
+        h6 {
+            color: #ff1178
+        }
+
+        small {
+            color: #191941;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+
+        }
+        .text-arcs{
+            font-size: 13px;
+        }
+    </style>
 </section>

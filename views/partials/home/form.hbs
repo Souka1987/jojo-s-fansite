@@ -1,3 +1,16 @@
+
+{{#if success }}
+<script>
+    /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
+    swal({
+        text: "Ton message a bien été envoyé.",
+        icon: "success"
+    }).then(function () {
+        window.location = "/";
+    });
+</script>
+{{/if}}
+
 {{!-- Form --}}
 <section class="mt-5">
     <div class="container">

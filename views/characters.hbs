@@ -1,6 +1,5 @@
 {{!-- Page personnages --}}
-
-<section class="mt-5">
+<section class="mt-5 bg-characters">
 
     <div class="container">
         <h1 style="text-align: center;" class="display-4">Liste des personnages</h1>
@@ -51,79 +50,80 @@
 
         {{!-- Card  --}}
         <div class="container">
-            <div class="row">
-                <ul id="myJojo" class="row justify-content-center">
-                    {{!-- Réduction des cards ici, 4 avec "limit" --}}
-                    {{#each character }}
-                    <li class="card-deck list-group-item col-md-6 col-sm-12 col-lg-3 col-xl-3 m-2 p-1 chara-card">
-                        <img src="{{ image }}" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ name }}</h5>
-                            {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
-                            <p class="card-text">{{ stripTags content }}</p>
-                            {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                            <p class="card-text"><small class="text-muted">Ajouté le:
-                                    {{ moment createDate format="DD.MM.YYYY" }}</small></p>
-                            {{!--  Button trigger modal  --}}
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
+            {{!-- <div class=""> --}}
+            <ul id="myJojo" class="row justify-content-center">
+                {{!-- Réduction des cards ici, 4 avec "limit" --}}
+                {{#each character }}
+                <li
+                    class="card-deck list-group-item col-md-6 col-sm-12 col-lg-4 col-xl-3 m-2 p-1 rounded shadow border-light">
+                    <div>
+                        <img src="{{ image }}" class="card-img-top rounded" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ name }}</h5>
+                        {{!-- Ajout de la variable "stripTags" ainsi que le contenu --}}
+                        <p class="card-text text-center">{{ stripTags content }}</p>
+                        {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                        <p class="card-text text-center"><small class="text-muted">Ajouté le:
+                                {{ moment createDate format="DD.MM.YYYY" }}</small></p>
+                        {{!--  Button trigger modal  --}}
+                        <div class="text-center">
+                            <button type="button" class="btn" data-toggle="modal"
                                 {{!-- Définir l'ID pour le lier au modal --}} data-target="#staticBackdrop{{ _id }}">
                                 Faculté
                             </button>
-                            {{!-- /Button trigger modal --}}
                         </div>
-                    </li>
+                        {{!-- /Button trigger modal --}}
+                    </div>
+                </li>
 
-                    {{!-- Modal --}}
-                    <div class="modal fade " id="staticBackdrop{{ _id }}" data-backdrop="static" data-keyboard="false"
-                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title font-weight-bolder">{{ powers.name }}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body p-1">
-                                    {{!-- card --}}
+                {{!-- Modal --}}
+                <div class="modal fade " id="staticBackdrop{{ _id }}" data-backdrop="static" data-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title font-weight-bolder">{{ powers.name }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body p-1">
+                                {{!-- card --}}
+                                <div>
+                                    <img src="{{ powers.image }}" class="card-img-top" alt="...">
                                     <div>
-                                        <img src="{{ powers.image }}" class="card-img-top" alt="...">
-                                        <div>
-                                            <p class="card-text">{{ stripTags powers.content1  }}</p>
-                                        </div>
-                                        <div>
-                                            <h5>{{ powers.title1 }}</h5>
-                                            <p class="card-text">{{ stripTags powers.content2 }}</p>
-                                        </div>
-                                        <div>
-                                            <h5>{{ powers.title2 }}</h5>
-                                            <p class="card-text">{{ stripTags powers.content3 }}</p>
-                                            {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                                            <p class="card-text"><small class="text-muted">Ajouté le:
-                                                    {{ moment createDate format="DD.MM.YYYY" }}</small></p>
-                                        </div>
+                                        <p class="card-text">{{ stripTags powers.content1  }}</p>
                                     </div>
-                                    {{!-- /card --}}
+                                    <div>
+                                        <h5>{{ powers.title1 }}</h5>
+                                        <p class="card-text">{{ stripTags powers.content2 }}</p>
+                                    </div>
+                                    <div>
+                                        <h5>{{ powers.title2 }}</h5>
+                                        <p class="card-text">{{ stripTags powers.content3 }}</p>
+                                        {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                                        <p class="card-text"><small class="text-muted">Ajouté le:
+                                                {{ moment createDate format="DD.MM.YYYY" }}</small></p>
+                                    </div>
+                                </div>
+                                {{!-- /card --}}
 
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Fermer</button>
-                                    </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                                 </div>
                             </div>
                         </div>
-                        {{!-- /Modal --}}
                     </div>
-                    {{!-- Fin de la boucle --}}
-                    {{/each }}
-                </ul>
-            </div>
+                    {{!-- /Modal --}}
+                </div>
+                {{!-- Fin de la boucle --}}
+                {{/each }}
+            </ul>
+            {{!-- </div> --}}
         </div>
     </div>
-</section>
-{{!-- /Page personnages --}}
-
-{{!--  Pagination  --}}
+    {{!--  Pagination  --}}
     <ul class="pagination justify-content-center">
         <li class="page-item disabled">
             <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -133,4 +133,128 @@
         <li class="page-item"><a class="page-link" href="page2">3</a></li>
         <li class="page-item"><a class="page-link" href="#">Next</a></li>
     </ul>
-{{!-- /Pagination --}}
+    {{!-- /Pagination --}}
+</section>
+{{!-- /Page personnages --}}
+
+<style>
+    .ul {
+        padding: 40px 30px;
+        flex: 1 1 auto;
+        min-height: 1px;
+    }
+
+    .ul {
+        position: relative;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, .125);
+        border-radius: .25rem;
+    }
+
+    .rounded {
+        border-radius: .55rem !important;
+    }
+
+    img {
+        vertical-align: middle;
+        border-style: none;
+    }
+
+    .shadow {
+        box-shadow: 2px 2px 4px #e2e6fc, -2px -2px 4px #fff;
+    }
+
+    .card {
+        position: relative;
+        flex-direction: column;
+    }
+
+    .card-title {
+        color: #191941;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+    }
+
+    .btn {
+        position: relative;
+        cursor: pointer;
+        border: none;
+        border-radius: 50px;
+        outline: none;
+        background: linear-gradient(90deg, #FF1178, #FE0000, #FFF205, #FF1178);
+        box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+        background-size: 400%;
+        color: #fff;
+        font-size: 15px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: linear-gradient(90deg, #FF1178, #FE0000, #FFF205, #FF1178);
+        background-size: 400%;
+        border-radius: 50px;
+        opacity: 0;
+        transition: .5s;
+    }
+
+    .btn:hover {
+        animation: animate 10s linear infinite;
+        color: white;
+    }
+
+    .btn:hover::before {
+        filter: blur(25px);
+        opacity: .8;
+        animation: animate 10s linear infinite;
+    }
+
+    @keyframes animate {
+        0% {
+            background-position: 0%;
+        }
+
+        100% {
+            background-position: 400%;
+        }
+    }
+
+    .img {
+        background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    }
+
+    .form-control {
+        color: #ffffff;
+        background-color: #ffffff;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+        display: inline-block;
+        height: 52px;
+        letter-spacing: .05rem;
+        padding: 15px 20px;
+        background-image: none;
+        background-clip: padding-box;
+        border: none;
+        appearance: none;
+        box-shadow: 2px 2px 4px #e2e6fc, -2px -2px 4px #fff;
+        touch-action: manipulation;
+        overflow: visible;
+        position: relative;
+        border-radius: 50px;
+
+    }
+</style>
