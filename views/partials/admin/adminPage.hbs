@@ -30,14 +30,14 @@
                                                     <th scope="col">Dates</th>
                                                     <th scope="col">
                                                         <button type="button" class="btn btn-add" data-toggle="modal"
-                                                            data-target='#modalAdd{{_id}}' data-whatever="">
+                                                            data-target='#modalAdd' data-whatever="">
                                                             <i class="fas fa-plus"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/news/modalAdd
-                                                    }}
+                                                        admin/crudAdmin/news/modalAdd
+                                                        }}
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l<i class="fas fa-plus"></i>
-                                                    dans la boucle --}}
+                                                        ID dynamique de l'objet
+                                                        dans la boucle --}}
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -57,19 +57,17 @@
                                                             data-target="#modalDelete{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/news/modalEdit
-                                                    }}
+                                                        admin/crudAdmin/news/modalEdit
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/news/modalDelete
-                                                    }}
+                                                        admin/crudAdmin/news/modalDelete
+                                                        }}
                                                     </td>
                                                 </tr>
-
                                                 {{/each }}
                                                 {{!-- Fin de la boucle --}}
                                             </tbody>
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +87,7 @@
                             <button id="admin-title" class="btn btn-block text-center" type="button"
                                 data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
                                 aria-controls="collapseOne">
-                                ARCS
+                                ARCS (les saisons)
                             </button>
                         </h2>
                     </div>
@@ -109,17 +107,16 @@
                                                     <th scope="col">Dates</th>
                                                     <th scope="col">
                                                         <button type="button" class="btn btn-add" data-toggle="modal"
-                                                            data-target="#modalAddArcs{{_id}}" data-whatever="@mdo"><i
+                                                            data-target="#modalAddArcs{{_id}}" data-whatever=""><i
                                                                 class="fas fa-plus"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/arcs/modalAddArcs
-                                                    }}
+                                                        admin/crudAdmin/arcs/modalAddArcs
+                                                        }}
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l'object
-                                                    dans la boucle --}}
+                                                        ID dynamique de l'object
+                                                        dans la boucle --}}
                                                     </th>
                                                 </tr>
-
                                             </thead>
                                             <tbody>
                                                 {{!-- Début de la boucle --}}
@@ -137,19 +134,17 @@
                                                             data-target="#modalDeleteArcs{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/arcs/modalEditArcs
-                                                    }}
+                                                        admin/crudAdmin/arcs/modalEditArcs
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/arcs/modalDeleteArcs
-                                                    }}
+                                                        admin/crudAdmin/arcs/modalDeleteArcs
+                                                        }}
                                                     </td>
                                                 </tr>
-
                                                 {{/each }}
                                                 {{!-- Fin de la boucle --}}
                                             </tbody>
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
@@ -180,7 +175,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="myTable" class="display">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -192,11 +187,11 @@
                                                             data-target="#modalAddCharacters{{_id}}"
                                                             data-whatever="@mdo"><i class="fas fa-plus"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/characters/modalAddCharacters
-                                                    }}
+                                                        admin/crudAdmin/characters/modalAddCharacters
+                                                        }}
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l'object
-                                                    dans la boucle --}}
+                                                        ID dynamique de l'object
+                                                        dans la boucle --}}
                                                     </th>
                                                 </tr>
 
@@ -216,11 +211,11 @@
                                                             data-target="#modalDeleteCharacters{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/characters/modalEditCharacters
-                                                    }}
+                                                        admin/crudAdmin/characters/modalEditCharacters
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/characters/modalDeleteCharacters
-                                                    }}
+                                                        admin/crudAdmin/characters/modalDeleteCharacters
+                                                        }}
                                                     </td>
                                                 </tr>
 
@@ -257,7 +252,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="myTable2" class="display">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -269,11 +264,11 @@
                                                             data-target="#modalAddPowers{{_id}}" data-whatever="@mdo"><i
                                                                 class="fas fa-plus"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/powers/modalAddPowers
-                                                    }}
+                                                        admin/crudAdmin/powers/modalAddPowers
+                                                        }}
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l'object
-                                                    dans la boucle --}}
+                                                        ID dynamique de l'object
+                                                        dans la boucle --}}
                                                     </th>
                                                 </tr>
 
@@ -294,11 +289,11 @@
                                                             data-target="#modalDelePowers{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/powers/modalEditPowers
-                                                    }}
+                                                        admin/crudAdmin/powers/modalEditPowers
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/powers/modalDeletePowers
-                                                    }}
+                                                        admin/crudAdmin/powers/modalDeletePowers
+                                                        }}
                                                     </td>
                                                 </tr>
 
@@ -336,24 +331,25 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="myTable3" class="display">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
                                                     <th scope="col">Titre des tomes</th>
                                                     <th scope="col">Saisons</th>
-                                                    <th scope="col">Fichiers</th>
+                                                    {{!-- <th scope="col">Images</th> --}}
                                                     <th scope="col">Dates</th>
                                                     <th scope="col">
                                                         <button type="button" class="btn btn-add" data-toggle="modal"
                                                             data-target="#modalAddManga{{_id}}" data-whatever="@mdo"><i
                                                                 class="fas fa-plus"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/manga/modalAddManga
-                                                    }}
+                                                        admin/crudAdmin/manga/modalAddManga
+                                                        }}
+
                                                         {{!-- Appel du modal avec un
-                                                    ID dynamique de l'object
-                                                    dans la boucle --}}
+                                                        ID dynamique de l'object
+                                                        dans la boucle --}}
                                                     </th>
                                                 </tr>
 
@@ -366,7 +362,7 @@
                                                     <th scope="row">{{ inc @index }}</th>
                                                     <td>{{ title }}</td>
                                                     <td>{{ season }}</td>
-                                                    <td>{{ image }}</td>
+                                                    {{!-- <td>{{ image }}</td> --}}
                                                     <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
                                                     <td><button type="button" class="btn btn-edit" data-toggle="modal"
                                                             data-target="#modalEditManga{{_id}}"><i
@@ -375,11 +371,11 @@
                                                             data-target="#modalDeleteManga{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/manga/modalEditManga
-                                                    }}
+                                                        admin/crudAdmin/manga/modalEditManga
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/manga/modalDeleteManga
-                                                    }}
+                                                        admin/crudAdmin/manga/modalDeleteManga
+                                                        }}
                                                     </td>
                                                 </tr>
 
@@ -417,7 +413,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="myTable4" class="display">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -446,8 +442,8 @@
                                                             data-target="#modalUsersDelete{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/users/modalUsersDelete
-                                                    }}
+                                                        admin/crudAdmin/users/modalUsersDelete
+                                                        }}
                                                     </td>
                                                 </tr>
 
@@ -466,7 +462,7 @@
 
             <!---------------------------------->
 
-            {{!-- manga --}}
+            {{!-- commentaires --}}
             <div class="accordion mt-5" id="accordionExample">
                 <div class="card">
                     <div class="card-header" id="headingOne">
@@ -485,7 +481,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="myTable5" class="display">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
@@ -509,11 +505,11 @@
                                                             data-target="#modalDeleteComments{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
-                                                    admin/crudAdmin/comments/modalAddComments
-                                                    }}
+                                                        admin/crudAdmin/comments/modalAddComments
+                                                        }}
                                                         {{>
-                                                    admin/crudAdmin/comments/modalDeleteComments
-                                                    }}
+                                                        admin/crudAdmin/comments/modalDeleteComments
+                                                        }}
                                                     </td>
                                                 </tr>
                                                 {{/each }}
@@ -527,12 +523,20 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             {{!-- /manga --}}
+=======
+            {{!-- /commentaires --}}
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
 
             <!---------------------------------->
 
             {{!-- messages --}}
+<<<<<<< HEAD
             <div class="accordion mt-5" id="accordionExample">
+=======
+            {{!-- <div class="accordion mt-5" id="accordionExample">
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
@@ -562,6 +566,7 @@
                                                     <th scope="col">Actions</th>
                                                 </tr>
 
+<<<<<<< HEAD
                                             </thead>
                                             <tbody>
                                                 {{!-- Début de la boucle --}}
@@ -575,10 +580,26 @@
                                                     <td>{{ message }}</td>
                                                     <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
                                                     {{!-- <td>
+=======
+                                            </thead> --}}
+            {{!-- <tbody>
+                                                {{!-- Début de la boucle --}}
+            {{#each message }}
+
+            <tr>
+                <th scope="row">{{ inc @index }}</th>
+                <td>{{ lastname }}</td>
+                <td>{{ email }}</td>
+                <td>{{ subject }}</td>
+                <td>{{ message }}</td>
+                <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                {{!-- <td>
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
                                                         <button type="button" class="btn btn-delete" data-toggle="modal"
                                                             data-target="#modalUsersDelete{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
+<<<<<<< HEAD
                                                     admin/crudAdmin/users/modalUsersDelete
                                                     }}
                                                     </td> --}}
@@ -587,6 +608,16 @@
                                                 {{/each }}
                                                 {{!-- Fin de la boucle --}}
                                             </tbody>
+=======
+                                                        admin/crudAdmin/users/modalUsersDelete
+                                                        }}
+                                                    </td> --}}
+            </tr>
+
+            {{/each }}
+            {{!-- Fin de la boucle --}}
+            {{!-- </tbody> 
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
                                         </table>
                                     </div>
                                 </div>
@@ -594,8 +625,122 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
             </div>
+=======
+            </div> --}}
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
             {{!-- /messages --}}
         </div>
 </section>
 {{!-- / Admin --}}
+
+
+
+<style>
+    <style>li,
+    a,
+    button {
+        font-size: 12px;
+        color: white;
+        margin: 5px;
+        padding: 7px;
+
+    }
+
+    label {
+        font-size: 12px
+    }
+
+    li,
+    a,
+    button {
+        padding: 5px;
+        margin: 5px;
+        color: #FFF205;
+        border-radius: 10px;
+        background-color: #17193b;
+    }
+
+    input,
+    button,
+    select,
+    optgroup,
+    textarea {
+        background: #333867;
+        border: #333867;
+        color: white;
+        border-radius: 10px;
+    }
+</style>
+
+
+<script>
+    jQuery(document).ready(function ($) {
+        $('#myTable').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
+        $('#myTable2').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
+        $('#myTable3').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
+        $('#myTable4').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
+        $('#myTable5').DataTable({
+            language: {
+                lengthMenu: "Il y en a _MENU_ par page",
+                info: "Page numéro: _PAGE_ sur _PAGES_",
+                search: "Rechercher",
+                paginate: {
+                    first: "first",
+                    last: "last",
+                    next: "next",
+                    previous: "previous"
+                }
+            }
+        });
+    });
+</script>

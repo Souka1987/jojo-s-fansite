@@ -11,4 +11,19 @@ module.exports = {
             comments: dbComments
         })
     },
+
+    // GET Suppression commentaire pour l'user
+    // deleteComments: async (req, res) => {
+
+    //     const dbComments = await Comments.findById(req.params.id)
+    //     console.log('Commentaire supprimé')
+    //     console.log(dbComments)
+
+    //     Comments.deleteOne({
+    //         _id: req.params.id // Toujours définir l'ID
+    //     }, (err) => {
+    //         if (!err) return res.redirect('/author') // Rediriger vers la page "author"
+    //         else res.send(err) // Sinon afficher l'érreur
+    //     })
+    // },
 }

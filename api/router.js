@@ -24,6 +24,7 @@ const homeController = require('./controllers/homeController'),
     messageController = require('./controllers/messageController'),
     commentsController = require('./controllers/commentsContoller'),
     nodemailerController = require('./controllers/nodemailerController'),
+    cookieController = require('./controllers/cookieController'),
 
     // ADMIN CONTROLLERS
     adminController = require('./controllers/admin/adminController'),
@@ -41,6 +42,7 @@ router.route('/')
     .get(homeController.getArcs)
 
 
+
 /*
  * Personnages
  * *********** */
@@ -55,6 +57,8 @@ router.route('/characters')
 
 router.route('/author')
     .get(authorController.get)
+
+
 
 /*
  * Manga
@@ -74,11 +78,49 @@ router.route('/manga')
 router.route('/nodemailer')
     .post(nodemailerController.mail)
 
+// email de verification
+router.route('/verification')
+    .post(nodemailerController.sendVerif)
+router.route('/verifuser')
+    .post(nodemailerController.verifMailPost)
+    
+// Mot de passe oublier
+router.route('/lostpassword')
+    .post(nodemailerController.lostPassword)
+
+// Page de mot de passe oublier
+router.route('/lostpassword/:id')
+    .get(nodemailerController.editPassword)
+
+
 
 
 // Message
 router.route('/message')
     .get(messageController.get)
+
+
+
+/*
+ * COOKIES
+ * ******* */
+
+// Suppression de cookie PtiGato & Cookie
+router.route('/cookie')
+    .post(cookieController.cookie)
+
+// Supprimer tous les cookies
+router.route('/clearCookie')
+    .get(cookieController.clearCookie)
+
+// Créer un nouveau cookie
+router.route('/newCookie')
+    .get(cookieController.newCookie)
+
+// Créer un nouveau PtiGato
+router.route('/newPtiGato')
+    .get(cookieController.newPtiGato)
+
 
 
 /************************************** */
@@ -96,8 +138,19 @@ router.route('/login')
 router.route('/auth')
     .post(loginController.post)
 
+// Déconnexion
 router.route('/logout')
     .get(loginController.logout)
+
+// Mot de passe oublier
+router.route('/editPassword/:id')
+    .post(loginController.editPasswordPost)
+
+// Page de vérification
+router.route('/verify/:id')
+    .get(nodemailerController.verifMail)
+    .post(loginController.verifMailPost)
+
 
 
 // Inscription
@@ -118,7 +171,7 @@ router.route('/newComments')
 
 // /GET Suppression commentaires 
 router.route('/deleteComments/:id')
-    .get(commentsController.deleteComments)
+    .get(auth.isUser, auth.isAdmin, commentsController.deleteComments)
 
 
 
@@ -132,7 +185,10 @@ router.route('/admin')
     .get(auth.isAdmin, adminController.get)
 
 
+
+
 // C.R.U.D
+
 // Arcs
 router.route('/admin/arcs')
     // GET récupération du formulaire formAdd
@@ -211,9 +267,9 @@ router.route('/admin/editPowers/:id')
     // POST formulaire
     .post(uploadCharacters.single('image'), auth.isAdmin, powersController.powersEdit)
 
-// GET bouton de suppression
-// router.route('/admin/deletePowers/:id')
-//     .get(auth.isAdmin, powersController.deletePowers)
+//GET bouton de suppression
+router.route('/admin/deletePowers/:id')
+    .get(auth.isAdmin, powersController.deletePowers)
 
 
 
@@ -227,6 +283,7 @@ router.route('/admin/manga')
     .get(auth.isAdmin, mangaController.mangaFormAdd)
     // POST formulaire mangaAdd
     .post(uploadArcs.single('image'), auth.isAdmin, mangaController.mangaAdd)
+
 
 router.route('/admin/editManga/:id')
     // GET récupération du formulaire editFormMAnga

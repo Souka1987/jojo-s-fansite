@@ -45,10 +45,10 @@ const UserSchema = new mongoose.Schema({
     },
     // A vous d'éssayer de les attribuer pendant l'authentification ('/authentification') dans ../api/auth.js
     // Et essayer de les faire ressortir dans le middleware du server.js
-    // imgUser: {
-    //     type: String,
-    //     default: "https://s2.qwant.com/thumbr/0x380/6/e/46f11d586d9cbdb2eb380182ce63468791ede023d2a2ac4fc38ac1e8443d0e/img_210318.png?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_210318.png&q=0&b=1&p=0&a=1"
-    // }
+    imgUser: {
+        type: String,
+        default: "https://s2.qwant.com/thumbr/0x380/6/e/46f11d586d9cbdb2eb380182ce63468791ede023d2a2ac4fc38ac1e8443d0e/img_210318.png?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_210318.png&q=0&b=1&p=0&a=1"
+    }
 })
 
 UserSchema.pre('save', function (next) {
@@ -59,4 +59,8 @@ UserSchema.pre('save', function (next) {
     })
 })
 
-module.exports = mongoose.model('User', UserSchema)
+// Pour récupérer les data de la base de données.
+const User = mongoose.model('User', UserSchema)
+
+// On peut aussi le faire d'une autre manière
+module.exports = User

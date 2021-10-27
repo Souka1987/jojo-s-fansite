@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+=======
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
     {{!-- <a class="navbar-brand" href="#">Navbar</a> --}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,60 +31,25 @@
                 <a class="nav-link" href="/message">Message</a>
             </li>
 
+
             <li class="nav-item active">
                 <a class="nav-link" href="/login">Login</a>
             </li>
+
             {{#if user }}
-            <li>
+            <li class="nav-item active">
                 <a class="nav-link" href="/logout">Logout</a>
             </li>
             {{/if }}
 
             {{#if isAdmin }}
-            <li>
+            <li class="nav-item active">
                 <a class="nav-link" href="/admin">Admin</a>
             </li>
             {{/if }}
         </ul>
     </div>
 </nav>
-
-<style>
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        padding: 10px 30px;
-        z-index: 1;
-        width: 100%;
-        position: fixed;
-        left: 0px;
-        top: 0px;
-    }
-
-    nav ul {
-        display: flex;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    nav ul li a {
-        margin: 8px;
-        padding: 0px 22px;
-        display: flex;
-        font-size: 11px;
-        text-transform: uppercase;
-        font-weight: 400;
-        letter-spacing: 1px;
-    }
-
-    nav ul li a:hover {
-        background-color: #FF1178;
-        color: #fff;
-        box-shadow: 5px 10px 30px rgba(255, 17, 120, 0.5);
-        transition: all ease 0.2s;
-    }
-</style>
 
 {{#if isUser }}
 <script>

@@ -26,7 +26,7 @@ module.exports = {
         User.deleteOne({ // Pour suprimer un document à la fois par son ID
             _id: req.params.id // Toujours définir le chemin de l'ID
         }, (err) => {
-            if (!err) return res.redirect('/author') // Rediriger vers la page "admin"
+            if (!err) return res.redirect('/author') // Rediriger vers la page "author"
             else res.send(err) // Sinon afficher l'érreur
         })
     }

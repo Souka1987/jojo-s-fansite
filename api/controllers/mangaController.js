@@ -5,8 +5,7 @@
 const path = require('path'),
     Manga = require('../../database/models/Manga'),
     Arcs = require('../../database/models/Arcs'),
-    fs = require('fs'),
-    format = require('date-format')
+    fs = require('fs')
 
 
 module.exports = {
@@ -58,8 +57,6 @@ module.exports = {
         // Création de l'article à partir du model
         Manga.create({
 
-            // Ici on travail une date qui ce retrouve au format 'String'
-            releaseDate: format.asString('le dd/MM/yyyy à hh:mm:ss', new Date()),
             // ...req.body prend par défaut tout le schéma
             ...req.body,
 
