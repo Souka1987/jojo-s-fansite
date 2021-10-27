@@ -4,7 +4,8 @@ const mongoose = require('mongoose'),
 
 // Création du shéma Model en utilisant le constructeur de mongoose
 const MangaSchema = new mongoose.Schema({
-    // déclaration de variable et leur type
+    // Déclaration de variables et leur type
+    // Card infos
     title: String,
     season: Number,
     content: String,
@@ -19,6 +20,13 @@ const MangaSchema = new mongoose.Schema({
     arcs: {
         type: Schema.Types.ObjectId,
         ref: 'Arcs'
+    },
+    releaseDate: {
+        type: String,
+        default: new Date()
+    },
+    publishingDate: {
+        type: String
     },
 
 })

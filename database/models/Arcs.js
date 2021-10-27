@@ -11,9 +11,14 @@ const ArcsSchema = new mongoose.Schema({
         type: Date,
         default: new Date() // La date sera créé au moment où l'on va créer l'article.
     },
-    manga:[],
-    Arcs: Number
-
+    manga: [],
+    Arcs: Number,
+    releaseDate: {
+        type: String
+    },
+    publishingDate: {
+        type: String
+    },
 })
 
 // Pour récupérer les data de la base de données.

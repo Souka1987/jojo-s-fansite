@@ -1,8 +1,10 @@
+const moment = require('moment')
+
 module.exports = {
 
     stripTags: function (Input) {
         //Pour l'éditeur de texte; fonction permettant de remplacer tous ces symboles par des ''.
-        //return Input.replace(/<(?:.|\n)*?>/gm, '');
+        if (Input) return Input.replace(/<(?:.|\n)*?>/gm, ' ');
     },
 
     // Limiter les cards avec la fonction "limit" + "array" qui renvoie à un tableau
@@ -16,12 +18,15 @@ module.exports = {
     inc: (value, option) => {
         return parseInt(value) + 1
     },
-    // Pour les users
+    // Pour les commentaires
     ifCond: (v1, v2, options) => {
         if (v1 === v2) {
             return options.fn(this);
         }
         return options.inverse(this);
     },
-
+    // Dates
+    formatDate: function (date, format) {
+        return moment(date).utc().format(format)
+    },
 }

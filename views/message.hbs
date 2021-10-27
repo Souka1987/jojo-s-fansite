@@ -1,39 +1,44 @@
 {{!-- Form --}}
-<section class="mt-5">
-    <div class="container">
-        <h1 class="text-center display-4">Envoyer un message</h1>
-    </div>
-
-    <div class="container mb-5">
+<section>
+    </br>
+    <div class="container mt-5">
+        <h1 class="text-center">Envoyer un message</h1>
         <div class="card-body mx-auto" style="max-width: 700px;">
-            <p>Pour toutes questions relatives au site ou à mon point vu sur le manga, vous avez la possibilité de
+<<<<<<< HEAD
+            <p class="text-center mt-5">Pour toutes questions relatives au site ou à mon point vu sur le manga, vous avez la
+=======
+            <p class="text-center">Pour toutes questions relatives au site ou à mon point vu sur le manga, vous avez la
+>>>>>>> 65472e03d72153f645f41dfbdc0fefd91a34cd84
+                possibilité de
                 m'envoyer un message ci-dessous:</p>
             <form action="/nodemailer" method="POST">
                 <div class="row">
                     <div class="col">
-                        <label for="exampleInputEmail1">Nom</label>
+                        <label>Nom</label>
                         <input type="text" class="form-control" name="firstname" placeholder="firstname">
                     </div>
                     <div class="col">
-                        <label for="exampleInputEmail1">Prénom</label>
+                        <label>Prénom</label>
                         <input type="text" class="form-control" name="name" placeholder="lastname">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="email"
-                        aria-describedby="emailHelp">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="email">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Sujet</label>
+                    <label>Sujet</label>
                     <input type="text" class="form-control" name="subject" placeholder="subject">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Message</label>
+                    <label>Message</label>
                     <textarea class="form-control" name="message" placeholder="message" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Envoyer</button>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </div>
             </form>
         </div>
     </div>
-    {{!-- /Form --}}
+</section>
+{{!-- /Form --}}

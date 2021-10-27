@@ -20,16 +20,11 @@ module.exports = {
             }),
             dbMangaSeason2 = await Manga.find({
                 season: 2
-            }),
-            dbMangaSeason3 = await Manga.find({
-                season: 3
             })
         res.render('manga', { // rend une vue + récupération des datas
             manga: dbManga,
             season1: dbMangaSeason1,
-            season2: dbMangaSeason2,
-            season3: dbMangaSeason3
-
+            season2: dbMangaSeason2
         })
     },
 
@@ -138,7 +133,7 @@ module.exports = {
             Manga.deleteOne({ // Pour suprimer un document à la fois par son ID
                 _id: req.params.id // Toujours définir l'ID
             }, (err) => {
-                if (!err) return res.redirect('/manga') // Rediriger vers la page "manga"
+                if (!err) return res.redirect('/admin') // Rediriger vers la page "manga"
                 else res.send(err) // Sinon afficher l'érreur
             })
         })

@@ -36,7 +36,7 @@ module.exports = {
     },
 
 
-    // GET Suppression commentaire
+    // GET Suppression commentaire pour l'Admin
     deleteComments: async (req, res) => {
 
         const dbComments = await Comments.findById(req.params.id)
@@ -44,9 +44,10 @@ module.exports = {
         console.log(dbComments)
 
         Comments.deleteOne({
+
             _id: req.params.id // Toujours définir l'ID
         }, (err) => {
-            if (!err) return res.redirect('/admin') // Rediriger vers la page "author"
+            if (!err) return res.redirect('/author') // Rediriger vers la page "author"
             else res.send(err) // Sinon afficher l'érreur
         })
     },

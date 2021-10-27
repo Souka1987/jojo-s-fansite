@@ -9,14 +9,14 @@ const http = require('http')
 // Import de module
 const
     express = require('express'),
-    //cookieParser = require('cookie-parser'),
+    cookieParser = require('cookie-parser'),
     app = express(),
     path = require('path'),
     // Handlebars sert à créer des modèles de pages web réutilisables
     hbs = require('express-handlebars'),
+    // Lien avec la base de données
     mongoose = require('mongoose'),
-    // le flash est une zone spéciale de la session servant à stocker les datas utilisateur.
-    connectFlash = require('connect-flash'),
+    morgan = require('morgan'),
     // Users
     expressSession = require('express-session'),
     mocha = require('mocha'),
@@ -25,13 +25,15 @@ const
     nodemailer = require('nodemailer'),
     // Import de body-parser
     bodyParser = require('body-parser'),
-    morgan = require('morgan'),
+    //morgan = require('morgan'),
+    handlebars = require('handlebars'),
     // édition du texte avec "stripTags" et "limit" pour mimiter les appels de fonction avec un délai.
     {
         stripTags,
         limit,
         inc,
-        ifCond
+        ifCond,
+        formatDate,
     } = require('./helpers/hbs'),
     // Swagger
     swaggerUi = require('swagger-ui-express'),
@@ -45,9 +47,11 @@ const
 require('dotenv').config()
 // console.log(process.env);
 
-
 // Morgan => Middleware de journalisation des requêtes HTTP pour node.js
-app.use(morgan('dev'))
+//app.use(morgan('dev'))
+
+// Cookie-Parser
+app.use(cookieParser())
 
 
 // Mongoose pour le lien avec la base de données. "jjba" est le nom de la base de données.
@@ -66,8 +70,8 @@ const mongoStore = MongoStore(expressSession) // Connection du module "MongoStor
 
 // Handlebars.moment => Pour formater la temporalité (dates/horraires)
 const Handlebars = require("handlebars"),
-    MomentHandler = require("handlebars.moment");
-MomentHandler.registerHelpers(Handlebars)
+    MomentHandler = require("handlebars.moment")
+MomentHandler.registerHelpers(Handlebars);
 
 
 // Users
@@ -85,15 +89,13 @@ app.use('*', (req, res, next) => {
     res.locals.user = req.session.userId;
     res.locals.session = req.session;
     res.locals.isAdmin = req.session.isAdmin;
-    console.log("ID Session: " + res.locals.user);
-    console.log(req.session);
+    // console.log("ID Session: " + res.locals.user);
+    // console.log(req.session);
     next()
 })
 
-// Connect-Flash
-app.use(connectFlash())
-
 // Handlebars
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs', hbs({
     helpers: {
@@ -101,17 +103,19 @@ app.engine('hbs', hbs({
         limit: limit, //"limit", pour la réduction des cards
         /* Pour l'édition de texte afin de le faire passer dans le
                 moteur de templating "app.engine" */
+
+        // Incrémentation
         inc: inc,
-        /*incrémentation*/
+        // User condition
         ifCond: ifCond,
-        /*user condition*/
+        // Dates
+        formatDate: formatDate,
     },
     extname: 'hbs',
     defaultLayout: 'main',
     adminLayout: 'adminLayout'
 
 }));
-
 
 // Express static permet de diriger un chemin (URL) sur un dossier en particulier
 app.use('/assets', express.static('public'))
@@ -132,8 +136,10 @@ app.use(express.urlencoded({
 const ROUTER = require('./api/router')
 app.use('/', ROUTER)
 
+// Backup
+const cron = require('./api/config/backup/cron')
 
-//Page erreur 404
+// Page erreur 404
 app.use((req, res) => {
     res.render('err404', {
         layout: false

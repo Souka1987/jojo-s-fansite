@@ -27,6 +27,7 @@ module.exports = {
     /* Ci-dessous, syntax permetant d'attendre le retour de la requête + "schema.find({})" 
            pour afficher le contenu de la base de données.*/
     formAddCharacter: async (req, res) => {
+        const file = req.file;
         const dbCharacter = await Character.find({}),
             dbPowers = await Powers.find({})
 
@@ -34,7 +35,7 @@ module.exports = {
             character: dbCharacter,
             powers: dbPowers
 
-        })
+        });
     },
 
     // POST Action du formulaire characterAdd ( Admin )
@@ -117,7 +118,7 @@ module.exports = {
 
             }, (err) => {
                 if (err) console.log(err); //Si il y a une erreur, l'afficher
-                res.redirect('/characters') //sinon renvoyer sur la page "characters"
+                res.redirect('/admin') //sinon renvoyer sur la page "admin"
 
             })
         }
@@ -141,7 +142,7 @@ module.exports = {
             Character.deleteOne({ // Pour suprimer un document à la fois par son ID
                 _id: req.params.id // Toujours définir l'ID
             }, (err) => {
-                if (!err) return res.redirect('/admin') // Rediriger vers la page "characters"
+                if (!err) return res.redirect('/admin') // Rediriger vers la page "admin"
                 else res.send(err) // Sinon afficher l'érreur
             })
         })
