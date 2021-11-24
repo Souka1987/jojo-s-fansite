@@ -1,52 +1,68 @@
-
-{{#if success }}
-<script>
-    /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
-    swal({
-        text: "C'est envoyé ;).",
-        icon: "success"
-    }).then(function () {
-        window.location = "/";
-    });
-</script>
+{{#if success}}
+  <script>
+    /*Ajout d'une promesse ".then" pour la redirection sur la page home*/ swal({
+    text: "Ton message a bien été envoyé.", icon: "success" }).then(function ()
+    { window.location = "/"; });
+  </script>
 {{/if}}
 
-{{!-- Form --}}
+{{! Form }}
 <section class="mt-5">
-    <div class="container">
-        <h2 class="text-center">Envoyer un message</h2>
-    </div>
-    <div class="container mb-5">
-        <div class="card-body mx-auto" style="max-width: 700px;">
-            <p>Pour toutes questions relatives au site ou à mon point vu sur le manga, vous avez la possibilité de
-                m'envoyer un message ci-dessous:</p>
-            <form action="/nodemailer" method="POST">
-                <div class="row">
-                    <div class="col">
-                        <label >Nom</label>
-                        <input type="text" class="form-control" name="name" placeholder="name"
-                            required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label >Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="email"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label >Sujet</label>
-                    <input type="text" class="form-control" name="subject" placeholder="subject">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"
-                        placeholder="message" required></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
+  <div class="container">
+    <h2 class="text-center">Envoyer un message</h2>
+  </div>
+  <div class="container mb-5">
+    <div class="card-body mx-auto" style="max-width: 700px;">
+      <p>Pour toutes questions relatives au site ou à mon point vu sur le manga,
+        vous avez la possibilité de m'envoyer un message ci-dessous:</p>
+      <form action="/nodemailer" method="POST">
+        <div class="row">
+          <div class="col">
+            <label>Nom</label>
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              placeholder="name"
+              required
+            />
+          </div>
         </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label>Sujet</label>
+          <input
+            type="text"
+            class="form-control"
+            name="subject"
+            placeholder="subject"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Message</label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            name="message"
+            rows="3"
+            placeholder="message"
+            required
+          ></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
     </div>
+  </div>
 </section>
-{{!-- /Form --}}
+{{! /Form }}

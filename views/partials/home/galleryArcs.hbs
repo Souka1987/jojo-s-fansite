@@ -1,9 +1,14 @@
 {{!-- Arcs Card --}}
-<section class="text-center">
+<section class="text-center bg">
     <div class="container">
+<<<<<<< HEAD
+        <h1 class="display-4">Les différentes saisons ou parties:</h1>
+        <p class="text-arcs text-justify">Cet oeuvre à la particularité d'être découpé en parties distinctes,
+=======
         <h1 class="">Les différentes parties:</h1>
         <span class="small">(elles ne sont pas classées dans leur ordre d'apparition)</span>
         <p class=" text-justify mt-5">Cet oeuvre à la particularité d'être découpé en parties distinctes,
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
             chacune suivant un
             protagoniste différent (mais qui ont tous pour point commun d'être être surnommés Jojo), son propre casting,
             son
@@ -20,12 +25,27 @@
         <div class="row justify-content-center">
             {{!-- Début de la boucle --}}
             {{#each (limit arcs 8) }}
+<<<<<<< HEAD
+            <div class="card-deck mb-3 text-center col-md-3">
+                <div class="card mb-4">
+                    {{!-- <div class="card-header"> --}}
+
+                    {{!-- </div> --}}
+                    <div class="card-body">
+                        <img src="{{ image }}" class="card-img-top" alt="...">
+                        <h6 class="mt-5 text-uppercase">{{ title }}</h6>
+                        <p class="justify mt-2 text-arcs">{{ stripTags content }}</p>
+                        {{!-- Récupérer le "createDate" pour ajouter la date --}}
+                        <p class="card-text text-muted"><small>Ajouté le:
+                                {{ moment createDate format="DD.MM.YYYY" }}</small></p>
+=======
             <div class="text-center  col-sm-12 col-lg-3 p-0 rounded">
                 <div class="card">
                     <div class="card-body">
                         <img src="{{ image }}" class="card-img-top" alt="seasons">
                         <h6 class="mt-3 text-uppercase">{{ title }}</h6>
                         <p class="justify mt-2 text-arcs">{{{ stripTags content }}}</p>
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
                     </div>
                 </div>
             </div>
@@ -33,4 +53,34 @@
             {{/each }}
         </div>
     </div>
+    <style>
+        .bg {
+            background-color: #f5f7fe;
+        }
+
+        .card-body {
+            padding: 40px 30px;
+            background-color: #fff;
+            background-clip: border-box;
+
+        }
+
+        img {
+            box-shadow: 4px 4px 8px #e2e6fc, -4px -4px 8px #fff !important;
+        }
+
+        h6 {
+            color: #ff1178
+        }
+
+        small {
+            color: #191941;
+            font-family: 'Lato', sans-serif;
+            font-size: 12px;
+
+        }
+        .text-arcs{
+            font-size: 13px;
+        }
+    </style>
 </section>

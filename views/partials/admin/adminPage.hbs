@@ -523,12 +523,20 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
+            {{!-- /manga --}}
+=======
             {{!-- /commentaires --}}
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
 
             <!---------------------------------->
 
             {{!-- messages --}}
+<<<<<<< HEAD
+            <div class="accordion mt-5" id="accordionExample">
+=======
             {{!-- <div class="accordion mt-5" id="accordionExample">
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
@@ -558,6 +566,21 @@
                                                     <th scope="col">Actions</th>
                                                 </tr>
 
+<<<<<<< HEAD
+                                            </thead>
+                                            <tbody>
+                                                {{!-- Début de la boucle --}}
+                                                {{#each message }}
+
+                                                <tr>
+                                                    <th scope="row">{{ inc @index }}</th>
+                                                    <td>{{ lastname }}</td>
+                                                    <td>{{ email }}</td>
+                                                    <td>{{ subject }}</td>
+                                                    <td>{{ message }}</td>
+                                                    <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
+                                                    {{!-- <td>
+=======
                                             </thead> --}}
             {{!-- <tbody>
                                                 {{!-- Début de la boucle --}}
@@ -571,10 +594,21 @@
                 <td>{{ message }}</td>
                 <td>{{ moment createDate format="DD/MM/YYYY" }}</td>
                 {{!-- <td>
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
                                                         <button type="button" class="btn btn-delete" data-toggle="modal"
                                                             data-target="#modalUsersDelete{{_id}}"><i
                                                                 class="fas fa-trash-alt"></i></button>
                                                         {{>
+<<<<<<< HEAD
+                                                    admin/crudAdmin/users/modalUsersDelete
+                                                    }}
+                                                    </td> --}}
+                                                </tr>
+
+                                                {{/each }}
+                                                {{!-- Fin de la boucle --}}
+                                            </tbody>
+=======
                                                         admin/crudAdmin/users/modalUsersDelete
                                                         }}
                                                     </td> --}}
@@ -583,6 +617,7 @@
             {{/each }}
             {{!-- Fin de la boucle --}}
             {{!-- </tbody> 
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
                                         </table>
                                     </div>
                                 </div>
@@ -590,7 +625,11 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
+            </div>
+=======
             </div> --}}
+>>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
             {{!-- /messages --}}
         </div>
 </section>
