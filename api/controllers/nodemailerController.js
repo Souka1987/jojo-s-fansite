@@ -50,15 +50,6 @@ module.exports = {
         console.log(mailOptions)
 
         // On demande à notre transporter d'envoyer notre mail
-<<<<<<< HEAD
-        transporter.sendMail(mailOptions, (err, info) => {
-            if (err) console.log(err)
-            else {
-                console.log(info)
-                res.render('index', {
-                    success: 'Ton message a bien été envoyé.'
-                })
-=======
         transporter.sendMail(mailOptions, (err, res, next) => {
             if (err) {
                 console.log(err)
@@ -145,7 +136,6 @@ module.exports = {
                     message: "Bad Request !"
                 })
 
->>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
             }
         } else {
             res.render('verifId', {

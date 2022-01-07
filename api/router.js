@@ -1,7 +1,6 @@
 // Import 
 const express = require('express'),
     router = express.Router(),
-    path = require('path'),
     uploadArcs = require('./config/multerArcs'),
     uploadCharacters = require('./config/multerCharacters'),
     // Middleware
@@ -27,10 +26,7 @@ const homeController = require('./controllers/homeController'),
     cookieController = require('./controllers/cookieController'),
 
     // ADMIN CONTROLLERS
-    adminController = require('./controllers/admin/adminController'),
-    {
-        route
-    } = require('../server')
+    adminController = require('./controllers/admin/adminController')
 
 
 
@@ -305,4 +301,4 @@ router.route('/admin/userDelete/:id')
 
 
 // Exportation du routeur
-module.exports = router
+module.exports = router;

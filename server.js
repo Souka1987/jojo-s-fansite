@@ -47,7 +47,7 @@ require('dotenv').config()
 // console.log(process.env);
 
 // Morgan => Middleware de journalisation des requêtes HTTP pour node.js
-//app.use(morgan('dev'))
+app.use(morgan('dev'))
 
 // Cookie-Parser
 app.use(cookieParser())
@@ -154,4 +154,4 @@ app.listen(port, function () {
     console.log(`Ecoute le port ${port}, lancé le : ${new Date().toLocaleString()}`);
 })
 
-module.exports = app
+module.exports = app;
