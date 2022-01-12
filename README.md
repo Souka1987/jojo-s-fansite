@@ -1,5 +1,7 @@
 <h1 align="center">Welcome to Jojo's World  👋</h1>
 
+<div align="center">
+ 
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-4169E1.svg?style=for-the-badge&logo=visual-studio&logoColor=white&style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/Souka1987/jojo-s-fansite?color=crimson&label=github&logo=github&logoColor=crimson&style=social)
 [![OS - Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux&logoColor=white)](https://www.linux.org/ "Go to Linux homepage")
@@ -14,6 +16,8 @@
 ![npm](https://img.shields.io/npm/v/mocha?color=brown&label=mocha&logo=mocha&logoColor=brown&style=social)
 ![npm](https://img.shields.io/npm/v/chai?color=brown&label=chai&logo=chai&logoColor=brown&style=social)
 ![npm](https://img.shields.io/npm/v/express?color=yellow&label=express&logo=express&logoColor=yellow)
+</div>
+
 ------------------
 
 > Fansite développé lors de la formation Developpeur Web et Web Mobile
