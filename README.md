@@ -20,7 +20,7 @@
 
 ------------------
 
-> Fansite développé lors de la formation Developpeur Web et Web Mobile
+> Fansite développé lors de la formation Developpeur Web et Web Mobile. Il a pour thème Jojo's Bizarre Adventure, une bande dessinée japonaise (manga) créé en 1986 par Hirohiko Araki.
 
 In progress
 
