@@ -1,67 +1,61 @@
 <section>
-    <div class="container">
-        <h6 class="text-center text-white">Modifier un personnage</h6>
-        {{!--Ajout de l'url et de la méthode. "multipart/form-data" sert à prendre en compte le jpeg--}}
-        <form action="/admin/editCharacters/{{ _id }}" method="POST" enctype="multipart/form-data">
+  <div class="container">
+    <h6 class="text-center text-white">Modifier un personnage</h6>
+    {{!Ajout de l'url et de la méthode. "multipart/form-data" sert à prendre en compte le jpeg}}
+    <form
+      action="/admin/editCharacters/{{_id}}"
+      method="POST"
+      enctype="multipart/form-data"
+    >
 
-            {{!-- Input Nom du personnage --}}
-            <div class="form-group">
-                <label for="text">Nom du personnage</label>
-<<<<<<< HEAD
-                <input type="text" class="form-control"  name="name" value="{{ name }}">
-=======
-                <input type="text" class="form-control" name="name" value="{{ name }}">
->>>>>>> ee28d828d9e5f4dc82b077e81634dd9fcf5b229a
-            </div>
+      {{! Input Nom du personnage }}
+      <div class="form-group">
+        <label for="text">Nom du personnage</label>
+        <input type="text" class="form-control" name="name" value="{{name}}" />
+      </div>
 
-            {{!-- Input du Pouvoir --}}
-            <div class="form-group">
-                <label for="text">Pouvoir</label>
-<<<<<<< HEAD
-            <input class="form-control"  name="powers" value="{{ powers }}">
-=======
-            <input class="form-control"name="powers" value="{{ powers }}">
->>>>>>> ee28d828d9e5f4dc82b077e81634dd9fcf5b229a
-                {{!-- <option>Selectionner un pouvoir</option>
+      {{! Input du Pouvoir }}
+      <div class="form-group">
+        <label for="text">Pouvoir</label>
+        <input class="form-control" name="powers" value="{{powers}}" />
+        {{!-- <option>Selectionner un pouvoir</option>
                 {{#each powers }}
                 <option value="{{name}}">{{powers}}</option>
                 {{/each }} --}}
-            {{!-- </select> --}}
-            </div>
+        {{! </select> }}
+      </div>
 
-            {{!-- Input Contenu --}}
-            <div class="form-group mt-2">
-<<<<<<< HEAD
-                <label for="exampleInputTextarea">Introduction du personnage</label>
-                <textarea class="form-control  ckeditor" id="editor7" name="content" hidden>{{ content }}</textarea>
-=======
-                <label>Introduction du personnage</label>
-                <textarea class="ckeditor form-control" id="editor7" name="content" hidden>{{ content }}</textarea>
->>>>>>> ee28d828d9e5f4dc82b077e81634dd9fcf5b229a
-                {{!-- Rajout de l'éditeur de texte "CKeditor" --}}
-                <script>
-                    const edchara = CKEDITOR.replace('editor7', {
-                        entities: false, // Pour la suppression des caractères spéciaux
-                        //uiColor: '#FFF205' // Coloriser les bordures de l'éditeur
-                        
-                    });
+      {{! Input Contenu }}
+      <div class="form-group mt-2">
+        <label>Introduction du personnage</label>
+        <textarea
+          class="ckeditor form-control"
+          id="editor7"
+          name="content"
+          hidden
+        >{{content}}</textarea>
+        {{! Rajout de l'éditeur de texte "CKeditor" }}
+        <script>
+          const edchara = CKEDITOR.replace('editor7', { entities: false, // Pour
+          la suppression des caractères spéciaux //uiColor: '#FFF205' //
+          Coloriser les bordures de l'éditeur }); edchara.on('change', function
+          (e) {//modification du contenu de l'éditeur
+          console.log(e.editor.getData()) })
+        </script>
+      </div>
 
-                    edchara.on('change', function (e) {//modification du contenu de l'éditeur
-                        console.log(e.editor.getData())
-                    })
-                </script>
-            </div>
+      {{! Input Images }}
+      <div class="form-group">
+        <label>Envoyer une image au format jpeg</label>
+        <input type="file" class="form-control-file" name="image" />{{image}}
+      </div>
 
-            {{!-- Input Images --}}
-            <div class="form-group">
-                <label >Envoyer une image au format jpeg</label>
-                <input type="file" class="form-control-file" name="image">{{ image }}
-            </div>
-
-            {{!-- Bouttons --}}
-            <div class="text-center">
-                <button type="submit" class="btn btn-edit"><i class="fas fa-edit"></i></button>
-            </div>
-        </form>
-    </div>
+      {{! Bouttons }}
+      <div class="text-center">
+        <button type="submit" class="btn btn-edit"><i
+            class="fas fa-edit"
+          ></i></button>
+      </div>
+    </form>
+  </div>
 </section>

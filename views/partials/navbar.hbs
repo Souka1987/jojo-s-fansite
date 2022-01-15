@@ -1,61 +1,64 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    {{!-- <a class="navbar-brand" href="#">Navbar</a> --}}
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<section  id="bg-navbar">
+<nav class="navbar navbar-expand-lg bg-grey">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">JOJO'S WORLD</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Acceuil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/author">Auteur</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/manga">Manga</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/characters">Personnages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+         <li>
+       </a>
+        {{#if user}}
 
-    <div class="collapse navbar-collapse justify-content-md-center m-2" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
-            </li>
+          <a
+            type="button"
+            class="btn btn-outline-primary me-2"
+            href="/logout"
+          >Logout</a>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/author">Auteur</a>
-            </li>
+        {{/if}}
+    </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/characters">Personnages</a>
-            </li>
+    <li>
+      {{#if isAdmin}}
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/manga">Manga</a>
-            </li>
+          <a
+            type="button"
+            class="btn btn-outline-primary me-2"
+            href="/admin"
+          >Admin</a>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/message">Message</a>
-            </li>
-
-
-            <li class="nav-item active">
-                <a class="nav-link" href="/login">Login</a>
-            </li>
-
-            {{#if user }}
-            <li class="nav-item active">
-                <a class="nav-link" href="/logout">Logout</a>
-            </li>
-            {{/if }}
-
-            {{#if isAdmin }}
-            <li class="nav-item active">
-                <a class="nav-link" href="/admin">Admin</a>
-            </li>
-            {{/if }}
-        </ul>
+        {{/if}}
+    </li>
+      </ul>
     </div>
+  </div>
 </nav>
 
-{{#if isUser }}
-<script>
-    /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
-    swal({
-        title: "Super !",
-        text: "Tu es bien déconnecté",
-        icon: "success"
-    }).then(function () {
-        window.location = "/";
-    })
-</script>
-{{/if}}
+{{#if isUser}}
+    <script>
+      /*Ajout d'une promesse ".then" pour la redirection sur la page home*/
+      swal({ title: "Super !", text: "Tu es bien déconnecté", icon: "success"
+      }).then(function () { window.location = "/"; })
+    </script>
+  {{/if}}
+  
+
+  
+</section>

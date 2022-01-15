@@ -52,7 +52,6 @@
 
         {{!-- Card --}}
         <div class="container">
-<<<<<<< HEAD
             {{!-- <div class=""> --}}
             <ul id="myJojo" class="row justify-content-center">
                 {{!-- Réduction des cards ici, 4 avec "limit" --}}
@@ -73,44 +72,10 @@
                         <div class="text-center">
                             <button type="button" class="btn" data-toggle="modal"
                                 {{!-- Définir l'ID pour le lier au modal --}} data-target="#staticBackdrop{{ _id }}">
-=======
-            <ul id="myJojo" class="row">
-                {{#each character }}
-                <li class="col-md-4">
-                    <div class="blog-card blog-card-blog">
-                        <div class="blog-card-image">
-                            <a href="#"> <img class="img" src="{{image}}">
-                            </a>
-                            <div class="ripple-cont"></div>
-                        </div>
-                        <div class="blog-table">
-                            <h5 class="card-title text-center font-weight-bolder">{{ name }}</h5>
-                            <p class="text-justify">{{{ stripTags content }}}</p>
-                            {{!-- Button trigger modal --}}
-                            <div class="text-center">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" {{!--
-                                    Définir l'ID pour le lier au modal --}} data-target="#exampleModalLong{{ _id }}">
-                                    <i class="fa fa-fw fa-lg fa-chevron-right"></i> Faculté
-
-                                </button>
-
-<<<<<<< HEAD
-                                
-                            </div>
-                            {{!-- /Button trigger modal --}}
-=======
-                        {{!-- Button trigger modal --}}
-                        <div class="text-center">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" {{!-- Définir l'ID pour le lier au
-                                    modal --}} data-target="#exampleModalLong{{ _id }}">
->>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
                                 Faculté
                             </button>
                         </div>
                         {{!-- /Button trigger modal --}}
-<<<<<<< HEAD
-=======
->>>>>>> 1885da6a7896d526af3e2c466aa0d81ed3082b07
 
                             <div class="card-footer mt-2">
                                 {{!-- Récupérer le "createDate" pour ajouter la date --}}
@@ -118,11 +83,8 @@
                                         {{ moment createDate format="DD.MM.YYYY" }}</small></p>
                             </div>
                         </div>
->>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
+
                     </div>
-
-<<<<<<< HEAD
-
 
                     {{!-- Modal --}}
                     <div class="modal fade" id="exampleModalLong{{ _id }}" data-backdrop="static" data-keyboard="false"
@@ -152,43 +114,8 @@
                                 {{!-- /card --}}
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
-=======
-                {{!-- Modal --}}
-<<<<<<< HEAD
-                <div class="modal fade " id="staticBackdrop{{ _id }}" data-backdrop="static" data-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title font-weight-bolder">{{ powers.name }}</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body p-1">
-                                {{!-- card --}}
-                                <div>
-                                    <img src="{{ powers.image }}" class="card-img-top" alt="...">
-                                    <div>
-                                        <p class="card-text">{{ stripTags powers.content1  }}</p>
-                                    </div>
-                                    <div>
-                                        <h5>{{ powers.title1 }}</h5>
-                                        <p class="card-text">{{ stripTags powers.content2 }}</p>
-                                    </div>
-                                    <div>
-                                        <h5>{{ powers.title2 }}</h5>
-                                        <p class="card-text">{{ stripTags powers.content3 }}</p>
-                                        {{!-- Récupérer le "createDate" pour ajouter la date --}}
-                                        <p class="card-text"><small class="text-muted">Ajouté le:
-                                                {{ moment createDate format="DD.MM.YYYY" }}</small></p>
-                                    </div>
-                                </div>
-                                {{!-- /card --}}
 
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-=======
+                {{!-- Modal --}}
                 <div class="modal fade" id="exampleModalLong{{ _id }}" data-backdrop="static" data-keyboard="false"
                     tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -211,168 +138,22 @@
                                     <hr>
                                     <p class="mt-2"> {{{ stripTags powers.content3 }}}
                                     </p>
->>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
->>>>>>> 1885da6a7896d526af3e2c466aa0d81ed3082b07
+
                                 </div>
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
+
                     {{!-- Fin de la boucle --}}
                     {{/each }}
                 </li>
-=======
-<<<<<<< HEAD
-                    {{!-- /Modal --}}
-=======
->>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a
+
                 </div>
                 {{!-- Fin de la boucle --}}
-                {{/each }}
->>>>>>> 1885da6a7896d526af3e2c466aa0d81ed3082b07
+                {{!-- {{/each }} --}}
+
             </ul>
-<<<<<<< HEAD
-            {{!-- </div> --}}
-        </div>
-    </div>
-    {{!--  Pagination  --}}
-    <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-        </li>
-        <li class="page-item active"><a class="page-link" href="page">1</a></li>
-        <li class="page-item"><a class="page-link" href="page1">2</a></li>
-        <li class="page-item"><a class="page-link" href="page2">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-    {{!-- /Pagination --}}
-</section>
-{{!-- /Page personnages --}}
-
-<style>
-    .ul {
-        padding: 40px 30px;
-        flex: 1 1 auto;
-        min-height: 1px;
-    }
-
-    .ul {
-        position: relative;
-        display: flex;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        border: 1px solid rgba(0, 0, 0, .125);
-        border-radius: .25rem;
-    }
-
-    .rounded {
-        border-radius: .55rem !important;
-    }
-
-    img {
-        vertical-align: middle;
-        border-style: none;
-    }
-
-    .shadow {
-        box-shadow: 2px 2px 4px #e2e6fc, -2px -2px 4px #fff;
-    }
-
-    .card {
-        position: relative;
-        flex-direction: column;
-    }
-
-    .card-title {
-        color: #191941;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: bold;
-    }
-
-    .btn {
-        position: relative;
-        cursor: pointer;
-        border: none;
-        border-radius: 50px;
-        outline: none;
-        background: linear-gradient(90deg, #FF1178, #FE0000, #FFF205, #FF1178);
-        box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #fff;
-        background-size: 400%;
-        color: #fff;
-        font-size: 15px;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-    }
-
-    .btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        background: linear-gradient(90deg, #FF1178, #FE0000, #FFF205, #FF1178);
-        background-size: 400%;
-        border-radius: 50px;
-        opacity: 0;
-        transition: .5s;
-    }
-
-    .btn:hover {
-        animation: animate 10s linear infinite;
-        color: white;
-    }
-
-    .btn:hover::before {
-        filter: blur(25px);
-        opacity: .8;
-        animation: animate 10s linear infinite;
-    }
-
-    @keyframes animate {
-        0% {
-            background-position: 0%;
-        }
-
-        100% {
-            background-position: 400%;
-        }
-    }
-
-    .img {
-        background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-    }
-
-    .form-control {
-        color: #ffffff;
-        background-color: #ffffff;
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 1.25rem;
-        display: inline-block;
-        height: 52px;
-        letter-spacing: .05rem;
-        padding: 15px 20px;
-        background-image: none;
-        background-clip: padding-box;
-        border: none;
-        appearance: none;
-        box-shadow: 2px 2px 4px #e2e6fc, -2px -2px 4px #fff;
-        touch-action: manipulation;
-        overflow: visible;
-        position: relative;
-        border-radius: 50px;
-
-    }
-</style>
-=======
         </div>
     </div>
 </section>
 {{!-- /Page personnages --}}
->>>>>>> 88db372f165f52f1f3f9508214e7a9745844833a

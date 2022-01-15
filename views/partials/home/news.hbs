@@ -1,27 +1,71 @@
 <section>
-  {{!-- Card --}}
+  {{! Card }}
   <div class="container mt-5">
     <div class="row">
       {{! Début de la boucle }}
-      {{#each (limit news 3) }}
-      <div class="col-md-6 col-lg-4">
-        <div class="card border-light mb-4">
-          <img src="{{ image }}" class="card-img-top" alt="news">
-          <div class="card-body">
-            <h5 class="font-weight-normal text-center">{{ title }}</h5>
-            <p class="text-justify mt-2">
-              {{{ stripTags content }}}
-            </p>
-            <p class="text-center text-muted"> <strong>Par: Admin</strong> | {{ moment createDate format="DD.MM.YYYY" }}
-            </p>
+      {{#each (limit news 3)}}
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-light mb-4">
+            <img src="{{image}}" class="card-img-top" alt="news" />
+            <div class="card-body">
+              <h5 class="font-weight-normal text-center">{{title}}</h5>
+              <p class="text-justify mt-2">
+                {{{stripTags content}}}
+              </p>
+              <p class="text-center text-muted">
+                <strong>Par: Admin</strong>
+                |
+                {{moment createDate format="DD.MM.YYYY"}}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      {{! Fin de la boucle }}
+        {{! Fin de la boucle }}
       {{/each}}
     </div>
   </div>
 </section>
 {{! / news }}
 
+{{!-- <div class="container px-4 py-5" id="custom-cards">
+  <h2 class="pb-2 border-bottom">News</h2>
+ {{#each (limit news 3)}}
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col">
+      <img
+        class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+        src="{{image}}"
+      >
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{title}}</h2>
+          <p>{{{stripTags content}}}</p>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="me-auto">
+              <img
+                src="https://github.com/twbs.png"
+                alt="Bootstrap"
+                width="32"
+                height="32"
+                class="rounded-circle border border-white"
+              />
+            </li>
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em"><use
+                  xlink:href="#geo-fill"
+                ></use></svg>
+              <small>Earth</small>
+            </li>
+            <li class="d-flex align-items-center">
+              <svg class="bi me-2" width="1em" height="1em"><use
+                  xlink:href="#calendar3"
+                ></use></svg>
+              <small>{{moment createDate format="DD.MM.YYYY"}}</small>
+            </li>
+          </ul>
+        </div>
+      </img>
+    </div>
 
+  </div>
+  {{/each}}
+</div> --}}
